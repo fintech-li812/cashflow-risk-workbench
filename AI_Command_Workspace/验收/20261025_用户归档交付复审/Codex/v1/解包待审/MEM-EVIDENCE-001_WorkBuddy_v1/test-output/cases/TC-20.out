@@ -1,0 +1,6 @@
+{"code":"OK","fixture_warning":"【合成数据·非生产·offline_fixture】 本次为合成夹具结果，不代表真实来源，不得当作生产证据","ok":true,"outcome":"created","receipt":{"company_id":"fixture-company","is_fixture":true,"kind":"receipt","note":"本地存储ID，不是MySQL主键；committed 仅表示本地事务已提交","operation":"save_cashflow_result","payload_sha256":"ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456","period":"2026-08","reconciliation_state":"completed","record_id":"loc-34e58aae8434964fd1d165ac","request_id":"req-tamper-001","run_id":"fixture-run-1","schema_version":"mfg-evidence.v1","source_revision":"fixture-rev-1","status":"committed","stored_at":"2026-10-24T15:08:12Z","tenant_id":"fixture-tenant"},"status":"committed"}
+
+{"ok": true, "mode": "payload", "record_id": "loc-34e58aae8434964fd1d165ac", "note": "append-only 触发器已临时移除以模拟库文件级篡改"}
+
+
+{"code":"VERIFY_FAILED","message":"store consistency check found 2 problem(s)","ok":false,"report":{"diagnostic_records":0,"formal_records":1,"problems":[{"code":"PAYLOAD_HASH_MISMATCH","detail":"digest ccd841c7b741 does not match stored payload","field":"payload_sha256","record_id":"loc-34e58aae8434964fd1d165ac"},{"code":"AMOUNT_RECONCILE_FAILED","detail":"balance does not reconcile","field":"amounts","record_id":"loc-34e58aae8434964fd1d165ac"}],"store_schema_version":"evidence-schema-1","verified_at":"2026-10-24T15:08:13Z"},"status":"tampered"}

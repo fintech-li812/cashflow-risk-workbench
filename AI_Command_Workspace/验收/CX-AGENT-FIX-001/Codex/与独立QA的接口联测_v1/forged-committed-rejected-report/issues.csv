@@ -1,0 +1,2 @@
+﻿state,code,location,expected,actual,action
+失败,RECEIPT_HASH,receipt.payload_sha256,完整结果规范JSON摘要,检查未满足；见定位及原始工件,核内容与精确回查，不仅看committed

@@ -1,0 +1,10 @@
+{
+  "args": [
+    "fill",
+    "[aria-label=\"账户1期末余额\"]",
+    ""
+  ],
+  "exit_code": 0,
+  "stdout": "{\"success\":true,\"data\":{\"filled\":\"[aria-label=\\\"账户1期末余额\\\"]\"},\"error\":null}\n",
+  "stderr": ""
+}

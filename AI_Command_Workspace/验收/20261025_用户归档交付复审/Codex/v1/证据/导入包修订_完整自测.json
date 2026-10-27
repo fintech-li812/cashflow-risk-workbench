@@ -1,0 +1,13 @@
+{
+  "label": "导入包修订_完整自测",
+  "command": [
+    "run.py",
+    "selftest",
+    "--workdir",
+    "D:\\AI_Command_Workspace\\验收\\20261025_用户归档交付复审\\Codex\\v1\\运行证据\\import_selftest"
+  ],
+  "cwd": "D:\\AI_Command_Workspace\\验收\\20261025_用户归档交付复审\\Codex\\v1\\修订交付\\MEM-IMPORT-002\\Codex\\v2",
+  "exit_code": 0,
+  "stdout_tail": "900 序列日期 | 1900 系统 serial 45961 → 2025-10-31（记录 date_system=1900）\nTC-019 PASS | Excel1900 虚构闰日 | serial=60 明确报 Excel1900 虚构闰日，不冒充 1900-02-29\nTC-020 PASS | 1904 日期系统 | 1904 系统识别正确，日期 2026-01-31\nTC-021 PASS | 重复行保留且可区分 | 重复两行全部保留，各自有独立键与重复证据\nTC-022 PASS | 合法分次到账不当错误 | 应收 1000000.00 / 已收 400000.00，未判为数据错误\nTC-023 PASS | 同源重跑键与排序稳定 | 同源重跑字节一致；source_revision 稳定 67019e9894ec…；输出排序稳定\nTC-024 PASS | 源改变：revision 变且 verify 检出 | 源改变后 verify 退出码 1 并检出；source_revision 由 67019e9894ec… 变为 d71d60ad0c51…\nTC-025 PASS | 篡改字段并重算哈希仍失败 | 篡改字段并重算清单哈希后 verify 退出码 1，指出源地址与期望值：[FAIL] 第 4 行记录字段 经营性流入（万元） 被篡改: 包内值='99999999.00' 真实源 现金流水!行3 D3 重导值='1808700.00'\nTC-026 PASS | HTML 注入转义且离线 | 单元格 <script> 被转义为 &lt;script&gt;，报告无外部资源\nTC-027 PASS | CSV 导出防公式注入 | = / + / @ / HYPERLINK 等 CSV 危险文本导出时加前缀，原文仍在 JSON 保留\nTC-028 PASS | 路径越界/重名拒绝 | 输出重名退出码 2；.. 越界 1；绝对路径 1（均非0拒绝）\nTC-029 PASS | 故意失败退出码非0 | 非法 period 退出码 2；缺文件 verify 退出码 1（非0）\nTC-030 PASS | 源件 scan 前后一致 | 源件 scan 前后 SHA256 一致: ad0600ce6e8514fe…\nTC-031 PASS | 干净包 verify 通过 | 干净包 verify 退出码 0：清单哈希、记录数、字段来源一致\nselftest 汇总: PASS=31 FAIL=0 BLOCKED=0 NOT_RUN=0 TOTAL=31\n",
+  "stderr_tail": ""
+}

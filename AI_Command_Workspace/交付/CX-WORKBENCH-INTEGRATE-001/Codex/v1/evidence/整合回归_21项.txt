@@ -1,0 +1,35 @@
+D:\AI_Command_Workspace\交付\CX-WORKBENCH-INTEGRATE-001\Codex\v1\tests\test_integration_web.py:5: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient
+test_actual_source_endpoint_is_readonly_and_blocked_for_full_result (test_integration_web.IntegrationWebTests.test_actual_source_endpoint_is_readonly_and_blocked_for_full_result) ... HTTP Request: GET http://127.0.0.1:18765/api/source-inspection "HTTP/1.1 200 OK"
+ok
+test_only_fixed_readonly_routes_exposed (test_integration_web.IntegrationWebTests.test_only_fixed_readonly_routes_exposed) ... HTTP Request: POST http://127.0.0.1:18765/api/source-inspection "HTTP/1.1 405 Method Not Allowed"
+HTTP Request: GET http://127.0.0.1:18765/api/workbench/secret "HTTP/1.1 404 Not Found"
+ok
+test_source_endpoint_rejects_unexpected_host (test_integration_web.IntegrationWebTests.test_source_endpoint_rejects_unexpected_host) ... HTTP Request: GET http://127.0.0.1:18765/api/source-inspection "HTTP/1.1 403 Forbidden"
+ok
+test_source_failure_does_not_leak_paths_or_claim_ready (test_integration_web.IntegrationWebTests.test_source_failure_does_not_leak_paths_or_claim_ready) ... HTTP Request: GET http://127.0.0.1:18765/api/source-inspection "HTTP/1.1 503 Service Unavailable"
+ok
+test_status_endpoint_rejects_unexpected_host (test_integration_web.IntegrationWebTests.test_status_endpoint_rejects_unexpected_host) ... HTTP Request: GET http://127.0.0.1:18765/api/workbench "HTTP/1.1 403 Forbidden"
+ok
+test_status_failure_is_not_connected (test_integration_web.IntegrationWebTests.test_status_failure_is_not_connected) ... HTTP Request: GET http://127.0.0.1:18765/api/workbench "HTTP/1.1 503 Service Unavailable"
+ok
+test_actual_eight_sheets (test_workbench.SourceTests.test_actual_eight_sheets) ... ok
+test_changed_source_stops_before_parse (test_workbench.SourceTests.test_changed_source_stops_before_parse) ... ok
+test_date_system_is_not_guessed_from_strings (test_workbench.SourceTests.test_date_system_is_not_guessed_from_strings) ... ok
+test_duplicate_original_rows_are_both_read (test_workbench.SourceTests.test_duplicate_original_rows_are_both_read) ... ok
+test_failed_database_probe_is_not_reported_connected (test_workbench.SourceTests.test_failed_database_probe_is_not_reported_connected) ... ok
+test_fake_workbook_does_not_get_unit_exception (test_workbench.SourceTests.test_fake_workbook_does_not_get_unit_exception) ... ok
+test_fixture_and_inspected_workbook_not_merged (test_workbench.SourceTests.test_fixture_and_inspected_workbook_not_merged) ... ok
+test_invalid_source_cannot_be_arbitrary_path (test_workbench.SourceTests.test_invalid_source_cannot_be_arbitrary_path) ... ok
+test_known_flags_are_not_gate_results (test_workbench.SourceTests.test_known_flags_are_not_gate_results) ... ok
+test_missing_file_reports_unavailable_not_empty_success (test_workbench.SourceTests.test_missing_file_reports_unavailable_not_empty_success) ... ok
+test_missing_source_inputs_never_return_financial_success (test_workbench.SourceTests.test_missing_source_inputs_never_return_financial_success) ... ok
+test_native_recalc_and_independent_balance_are_explicit (test_workbench.SourceTests.test_native_recalc_and_independent_balance_are_explicit) ... ok
+test_only_registered_manufacturing_source (test_workbench.SourceTests.test_only_registered_manufacturing_source) ... ok
+test_original_unit_suspect_is_preserved (test_workbench.SourceTests.test_original_unit_suspect_is_preserved) ... ok
+test_read_scope_explicit (test_workbench.SourceTests.test_read_scope_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.147s
+
+OK

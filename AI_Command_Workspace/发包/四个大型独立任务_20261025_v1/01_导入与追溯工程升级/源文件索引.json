@@ -1,0 +1,1593 @@
+{
+  "references_are_candidates": true,
+  "files": [
+    {
+      "path": "冻结基线验收/AGENTS.md",
+      "sha256": "affa623d09e73ac1f2e9f9f179a84925e87bafd01cf7f0c3c12b24d3b8e5dedc"
+    },
+    {
+      "path": "冻结基线验收/fixtures/context.json",
+      "sha256": "a6a34fcdc911a22c0df8ae04dffe3ee71069856e71066b4f81ba84d15c4f4a63"
+    },
+    {
+      "path": "冻结基线验收/fixtures/mapping.json",
+      "sha256": "330f9da8298a7bfc17cbcb007213921e28d50279a6cd47156ef89dc65fc70550"
+    },
+    {
+      "path": "冻结基线验收/fixtures/result.json",
+      "sha256": "e6470f7adeba00804b178be5dc17a3087a88758178b9482cfd64b8cf81cf36d7"
+    },
+    {
+      "path": "冻结基线验收/fixtures/unit_exceptions.json",
+      "sha256": "faba6f86554a645db55bd7e8c495f0fa134722d929859dfc6eca83afe3433aa6"
+    },
+    {
+      "path": "冻结基线验收/manifest.json",
+      "sha256": "2172e2a056f5770b4a393e2d2a3d8433515ce1d17f2072d9af230cdb063eec5f"
+    },
+    {
+      "path": "冻结基线验收/README_先读我.md",
+      "sha256": "6258edbda01216959d251044c93b59c3393bfd354dbc4f1dfc726cf3926f6360"
+    },
+    {
+      "path": "冻结基线验收/source/agent_guard.py",
+      "sha256": "eb99d420e2ac7ef1352b448d0c29e1430d0a65cd80a76111eee3dc27c96055c1"
+    },
+    {
+      "path": "冻结基线验收/source/history/旧任务书_v1_非当前执行要求.md",
+      "sha256": "c94847a8a8a22dd9d50fab919fb129a5ff23f8bee7349c2f8150cee41b2cec16"
+    },
+    {
+      "path": "冻结基线验收/source/制造业_样例数据.xlsx",
+      "sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b"
+    },
+    {
+      "path": "冻结基线验收/source/统一接口_v1.md",
+      "sha256": "b17a22386d0931093e1bcf6e02d52895bf825c96234f0b2590143d448f6e2fbb"
+    },
+    {
+      "path": "冻结基线验收/task.json",
+      "sha256": "1e58aef9c665d4222edbb262e2a103c5e905e703bf22b4a340efa37e54817026"
+    },
+    {
+      "path": "冻结基线验收/交付回执模板.md",
+      "sha256": "115bd38e824b1648085ef023be06624c03937f7dd834daa7c96211dfcdef5125"
+    },
+    {
+      "path": "冻结基线验收/共同要求_接口端口自验交接.md",
+      "sha256": "067acd9a51d24501fff421256c5d6ea2ef732c79368e46d19527e8c947b06994"
+    },
+    {
+      "path": "冻结基线验收/实现与需求映射_模板.json",
+      "sha256": "ee058b3ce219c32da880df3744fca04dcfe2d089524f583a185dbc23e9ad9d2d"
+    },
+    {
+      "path": "冻结基线验收/自验入口.py",
+      "sha256": "f5cb334a21a82d93f44ee637263cc7192e3eb721d7f3743dc61a3167207a83c2"
+    },
+    {
+      "path": "参考候选/导入修订v2/01_需求与实现映射.csv",
+      "sha256": "995faaab8c70bde88650d9d92bef994605ad1eaf2a5c824a0e1216115054aa4c"
+    },
+    {
+      "path": "参考候选/导入修订v2/02_测试结果.csv",
+      "sha256": "2aefc4e0b98f015d30c92fa14057cd08fe6f7d12f2178313a36fd0daa692c78e"
+    },
+    {
+      "path": "参考候选/导入修订v2/03_证据索引.csv",
+      "sha256": "ea1d52016f477b14c4c9a7085f157c1ee4bff324b1e14a847cc84214e8f00b6b"
+    },
+    {
+      "path": "参考候选/导入修订v2/04_继承与改动.csv",
+      "sha256": "40f5884554cad3b0090b2a25373ef7a498f9c1a027040df4cce583d2bed652fa"
+    },
+    {
+      "path": "参考候选/导入修订v2/fixtures/controlled_sample.xlsx",
+      "sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b"
+    },
+    {
+      "path": "参考候选/导入修订v2/fixtures/make_fixtures.py",
+      "sha256": "847b8d3627b949a11570ed6f8f8327b6efdd8b7e286c64c6e659a1276ebccb94"
+    },
+    {
+      "path": "参考候选/导入修订v2/fixtures/mapping_fixture.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/manifest.json",
+      "sha256": "ead282193612b50ec5c247d74b89bc220d2bc7b5bbf013a0ceeede71267d59a7"
+    },
+    {
+      "path": "参考候选/导入修订v2/mapping/mfg_sample_mapping.json",
+      "sha256": "009e1341ee4045df5435418ea2c22dc6dfa239ec42862d08e3d228f95d2856b9"
+    },
+    {
+      "path": "参考候选/导入修订v2/PYTHON_VERSION.txt",
+      "sha256": "66f37ee6be46abedd0ccaa90e6a7f700e472cdf0e090e3f2ddd4eb69bf85fcb1"
+    },
+    {
+      "path": "参考候选/导入修订v2/README.md",
+      "sha256": "f17c5f51e5bb07c91182f9c2efb6281410c08cfac780e2227a1b20f8d46a8e35"
+    },
+    {
+      "path": "参考候选/导入修订v2/requirements.txt",
+      "sha256": "06d28d69e958deafb09f0a44fcae9b548f15e4debc14ebc39aad5f0934856fbf"
+    },
+    {
+      "path": "参考候选/导入修订v2/run.py",
+      "sha256": "8d4b08d12ca70462581d4801f4c26f12f06a17b9d2174276312e35d7c74f41ef"
+    },
+    {
+      "path": "参考候选/导入修订v2/SHA256SUMS.txt",
+      "sha256": "f8744244275d6bf5f93197ff36aec9d7235017ba029e753a8d232ca224f052c8"
+    },
+    {
+      "path": "参考候选/导入修订v2/src/mfg_import/__init__.py",
+      "sha256": "ea05302ab050a8dd6ee146898d87acea52f4b4fdfb41c022da2c087a152db0b9"
+    },
+    {
+      "path": "参考候选/导入修订v2/src/mfg_import/__main__.py",
+      "sha256": "85dffc6a8723adae2f1371c8343bf7ec01e05db152d771afc730249a34c96b4d"
+    },
+    {
+      "path": "参考候选/导入修订v2/src/mfg_import/canon.py",
+      "sha256": "d6dc368855a13a805c99e5c9b394575f863d7e600ddca7bcac80559f479abdc2"
+    },
+    {
+      "path": "参考候选/导入修订v2/src/mfg_import/convert.py",
+      "sha256": "4a92b7128acf51cb18e9c697596d921021fbdba67d2ed18d88e72ceb0a7cc990"
+    },
+    {
+      "path": "参考候选/导入修订v2/src/mfg_import/report.py",
+      "sha256": "54526ddb9abe3ea71113e9e1f5c99544fa6c3040494d6351b27548e84ee6f6c1"
+    },
+    {
+      "path": "参考候选/导入修订v2/src/mfg_import/scanner.py",
+      "sha256": "668a244e200de85804a059a14b8498d818a280ba4bdb5e996846aea9f75f5efa"
+    },
+    {
+      "path": "参考候选/导入修订v2/src/mfg_import/selftest.py",
+      "sha256": "912abf9110c26828b01a30c73c473993717587727f1c426dc144e8a4a6c7931c"
+    },
+    {
+      "path": "参考候选/导入修订v2/src/mfg_import/verifier.py",
+      "sha256": "58c5e7984d69c301e593bc61bc2fecc9969bbb3727c76409913af654237ce0bb"
+    },
+    {
+      "path": "参考候选/导入修订v2/src/mfg_import/xlsxraw.py",
+      "sha256": "c8dbd3b273c636e7eef0a057f18e24fe91fd93bbeffbe6cdf3a4b4ac72d4a5ca"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_stdout.txt",
+      "sha256": "adaf2ec4e19061dca32d0a08a1151c8817a4d5b873e1f872c2d898b2611d25aa"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_tampered/inventory.json",
+      "sha256": "370fe9c14830434ff94f6b039eb87c160c4a23288613a9707acaaab0bbc37411"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_tampered/issues.csv",
+      "sha256": "01ee90e82a44eb4c1a17b596b3b6f941894ffbbc2be38e79e60e5e07105d3d38"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_tampered/issues.jsonl",
+      "sha256": "6f81aee3a1299842a837da1366bcf189026bb21b3948c062c55ada1338d54ebb"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_tampered/manifest.json",
+      "sha256": "9e3937901143b899be235523f351538d25fcf3212bff798a42813ccd4cdb5f7a"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_tampered/mapping.snapshot.json",
+      "sha256": "009e1341ee4045df5435418ea2c22dc6dfa239ec42862d08e3d228f95d2856b9"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_tampered/records.jsonl",
+      "sha256": "e52448234bf374e8edd47f2a6ee76cac61448145de5af874f9de0154f5c29916"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_tampered/report.html",
+      "sha256": "e9c7039d7a370b390fd90122e8a35d852f0cb79d00224b099b4989df97df1076"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_tampered/unit_exceptions.snapshot.json",
+      "sha256": "9d56b035d7d4a9941b1718cd8f8130c0e1e8980c106885560cec1e890ee8ea34"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_v1/inventory.json",
+      "sha256": "370fe9c14830434ff94f6b039eb87c160c4a23288613a9707acaaab0bbc37411"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_v1/issues.csv",
+      "sha256": "01ee90e82a44eb4c1a17b596b3b6f941894ffbbc2be38e79e60e5e07105d3d38"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_v1/issues.jsonl",
+      "sha256": "6f81aee3a1299842a837da1366bcf189026bb21b3948c062c55ada1338d54ebb"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_v1/manifest.json",
+      "sha256": "88a8652d9fca8e17ee3c9886858cf445ef2d6054891c7fc81a4c34133180669f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_v1/mapping.snapshot.json",
+      "sha256": "009e1341ee4045df5435418ea2c22dc6dfa239ec42862d08e3d228f95d2856b9"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_v1/records.jsonl",
+      "sha256": "d09f70562f5c450d61542489d45f5ceff08afa5ee21ca5a2104610e8e4713f6a"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_v1/report.html",
+      "sha256": "e9c7039d7a370b390fd90122e8a35d852f0cb79d00224b099b4989df97df1076"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_scan_v1/unit_exceptions.snapshot.json",
+      "sha256": "9d56b035d7d4a9941b1718cd8f8130c0e1e8980c106885560cec1e890ee8ea34"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_source_sha_after.txt",
+      "sha256": "a42dd7c975a275fb5662f4c1f8ddce8bd00cb5a97fd2db23d60f0a23b84af218"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/sample_source_sha_before.txt",
+      "sha256": "a42dd7c975a275fb5662f4c1f8ddce8bd00cb5a97fd2db23d60f0a23b84af218"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-001/in/fixture.xlsx",
+      "sha256": "f745e6f46e1abe225fe5f7aedaeeb1082c1a978dc40ee0a4fa61e6a2ef0cd06e"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-001/pkg/inventory.json",
+      "sha256": "8c9fc692c163471a29bbfe10cc85d9d2becdc9350aeb846ea1abeb812fea0733"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-001/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-001/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-001/pkg/manifest.json",
+      "sha256": "d129c19a611f8f42d4875d7675637a1fcc9d4c76d6fb855e485c5a8f14b94b49"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-001/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-001/pkg/records.jsonl",
+      "sha256": "17754e1d29cb389dbd51024cd0b48195974d269e7d8461f865d5954837bb00b0"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-001/pkg/report.html",
+      "sha256": "be904491a4cc2481755dd5d02a465186842f7fe67fa810838c3b46b13b1e6b6c"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-001/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-002/in/fixture.xlsx",
+      "sha256": "51b926d84d07ffd1787f061d58fbfbd8e2f0d3ebc57ea4cef064d6d132c94b97"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-002/pkg/inventory.json",
+      "sha256": "e4836d81c196b9d2b9beb53d7eed895142bb0aaa96798fdada6b8032bd1b0fec"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-002/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-002/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-002/pkg/manifest.json",
+      "sha256": "30a904dd447fd7661b3b48927199d140f6979513a2740d6bf61aba460e87bcb6"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-002/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-002/pkg/records.jsonl",
+      "sha256": "73fad4332ac903dcf7c8835ce27abe9a402a67c8dae7d400ea859330dd8a2aac"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-002/pkg/report.html",
+      "sha256": "2a88e2338c20787ea6d3ca508981fd5425d7d6e04a130a7d0811ecb1c3458aa1"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-002/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-003/in/fixture.xlsx",
+      "sha256": "f4534a3c8a079f839eecafca174c42e9ed4daf00267431be2fa175b8378d1824"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-003/pkg/inventory.json",
+      "sha256": "35de2f6f6433d153697c08004205c4421b7f65fa5308b76a98d88d9594a476b6"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-003/pkg/issues.csv",
+      "sha256": "225736f418bc63cd4dcc578ecdc78c1b57f04bea6ef838ba20f4810a50576705"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-003/pkg/issues.jsonl",
+      "sha256": "c5fce33d48a90b54fa8a25a5bf8a3e30a9a3ef2463634a611802ae7472fb19e6"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-003/pkg/manifest.json",
+      "sha256": "8fbff5b563234b79dd6100c0250bad4e96ef55d9e76275367ddbe072bf349eaa"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-003/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-003/pkg/records.jsonl",
+      "sha256": "76e955bda2b0bc3986e4dcccaee9f7920466807d81babee5f27a7ede57f6ee18"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-003/pkg/report.html",
+      "sha256": "00802d94f77dbcf8e518c9d6807be7d95d26eee02a51e429872de2c1bfeffc43"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-003/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-004/in/fixture.xlsx",
+      "sha256": "d6884640ce1c59ba475e9ea9359f18db53bc9a24e417b808a813ed1f1917496c"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-004/pkg/inventory.json",
+      "sha256": "bfb1a4e62bffb1825f54c01dbb153a7a58092a3ead4c1ec68cffb8742b157868"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-004/pkg/issues.csv",
+      "sha256": "b75c2d26289ea2bdb05149981bb98e4e1c9e9cd10e478e6c172fce322cf65281"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-004/pkg/issues.jsonl",
+      "sha256": "5e1cc33baae1b400146ab8901114570ba7f05d32a580b541ebaf8f123d8484c4"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-004/pkg/manifest.json",
+      "sha256": "6db4248965267fe2887746b929e544398132f7893479c08a70637d6883475601"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-004/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-004/pkg/records.jsonl",
+      "sha256": "a6a7a5431a44340f0777a8cc9da5a1b9581ea620b2c16d304e4324a897d8691a"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-004/pkg/report.html",
+      "sha256": "8f2feedaa09da5ada6ee2cfe87f7505c871b565ce70059d3f8a1a1b7089e8327"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-004/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-005/in/fixture.xlsx",
+      "sha256": "203867e5b6acf55e3ed294a34a72ee65783308194e9ec4615d3f547a22b46668"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-005/pkg/inventory.json",
+      "sha256": "15770843b858fd76891aabe40645707da5022d8ee9c0354e9684a9712f919967"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-005/pkg/issues.csv",
+      "sha256": "c6a7ce5aa679ae8798d6c61b02abeca9de20b62c54727d2f9e48bea19dfd0efa"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-005/pkg/issues.jsonl",
+      "sha256": "9fd11ed8e88c4b44e975cf3944a0f8fe5f6ee6fdbad8d4772fe187e79ac6b3c6"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-005/pkg/manifest.json",
+      "sha256": "21877f8a0adf230c24f563aab2b88f69dc45be2aefdda2c6784b72d47e687343"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-005/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-005/pkg/records.jsonl",
+      "sha256": "6c815f0d0df65d4814dd725023fc074ba6d175ef3375183cfa3ab4fe5afc0678"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-005/pkg/report.html",
+      "sha256": "af68e997c8b88620fe5039dde750545f3aa851eb73d02846d900f4e9b3fcad99"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-005/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-006/in/fixture.xlsx",
+      "sha256": "427c4e5b9a831b391d1650c46d8ae8ed8b18e9380bf93392380865ae7fc339f0"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-006/pkg/inventory.json",
+      "sha256": "7f8731f8fa77f28dba66ce2037d2257b6419fd09c3b47012da0fcb0e44702362"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-006/pkg/issues.csv",
+      "sha256": "9d558a0f6ba757d298ed46dd169486112466f7966fc0017590ee62fbfcbc906c"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-006/pkg/issues.jsonl",
+      "sha256": "7fe15b6391c14dda59b8fd92485faacc29abbec5ec4fade1494aa5061364a4a9"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-006/pkg/manifest.json",
+      "sha256": "f1d0771abefedf5634f10d4f83758caaeba36acc4f079b9308c5633c27ac75eb"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-006/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-006/pkg/records.jsonl",
+      "sha256": "fa03110f23bc8f5ca0bce646e0e5feb4e7fd9614ebc0790e821d66f65c09dad3"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-006/pkg/report.html",
+      "sha256": "2fd8d226506a46035c9b294a4c5afc7e7990b9e7b672212f5c51c9aaa25a2697"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-006/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-007/in/fixture.xlsx",
+      "sha256": "44502c339bb9da20c191063faf74a6883ab28d350fbbf72dc27c1d6103d87c64"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-007/pkg/inventory.json",
+      "sha256": "dfbf843cd3ece65475a651746b07b63c2c987709052810e03f104ced596ec898"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-007/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-007/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-007/pkg/manifest.json",
+      "sha256": "911ffef83c03f41122925734a5fc16f4bc53c6d896dbca84c482e8019957a370"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-007/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-007/pkg/records.jsonl",
+      "sha256": "246a7237a772621da48a170ea6bc12c22d61548ba508f93bb62210dde0d345fb"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-007/pkg/report.html",
+      "sha256": "765fa7a1a28e7f3be3dfd9b7e2379286a2eed3f53262d4d82c552d0474cb3ae2"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-007/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-008/in/fixture.xlsx",
+      "sha256": "2bb77a4df2d179c9566def8f198ad69f624d3adb7a76e5073c7dd447015b7a58"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-008/pkg/inventory.json",
+      "sha256": "d363ce74095e46fd53547116cb7bdcfa424520930a871945e333e5cf442a7cc7"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-008/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-008/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-008/pkg/manifest.json",
+      "sha256": "500850fc4fb660730e57f4ab8d801a743d97a3050e4ac4e1007d3249ee61b202"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-008/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-008/pkg/records.jsonl",
+      "sha256": "a99028f2daf1716b68201759255976467be5229f3af28192f178b0d15bc655e1"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-008/pkg/report.html",
+      "sha256": "d6cb79e0e3b75c8515c2fe008a51528c199100d65129e90c8695f9bc268cf279"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-008/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-009/in/fixture.xlsx",
+      "sha256": "6821f8b4d3c8060ec028bb435ffc154f38a0291bbb8cae1f6d5a9548a2787050"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-009/pkg/inventory.json",
+      "sha256": "b53580127cfda75aa4f0746609e094ff62246503ce0e7e19439ea6acbfc92ea0"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-009/pkg/issues.csv",
+      "sha256": "9bce44ef3d5e9dca4a5a669c7c6c3eb2108d40f56f4479831bced43d5ddc57ee"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-009/pkg/issues.jsonl",
+      "sha256": "ba834a49057a71e7c0723a06052d2381b58f08569cfa9ddd6baffda6033255a2"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-009/pkg/manifest.json",
+      "sha256": "7c45d402377ebcd4466e5f386002ec8c0a187da805888d0f4e28c560010a15e5"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-009/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-009/pkg/records.jsonl",
+      "sha256": "e9910b0eb0d5392e530287e9d7d6ce500b8a82f3057d5749ac0a960a37567c28"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-009/pkg/report.html",
+      "sha256": "afd045e278a15149d28359175218cd5e2e27dd9cf734e9bcb6708a3a3ce2e24f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-009/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-010/in/fixture.xlsx",
+      "sha256": "3b5dd2355716bdb927f3d34965d542dc737f89fa2a3f497a52616167efaffcf0"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-010/pkg/inventory.json",
+      "sha256": "00d6939a545ed0fe032d0a5a9131829866063f82964e65395e6833fbcd5aa883"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-010/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-010/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-010/pkg/manifest.json",
+      "sha256": "646849546a811e5049432d24ac871ffa19bcd0c29a1cba98c977bc4466e8fea6"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-010/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-010/pkg/records.jsonl",
+      "sha256": "2cd3d467512e91904fa4ec20d1a9442176dc7f80f676ebaea560d40404adfe8d"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-010/pkg/report.html",
+      "sha256": "c6038116026813ce19ec732a8d09f14cfe8154ce76d3afe9aaae2b29553aadc8"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-010/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-011/in/fixture.xlsx",
+      "sha256": "eb96c681f386777769877a657e69abc5312ab60b191df2746e60af151dbb2bf9"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-011/pkg/inventory.json",
+      "sha256": "5595bb52f97b3cfdda1d5d06b439ef62257ed4d917f196c89902aa5eb2df6903"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-011/pkg/issues.csv",
+      "sha256": "f3cb68c5a1568abc9eaff96472c5b0ff1bae6bc7862ad151d5990773d260fc51"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-011/pkg/issues.jsonl",
+      "sha256": "feaea3c20e905beb5bbf6ecb681d18009ef7c50f88041e80e025429166c5addb"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-011/pkg/manifest.json",
+      "sha256": "7330e78613fd75260d0fef131e59543a73e95d4e3fe028a8b4a53e328df46e68"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-011/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-011/pkg/records.jsonl",
+      "sha256": "bce69bae95df3971aedb2f59a2d5f62676074f436a10d14162990975ec366e5b"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-011/pkg/report.html",
+      "sha256": "3212bafa2398bd69ea5295be3fc79d2121a203f84370b799b28213ff0dc26984"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-011/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-012/in/fixture.xlsx",
+      "sha256": "018d273fe8cdee0b7ad7f8c94e5b6ed287f1d80820568ad6b8864a3d5aa25a91"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-012/pkg/inventory.json",
+      "sha256": "be4c3a89c44ff0eb28fab1d57b8b42486a56929001cc11f2fac918a412b7217a"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-012/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-012/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-012/pkg/manifest.json",
+      "sha256": "faa53d0c0c6926b10d8ddf0966298d50ab8892f74969037449e38797e15f34da"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-012/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-012/pkg/records.jsonl",
+      "sha256": "04e2d0846a67d3dee89eb050f5e69f7fab5c291b185bdd6c9d9a36d96abc5f6a"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-012/pkg/report.html",
+      "sha256": "d113e9d0cbb99bb9ce4d3a99a4f2deb6ee39c8d83f657d9d92191ae5271e7445"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-012/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-013/in/fixture.xlsx",
+      "sha256": "f8bd8d6438aca0b405763f4cad83733208e3f50ad08ceb4e69c1921c4cd3768d"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-013/pkg/inventory.json",
+      "sha256": "eaf9fb3d650f07919709d169ce9ecdfcf64b2e7d0fb86cf516640062293030f6"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-013/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-013/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-013/pkg/manifest.json",
+      "sha256": "a105aa1923019514f4b5326ca4b1bd415968eb8c630b2005708f468ef7b3a4f4"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-013/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-013/pkg/records.jsonl",
+      "sha256": "058e83b5a5fd99f4094c43568c91f8bfed18a1e09578d711190db8d50650f008"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-013/pkg/report.html",
+      "sha256": "7a9caab1fe405a9848c0979838cc57b71bd33b4eee917711f1a2247615c9fe26"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-013/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-014/in/fixture.xlsx",
+      "sha256": "08678ebdcd4ba4d3d9ca993da1767503b99d0163e88c32ea4f26d1e18c0b3a00"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-014/pkg/inventory.json",
+      "sha256": "8b8bdcbf1cb21bf7a314a6f13f614ab3131ae40ea5690d5451ee7d8076cb66a7"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-014/pkg/issues.csv",
+      "sha256": "db82dad1690f1dc60f9edefebdaadf946586ea0ee394a26ddce96b35468f84b7"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-014/pkg/issues.jsonl",
+      "sha256": "13be6a824a50bf2c77517d8fc93f1f6ee5280cadd1754fa12747a7b7d7ac6756"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-014/pkg/manifest.json",
+      "sha256": "d625428194cf4e441fabbd9e9f3882e49942698338f6845201c890a7b9a4bd3a"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-014/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-014/pkg/records.jsonl",
+      "sha256": "88f2b2ee078cea3a1855f579677fa4f225e9d37acf2b6ecfae175680343f6375"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-014/pkg/report.html",
+      "sha256": "db4cd9305c1b912b79e24509faee240415634180c88da34f7569ccd6922745ed"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-014/pkg/unit_exceptions.snapshot.json",
+      "sha256": "318c7215b2ffe3e389c158b3072e4f338bc4694940ecaa042be9c46074b6c99b"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-014/unit_exceptions_test.json",
+      "sha256": "a1a6b45d72b96c6870e1f0be943536b8ebeef36939c0bfd22495f3d831c8bfb5"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-015/exceptions.json",
+      "sha256": "5cf82628f9d82b503b72b7aa29349405d1128b5a2aaf9d6d1a5e106503cd0002"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-015/in/fixture.xlsx",
+      "sha256": "ceca24bbd4b81ed32eb1f114b1a1da1dfb81c2f920a11c3d24864e8fedad3b5e"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-015/in2/fixture.xlsx",
+      "sha256": "2f09a064bba6c28be60302fcd1681a968c537e6348ccf01379711dd60ed9bd1e"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-015/pkg/inventory.json",
+      "sha256": "340fe6df23d86d6c9f504fd7ac80ead944f35ac6393917ee14bc4157433d9377"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-015/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-015/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-015/pkg/manifest.json",
+      "sha256": "73ab091cc00f1128241cff04a4e20f92667a87eca45147590364c47456b68861"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-015/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-015/pkg/records.jsonl",
+      "sha256": "f8bd8fe274741ad7e2120ed480fb901e3b68cb2477087e2a178224b5c96b7b9f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-015/pkg/report.html",
+      "sha256": "8721bb787ce13fbee1bbe5f912715f77b07cdad0fc37196736db38ce7d7d5f4a"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-015/pkg/unit_exceptions.snapshot.json",
+      "sha256": "fe25e1a78f7dc7b11a39fe3589d5899828dd7689ebff0072666dd002e83601bb"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-016/in/fixture.xlsx",
+      "sha256": "f7ae4fa9a87ebc0ec2cf928914b169224edc89ce0a524e57e4e31504cf46f495"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-016/pkg/inventory.json",
+      "sha256": "bcd73a7dffbfa77f2452e106409350356a8b594d5e2665c644bc7a4e5436394d"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-016/pkg/issues.csv",
+      "sha256": "ec29f7d34d8b62c3b67d4097e7e9671d023b8f8bd1e70f70b3a3805e9e89bb42"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-016/pkg/issues.jsonl",
+      "sha256": "c197011902f2a098041a1e680eaf47468e2de28129af7d886047c99ae9f48a6e"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-016/pkg/manifest.json",
+      "sha256": "1fd6b8d060dedbf1f6194f71173db291c9d276550cd0cfc22b8bad77baee7638"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-016/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-016/pkg/records.jsonl",
+      "sha256": "a425f79a4acd1bc794091d108acfeddf077ec2a97c0d8683c629c865e5b325d6"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-016/pkg/report.html",
+      "sha256": "ca27b433ab34350f076eb5e022f88eac8c0641e39417447a898271fd9a30842f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-016/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-017/in/fixture.xlsx",
+      "sha256": "1474d60b3f2cae9637e41570497607d2b3780496d52b24453ed94b2b29bd9d4f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-017/pkg/inventory.json",
+      "sha256": "26eeaf5b94645ba8dd98f43b8213ea840acae67c9a8b7769f5335c6269373bde"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-017/pkg/issues.csv",
+      "sha256": "b00a279974a82199aaafc9295a316c5bbde1431eadd5cf495474474a960d6942"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-017/pkg/issues.jsonl",
+      "sha256": "ab1f510d4aeaa1baefce47f07c5d9af9e34c5e8e6e62128486eb5de92f99803e"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-017/pkg/manifest.json",
+      "sha256": "9f5e5c305e7942e937c7a2f1db4928c84a574db55fdca01e4c54fe030ab3459f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-017/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-017/pkg/records.jsonl",
+      "sha256": "67c525d557173612ac61670d058e817b9a297c75479ef48791b761aa8dfe7923"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-017/pkg/report.html",
+      "sha256": "303de253b6788e7b54ec70843584475d806cda6fd29d9d9e8c6fa33c841743f5"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-017/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-018/in/fixture.xlsx",
+      "sha256": "734774032a5a2c64b47602ab8a7a9f3c1fdf4fa0acb1486576c028457a95a84d"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-018/pkg/inventory.json",
+      "sha256": "cef462da509816a87b20a371153cce2e1c55dde6335b3dd4914b27ba2ca4a833"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-018/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-018/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-018/pkg/manifest.json",
+      "sha256": "d49a0484eeba77bbf6e11a658ef525ac95c7b8982360b8f4346ffc1bf150d45e"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-018/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-018/pkg/records.jsonl",
+      "sha256": "055bfede20142b220026ceaac27e86eb671ead4d8e357893e955c6b12fd8c3bc"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-018/pkg/report.html",
+      "sha256": "023c3b96abd8da87f9cfd735653f80ee3bab30fdd43395c14a2a0f41b609a245"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-018/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-019/in/fixture.xlsx",
+      "sha256": "752ec6cc0c1c555b56f828ac08ac5bfb89c9fc78ff2aef5ef5fa4a27702cc6cb"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-019/pkg/inventory.json",
+      "sha256": "6c0697544efb700cc097dac00877172c2414a77bd11949b4bf16a4d3167daa76"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-019/pkg/issues.csv",
+      "sha256": "2427428a50f4e97ba8652cf4cb891be336ac6d02d1620873053fc2ad6fd50036"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-019/pkg/issues.jsonl",
+      "sha256": "8f5e4a7090e6bea529a4aa24778eb69202a9c0bc4afac14f004532783b6a1e34"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-019/pkg/manifest.json",
+      "sha256": "93d5d0127730815a60719fb282ef77ba6221e26335e194acc1a2b2b752b2d5f9"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-019/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-019/pkg/records.jsonl",
+      "sha256": "7fe984f6dae290f667f5ed26ba78e363eed5b9eca08c2cea7155d004560bae51"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-019/pkg/report.html",
+      "sha256": "2987b2249b0a1c325dd00e902a7df763034eaea6799767ba9b7dff211fed7e74"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-019/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-020/in/fixture.xlsx",
+      "sha256": "6102055af3304d9eac9f99a3585c74ab5428ec01ed5e430aeb1055cee44ff1d5"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-020/pkg/inventory.json",
+      "sha256": "5d70656043af630666fa8203404eb28832bd16e8455d71642ab27c2cae27e913"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-020/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-020/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-020/pkg/manifest.json",
+      "sha256": "f1db6018673c3868cc137c81fb1cbd13c7f96507cc26902bb68546832c641925"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-020/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-020/pkg/records.jsonl",
+      "sha256": "59cca2d032047c0c4ded1d4210dec8adac4046a5bd32ba12e1cde9c78a0d0615"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-020/pkg/report.html",
+      "sha256": "096cf1fe1d721fdbae4f82baea353458fa0cc91f655cfab26afdaf8b5a8248b1"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-020/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-021/in/fixture.xlsx",
+      "sha256": "818ae9700674b5f5642ac04486db40487c03b47d45c1fc995cd56ccd3ab64d1a"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-021/pkg/inventory.json",
+      "sha256": "18fdba3006a073f575047f6eddd535baf6af9b159763e6f4e96c450b7fcf11fa"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-021/pkg/issues.csv",
+      "sha256": "dbf5eb6918ba835bacc2bc9b9de62944f49baecda2c4e653ae0ca3be39a076eb"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-021/pkg/issues.jsonl",
+      "sha256": "f745967a3b7686ec3fcc8e4eff0b52d2cdec52d53f48dcd930eb45c42422b83c"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-021/pkg/manifest.json",
+      "sha256": "21fdba866bf516247450125fa9e6c0c5ef0fec9aadbcec68b22b18b679118a32"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-021/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-021/pkg/records.jsonl",
+      "sha256": "0955d209a7b6fe15d5d75e0013c1ba0f11fa85be09786d5c23fd2c43d6105c5c"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-021/pkg/report.html",
+      "sha256": "2c09f4ccf1fe5a3846023f6bb7979ac81ae57074b202db41b5a85e7972034cc3"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-021/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-022/in/fixture.xlsx",
+      "sha256": "b2ec02864f877c0e2dd6dbcd1bdf8ea8a66015267e2e23a0133ea36d6b7d4fd5"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-022/pkg/inventory.json",
+      "sha256": "22a1ed52f98844b4a95979a030ff42c56c6a6e6ec658efffae5fe96a49b78c81"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-022/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-022/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-022/pkg/manifest.json",
+      "sha256": "bcb0b03b661f2cc6e64232557969423fae5148cf88d743559ee0724b4447f4f9"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-022/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-022/pkg/records.jsonl",
+      "sha256": "dc9c8b149f17b77ef772231317db7542336316ec246eca333bb36f5c51bcb024"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-022/pkg/report.html",
+      "sha256": "516c35e16330bfef43f1f4296829ca1cb52881b7be235194ea638d3c49e2d9c6"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-022/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023/in/fixture.xlsx",
+      "sha256": "dafa585caa7f3eac8f19aec04b1a5639340446dce23cd9bf318488d18ae443ca"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023a/pkg/inventory.json",
+      "sha256": "220168828a7558fb89e78dd6904d20edbfb87f32c501fc3bfafca71bae9c56aa"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023a/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023a/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023a/pkg/manifest.json",
+      "sha256": "d926cefcc06cebc61b6e91c266c5a9daff1d01cf7573cf2d20085cac17fef52c"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023a/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023a/pkg/records.jsonl",
+      "sha256": "e0f87a60c46f4af73c94370cd06871c23df817cd4d045885f206618716f1592c"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023a/pkg/report.html",
+      "sha256": "fce0facb12b2e3c225db2872c219af8039f6c0cb92409932cd90eba196f8c67a"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023a/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023b/pkg/inventory.json",
+      "sha256": "220168828a7558fb89e78dd6904d20edbfb87f32c501fc3bfafca71bae9c56aa"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023b/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023b/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023b/pkg/manifest.json",
+      "sha256": "676070300d15c5d9ffa69477a7dcb258f13822c5c0c5ae9bc496335e5ea1e418"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023b/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023b/pkg/records.jsonl",
+      "sha256": "e0f87a60c46f4af73c94370cd06871c23df817cd4d045885f206618716f1592c"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023b/pkg/report.html",
+      "sha256": "fce0facb12b2e3c225db2872c219af8039f6c0cb92409932cd90eba196f8c67a"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-023b/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024/in/fixture.xlsx",
+      "sha256": "94a3e18a4f7fcdf69f694cf9a2adcfd9dac326e03759480b8d1f077906c711ba"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024/pkg/inventory.json",
+      "sha256": "37460f150d59e783815971eea95133e2891e698a3960a7674509995aef34c446"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024/pkg/manifest.json",
+      "sha256": "8b09762c5cf49a23e0f8651b1180463defc11633770632fc2c977566bbabbfab"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024/pkg/records.jsonl",
+      "sha256": "30e2a10e0d5bc7d0c1b656a710346aada9bc965367199b880fc99a9cbd97e5a3"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024/pkg/report.html",
+      "sha256": "239721a8b665862f8e2941cf877ac168c7cf1a403c4bdab8913028beccf87cbb"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024b/pkg/inventory.json",
+      "sha256": "4b0febdcac6d8761443cb941bda4f13fc20dc4d245b4d9a0bbc9fa86721b51ce"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024b/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024b/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024b/pkg/manifest.json",
+      "sha256": "fb39e2a20b47a4cb194f16b0830abad3081bb8ec43db834fa2bd523fbd76ae4b"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024b/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024b/pkg/records.jsonl",
+      "sha256": "c37d7d044236bf5dd1fd87f5fa4afdfab05a0813d18c80dc7a180072d8bc0055"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024b/pkg/report.html",
+      "sha256": "ecf8cd392677b35ea8a41a343a5230571fa0a3e30de8e5eed3ced1ee33fb0a12"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-024b/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/in/fixture.xlsx",
+      "sha256": "2b8026117ca4ed26c02405c3f2f3226da912425427f4479438b4d1757bb74c15"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg/inventory.json",
+      "sha256": "777f609ef1112c941e563cac7f7365bf174a41a2d81c54488f9944bc24992661"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg/manifest.json",
+      "sha256": "ac4c32b5fdf17801fcffede93ba894f560ccaf92e1eea717ec90f9f7d68922dd"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg/records.jsonl",
+      "sha256": "1cd240067f44b07de3a0a6c67e67797ea616e022d8f7073e6df135dbbd41c342"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg/report.html",
+      "sha256": "5c77830a324a95745b2745c5e22b5a51d95ffe825a76cadcd1dc8bbbc5cc635e"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg_tampered/inventory.json",
+      "sha256": "777f609ef1112c941e563cac7f7365bf174a41a2d81c54488f9944bc24992661"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg_tampered/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg_tampered/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg_tampered/manifest.json",
+      "sha256": "6f41ce8590724f2095c667097a32af82c5bcd70f978e0a85f93e08a480d58a3a"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg_tampered/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg_tampered/records.jsonl",
+      "sha256": "8a00d70c3e8d35e38b451d3b69ba68ee77ce9a0403af0327423bc9f1fac9ea5a"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg_tampered/report.html",
+      "sha256": "5c77830a324a95745b2745c5e22b5a51d95ffe825a76cadcd1dc8bbbc5cc635e"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-025/pkg_tampered/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-026/in/fixture.xlsx",
+      "sha256": "2e10f6386ea09f023d26e997cc42c159e382207eb09a4a78427e8b8863ac506f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-026/pkg/inventory.json",
+      "sha256": "b75a6939ae3338f0408770153d79ddbfd92e3e9b45286f15370a68d707f920db"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-026/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-026/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-026/pkg/manifest.json",
+      "sha256": "2ec84a6ad46abadfe17eba23e70fa1bbe08bb37e5e0f8459064067ff0c1c1221"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-026/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-026/pkg/records.jsonl",
+      "sha256": "dd35829c9497ead79fd8e80afe53f08994663c540ac14c29fcb5a1ec61f349bf"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-026/pkg/report.html",
+      "sha256": "d6f4fc289ce7955d28d2e2747d592f3505db50506ca5c8e4d68783e859edab78"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-026/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/in/fixture.xlsx",
+      "sha256": "03f7ca93bf787b2f52270c84a7249e832e9bfea5a1ac4e3dcadd15125e869cca"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg/inventory.json",
+      "sha256": "a74869d4c147938521bb9a1dc8877dc77d59b85a125ce73545bbc03841b92ff3"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg/manifest.json",
+      "sha256": "776b291413b485e1dba9fbdf065ff6dba60b6fc4140126b8bac17344b2136c61"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg/records.jsonl",
+      "sha256": "37727a2c11d8ff64d3b78bdf6f23d59c4fc90bcc8697265218337e3f4758a3f8"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg/report.html",
+      "sha256": "1825d2510223ab4365b4920f9b7c8670e7f7e4800c80cccf941e6e847835b347"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg_abs/inventory.json",
+      "sha256": "a74869d4c147938521bb9a1dc8877dc77d59b85a125ce73545bbc03841b92ff3"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg_abs/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg_abs/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg_abs/manifest.json",
+      "sha256": "ebb0e3adfbc86e5a5a171d4642fd9c590ec7ef85cd2af088aaeacab7cbe52eec"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg_abs/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg_abs/records.jsonl",
+      "sha256": "37727a2c11d8ff64d3b78bdf6f23d59c4fc90bcc8697265218337e3f4758a3f8"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg_abs/report.html",
+      "sha256": "1825d2510223ab4365b4920f9b7c8670e7f7e4800c80cccf941e6e847835b347"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-028/pkg_abs/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-029/in/fixture.xlsx",
+      "sha256": "ee347ec3c2eccf5b05d8566f269f796cb7e8e21b2410094a06abb3ba8e44054c"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-029/pkg/inventory.json",
+      "sha256": "2c96d23deba3a88d7de3a4c08240a712e2141a84d3116875b06ceb9371a1a0c3"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-029/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-029/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-029/pkg/manifest.json",
+      "sha256": "6ef8acb42686ba7ae8e187f062491e2eb153a63c1995f412f8c3345445a8b83f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-029/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-029/pkg/report.html",
+      "sha256": "fc20f94c437bd803100f0e5a8e13c9c16393c6bbaf79a64d3afb81bf0fcb80b1"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-029/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-030/in/fixture.xlsx",
+      "sha256": "50d4a363f234c7c211f5f55d3e79f1f84ff5f1850db0674469900a5609756c6d"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-030/pkg/inventory.json",
+      "sha256": "66417eb13cd4a39f78daa25a2296031a0995c52102db1ada6f0caf4c3ed1f6ab"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-030/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-030/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-030/pkg/manifest.json",
+      "sha256": "0da50a5c2fb3c700fc0201cbc967807850f88e72c272cc5fe312b46ff6ea8982"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-030/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-030/pkg/records.jsonl",
+      "sha256": "1d440a71865dcde5c4d7e87ed63d64ae02b8a3d58280f52eb171f788ab5172c8"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-030/pkg/report.html",
+      "sha256": "8a92dc5a706ec2d06fff0a57486621bd55a23455f94dd5a02aecd2b6f7028bbd"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-030/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-031/in/fixture.xlsx",
+      "sha256": "69ec4cafa4dd944943a531770f4706b03cc574bf871b93a67979777921604fa1"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-031/pkg/inventory.json",
+      "sha256": "4f797717d0ec0e79393592abb325c986300b1e245c23144e142594c6e5f1847d"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-031/pkg/issues.csv",
+      "sha256": "d4a684065c919709224504e07a50b09c2f1ba738f98a40a583996e79965a9d06"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-031/pkg/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-031/pkg/manifest.json",
+      "sha256": "741de2ca7ae3a8f4741e118889d0f0a38b5a134788b987bedf1f7369f7fb4b1d"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-031/pkg/mapping.snapshot.json",
+      "sha256": "96093f71dc61ff96d437d2b0b707c2ad388be56865e7bee0f69393e68575d291"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-031/pkg/records.jsonl",
+      "sha256": "c3583218a73f25149ccff2e40499e2b4e24971b920e4f289fb497188826f1db3"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-031/pkg/report.html",
+      "sha256": "4d354bd4110cb7cf8b7ca6f34eaba3ed066d4ecaf99dd3af269257dd24e415d9"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/cases/TC-031/pkg/unit_exceptions.snapshot.json",
+      "sha256": "d5b665702ef3557c9283799c676e3d1afc1779492edca5405871385bddcb9e7f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/selftest_log.txt",
+      "sha256": "9539bc289f781a5194fb2b5775f1f3e803be73080f869bfce52ec055460e255f"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/selftest_v2/selftest_results.json",
+      "sha256": "1c510d979819a7bbfad3639d4eac12a05fe61b22566e97a559382a667e898198"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/tamper_steps.txt",
+      "sha256": "3cb6ce4c4e232a20fcedfe7df95ba31b48e9081b211a7152debe1f843b2a6c68"
+    },
+    {
+      "path": "参考候选/导入修订v2/test-output/tamper_verify_log.txt",
+      "sha256": "c91260e7ab73d36a78f523752235ea7340ccd30f8b39042fa8a8e0eab5c691ac"
+    },
+    {
+      "path": "参考候选/导入修订v2/tests/expected/expected_values.json",
+      "sha256": "321172d4f0a4f209eee260f4e69f39f34a902518f01d1cf1cdd06523d406bfab"
+    },
+    {
+      "path": "参考候选/导入修订v2/tests/regression_review.py",
+      "sha256": "6e7379ebfc9953696409e13da9260b0af9472476a6f7273cf902d30a125ab0ef"
+    },
+    {
+      "path": "参考候选/导入修订v2/unit_exceptions.json",
+      "sha256": "5e8e3fe7f8cc9a862c11188e0c8f3dd0fc9864eed0eca64b72cd00fd65c1085d"
+    },
+    {
+      "path": "参考候选/导入修订v2/历史README_v1.md",
+      "sha256": "0c50b87831aa22b0dfdb2887f59397ad8f118bda093cc9a8525e27d916de28a6"
+    },
+    {
+      "path": "参考候选/导入修订v2/审批修订说明.md",
+      "sha256": "3a0772c7cc534f1a4c42f93fdc8d1f9fa199a2a21bca289b0b1721af047ea603"
+    },
+    {
+      "path": "参考候选/导入修订v2/未实现与待确认.md",
+      "sha256": "b50915b8ca6f98447123226ecbcb2793d7b141271e10b60eea5342ac175954d3"
+    },
+    {
+      "path": "参考候选/导入修订v2/设计与接口说明.md",
+      "sha256": "28cd01e1e324d5822840acac61974dc7d6fb1db787aef0240a7ab6a72d2a7fc1"
+    },
+    {
+      "path": "参考候选/导入修订v2/错误码说明.md",
+      "sha256": "a3884730dd10fad808cbf677c83c5a49cc118c0f25b703af3bf8660366f7da29"
+    },
+    {
+      "path": "参考文档/制造业文档v2/01_千问报告修正候选/README.md",
+      "sha256": "deb70c4c584a3495f52484d1ed58288202e7b3b0b6f3d4d56219b01b90c1781a"
+    },
+    {
+      "path": "参考文档/制造业文档v2/01_千问报告修正候选/只读取数证据.json",
+      "sha256": "c7e25e56680e7d3af353a66ceb08d67215754c8cf92d875aa2e34cff9661b930"
+    },
+    {
+      "path": "参考文档/制造业文档v2/01_千问报告修正候选/平台接入口核实.md",
+      "sha256": "cec8d65c6b2cd4bb81785b47be147c0767edab3886212358e123bb4312090074"
+    },
+    {
+      "path": "参考文档/制造业文档v2/01_千问报告修正候选/问题清单.md",
+      "sha256": "72f8502344e28fb519f1c938a0a061928e483e847621ab0223d9d4807448dd96"
+    },
+    {
+      "path": "参考文档/制造业文档v2/02_统计范围.csv",
+      "sha256": "50ff92fc4d5089977fd0430bd6439a9bd1a96de363362e3e04403a6295d38b51"
+    },
+    {
+      "path": "参考文档/制造业文档v2/02_负责人及统计范围.md",
+      "sha256": "09771f293d281e1046cdbe3d3f0891aa39643c36e5ffcf18de1dc91c01f100f2"
+    },
+    {
+      "path": "参考文档/制造业文档v2/02_责任分工.csv",
+      "sha256": "f69557c27a60bebbb9ff59e4fb68eab2f41b1ee425d44fd45c050e5685f1e040"
+    },
+    {
+      "path": "参考文档/制造业文档v2/03_字段合同.csv",
+      "sha256": "7279d594cf2d330ec2073d28d04d7da6d344b64d6632d5f042bafca6d0d2132c"
+    },
+    {
+      "path": "参考文档/制造业文档v2/03_字段合同.md",
+      "sha256": "ebfedd2827d58bbc8ae13d3a2345e4e198f803a579bd60a63f310476357f9670"
+    },
+    {
+      "path": "参考文档/制造业文档v2/04_差异回溯报告模板.md",
+      "sha256": "acc39f3b025463e3624fcb5913c8db7c3b3b8a0614a566604ec6b0862742fcd8"
+    },
+    {
+      "path": "参考文档/制造业文档v2/04_现金流核对报告模板.md",
+      "sha256": "4ffa96eca2f8378aaee6bfb92a2d6541ec22210460f3d9c7413a23d310722b0e"
+    },
+    {
+      "path": "参考文档/制造业文档v2/04_结果状态说明.md",
+      "sha256": "8ab37469c97d4dc3c4f7fae57ab86e951cf814b2dde90f5d1ff7d8dea3df495e"
+    },
+    {
+      "path": "参考文档/制造业文档v2/05_制造业现金流使用手册_候选.md",
+      "sha256": "0180b7faeaca5eafdd7923d9ef72b3c4411a7853aac0440ba82633be6074e4ac"
+    },
+    {
+      "path": "参考文档/制造业文档v2/06_看板与Agent文案稿.md",
+      "sha256": "c8159a6d6f5120e71a1114d6baeaf4fa0c9d4ee88be1591ed78d5cedb9ecc135"
+    },
+    {
+      "path": "参考文档/制造业文档v2/06_看板文案修改表.csv",
+      "sha256": "52cdcce1999df4ff3794a282af9c47ff058c0ee83183af7e0c1e0a54ded6ea0d"
+    },
+    {
+      "path": "参考文档/制造业文档v2/07_逐条修订记录.csv",
+      "sha256": "8f77eeff3121bd3d570195791d329072321a3d76f474022005148acac52375aa"
+    },
+    {
+      "path": "参考文档/制造业文档v2/08_证据索引.csv",
+      "sha256": "cd9b89e2e65f7dda407cab12f117d20fae4659181d67ec5aa4b2eba498980b26"
+    },
+    {
+      "path": "参考文档/制造业文档v2/09_待X确认事项.csv",
+      "sha256": "6c06be763b0999daba9af4ac4a4b99f063fa7b91161168bf8ccde38f016245ba"
+    },
+    {
+      "path": "参考文档/制造业文档v2/10_自查验收.csv",
+      "sha256": "7b8d70d74d25f3b83e16ee478421807cd3244bb760aa878f307dbc1018423d2a"
+    },
+    {
+      "path": "参考文档/制造业文档v2/manifest.json",
+      "sha256": "74a255960dad281997ac8b781c4ddac610392fb8762947a85e19c9a2af2062b2"
+    },
+    {
+      "path": "参考文档/制造业文档v2/README.md",
+      "sha256": "4f0b26f318c94dec55c6a9ef9e6dd12ca42f875d59a3446e32d472253fcd495f"
+    },
+    {
+      "path": "参考文档/制造业文档v2/SHA256SUMS.txt",
+      "sha256": "8a55dd521365988b2bb66fb9411d2450ae924a9eb9bb9fd8a9189f0dcdf04914"
+    },
+    {
+      "path": "参考文档/最新审批结论.md",
+      "sha256": "c93597d235c4fec17dbd36ed3ae0d41cc31c47384e19c1b69c820d259702efc3"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+# MEM-EVIDENCE-001 v1 锁定依赖
+
+实测环境：CPython 3.13.14（Windows，MSC v.1944 64 bit AMD64），仅使用标准库。
+最低适用：Python 3.10+（用到 sqlite3 / json / hashlib / decimal / argparse / dataclasses-free 实现）
+
+python==3.13.14（实测）
+# 第三方依赖：无。刻意不引入 PyMySQL / requests / pandas，
+# 以保证"不连服务器、不读写生产库、不部署"的边界可被静态检查（见 tests/static_boundary_check.py）。
+
+# 复现命令（在包根目录）：
+#   python -m src.cli selftest --workdir <全新目录>
+# 或：
+#   python tests/run_tests.py --workdir <全新目录>
+# 期望：全部用例通过，退出码 0；存在失败时退出码 10。

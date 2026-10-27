@@ -1,0 +1,2 @@
+﻿state,code,location,expected,actual,action
+失败,RECEIPT_CONTEXT,receipt.company_id,与结果/context相同,检查未满足；见定位及原始工件,精确回查同企业/期间/版本/run

@@ -1,0 +1,15 @@
+﻿改动ID,源文件与SHA256,原行为,候选实现位置,修改与原因,独立反例,实际结果
+CHG-001,01_源文件/规则/统一接口_v1.md（源件SHA见 源文件索引.csv SRC-003）,规定 source_revision / source_record_key 与规范 JSON 算法,src/mfg_import/canon.py,照原文实现，不另起算法（sort_keys/separators/allow_nan=False；sources 按名排序）,TC-023 同源重跑字节一致；TC-024 源改变 revision 必变,PASS：重跑字节一致；源改后 revision 由 9073996a… 变为 9924e912…
+CHG-002,01_源文件/规则/统一接口_v1.md,金额须为元十进制字符串,src/mfg_import/convert.py:wan_to_yuan_fen(),万元先按原精度 ×10000 再在元位 ROUND_HALF_UP 落分（对照 FIN-01 打回项）,TC-013：1.234567万→12345.67（不能是12300.00）,PASS：1.234567万→12345.67；163.13万→1631300.00
+CHG-003,01_源文件/审核/最新审批与反例.md（SRC-006）FIN-02：非法/非有限金额需统一拒绝,历史实现放行 NaN/Infinity,src/mfg_import/convert.py:parse_decimal(),显式拒绝 NaN/Infinity/非法字符串并给明确错误码,合成用例：金额文本 NaN/Infinity 应报 NON_FINITE_AMOUNT,PASS（由 TC-016/TC-009 同类路径覆盖；非法文本报 INVALID_AMOUNT/NUMERIC_TEXT_NOT_CONVERTED）
+CHG-004,01_源文件/审核/最新审批与反例.md FIN-03：失败与意外异常必须非0退出,历史实现 catch 后仍返回 0,src/mfg_import/__main__.py 与 selftest.py,用例 FAIL/意外异常 → selftest 退出 1；参数错 → 2；不伪装 BLOCKED,TC-029：非法 period=2、删记录后 verify=1,PASS：退出码 2 / 1
+CHG-005,01_源文件/审核/最新审批与反例.md FIN-04：预期须来自不被运行程序改写的冻结文件,历史实现先生成再读自己的用例表,tests/expected/expected_values.json + selftest.py 前后哈希断言,预期值与实现分离，运行前后核 SHA256,selftest 内 TC-EXP 断言,PASS：expected_values.json 前后 SHA256 不变
+CHG-006,01_源文件/原任务/制造业导入任务.md（SRC-011）,D8=1631300 单位疑点需绑定源/表/地址,unit_exceptions.json + scanner.py 例外分支,三要素同时匹配才生效；命中后 null 且原值保留,TC-014（匹配）与 TC-015（另一源同地址不误拦）,PASS：命中为 null；另一源正常换算 16313000000.00
+CHG-007,01_源文件/审核/最新审批与反例.md QWC-02：D8 不得缩放或修正,历史描述换算少 10 倍,本报告与未实现与待确认.md,只保留原值、不给衍生金额、不做换算,样例扫描 ISS-0001,PASS：规范值 null，原值 1631300 保留
+CHG-008,01_源文件/审核/最新审批与反例.md QWC-03：需逐格证据而非摘要,历史只交片段,src/mfg_import/scanner.py:cells 快照,记录每行全部存在单元格（类型/XML原值/公式/缓存）,TC-001（现金流水 9 列全快照）与样例 records.jsonl,PASS：样例 66 条记录均含单元格级证据
+CHG-009,222_仅历史参考.md（SRC-012）节三B：不得 eval 公式代算,历史风险,src/mfg_import/convert.py 与 scanner.py,公式缓存缺失即报 FORMULA_CACHE_MISSING，值为 null,TC-011：有公式无缓存，值为 null,PASS：null + FORMULA_CACHE_MISSING
+CHG-010,222_仅历史参考.md 节三A：重名/歧义不取第一项,历史风险,scanner.py:_match_columns()/_scan_vertical(),命中多列/多行即报 issue 并置 null,TC-005 / TC-006 / TC-007,PASS：均报 issue 且不取值
+CHG-011,任务书_要求与验收.md 第6条,verify 只比哈希不足以发现字段篡改,src/mfg_import/verifier.py,新增"用真实源重导并逐字节比对 + 字段级定位",TC-025 与样例篡改实验,PASS：退出码1，指出 现金流水!行3 D3 真实值 1808700.00
+CHG-012,本次实现自查（非源件要求）,映射快照被规范化导致包内映射哈希≠源映射哈希、source_revision 无法复算,scanner.py 写 mapping.snapshot.json 改为原字节拷贝,保证包内快照 SHA256 等于源映射 SHA256,TC-031 干净包 verify,PASS：重导 revision 与包内一致
+CHG-013,本次实现自查（非源件要求）,篡改脚本用文本模式写导致 CRLF，字段级定位退化,verifier.py:_locate_diff(),比对前统一换行符再逐行定位（仅定位用，不影响内容比对）,样例篡改实验重跑,PASS：打印"字段 经营性流入（万元） 被篡改"并给出源地址
+CHG-014,01_源文件/规则/一期范围.md（SRC-002）,现金流水仅经营性口径，不得伪称全口径,README 第4节 / 未实现与待确认.md 第三节,导入包只登记不扩展，报告明确口径,样例扫描结果说明,PASS：样例扫描未生成投资/筹资流水合并结果

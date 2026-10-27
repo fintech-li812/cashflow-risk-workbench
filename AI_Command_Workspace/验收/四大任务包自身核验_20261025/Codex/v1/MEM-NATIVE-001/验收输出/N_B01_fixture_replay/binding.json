@@ -1,0 +1,18 @@
+{
+  "schema_version": "mfg-native-binding.v1",
+  "tenant_id": "fixture-tenant",
+  "company_id": "fixture-manufacturing",
+  "period": "2026-08",
+  "source_revision": "fixture-source-v1",
+  "run_id": "fixture-run-202608",
+  "workbook_ref": "synthetic-native-test",
+  "sheet": "原生重算验证",
+  "range": "B2:B8",
+  "unit": "CNY",
+  "capture_mode": "offline_fixture",
+  "provider_id": "fixture_provider",
+  "capabilities": {
+    "read_cells": true,
+    "request_recalculation": true
+  }
+}

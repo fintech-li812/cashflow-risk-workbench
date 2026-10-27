@@ -1,0 +1,24 @@
+{
+  "complete": {
+    "status": "ready",
+    "selected_ids": [
+      "bank-sale",
+      "bank-expense",
+      "bank-loan"
+    ],
+    "input_records": 9,
+    "selected_actual_records": 3,
+    "eliminated_transfer_records": 2,
+    "corroborating_only_records": 1,
+    "noncash_records": 3
+  },
+  "fixture_arithmetic_reference_only": {
+    "opening": "100000.00",
+    "inflow": "1400.00",
+    "outflow": "100.00",
+    "net": "1300.00",
+    "closing": "101300.00",
+    "independent_closing": "140000.00",
+    "difference": "38700.00"
+  }
+}

@@ -1,0 +1,2 @@
+{"code":"OK","message":"store consistency check passed","ok":true,"report":{"diagnostic_records":0,"formal_records":1,"problems":[],"store_schema_version":"evidence-schema-1","verified_at":"2026-10-24T15:08:09Z"},"status":"verified"}
+{"code":"OK","message":"store consistency check passed","ok":true,"report":{"diagnostic_records":0,"formal_records":1,"problems":[],"store_schema_version":"evidence-schema-1","verified_at":"2026-10-24T15:08:10Z"},"status":"verified"}

@@ -1,0 +1,19 @@
+{
+  "packages": [
+    {
+      "task_id": "MEM-IMPORT-002",
+      "zip": "D:\\AI_Command_Workspace\\发包\\进阶两个任务_20261023\\03_较难_Excel导入与来源追溯_任务与源文件_v1.zip",
+      "sha256": "febc21584a5f610058f138e7ea05a4ec1f598c9ed960f7bfc3268f7ecdf008ea",
+      "source_count": 14,
+      "bytes": 64203
+    },
+    {
+      "task_id": "MEM-EVIDENCE-001",
+      "zip": "D:\\AI_Command_Workspace\\发包\\进阶两个任务_20261023\\04_更难_可靠存储与故障恢复_任务与源文件_v1.zip",
+      "sha256": "5b4811f03e6a705f9dcde94c2fea13fdc87e1cf7a27be874bbdf9592d503a0f2",
+      "source_count": 15,
+      "bytes": 47919
+    }
+  ],
+  "checks": "ZIP CRC/manifest/source hashes passed; originals unchanged; no platform or DB operations"
+}

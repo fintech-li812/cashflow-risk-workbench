@@ -1,0 +1,15 @@
+test_package_unit_lie_rejected_by_mapping (test_qa_tool.QA.test_package_unit_lie_rejected_by_mapping) ... FAIL
+
+======================================================================
+FAIL: test_package_unit_lie_rejected_by_mapping (test_qa_tool.QA.test_package_unit_lie_rejected_by_mapping)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_unit_mapping\test_qa_tool.py", line 296, in test_package_unit_lie_rejected_by_mapping
+    self.assertIn('UNIT_MAPPING_MISMATCH', {v['code'] for v in r.issues}); self.assertEqual(r.status, '失败')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'UNIT_MAPPING_MISMATCH' not found in set()
+
+----------------------------------------------------------------------
+Ran 1 test in 0.009s
+
+FAILED (failures=1)

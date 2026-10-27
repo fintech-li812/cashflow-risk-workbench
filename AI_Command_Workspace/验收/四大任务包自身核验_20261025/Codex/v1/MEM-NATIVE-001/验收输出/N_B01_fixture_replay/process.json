@@ -1,0 +1,21 @@
+{
+  "command": [
+    "C:\\Users\\33847\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-NATIVE-001\\假交付\\src\\native_cli.py",
+    "probe",
+    "--binding",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-NATIVE-001\\验收输出\\N_B01_fixture_replay\\binding.json",
+    "--capture",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-NATIVE-001\\验收输出\\N_B01_fixture_replay\\capture.json",
+    "--context",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-NATIVE-001\\验收输出\\N_B01_fixture_replay\\context.json",
+    "--output-dir",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-NATIVE-001\\验收输出\\N_B01_fixture_replay\\output",
+    "--allow-fixture"
+  ],
+  "expected_exit": 0,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

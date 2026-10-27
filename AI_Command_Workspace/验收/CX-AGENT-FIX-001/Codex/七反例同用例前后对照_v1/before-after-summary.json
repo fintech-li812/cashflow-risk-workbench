@@ -1,0 +1,37 @@
+{
+  "same_test_source": true,
+  "baseline_expected_to_fail": true,
+  "fixed_expected_to_pass": true,
+  "results": [
+    {
+      "label": "before",
+      "exit_code": 1,
+      "test_methods": [
+        "test_p01_new_run_reads_new_result",
+        "test_p02_invalid_response_never_cached",
+        "test_p03_each_source_locator_must_match_snapshot",
+        "test_p04_existing_receipt_wrong_payload_is_conflict",
+        "test_p05_save_foreign_result_never_calls_backend",
+        "test_p06_mapping_ready_is_not_committed",
+        "test_p07_pending_result_is_blocked"
+      ],
+      "test_source_sha256": "437f38d6dae0074b4850980cb1f94583f9e77cdaa61026f5ea227ba2123e566f",
+      "raw_log_sha256": "10f51b8b32d37a9b617efaba4b00f041ac9f2288d77ded8a810d91d9edb8366c"
+    },
+    {
+      "label": "after",
+      "exit_code": 0,
+      "test_methods": [
+        "test_p01_new_run_reads_new_result",
+        "test_p02_invalid_response_never_cached",
+        "test_p03_each_source_locator_must_match_snapshot",
+        "test_p04_existing_receipt_wrong_payload_is_conflict",
+        "test_p05_save_foreign_result_never_calls_backend",
+        "test_p06_mapping_ready_is_not_committed",
+        "test_p07_pending_result_is_blocked"
+      ],
+      "test_source_sha256": "437f38d6dae0074b4850980cb1f94583f9e77cdaa61026f5ea227ba2123e566f",
+      "raw_log_sha256": "a4679bb14a2968266b4ac268c9ad01b214ce385258d15e67f1f3357a614ae2fb"
+    }
+  ]
+}

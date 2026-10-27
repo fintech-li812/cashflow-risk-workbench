@@ -1,0 +1,14 @@
+test_bound_flag_cannot_claim_native_platform_verification (test_config_entry_v2.ConfigEntryTests.test_bound_flag_cannot_claim_native_platform_verification) ... ok
+test_fixture_cannot_be_enabled_for_nonqa_account (test_config_entry_v2.ConfigEntryTests.test_fixture_cannot_be_enabled_for_nonqa_account) ... ok
+test_launcher_overrides_inherited_production_configuration (test_config_entry_v2.ConfigEntryTests.test_launcher_overrides_inherited_production_configuration) ... ok
+test_launcher_rejects_nonqa_runtime_and_boolean_port (test_config_entry_v2.ConfigEntryTests.test_launcher_rejects_nonqa_runtime_and_boolean_port) ... ok
+test_ports_reject_bool_string_zero_and_overflow (test_config_entry_v2.ConfigEntryTests.test_ports_reject_bool_string_zero_and_overflow) ... ok
+test_remote_host_is_rejected (test_config_entry_v2.ConfigEntryTests.test_remote_host_is_rejected) ... ok
+test_root_cannot_connect_to_business_database (test_config_entry_v2.ConfigEntryTests.test_root_cannot_connect_to_business_database) ... ok
+test_security_flags_require_booleans (test_config_entry_v2.ConfigEntryTests.test_security_flags_require_booleans) ... ok
+test_tampered_fixture_is_rejected_before_start (test_config_entry_v2.ConfigEntryTests.test_tampered_fixture_is_rejected_before_start) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.009s
+
+OK

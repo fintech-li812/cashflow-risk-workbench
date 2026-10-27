@@ -1,0 +1,30 @@
+test_category_pending_blocks (test_reconciliation.ReconciliationTests.test_category_pending_blocks) ... ok
+test_cli_result_bundle_and_collision (test_reconciliation.ReconciliationTests.test_cli_result_bundle_and_collision) ... ok
+test_cross_context_failure (test_reconciliation.ReconciliationTests.test_cross_context_failure) ... ok
+test_default_fixture_mode_refused (test_reconciliation.ReconciliationTests.test_default_fixture_mode_refused) ... ok
+test_difference_not_automatically_balanced (test_reconciliation.ReconciliationTests.test_difference_not_automatically_balanced) ... ok
+test_exact_account_A (test_reconciliation.ReconciliationTests.test_exact_account_A) ... ok
+test_exact_account_B (test_reconciliation.ReconciliationTests.test_exact_account_B) ... ok
+test_exact_consolidated_independent_expected (test_reconciliation.ReconciliationTests.test_exact_consolidated_independent_expected) ... ok
+test_exact_guarded_fixture_result (test_reconciliation.ReconciliationTests.test_exact_guarded_fixture_result) ... ok
+test_internal_transfers_count_for_individual_not_consolidated (test_reconciliation.ReconciliationTests.test_internal_transfers_count_for_individual_not_consolidated) ... ok
+test_invoice_and_business_corroboration_not_added (test_reconciliation.ReconciliationTests.test_invoice_and_business_corroboration_not_added) ... ok
+test_large_payment_creates_negative_net_without_correction (test_reconciliation.ReconciliationTests.test_large_payment_creates_negative_net_without_correction) ... ok
+test_matching_independent_balances (test_reconciliation.ReconciliationTests.test_matching_independent_balances) ... ok
+test_missing_actual_closing_hard_block (test_reconciliation.ReconciliationTests.test_missing_actual_closing_hard_block) ... ok
+test_missing_opening_hard_block (test_reconciliation.ReconciliationTests.test_missing_opening_hard_block) ... ok
+test_missing_transfer_approval_blocks (test_reconciliation.ReconciliationTests.test_missing_transfer_approval_blocks) ... ok
+test_negative_account_balance_preserved (test_reconciliation.ReconciliationTests.test_negative_account_balance_preserved) ... ok
+test_no_real_business_calculation (test_reconciliation.ReconciliationTests.test_no_real_business_calculation) ... ok
+test_one_cent_difference_preserved_after_snapshot_refresh (test_reconciliation.ReconciliationTests.test_one_cent_difference_preserved_after_snapshot_refresh) ... ok
+test_originals_expected_unchanged (test_reconciliation.ReconciliationTests.test_originals_expected_unchanged) ... ok
+test_per_account_and_consolidated_invariants (test_reconciliation.ReconciliationTests.test_per_account_and_consolidated_invariants) ... ok
+test_reapproved_duplicate_excluded_from_account_and_consolidation (test_reconciliation.ReconciliationTests.test_reapproved_duplicate_excluded_from_account_and_consolidation) ... ok
+test_stale_balance_binding_snapshot_rejected (test_reconciliation.ReconciliationTests.test_stale_balance_binding_snapshot_rejected) ... ok
+test_transfer_input_mutation_between_checks_rejected (test_reconciliation.ReconciliationTests.test_transfer_input_mutation_between_checks_rejected) ... ok
+test_unconfirmed_scope_blocks (test_reconciliation.ReconciliationTests.test_unconfirmed_scope_blocks) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 1.404s
+
+OK

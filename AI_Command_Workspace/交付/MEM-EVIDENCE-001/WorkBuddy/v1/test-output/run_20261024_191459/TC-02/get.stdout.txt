@@ -1,0 +1,49 @@
+{
+  "fixture_marker": "【合成离线夹具，非平台真实结果】",
+  "receipt": {
+    "company_id": "fixture-company",
+    "kind": "receipt",
+    "operation": "save_cashflow_result",
+    "payload_sha256": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456",
+    "period": "2026-08",
+    "record_id": "ev-78f10ce9748f620073921054",
+    "request_id": "st-01",
+    "run_id": "fixture-run-1",
+    "schema_version": "mfg-evidence.v1",
+    "source_revision": "fixture-rev-1",
+    "status": "committed",
+    "stored_at": "2026-10-24T11:14:59.561Z",
+    "tenant_id": "fixture-tenant"
+  },
+  "record": {
+    "amounts": {
+      "actual_closing": "140000.00",
+      "closing": "140000.00",
+      "difference": "0.00",
+      "inflow": "130000.00",
+      "net": "40000.00",
+      "opening": "100000.00",
+      "outflow": "90000.00"
+    },
+    "calculation_version": "fixture.v1",
+    "company_id": "fixture-company",
+    "coverage": "full_cashflow",
+    "industry": "manufacturing",
+    "issues": [],
+    "origin": "offline_fixture",
+    "period": "2026-08",
+    "run_id": "fixture-run-1",
+    "schema_version": "mfg-agent-result.v1",
+    "source": {
+      "range": "A1:H2",
+      "sheet": "synthetic-result",
+      "snapshot_ref": "fixture-snapshot",
+      "workbook_ref": "synthetic-book"
+    },
+    "source_revision": "fixture-rev-1",
+    "status": "success",
+    "tenant_id": "fixture-tenant",
+    "unit": "CNY"
+  },
+  "status": "ok"
+}

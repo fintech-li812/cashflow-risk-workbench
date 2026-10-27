@@ -1,0 +1,1 @@
+C:\Users\33847\.workbuddy\binaries\python\versions\3.13.12\python.exe D:\AI_Command_Workspace\交付\MEM-EVIDENCE-001\WorkBuddy\v1\src\evidence_cli.py get --tenant-id fixture-tenant --company-id fixture-company --record-id ev-78f10ce9748f620073921054 --store D:\AI_Command_Workspace\交付\MEM-EVIDENCE-001\WorkBuddy\v1\test-output\run_20261024_191750\wd\test.db

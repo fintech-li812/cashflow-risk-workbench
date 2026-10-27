@@ -1,0 +1,21 @@
+test_tool_name_mismatch (test_tool_call_guard.GuardTests.test_tool_name_mismatch) ... FAIL
+
+======================================================================
+FAIL: test_tool_name_mismatch (test_tool_call_guard.GuardTests.test_tool_name_mismatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 136, in test_tool_name_mismatch
+    self.d['name']='other'; self.assertBlocked('tool_name_mismatch')
+                            ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 51, in assertBlocked
+    self.assertEqual(r['status'],'blocked',r)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'prepared' != 'blocked'
+- prepared
++ blocked
+ : {'status': 'prepared', 'called': False, 'schema_dialect': 'https://json-schema.org/draft/2020-12/schema', 'call_sha256': '6cc9ca008e0dee0bd62fc51c8adaba5ded2908fa6a24e45ddcf2c6bcca05709d', 'call': {'name': 'synthetic_fixture_save', 'arguments': {'context': {'tenant_id': 'fixture-tenant', 'company_id': 'fixture-company', 'period': '2026-10', 'source_revision': 'fixture-revision', 'run_id': 'fixture-run'}, 'request_id': 'fixture-request', 'event': 'fixture-test', 'occurred_at': '2026-10-23T23:00:00+08:00', 'payload': {'amount': '1.00'}}}, 'descriptor_sha256': '57ecc7fb5963e973e179bbed4d33c036b12f65b9e1e4755ed0c47bedfa4435b8', 'notice': 'offline validation only; descriptor provenance/authentication unverified'}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (failures=1)

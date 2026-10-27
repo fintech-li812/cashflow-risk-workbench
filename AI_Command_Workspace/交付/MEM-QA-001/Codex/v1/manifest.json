@@ -1,0 +1,160 @@
+{
+  "task_id": "MEM-QA-001",
+  "package_version": "v1",
+  "author": "Codex",
+  "status": "candidate",
+  "scope": "manufacturing_actual_cashflow_offline_artifact_qa",
+  "tests": {
+    "unit_methods": 70,
+    "mutation_rejected": 15,
+    "cli_expected_matched": 5,
+    "platform": 0,
+    "mysql": 0
+  },
+  "files": [
+    {
+      "path": "docs/适配协议与限制.md",
+      "sha256": "678c775fab7c67d0c06a087fd042da0b5ec95e7e324bece4db49e97d5f7a2cc7"
+    },
+    {
+      "path": "examples/bad-one-cent.json",
+      "sha256": "9d10eccdf714dd6a57f17aa3e02a9193a14291a8b79eb25794b8973b06b80bca"
+    },
+    {
+      "path": "examples/context.json",
+      "sha256": "3828a54b68884428615ec55be7740b921d593757eee6c2019505d83cdbee1574"
+    },
+    {
+      "path": "examples/import-package/inventory.json",
+      "sha256": "41b8f1f8cfda2ecbe5178ee91c2796c9a28685b1ce86946108e85ed04decbbd8"
+    },
+    {
+      "path": "examples/import-package/issues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/import-package/records.jsonl",
+      "sha256": "b58df8cfb325907e391b1561ffd5808a73ed77fd97e88b7e4bc3febf37351198"
+    },
+    {
+      "path": "examples/import-package/report.html",
+      "sha256": "16fb08ec6a53788bab1cc1427cb9e199d37086071a1fb682cace7cfd47f9e866"
+    },
+    {
+      "path": "examples/import-package-mapping.json",
+      "sha256": "96d43565cb6387889ec2b1a3b71c66f4e29d9f1580db26b9cbd487697c48a8a6"
+    },
+    {
+      "path": "examples/import-package-sources/source.xlsx",
+      "sha256": "1c552edbb6183f9049ac79b832008ff38a1d32bca8ac5b270aece323f496714a"
+    },
+    {
+      "path": "examples/README.md",
+      "sha256": "e845609b4e85f84d11829edaf04828f25ae4bf44b350aa3116ff650846671361"
+    },
+    {
+      "path": "examples/receipt.json",
+      "sha256": "bfe297c579a4fd200704385fbac1d10fa94c765f75ae73485840c498d0035f57"
+    },
+    {
+      "path": "examples/replay-cases/cases.json",
+      "sha256": "1104da29aa9ac53ad737bb5e9c1787a7d6aa3c688194ae9618d0da9e1cf10956"
+    },
+    {
+      "path": "examples/replay-cases/normal-context.json",
+      "sha256": "3828a54b68884428615ec55be7740b921d593757eee6c2019505d83cdbee1574"
+    },
+    {
+      "path": "examples/replay-cases/normal-receipt.json",
+      "sha256": "bfe297c579a4fd200704385fbac1d10fa94c765f75ae73485840c498d0035f57"
+    },
+    {
+      "path": "examples/replay-cases/normal-result.json",
+      "sha256": "21e73fc2387cf1eebd17bfb0e23f7fb2b1bf89150dae53b4345ee50d9713351e"
+    },
+    {
+      "path": "examples/replay-cases/one-cent-error-context.json",
+      "sha256": "3828a54b68884428615ec55be7740b921d593757eee6c2019505d83cdbee1574"
+    },
+    {
+      "path": "examples/replay-cases/one-cent-error-result.json",
+      "sha256": "9d10eccdf714dd6a57f17aa3e02a9193a14291a8b79eb25794b8973b06b80bca"
+    },
+    {
+      "path": "examples/replay-plan.sha256.txt",
+      "sha256": "7e893d27beb5bdf07b9b3d9e9c9a3a6d841874435435e565b0a9e32e260f7cc0"
+    },
+    {
+      "path": "examples/result.json",
+      "sha256": "21e73fc2387cf1eebd17bfb0e23f7fb2b1bf89150dae53b4345ee50d9713351e"
+    },
+    {
+      "path": "expected/frozen_expectations.json",
+      "sha256": "9049c6782e5ced0be088e1deb405c0fc6a2c20a2801b509b56b7ad9b88e3c7c1"
+    },
+    {
+      "path": "profiles/ooxml_profile.v1.json",
+      "sha256": "7e53c527c06160fd08ad455c9da8db6be6ca1f685d4263adab44d57aa5b6d259"
+    },
+    {
+      "path": "qa_tool.py",
+      "sha256": "b2dbc35787ceb43d28ede519925e587b72d95ba8d13f620cd2fa1b72ac74f7de"
+    },
+    {
+      "path": "README.md",
+      "sha256": "c60d53ca7a99e9a0a0cbd7a60bb68af17e1c8cc0ac4159f797c2936bffca2417"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "b8f7de965fdd4c53dde17377d9b49b4a8396791c49a5b48fe152f729798ffd8e"
+    },
+    {
+      "path": "selftest.py",
+      "sha256": "f96aedd21cda2a3323e57b7e6523150a8adb557bc281d35961360a2423e79607"
+    },
+    {
+      "path": "templates/报告与消息草稿.md",
+      "sha256": "4293614c6a29fa3d713ab23a7c8a0de455eeb2896970cc5ecda1345c2a26e836"
+    },
+    {
+      "path": "test-output/Agent候选试审_7反例.json",
+      "sha256": "9d63d16598428b6326a0c15ec4381804ec3cb9b2b863069d93f2a9c19d550ac2"
+    },
+    {
+      "path": "test-output/cli-smoke-summary.json",
+      "sha256": "bef359932ee3af7fce22730a34eed4c4c34d395f4ec2cd6efbbd5fd684970c24"
+    },
+    {
+      "path": "test-output/mutation-summary.json",
+      "sha256": "9ea7b0edcdd3c2b10b2ea80b81dbd2d089c79ab48361d500ff22d007feed9f0a"
+    },
+    {
+      "path": "test-output/selftest-summary.json",
+      "sha256": "c57d7729f40e4565013c45e049a88729417bfa1a57a8d5bfbe79de6d8f4dee24"
+    },
+    {
+      "path": "test-output/unittest-output.txt",
+      "sha256": "1e30096f05ec65ed218166c39fc568225dcb9ef746502b83131b64f72c509454"
+    },
+    {
+      "path": "test-output/本次变异试验复现脚本_历史路径.py",
+      "sha256": "5c18550b715876f0bac13c38c3e6567a41e1982bdb4527c0c6c94a096d781c13"
+    },
+    {
+      "path": "test-output/真实平台与集成边界.md",
+      "sha256": "420d6d63d64cc786bd6df98650fd71783172e5fc2272810654802c6faecfbe16"
+    },
+    {
+      "path": "test_qa_tool.py",
+      "sha256": "281396fcf3d51b76d1c2204f2612d0e26a5f94eaa59b55dd6275739007b87870"
+    },
+    {
+      "path": "tests/test_cases_index.json",
+      "sha256": "3702fd3ed590e8f0aae5de8429a399528b6bcc869046a7072057c2f21645060f"
+    },
+    {
+      "path": "任务看板_本次接续前快照.md",
+      "sha256": "08c6dc62e0537c9f3535f967e6176d5c00ea81147d3a06ebf6900f5eae1cbe3f"
+    }
+  ]
+}

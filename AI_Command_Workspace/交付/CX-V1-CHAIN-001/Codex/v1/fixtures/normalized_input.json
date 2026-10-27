@@ -1,0 +1,32 @@
+{
+  "tenant_id": "fixture-tenant",
+  "company_id": "fixture-manufacturing",
+  "period": "2026-08",
+  "source_revision": "fixture-source-v1",
+  "run_id": "fixture-run-202608",
+  "origin": "offline_fixture",
+  "unit": "CNY",
+  "coverage": "full_cashflow",
+  "source": {
+    "workbook_ref": "synthetic-manufacturing-v1",
+    "sheet": "fixture-result",
+    "range": "A1:G2",
+    "snapshot_ref": "fixture-snapshot-202608"
+  },
+  "opening": "100000.00",
+  "actual_closing": "140000.00",
+  "cashflows": {
+    "operating": {
+      "inflow": "80000.00",
+      "outflow": "60000.00"
+    },
+    "investing": {
+      "inflow": "0.00",
+      "outflow": "20000.00"
+    },
+    "financing": {
+      "inflow": "50000.00",
+      "outflow": "10000.00"
+    }
+  }
+}

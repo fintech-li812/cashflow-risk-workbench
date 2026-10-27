@@ -1,0 +1,18 @@
+Kernel swap total before=1048572 KiB
+
+== kernel swap after ==
+Filename				Type		Size		Used		Priority
+/swapfile                               file		1048572		0		-2
+/swapfile_cf_extra_20261022             file		1048572		0		-3
+               total        used        free      shared  buff/cache   available
+Mem:           1.7Gi       912Mi       160Mi       3.4Mi       846Mi       828Mi
+Swap:          2.0Gi          0B       2.0Gi
+
+== persistent swap entry ==
+/swapfile_cf_extra_20261022 none swap sw 0 0
+
+== mysql ==
+active
++00:00	+00:00	268435456	20
+
+SWAP_DEPLOYMENT_COMPLETE

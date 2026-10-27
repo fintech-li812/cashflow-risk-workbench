@@ -1,0 +1,11 @@
+{
+  "args": [
+    "set",
+    "viewport",
+    "390",
+    "844"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"success\":true,\"data\":{\"deviceScaleFactor\":1.0,\"height\":844,\"mobile\":false,\"width\":390},\"error\":null}\n",
+  "stderr": ""
+}

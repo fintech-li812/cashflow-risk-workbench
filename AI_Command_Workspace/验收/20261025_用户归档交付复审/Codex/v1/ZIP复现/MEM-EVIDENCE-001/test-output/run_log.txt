@@ -1,0 +1,143 @@
+[通过] TC-01 正常提交后新进程重启读回 exit=0/0
+    - 退出码: expected=0 actual=0
+    - outcome: expected='created' actual='created'
+    - 回执状态: expected='committed' actual='committed'
+    - 摘要一致: expected='ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456' actual='ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456'
+    - record_id: expected='loc-8b0eccb1d1979b5df9d4d4d0' actual='loc-8b0eccb1d1979b5df9d4d4d0'
+    - 新进程读回退出码: expected=0 actual=0
+    - 重启读回 record_id 相同: expected='loc-8b0eccb1d1979b5df9d4d4d0' actual='loc-8b0eccb1d1979b5df9d4d4d0'
+    - 精度保留 140000.00: expected='140000.00' actual='140000.00'
+[通过] TC-02 同键同摘要回放返回原 record_id exit=0/0
+    - 退出码: expected=0 actual=0
+    - outcome: expected='replay' actual='replay'
+    - record_id 不变: expected='loc-8b0eccb1d1979b5df9d4d4d0' actual='loc-8b0eccb1d1979b5df9d4d4d0'
+    - 业务记录数: expected=1 actual=1
+[通过] TC-03 同键不同 payload 冲突且不覆盖 exit=4/4
+    - 退出码: expected=4 actual=4
+    - 错误码: expected='CONFLICT' actual='CONFLICT'
+    - 业务记录数仍为 1: expected=1 actual=1
+    - 原记录摘要未被覆盖: expected='ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456' actual='ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456'
+[通过] TC-04 全 0 金额（真实 0 不等于缺项） exit=0/0
+    - 退出码: expected=0 actual=0
+    - outcome: expected='created' actual='created'
+    - opening 保留 0.00: expected='0.00' actual='0.00'
+    - 勾稽状态: expected='completed' actual='completed'
+[通过] TC-05 缺实际余额可保存但勾稽未完成 exit=0/0
+    - 退出码: expected=0 actual=0
+    - 勾稽状态: expected='not_performed' actual='not_performed'
+    - difference 为 null: expected=None actual=None
+    - actual_closing 为 null: expected=None actual=None
+    - 提示未完成勾稽: expected=True actual=True
+[通过] TC-06 差异一分保存并标记待核 exit=0/0
+    - 退出码: expected=0 actual=0
+    - 勾稽状态: expected='difference_pending_review' actual='difference_pending_review'
+    - difference 精确到分: expected='0.01' actual='0.01'
+[通过] TC-07 非法金额/非有限值/勾稽错误全部拒绝 exit=3/3
+    - 非法金额退出码: expected=3 actual=3
+    - 非法金额错误码: expected='VALIDATION_FAILED' actual='VALIDATION_FAILED'
+    - 非有限值退出码: expected=3 actual=3
+    - 勾稽错误退出码: expected=3 actual=3
+    - 未写入任何记录: expected=0 actual=0
+[通过] TC-08 缺必填字段拒绝保存 exit=3/3
+    - 退出码: expected=3 actual=3
+    - 错误码: expected='VALIDATION_FAILED' actual='VALIDATION_FAILED'
+    - 未写入记录: expected=0 actual=0
+[通过] TC-09 payload 身份与可信上下文不一致拒绝 exit=3/3
+    - 退出码: expected=3 actual=3
+    - 错误码: expected='VALIDATION_FAILED' actual='VALIDATION_FAILED'
+    - 未写入记录: expected=0 actual=0
+[通过] TC-10 源版本与上下文不一致拒绝（不误复用旧快照） exit=3/3
+    - 退出码: expected=3 actual=3
+    - 错误码: expected='VALIDATION_FAILED' actual='VALIDATION_FAILED'
+[通过] TC-11 非 success 不产生正式回执，仅可存诊断 exit=3/3
+    - 正式保存退出码: expected=3 actual=3
+    - 正式保存错误码: expected='VALIDATION_FAILED' actual='VALIDATION_FAILED'
+    - 诊断通道退出码: expected=0 actual=0
+    - 正式记录数: expected=0 actual=0
+    - 诊断记录数: expected=1 actual=1
+    - 诊断不返回回执: expected=None actual=None
+[通过] TC-12 默认拒绝 offline_fixture，显式允许产生醒目标识 exit=3/3
+    - 默认退出码: expected=3 actual=3
+    - 默认错误码: expected='VALIDATION_FAILED' actual='VALIDATION_FAILED'
+    - 显式允许退出码: expected=0 actual=0
+    - 回执标记 is_fixture: expected=True actual=True
+    - 输出含醒目标识: expected=True actual=True
+[通过] TC-13 COMMIT 前进程终止：不留半条记录 exit=9/9
+    - 故障子进程退出码: expected=9 actual=9
+    - 崩溃后无部分记录: expected=0 actual=0
+    - 重试后记录数: expected=1 actual=1
+    - 重试返回 committed: expected='committed' actual='committed'
+[通过] TC-14 COMMIT 后回执丢失：回查命中原记录，重试返回同一 record_id exit=9/9
+    - 故障子进程退出码: expected=9 actual=9
+    - 崩溃前已落库记录数: expected=1 actual=1
+    - 重试退出码: expected=0 actual=0
+    - 重试返回原 record_id: expected='loc-0a62c2bce6bf5ea6728582b3' actual='loc-0a62c2bce6bf5ea6728582b3'
+    - 重试未新增记录: expected=1 actual=1
+[未执行] TC-15 并发/竞争测试未执行 exit=None/0
+[未执行] TC-16 并发/竞争测试未执行 exit=None/0
+[通过] TC-17 历史只追加、旧版不覆盖、当前版本选择可解释 exit=0/0
+    - 退出码: expected=0 actual=0
+    - 历史条数: expected=2 actual=2
+    - 当前有效为 rev2 记录: expected='loc-ab9f6fc900e4c22a3ab0c95f' actual='loc-ab9f6fc900e4c22a3ab0c95f'
+    - 存在两个源版本: expected=['fixture-rev-1', 'fixture-rev-2'] actual=['fixture-rev-1', 'fixture-rev-2']
+    - 按 rev1 过滤只剩 1 条: expected=1 actual=1
+    - 给出选择规则说明: expected=True actual=True
+[通过] TC-18 跨租户/跨企业读取被拒且不泄露内容 exit=6/6
+    - 他身份 get 退出码: expected=6 actual=6
+    - 他身份 get 错误码: expected='SCOPE_DENIED' actual='SCOPE_DENIED'
+    - 他身份 history 条数: expected=0 actual=0
+    - 自填身份与上下文不符退出码: expected=6 actual=6
+    - 响应不含 payload: expected=False actual=False
+[通过] TC-19 verify-store 通过，且关闭库后重开结果一致 exit=0/0
+    - 首次退出码: expected=0 actual=0
+    - 问题数: expected=0 actual=0
+    - 重开后退出码: expected=0 actual=0
+    - 记录数一致: expected=1 actual=1
+[通过] TC-20 篡改检测：篡改 payload 业务值 exit=8/8
+    - 保存退出码: expected=0 actual=0
+    - 篡改脚本执行成功: expected=0 actual=0
+    - 退出码: expected=8 actual=8
+    - 错误码: expected='VERIFY_FAILED' actual='VERIFY_FAILED'
+    - 检出问题码含 PAYLOAD_HASH_MISMATCH: expected=True actual=True
+[通过] TC-21 篡改检测：篡改 payload_sha256 exit=8/8
+    - 保存退出码: expected=0 actual=0
+    - 篡改脚本执行成功: expected=0 actual=0
+    - 退出码: expected=8 actual=8
+    - 错误码: expected='VERIFY_FAILED' actual='VERIFY_FAILED'
+    - 检出问题码含 PAYLOAD_HASH_MISMATCH: expected=True actual=True
+[通过] TC-22 篡改检测：篡改关联身份字段 exit=8/8
+    - 保存退出码: expected=0 actual=0
+    - 篡改脚本执行成功: expected=0 actual=0
+    - 退出码: expected=8 actual=8
+    - 错误码: expected='VERIFY_FAILED' actual='VERIFY_FAILED'
+    - 检出问题码含 IDENTITY_LINK_BROKEN: expected=True actual=True
+[通过] TC-23 路径穿越/绝对路径越界/非法后缀/非空工作目录全部拒绝 exit=2/2
+    - 相对穿越退出码: expected=2 actual=2
+    - 相对穿越错误码: expected='USAGE' actual='USAGE'
+    - 绝对路径越界退出码: expected=2 actual=2
+    - 非法后缀退出码: expected=2 actual=2
+    - 非空 workdir 退出码: expected=2 actual=2
+[通过] TC-24 身份含 SQL 特殊字符仍安全存取（全参数化） exit=0/0
+    - 保存退出码: expected=0 actual=0
+    - 读回退出码: expected=0 actual=0
+    - 表结构完好可复核: expected=0 actual=0
+    - record_id 与预期一致: expected='loc-c432425310c54d24017dde37' actual='loc-c432425310c54d24017dde37'
+[通过] TC-25 提交后回执未确定：返回未确定态且不报成功 exit=11/11
+    - 退出码: expected=11 actual=11
+    - 错误码: expected='UNKNOWN_STATE' actual='UNKNOWN_STATE'
+    - 未报成功: expected=False actual=False
+    - 库中已有该提交: expected=1 actual=1
+    - 同 ID 重试返回同一 record_id: expected='loc-2a8ed58da5c93a9f1a1fd87b' actual='loc-2a8ed58da5c93a9f1a1fd87b'
+    - 重试后仍仅 1 条: expected=1 actual=1
+[通过] TC-26 故意断言失败的自测必须非 0 退出 exit=10/10
+    - 退出码: expected=10 actual=10
+    - 返回码: expected='SELFTEST_FAILED' actual='SELFTEST_FAILED'
+    - 内部失败数大于 0: expected=True actual=True
+[通过] TC-27 源码静态边界检查：无外连/无删除逻辑/无凭据读取 exit=0/0
+    - 退出码: expected=0 actual=0
+    - 无违规发现: expected=0 actual=0
+    - 扫描文件数大于 0: expected=True actual=True
+[通过] TC-28 运行前后独立预期与夹具哈希未被改写 exit=0/0
+    - expected 哈希一致: expected=True actual=True
+    - fixtures 哈希一致: expected=True actual=True
+    - expected 文件数大于 0: expected=True actual=True

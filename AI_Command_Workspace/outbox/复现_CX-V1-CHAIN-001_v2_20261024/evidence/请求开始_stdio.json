@@ -1,0 +1,6 @@
+{
+  "transport": "stdio",
+  "request_id": "v2-stdio-592158cd380d4c4ea32a7e10e283cd5f",
+  "fixture": true,
+  "qwen_agent_called": false
+}

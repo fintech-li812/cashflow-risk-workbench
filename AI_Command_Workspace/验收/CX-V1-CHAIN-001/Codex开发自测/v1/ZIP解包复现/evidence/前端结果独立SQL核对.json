@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "request_id": "web-calc-9af82711-daab-4fe0-bfd4-761027f15d49",
+  "record_id": "f2d353ee-64b2-4cbd-83db-a16e2268eae7",
+  "count": 1,
+  "calculation_version": "baseline-cashflow-arithmetic.v1",
+  "payload_sha256": "356c833f3234cf25c5703888e4da398b4b7889445f6925365bda1e973c582b7b",
+  "check": "independent SQL after browser save and query; synthetic data, real isolated MySQL"
+}

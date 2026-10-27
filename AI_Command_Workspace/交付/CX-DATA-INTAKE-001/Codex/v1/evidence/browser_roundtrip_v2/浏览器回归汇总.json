@@ -1,0 +1,53 @@
+{
+  "total": 11,
+  "passed": 11,
+  "failed": 0,
+  "tests": [
+    {
+      "case": "合成页面真实填写及两凭证摘要",
+      "status": "passed"
+    },
+    {
+      "case": "真实零余额不作缺失",
+      "status": "passed"
+    },
+    {
+      "case": "清空余额明确缺项不补零",
+      "status": "passed"
+    },
+    {
+      "case": "过精度保留原输入并阻断就绪",
+      "status": "passed"
+    },
+    {
+      "case": "缺项界面转义恶意别名",
+      "status": "passed"
+    },
+    {
+      "case": "真实落盘导出保持待确认及无内部身份",
+      "status": "passed"
+    },
+    {
+      "case": "导出草稿重新打开不伪造凭证持有",
+      "status": "passed"
+    },
+    {
+      "case": "重新选择内容相同的本地凭证后恢复齐全",
+      "status": "passed"
+    },
+    {
+      "case": "伪造批准导入被拒且不覆盖当前草稿",
+      "status": "passed"
+    },
+    {
+      "case": "手机390宽无页面横向溢出",
+      "status": "passed"
+    },
+    {
+      "case": "桌面和手机真实截图",
+      "status": "passed"
+    }
+  ],
+  "exported_blob_sha256": "0407c65bca9c715cce873fb6a5e15906303b5996ce1c83a7e9b7419d2645e819",
+  "platform_native_verified": false
+}

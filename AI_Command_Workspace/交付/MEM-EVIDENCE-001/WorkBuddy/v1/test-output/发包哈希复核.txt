@@ -1,0 +1,28 @@
+# 发包源件 SHA256 复核（交付前再次执行）
+执行时间(UTC): 2026-10-24T11:23:04Z
+命令: sed 's/\r$//' SHA256SUMS.txt | sha256sum -c -
+结果:
+00_先读这里.md: OK
+01_源文件/原任务/结果快照存储任务.md: OK
+01_源文件/参考/Agent接口映射.md: OK
+01_源文件/参考/Agent未实现清单.md: OK
+01_源文件/参考候选/agent_guard.py: OK
+01_源文件/参考候选/persistence.py: OK
+01_源文件/参考候选/request_flow.py: OK
+01_源文件/参考候选/requirements.lock.txt: OK
+01_源文件/参考候选/runtime_adapter.py: OK
+01_源文件/合成夹具/synthetic_success.json: OK
+01_源文件/审核/最新审批与反例.md: OK
+01_源文件/规则/AGENTS.md: OK
+01_源文件/规则/一期范围.md: OK
+01_源文件/规则/算法迭代与接口约定.md: OK
+01_源文件/规则/结果边界接口.md: OK
+01_源文件/规则/统一接口_v1.md: OK
+02_交接模板/01_需求与实现映射.csv: OK
+02_交接模板/02_测试结果.csv: OK
+02_交接模板/03_证据索引.csv: OK
+02_交接模板/04_继承与改动.csv: OK
+manifest.json: OK
+任务书_要求与验收.md: OK
+合成测试context_非生产认证.json: OK
+源文件索引.csv: OK

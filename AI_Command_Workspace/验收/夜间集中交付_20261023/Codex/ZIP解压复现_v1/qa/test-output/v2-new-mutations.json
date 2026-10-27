@@ -1,0 +1,18 @@
+{
+  "caught": 2,
+  "total": 2,
+  "results": [
+    {
+      "mutation": "remove_finite_json_parse",
+      "target_test": "test_json_exponent_overflow_rejected_in_extra_field",
+      "exit": 1,
+      "caught": true
+    },
+    {
+      "mutation": "remove_full_object_finite_guard",
+      "target_test": "test_direct_library_api_cannot_hide_nonfinite_extras",
+      "exit": 1,
+      "caught": true
+    }
+  ]
+}

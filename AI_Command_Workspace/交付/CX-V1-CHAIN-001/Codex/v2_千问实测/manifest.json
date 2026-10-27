@@ -1,0 +1,38 @@
+{
+  "task_id": "CX-V1-CHAIN-001",
+  "version": "v2_native_evidence",
+  "source_package_sha256": "45e0293c743e4aa41356f133e5b4222445151635f448bd0247951846828db865",
+  "qwen_agent_mcp_flow_verified": true,
+  "native_sheet_recalculation_verified": false,
+  "production_deployed": false,
+  "files": [
+    {
+      "path": "00_读取快照_工具.json",
+      "sha256": "6936cded730bd07aefecd311878905d2dbc013735618835b8607774eb0371ef0"
+    },
+    {
+      "path": "01_首次保存_工具.json",
+      "sha256": "26b2176cd2560203f8e0da8eaa3728fa300e8aa449c2a7db86a28a8d736f9ba0"
+    },
+    {
+      "path": "02_精确回查_工具.json",
+      "sha256": "c22275f7d8789604053ce9e19db0a3e11d2fcacc62b2149be6cdc5e978f7697f"
+    },
+    {
+      "path": "03_重复保存_工具.json",
+      "sha256": "26b2176cd2560203f8e0da8eaa3728fa300e8aa449c2a7db86a28a8d736f9ba0"
+    },
+    {
+      "path": "SQL独立核对.json",
+      "sha256": "7b9079fa81a40335f2776960d37aa6f9ae081980a88098c3e7e77e7447e47af2"
+    },
+    {
+      "path": "千问Agent隔离联调核验报告.md",
+      "sha256": "7f524ea6810f0aaf6f36939be65f9d4300c500198a208598e4e963b38441e2e8"
+    },
+    {
+      "path": "综合核验.json",
+      "sha256": "e569e6cc6fce533a5ceb1e8f361a636446db3b2f04bd9f191f2bb1767761d7cf"
+    }
+  ]
+}

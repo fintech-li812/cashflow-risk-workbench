@@ -1,0 +1,9 @@
+{
+  "time": "2026-10-24T00:01:53+08:00",
+  "normal_exit": 0,
+  "wrong_package_exit": 2,
+  "missing_dependencies_exit": 2,
+  "original_package_unchanged": true,
+  "script_sha256": "bd4d747e14c8fb98777e861d556dedd7f88ed9a93ff81cc6b68746e63a5a87bb",
+  "review_status": "pending"
+}

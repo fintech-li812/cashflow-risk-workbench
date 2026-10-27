@@ -1,0 +1,82 @@
+{
+  "count": 5,
+  "matched": 5,
+  "source_expected_unchanged": true,
+  "results": [
+    {
+      "name": "result-valid",
+      "command": [
+        "verify-result",
+        "--result",
+        "examples/result.json",
+        "--context",
+        "examples/context.json",
+        "--receipt",
+        "examples/receipt.json",
+        "--request-id",
+        "save-1",
+        "--allow-fixture"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "matched": true
+    },
+    {
+      "name": "one-cent-rejected",
+      "command": [
+        "verify-result",
+        "--result",
+        "examples/bad-one-cent.json",
+        "--context",
+        "examples/context.json",
+        "--allow-fixture"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "matched": true
+    },
+    {
+      "name": "import-source",
+      "command": [
+        "verify-package",
+        "--package",
+        "examples/import-package",
+        "--source",
+        "examples/import-package-sources",
+        "--profile",
+        "profiles/ooxml_profile.v1.json",
+        "--mapping",
+        "examples/import-package-mapping.json"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "matched": true
+    },
+    {
+      "name": "replay",
+      "command": [
+        "replay",
+        "--case-dir",
+        "examples/replay-cases",
+        "--plan-sha256",
+        "1104da29aa9ac53ad737bb5e9c1787a7d6aa3c688194ae9618d0da9e1cf10956"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "matched": true
+    },
+    {
+      "name": "fixture-production-rejected",
+      "command": [
+        "verify-result",
+        "--result",
+        "examples/result.json",
+        "--context",
+        "examples/context.json"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "matched": true
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "testedEngine": "artifact-tool; not Qwen",
+  "checks": [
+    {
+      "cell": "C6",
+      "expected": 130,
+      "actual": 130
+    },
+    {
+      "cell": "C7",
+      "expected": 11.833333333333334,
+      "actual": 11.833333333333334
+    },
+    {
+      "cell": "C8",
+      "expected": 1820,
+      "actual": 1820
+    },
+    {
+      "cell": "C9",
+      "expected": 2,
+      "actual": 2
+    },
+    {
+      "cell": "C10",
+      "expected": 30,
+      "actual": 30
+    },
+    {
+      "cell": "C11",
+      "expected": 2,
+      "actual": 2
+    },
+    {
+      "cell": "C12",
+      "expected": "非法日期",
+      "actual": "非法日期"
+    },
+    {
+      "cell": "C13",
+      "expected": "2026-01-31",
+      "actual": "2026-01-31"
+    },
+    {
+      "cell": "C14",
+      "expected": "数值",
+      "actual": "数值"
+    },
+    {
+      "cell": "C15",
+      "expected": 8.25,
+      "actual": 8.25
+    },
+    {
+      "cell": "C16",
+      "expected": "缺少输入",
+      "actual": "缺少输入"
+    },
+    {
+      "cell": "C17",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "cell": "C18",
+      "expected": 59,
+      "actual": 59
+    }
+  ],
+  "inputChangeVerified": true,
+  "platformTested": false
+}

@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "{\"task_id\": \"CX-ACCOUNT-RECON-001\", \"total\": 25, \"passed\": 25, \"failed\": 0, \"blocked\": 0, \"not_run\": 0, \"independent_inputs_and_expected_unchanged\": true, \"failures\": [], \"origin\": \"offline_fixture\", \"native_sheet_verified\": false}\n",
+  "stderr": ""
+}

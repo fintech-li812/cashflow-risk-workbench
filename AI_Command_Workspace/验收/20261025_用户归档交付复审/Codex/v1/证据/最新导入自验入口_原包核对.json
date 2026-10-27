@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:/Users/33847/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "-B",
+    "D:\\AI_Command_Workspace\\发包\\两个自验直交任务_20261024\\02_Excel导入与来源追溯_较难\\自验入口.py",
+    "--submission",
+    "D:\\AI_Command_Workspace\\验收\\20261025_用户归档交付复审\\Codex\\v1\\解包待审\\MEM-IMPORT-002_WorkBuddy_v1",
+    "--output-dir",
+    "D:\\AI_Command_Workspace\\验收\\20261025_用户归档交付复审\\Codex\\v1\\运行证据\\最新导入冻结验收"
+  ],
+  "expected_exit": 2,
+  "exit_code": 2,
+  "stdout": "{\"task_id\": \"MEM-IMPORT-002\", \"status\": \"failed\", \"admission\": \"D:\\\\AI_Command_Workspace\\\\验收\\\\20261025_用户归档交付复审\\\\Codex\\\\v1\\\\运行证据\\\\最新导入冻结验收\\\\admission.json\"}\n",
+  "stderr": ""
+}

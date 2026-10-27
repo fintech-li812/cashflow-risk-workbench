@@ -1,0 +1,7 @@
+{"code":"USAGE","details":{},"message":"store path escapes the workdir: outside-evidence.sqlite3","ok":false,"status":"rejected"}
+
+{"code":"USAGE","details":{},"message":"store path escapes the workdir: outside-evidence.sqlite3","ok":false,"status":"rejected"}
+
+{"code":"USAGE","details":{},"message":"store file must use .sqlite3 suffix","ok":false,"status":"rejected"}
+
+{"ok": false, "code": "USAGE", "status": "rejected", "message": "workdir already exists and is not empty: C:\\Users\\Lenovo\\WorkBuddy\\2026-10-24-19-04-52\\_run_v1", "details": {}}

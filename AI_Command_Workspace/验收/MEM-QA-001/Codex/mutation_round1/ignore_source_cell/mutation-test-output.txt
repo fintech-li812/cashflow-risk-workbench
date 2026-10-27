@@ -1,0 +1,18 @@
+test_package_tamper_and_rehash_still_found (test_qa_tool.QA.test_package_tamper_and_rehash_still_found) ... FAIL
+
+======================================================================
+FAIL: test_package_tamper_and_rehash_still_found (test_qa_tool.QA.test_package_tamper_and_rehash_still_found)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_source_cell\test_qa_tool.py", line 289, in test_package_tamper_and_rehash_still_found
+    self.assertEqual(r.status, '失败'); self.assertIn('SOURCE_CELL_MISMATCH', {v['code'] for v in r.issues})
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '通过' != '失败'
+- 通过
++ 失败
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.053s
+
+FAILED (failures=1)

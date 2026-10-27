@@ -1,0 +1,47 @@
+{
+  "mapping_version": "mfg-cashflow-columns.v1",
+  "logical_file": "制造业_样例数据.xlsx",
+  "source_unit": "万元",
+  "sheet": "现金流水",
+  "header_row": 2,
+  "data_start_row": 3,
+  "fields": {
+    "month": {
+      "column": "A",
+      "type": "month"
+    },
+    "month_end": {
+      "column": "B",
+      "type": "date"
+    },
+    "flow_type": {
+      "column": "C",
+      "type": "text"
+    },
+    "operating_inflow": {
+      "column": "D",
+      "type": "money"
+    },
+    "operating_outflow": {
+      "column": "E",
+      "type": "money"
+    },
+    "net_cashflow": {
+      "column": "F",
+      "type": "money"
+    },
+    "closing_balance": {
+      "column": "G",
+      "type": "money"
+    },
+    "note": {
+      "column": "H",
+      "type": "text"
+    },
+    "gate_result": {
+      "column": "I",
+      "type": "text"
+    }
+  },
+  "unit_exceptions_file": "unit_exceptions.json"
+}

@@ -1,0 +1,229 @@
+{
+  "task_id": "MEM-NATIVE-001",
+  "requirements": [
+    {
+      "case_id": "N01",
+      "requirement": "合成三阶段回放",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N02",
+      "requirement": "fixture默认拒绝",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N03",
+      "requirement": "企业错配",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N04",
+      "requirement": "来源版本错配",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N05",
+      "requirement": "旧缓存冒充重算",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N06",
+      "requirement": "重开后公式变更",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N07",
+      "requirement": "回放伪称原生",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N08",
+      "requirement": "缺读表能力",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N09",
+      "requirement": "缺重算能力",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N10",
+      "requirement": "阶段序号倒退",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N11",
+      "requirement": "浮点金额拒绝",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N12",
+      "requirement": "输出重名保留",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N13",
+      "requirement": "身份五字段完整",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N14",
+      "requirement": "工作簿标识错配",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N15",
+      "requirement": "Sheet或区域错配",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N16",
+      "requirement": "缺单元格",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N17",
+      "requirement": "固定值不是公式",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N18",
+      "requirement": "公式文本校验",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N19",
+      "requirement": "修改输入确实改变",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N20",
+      "requirement": "独立余额未改保留差异",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N21",
+      "requirement": "单位不明阻断",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N22",
+      "requirement": "缺原始工具引用",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N23",
+      "requirement": "工具失败非0不伪装",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N24",
+      "requirement": "超时不确定不重放写入",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N25",
+      "requirement": "只读与重算权限分离",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N26",
+      "requirement": "登录及安全弹窗人工处理",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N27",
+      "requirement": "无法绑定返回阻塞",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N28",
+      "requirement": "本地OOXML不能冒充原生",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N29",
+      "requirement": "敏感字段脱敏",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N30",
+      "requirement": "故意失败自验非0",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N31",
+      "requirement": "新环境复现",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "N32",
+      "requirement": "输入和冻结基准不变",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    }
+  ]
+}

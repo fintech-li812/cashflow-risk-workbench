@@ -1,0 +1,21 @@
+test_bad_plan_target_rejected (__main__.Preflight.test_bad_plan_target_rejected) ... ok
+test_cannot_remove_mandatory_artifacts_from_plan (__main__.Preflight.test_cannot_remove_mandatory_artifacts_from_plan) ... ok
+test_duplicate_gate_not_counted_as_all_complete (__main__.Preflight.test_duplicate_gate_not_counted_as_all_complete) ... ok
+test_empty_server_file_is_real_blocker (__main__.Preflight.test_empty_server_file_is_real_blocker) ... ok
+test_existing_output_is_not_overwritten (__main__.Preflight.test_existing_output_is_not_overwritten) ... ok
+test_explicit_failed_manual_gate_stays_failure (__main__.Preflight.test_explicit_failed_manual_gate_stays_failure) ... ok
+test_fixed_artifact_digest_detects_change (__main__.Preflight.test_fixed_artifact_digest_detects_change) ... ok
+test_invalid_zip_path_rejected_not_extracted (__main__.Preflight.test_invalid_zip_path_rejected_not_extracted) ... ok
+test_missing_file_is_failure (__main__.Preflight.test_missing_file_is_failure) ... ok
+test_nonempty_files_never_authorize_release (__main__.Preflight.test_nonempty_files_never_authorize_release) ... ok
+test_output_inside_source_project_rejected (__main__.Preflight.test_output_inside_source_project_rejected) ... ok
+test_package_reads_metadata_without_executing_candidate (__main__.Preflight.test_package_reads_metadata_without_executing_candidate) ... ok
+test_package_task_id_must_match_plan (__main__.Preflight.test_package_task_id_must_match_plan) ... ok
+test_paths_may_not_escape_configured_roots (__main__.Preflight.test_paths_may_not_escape_configured_roots) ... ok
+test_self_declared_approval_cannot_bypass_real_observation (__main__.Preflight.test_self_declared_approval_cannot_bypass_real_observation) ... ok
+test_unknown_check_kind_not_silently_passed (__main__.Preflight.test_unknown_check_kind_not_silently_passed) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.036s
+
+OK

@@ -1,0 +1,10 @@
+{
+  "args": [
+    "eval",
+    "-b",
+    "KHt3aWR0aDp3aW5kb3cuaW5uZXJXaWR0aCxzY3JvbGw6ZG9jdW1lbnQuZG9jdW1lbnRFbGVtZW50LnNjcm9sbFdpZHRoLGNsaWVudDpkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuY2xpZW50V2lkdGh9KQ=="
+  ],
+  "exit_code": 0,
+  "stdout": "{\"success\":true,\"data\":{\"origin\":\"file:///D:/AI_Command_Workspace/%E4%BA%A4%E4%BB%98/CX-DATA-INTAKE-001/Codex/v1/web/index.html\",\"result\":{\"client\":375,\"scroll\":375,\"width\":390}},\"error\":null}\n",
+  "stderr": ""
+}

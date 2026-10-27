@@ -1,0 +1,19 @@
+test_fixture_default_rejected (test_qa_tool.QA.test_fixture_default_rejected) ... FAIL
+
+======================================================================
+FAIL: test_fixture_default_rejected (test_qa_tool.QA.test_fixture_default_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\allow_fixture_in_production\test_qa_tool.py", line 136, in test_fixture_default_rejected
+    self.check_result('FIXTURE_IN_PRODUCTION', allow_fixture=False)
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\allow_fixture_in_production\test_qa_tool.py", line 128, in check_result
+    self.assertEqual(report.status, '失败', report.as_dict())
+AssertionError: '通过' != '失败'
+- 通过
++ 失败
+ : {'schema_version': 'mfg-qa.v1', 'operation': 'verify-result', 'status': '通过', 'exit_code': 0, 'check_count': 55, 'issues': [], 'notes': ['离线工件检查；没有执行主算法、平台操作或数据库提交。', '当前为显式合成测试；通过仅证明格式与算术，不代表真实企业/平台。']}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)

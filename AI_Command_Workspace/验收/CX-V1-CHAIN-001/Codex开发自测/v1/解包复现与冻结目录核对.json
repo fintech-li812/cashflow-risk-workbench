@@ -1,0 +1,15 @@
+{
+  "zip_tests": [
+    {
+      "test": "test_arithmetic.py",
+      "exit_code": 0
+    },
+    {
+      "test": "test_web_guard.py",
+      "exit_code": 0
+    }
+  ],
+  "original_manifest_files_unchanged": 58,
+  "preview_after_freeze": "actual query completed; runtime logs outside frozen directory",
+  "review_status": "pending"
+}

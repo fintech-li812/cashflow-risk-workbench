@@ -1,0 +1,6 @@
+﻿证据ID,证据来源性质,相对路径,定位,SHA256,执行人,时间,证明内容,不能证明什么
+EV-01,本地命令实测,test-output/发包哈希复核.txt,全文,355b6a59169d34f9042f1c73373b533aa9698e7b2381c32a2a32cf86cc2271eb,WorkBuddy,2026-10-24T19:25:44+08:00,发包24份源件SHA256与SHA256SUMS一致（复核时原件未变）,不证明源件内容业务正确；仅证明与发包时一致
+EV-02,本地命令实测,test-output/run_20261024_191750/summary.json,全文,88175de2cff51eb4c1b8cc65b101b884d89bf020bbf0a3f6f117e5ad17488fdf,WorkBuddy,2026-10-24T19:25:44+08:00,30项测试矩阵全PASS且退出码0；逐用例命令/输出在同目录各TC子目录,不证明千问平台或MySQL生产行为；全部为本地SQLite合成夹具
+EV-03,本地命令实测,test-output/manual_selftest（selftest.db及目录）,目录,（目录，逐文件哈希见SHA256SUMS.txt）,WorkBuddy,2026-10-24T19:25:44+08:00,selftest一键自证11项全过退出码0,不证明平台能力；selftest仅用合成夹具
+EV-04,本地命令实测,test-output/run_20261024_191535/summary.json,全文,89c0844e96ef236ff9fb9da79b8b3a28a9e8a38a9c10b4420dfb48cc2c559420,WorkBuddy,2026-10-24T19:25:44+08:00,第2轮26PASS/4FAIL的失败证据（夹具勾稽与并发建库竞争）,不代表当前候选状态；当前状态以EV-02为准
+EV-05,本地命令实测,test-output/run_20261024_191750/summary.json内FROZEN项,results末行,88175de2cff51eb4c1b8cc65b101b884d89bf020bbf0a3f6f117e5ad17488fdf,WorkBuddy,2026-10-24T19:25:44+08:00,expected/cli_cases_expected.json与fixtures运行前后SHA256不变,不证明预期内容本身业务正确；仅证明未被运行期改写

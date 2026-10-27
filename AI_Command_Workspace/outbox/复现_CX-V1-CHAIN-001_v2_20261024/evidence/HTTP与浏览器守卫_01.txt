@@ -1,0 +1,28 @@
+D:\AI_Command_Workspace\交付\CX-V1-CHAIN-001\Codex\v2\tests\test_transport_v2.py:5: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient
+test_actual_tools_list (__main__.MCPHTTPTests.test_actual_tools_list) ... StreamableHTTP session manager started
+Processing request of type ListToolsRequest
+HTTP Request: POST http://127.0.0.1:18765/mcp/ "HTTP/1.1 200 OK"
+Terminating session: None
+StreamableHTTP session manager shutting down
+ok
+test_read_tool_is_explicit_fixture (__main__.MCPHTTPTests.test_read_tool_is_explicit_fixture) ... StreamableHTTP session manager started
+Processing request of type CallToolRequest
+HTTP Request: POST http://127.0.0.1:18765/mcp/ "HTTP/1.1 200 OK"
+Terminating session: None
+StreamableHTTP session manager shutting down
+ERROR
+
+======================================================================
+ERROR: test_read_tool_is_explicit_fixture (__main__.MCPHTTPTests.test_read_tool_is_explicit_fixture)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-V1-CHAIN-001\Codex\v2\tests\test_transport_v2.py", line 87, in test_read_tool_is_explicit_fixture
+    value=r.json()['result']['structuredContent'];self.assertTrue(value['fixture']);self.assertFalse(value['platform_native_verified'])
+          ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'structuredContent'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.036s
+
+FAILED (errors=1)

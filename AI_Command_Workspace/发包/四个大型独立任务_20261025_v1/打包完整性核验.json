@@ -1,0 +1,46 @@
+{
+  "all_zip_crc_and_member_sha256_passed": true,
+  "desktop_copies_verified": true,
+  "packages": [
+    {
+      "number": 1,
+      "task_id": "MEM-IMPORT-002",
+      "role": "数据工程负责人",
+      "case_count": 36,
+      "folder": "D:\\AI_Command_Workspace\\发包\\四个大型独立任务_20261025_v1\\01_导入与追溯工程升级",
+      "desktop_zip": "C:\\Users\\33847\\Desktop\\01_导入与追溯工程升级_完整自审任务包_20261025.zip",
+      "sha256": "f8afed6055164b6f92b7587247a95441ee7e7b989dec4765193e6f3344ba79df",
+      "bytes": 683043
+    },
+    {
+      "number": 2,
+      "task_id": "MEM-REPORT-002",
+      "role": "报告与交付工程负责人",
+      "case_count": 32,
+      "folder": "D:\\AI_Command_Workspace\\发包\\四个大型独立任务_20261025_v1\\02_报告与证据导出工程",
+      "desktop_zip": "C:\\Users\\33847\\Desktop\\02_报告与证据导出工程_完整自审任务包_20261025.zip",
+      "sha256": "e48c811ae618b09fa9061537c62a55b37b9896742acf64e1f2033d28566a3d28",
+      "bytes": 194270
+    },
+    {
+      "number": 3,
+      "task_id": "MEM-NATIVE-001",
+      "role": "平台适配工程负责人",
+      "case_count": 32,
+      "folder": "D:\\AI_Command_Workspace\\发包\\四个大型独立任务_20261025_v1\\03_千问原生表格适配与取证",
+      "desktop_zip": "C:\\Users\\33847\\Desktop\\03_千问原生表格适配与取证_完整自审任务包_20261025.zip",
+      "sha256": "dca9ce40f45f599cc7aeab7abe3950f5182549fffc9e7d78c84dfd993b0cbdac",
+      "bytes": 85408
+    },
+    {
+      "number": 4,
+      "task_id": "MEM-RELEASE-002",
+      "role": "集成验收与交付质量负责人",
+      "case_count": 36,
+      "folder": "D:\\AI_Command_Workspace\\发包\\四个大型独立任务_20261025_v1\\04_全链路验收与发布前总检",
+      "desktop_zip": "C:\\Users\\33847\\Desktop\\04_全链路验收与发布前总检_完整自审任务包_20261025.zip",
+      "sha256": "c03f0828654cd07092297280792cb852b37bdaa3c2f149056417d3ed824875a1",
+      "bytes": 87544
+    }
+  ]
+}

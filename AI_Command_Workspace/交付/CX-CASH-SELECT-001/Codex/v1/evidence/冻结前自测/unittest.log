@@ -1,0 +1,53 @@
+test_bad_date (test_cash_selection.SelectionTests.test_bad_date) ... ok
+test_bank_and_business_cash_counted_once (test_cash_selection.SelectionTests.test_bank_and_business_cash_counted_once) ... ok
+test_cash_corroboration_mismatch (test_cash_selection.SelectionTests.test_cash_corroboration_mismatch) ... ok
+test_cli_success_and_collision (test_cash_selection.SelectionTests.test_cli_success_and_collision) ... ok
+test_complete (test_cash_selection.SelectionTests.test_complete) ... ok
+test_cross_day_transfer_requires_manual_resolution (test_cash_selection.SelectionTests.test_cross_day_transfer_requires_manual_resolution) ... ok
+test_default_fixture_rejected (test_cash_selection.SelectionTests.test_default_fixture_rejected) ... ok
+test_depreciation_and_credit_limit_not_cash (test_cash_selection.SelectionTests.test_depreciation_and_credit_limit_not_cash) ... ok
+test_deterministic_plan_hash (test_cash_selection.SelectionTests.test_deterministic_plan_hash) ... ok
+test_document_link_never_requires_invoice_equal_receipt (test_cash_selection.SelectionTests.test_document_link_never_requires_invoice_equal_receipt) ... ok
+test_double_primary_source_blocks (test_cash_selection.SelectionTests.test_double_primary_source_blocks) ... ok
+test_duplicate_record_id (test_cash_selection.SelectionTests.test_duplicate_record_id) ... ok
+test_duplicate_source_key_same_fact (test_cash_selection.SelectionTests.test_duplicate_source_key_same_fact) ... ok
+test_empty_feed_not_assumed_zero (test_cash_selection.SelectionTests.test_empty_feed_not_assumed_zero) ... ok
+test_explicit_duplicate_retains_trace (test_cash_selection.SelectionTests.test_explicit_duplicate_retains_trace) ... ok
+test_external_trust_required (test_cash_selection.SelectionTests.test_external_trust_required) ... ok
+test_float_amount_rejected (test_cash_selection.SelectionTests.test_float_amount_rejected) ... ok
+test_foreign_context (test_cash_selection.SelectionTests.test_foreign_context) ... ok
+test_incomplete_primary_blocks (test_cash_selection.SelectionTests.test_incomplete_primary_blocks) ... ok
+test_input_hash_change_not_approved (test_cash_selection.SelectionTests.test_input_hash_change_not_approved) ... ok
+test_invoice_and_receipt_can_share_original_row_key (test_cash_selection.SelectionTests.test_invoice_and_receipt_can_share_original_row_key) ... ok
+test_invoice_not_cash_identity_link (test_cash_selection.SelectionTests.test_invoice_not_cash_identity_link) ... ok
+test_link_missing_reference (test_cash_selection.SelectionTests.test_link_missing_reference) ... ok
+test_missing_transfer_approval_blocks (test_cash_selection.SelectionTests.test_missing_transfer_approval_blocks) ... ok
+test_missing_transfer_reference (test_cash_selection.SelectionTests.test_missing_transfer_reference) ... ok
+test_negative_gross_amount_rejected (test_cash_selection.SelectionTests.test_negative_gross_amount_rejected) ... ok
+test_negative_net_not_computed_or_hidden (test_cash_selection.SelectionTests.test_negative_net_not_computed_or_hidden) ... ok
+test_no_primary_source_blocks (test_cash_selection.SelectionTests.test_no_primary_source_blocks) ... ok
+test_not_identical_duplicate_refused (test_cash_selection.SelectionTests.test_not_identical_duplicate_refused) ... ok
+test_original_inputs_and_expected_unchanged (test_cash_selection.SelectionTests.test_original_inputs_and_expected_unchanged) ... ok
+test_other_period_cash (test_cash_selection.SelectionTests.test_other_period_cash) ... ok
+test_partial_receipt_invoice_is_not_amount_error (test_cash_selection.SelectionTests.test_partial_receipt_invoice_is_not_amount_error) ... ok
+test_read_change_detected (test_cash_selection.SelectionTests.test_read_change_detected) ... ok
+test_same_amount_different_transactions_not_deduplicated (test_cash_selection.SelectionTests.test_same_amount_different_transactions_not_deduplicated) ... ok
+test_scope_context_changed (test_cash_selection.SelectionTests.test_scope_context_changed) ... ok
+test_scope_count_inconsistent (test_cash_selection.SelectionTests.test_scope_count_inconsistent) ... ok
+test_scope_not_ready (test_cash_selection.SelectionTests.test_scope_not_ready) ... ok
+test_transfer_account_same_blocked (test_cash_selection.SelectionTests.test_transfer_account_same_blocked) ... ok
+test_transfer_amount_mismatch_not_net_zero (test_cash_selection.SelectionTests.test_transfer_amount_mismatch_not_net_zero) ... ok
+test_transfer_pair_no_classification_needed (test_cash_selection.SelectionTests.test_transfer_pair_no_classification_needed) ... ok
+test_transfer_raw_records_preserved (test_cash_selection.SelectionTests.test_transfer_raw_records_preserved) ... ok
+test_transfer_reused_rejected (test_cash_selection.SelectionTests.test_transfer_reused_rejected) ... ok
+test_unknown_account (test_cash_selection.SelectionTests.test_unknown_account) ... ok
+test_unknown_category_blocks (test_cash_selection.SelectionTests.test_unknown_category_blocks) ... ok
+test_unregistered_source (test_cash_selection.SelectionTests.test_unregistered_source) ... ok
+test_unresolved_duplicate_blocks_without_deleting (test_cash_selection.SelectionTests.test_unresolved_duplicate_blocks_without_deleting) ... ok
+test_wrong_unit (test_cash_selection.SelectionTests.test_wrong_unit) ... ok
+test_zero_declaration_contradiction (test_cash_selection.SelectionTests.test_zero_declaration_contradiction) ... ok
+
+----------------------------------------------------------------------
+Ran 48 tests in 0.967s
+
+OK

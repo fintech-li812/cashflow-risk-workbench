@@ -1,0 +1,3 @@
+{"action":"人工核实真实单位后按批准口径重导","address":"D8","code":"UNIT_SUSPECT_PENDING","file":"制造业_样例数据.xlsx","issue_id":"ISS-0001","raw":"1631300","reason":"已登记单位疑点（绑定源SHA+Sheet+地址）：制造业样例现金流水 D8=1631300 为已确认单位疑点（表头声明万元，原值未核实）；保持规范值 null，不再乘 10000，不自动修正；规范值保持 null，不再放大","row":8,"sheet":"现金流水"}
+{"action":"人工确认是否重复录入","address":null,"code":"DUPLICATE_ROW","file":"制造业_样例数据.xlsx","issue_id":"ISS-0002","raw":null,"reason":"行 [12, 15] 原始取值完全相同；重复保留，不删除","row":12,"sheet":"现金流水"}
+{"action":"人工确认是否重复录入","address":null,"code":"DUPLICATE_ROW","file":"制造业_样例数据.xlsx","issue_id":"ISS-0003","raw":null,"reason":"行 [12, 15] 原始取值完全相同；重复保留，不删除","row":15,"sheet":"现金流水"}

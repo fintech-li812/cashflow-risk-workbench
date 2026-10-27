@@ -1,0 +1,78 @@
+- banner
+  - heading "制造业现金流工作台" [level=1, ref=e1]
+  - StaticText "基础版 · 现金流核对与结果留档"
+- main
+  - generic
+    - strong
+      - StaticText "合成数据工程联调"
+    - StaticText "　当前使用人工构造数据，连接真实MySQL隔离测试库。千问平台尚未接入；此页不代表真实企业已通过验收。"
+  - generic
+    - heading "现金流核对" [level=2, ref=e2]
+    - StaticText "期间：2026-08　·　单位：元　·　来源：fixture-source-v1　·　baseline-cashflow-arithmetic.v1"
+    - LabelText
+      - StaticText "本次请求编号（同一次重试保持不变）"
+    - textbox "本次请求编号（同一次重试保持不变）" [ref=e3]: web-81acbe0a-cfb7-42de-bc37-cf2baace89f5
+      - StaticText "web-81acbe0a-cfb7-42de-bc37-cf2baace89f5"
+    - button "读取、核对并留档" [disabled, ref=e4]
+    - button "按编号回查" [disabled, ref=e5]
+    - button "检查连接" [ref=e6]
+    - status
+      - StaticText "数据库尚未连通，请恢复授权隧道后再检查连接。"
+    - table
+      - rowgroup
+        - row
+          - columnheader "核对项目" [ref=e10]
+          - columnheader "金额（元）" [ref=e11]
+      - rowgroup
+        - row
+          - cell "期初现金" [ref=e12]
+          - cell "100000.00" [ref=e13]
+        - row
+          - cell "实际流入合计" [ref=e14]
+          - cell "130000.00" [ref=e15]
+        - row
+          - cell "实际流出合计" [ref=e16]
+          - cell "90000.00" [ref=e17]
+        - row
+          - cell "净现金流" [ref=e18]
+          - cell "40000.00" [ref=e19]
+        - row
+          - cell "计算期末现金" [ref=e20]
+          - cell "140000.00" [ref=e21]
+        - row
+          - cell "独立实际期末余额" [ref=e22]
+          - cell "140000.00" [ref=e23]
+        - row
+          - cell "余额差异" [ref=e24]
+          - cell "0.00" [ref=e25]
+    - StaticText "净额 = 实际流入 − 实际流出；计算期末 = 期初 + 净额；差异 = 独立实际期末 − 计算期末。"
+  - generic
+    - heading "结果解释" [level=2, ref=e7]
+    - paragraph
+      - StaticText "【合成数据离线演示】2026-08现金流（元）：流入130000.00，流出90000.00，净额40000.00，计算期末余额140000.00。实际期末余额140000.00，差异0.00。来源：synthetic-manufacturing-v1 / fixture-result / A1:G2。这段说明只解释计算结果；是否已保存，以右侧数据库回执为准。"
+  - complementary
+    - generic
+      - heading "留档与回查" [level=2, ref=e8]
+      - generic
+        - StaticText "数据库状态"
+        - StaticText "已提交，回查一致"
+        - StaticText "记录ID"
+        - StaticText "e827c6fc-0c69-47b8-a538-154ad1ee6501"
+        - StaticText "请求编号"
+        - StaticText "web-81acbe0a-cfb7-42de-bc37-cf2baace89f5"
+        - StaticText "期间 / 来源版本"
+        - StaticText "2026-08 / fixture-source-v1"
+        - StaticText "运行版本"
+        - StaticText "fixture-run-202608"
+        - StaticText "保存时间"
+        - StaticText "2026-10-24T04:38:45.099123+00:00"
+        - StaticText "内容摘要"
+        - StaticText "356c833f3234cf25c5703888e4da398b4b7889445f6925365bda1e973c582b7b"
+    - generic
+      - heading "第一版运行范围" [level=2, ref=e9]
+      - paragraph
+        - StaticText "核对已有现金流结果、留档、按完整版本回查。保存结果须与批准快照一致。"
+      - paragraph
+        - StaticText "滚动预测、三态自动判定在第二阶段完善。本页不显示虚构预测或自动化解状态。"
+  - sectionfooter
+    - StaticText "本地候选联调界面。正式验收仍需千问真实读表、公式重算、MCP调用及MySQL独立回查。"

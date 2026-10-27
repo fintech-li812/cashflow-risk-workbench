@@ -1,0 +1,131 @@
+{
+  "scope": "synthetic fixture; isolated real MySQL; not Qwen native",
+  "request_id": "mcp-e2e-c8f29f5c26a244b09ea3f36cb1d09b6c",
+  "calls": [
+    {
+      "tool": "read_cashflow_result",
+      "status": "ok"
+    },
+    {
+      "tool": "save_cashflow_result",
+      "status": "committed",
+      "receipt": {
+        "schema_version": "mfg-evidence.v1",
+        "kind": "receipt",
+        "operation": "save_cashflow_result",
+        "tenant_id": "fixture-tenant",
+        "company_id": "fixture-manufacturing",
+        "period": "2026-08",
+        "source_revision": "fixture-source-v1",
+        "run_id": "fixture-run-202608",
+        "request_id": "mcp-e2e-c8f29f5c26a244b09ea3f36cb1d09b6c",
+        "record_id": "92830c8f-b82b-45fe-8ac7-3fbce99dcdea",
+        "payload_sha256": "356c833f3234cf25c5703888e4da398b4b7889445f6925365bda1e973c582b7b",
+        "stored_at": "2026-10-23T16:41:03.199548+00:00",
+        "status": "committed"
+      }
+    },
+    {
+      "tool": "query_cashflow_result",
+      "status": "committed"
+    }
+  ],
+  "protocol": "official mcp SDK 1.30.0 stdio",
+  "server": {
+    "name": "manufacturing-cashflow-v1-candidate",
+    "title": null,
+    "version": "1.30.0",
+    "websiteUrl": null,
+    "icons": null
+  },
+  "tools": [
+    {
+      "name": "read_cashflow_result",
+      "title": null,
+      "description": "Read the configured approved cashflow snapshot. Never calculate forecasts.",
+      "inputSchema": {
+        "properties": {},
+        "title": "read_cashflow_resultArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "save_cashflow_result",
+      "title": null,
+      "description": "Commit the exact approved result to MySQL; replay same request safely.",
+      "inputSchema": {
+        "properties": {
+          "result": {
+            "additionalProperties": true,
+            "title": "Result",
+            "type": "object"
+          },
+          "request_id": {
+            "title": "Request Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result",
+          "request_id"
+        ],
+        "title": "save_cashflow_resultArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "query_cashflow_result",
+      "title": null,
+      "description": "Exact query within configured tenant/company and supplied version context.",
+      "inputSchema": {
+        "properties": {
+          "request_id": {
+            "title": "Request Id",
+            "type": "string"
+          },
+          "period": {
+            "title": "Period",
+            "type": "string"
+          },
+          "source_revision": {
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "run_id": {
+            "title": "Run Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "request_id",
+          "period",
+          "source_revision",
+          "run_id"
+        ],
+        "title": "query_cashflow_resultArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    }
+  ],
+  "restart_readback": true,
+  "status": "passed",
+  "independent_database_readback": true,
+  "qwen_platform": false,
+  "production_deployed": false,
+  "fixture_file": "D:\\AI_Command_Workspace\\交付\\CX-V1-CHAIN-001\\Codex\\v1\\fixtures\\calculated_result_v1.json"
+}

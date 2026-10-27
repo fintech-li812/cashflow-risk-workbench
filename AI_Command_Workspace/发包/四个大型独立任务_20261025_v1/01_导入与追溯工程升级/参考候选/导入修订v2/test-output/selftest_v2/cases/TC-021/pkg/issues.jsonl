@@ -1,0 +1,2 @@
+{"action":"人工确认是否重复录入","address":null,"code":"DUPLICATE_ROW","file":"fixture.xlsx","issue_id":"ISS-0001","raw":null,"reason":"行 [3, 4] 原始取值完全相同；重复保留，不删除","row":3,"sheet":"现金流水"}
+{"action":"人工确认是否重复录入","address":null,"code":"DUPLICATE_ROW","file":"fixture.xlsx","issue_id":"ISS-0002","raw":null,"reason":"行 [3, 4] 原始取值完全相同；重复保留，不删除","row":4,"sheet":"现金流水"}

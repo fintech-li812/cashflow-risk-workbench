@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Users\\33847\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "D:\\AI_Command_Workspace\\发包\\四个大型独立任务_20261025_v1\\02_报告与证据导出工程\\冻结基线验收\\自验入口.py",
+    "--submission",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-REPORT-002\\假交付",
+    "--output-dir",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-REPORT-002\\验收输出\\baseline_checks"
+  ],
+  "expected_exit": 0,
+  "exit_code": 2,
+  "stdout": "{\"task_id\": \"MEM-REPORT-002\", \"status\": \"failed\", \"admission\": \"D:\\\\AI_Command_Workspace\\\\验收\\\\四大任务包自身核验_20261025\\\\Codex\\\\v1\\\\MEM-REPORT-002\\\\验收输出\\\\baseline_checks\\\\admission.json\"}\n",
+  "stderr": ""
+}

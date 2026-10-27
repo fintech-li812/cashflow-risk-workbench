@@ -1,0 +1,51 @@
+{
+  "_note": "独立预期：由独立脚本按统一规范JSON算法离线计算并冻结，运行过程只读不写；被测代码不得改写本文件。",
+  "canonical_json_rule": "json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(',',':'), allow_nan=False).encode('utf-8')",
+  "digests": {
+    "result_non_success.json": "4755ebfcf545fbd9854b2c765c994e12e0961f00b0d766cba612918b5055144e",
+    "result_source_rev2.json": "8c7a2cce2ed5cbb8f957565da518fe980c4cc90df064158632989ab8c57b4058",
+    "result_sql_special.json": "4ff9b16245982d2b2f429751f92c10de0693d153d71b316f4861ee871228537e",
+    "synthetic_success.json": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456",
+    "synthetic_success_diff_cent.json": "730b3e27f0b6f84ce16117723154e1dbc24af4ba3ae5a00171390abb786d1364",
+    "synthetic_success_no_actual.json": "74a7e7aaa186adf336068e5e549723665a30e918cc1eece33a725237aca20c81",
+    "synthetic_success_variant.json": "23b8af5d505540ba49477f8435b1732a145bac333e846e9631fc1df60830be41",
+    "synthetic_success_zero.json": "a40d3c1813c29e4f2d4f32cfcb2dadd8cb75a0ad4d549611a2a415267533a4c1"
+  },
+  "expected_exits": {
+    "TC-01": 0,
+    "TC-02": 0,
+    "TC-03": 4,
+    "TC-04": 0,
+    "TC-05": 0,
+    "TC-06": 0,
+    "TC-07": 3,
+    "TC-08": 3,
+    "TC-09": 3,
+    "TC-10": 3,
+    "TC-11": 3,
+    "TC-12": 3,
+    "TC-13": 9,
+    "TC-14": 9,
+    "TC-15": 0,
+    "TC-16": 7,
+    "TC-17": 0,
+    "TC-18": 6,
+    "TC-19": 0,
+    "TC-20": 8,
+    "TC-21": 8,
+    "TC-22": 8,
+    "TC-23": 2,
+    "TC-24": 0,
+    "TC-25": 11,
+    "TC-26": 10,
+    "TC-27": 0,
+    "TC-28": 0
+  },
+  "operation": "save_cashflow_result",
+  "record_ids": {
+    "req-main-001": "loc-8b0eccb1d1979b5df9d4d4d0",
+    "req-race-001": "loc-dceed6fb1d08a8d57b9897c1",
+    "req-sql-001": "loc-c432425310c54d24017dde37",
+    "req-unknown-001": "loc-2a8ed58da5c93a9f1a1fd87b"
+  }
+}

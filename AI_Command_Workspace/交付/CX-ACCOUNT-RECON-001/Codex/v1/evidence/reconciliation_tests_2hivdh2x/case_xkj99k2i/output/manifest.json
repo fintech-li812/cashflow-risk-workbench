@@ -1,0 +1,25 @@
+{
+  "schema_version": "mfg-per-account-reconciliation-package.v1",
+  "files": [
+    {
+      "path": "reconciliation.json",
+      "sha256": "bb6143737ca3c0fdbd4213453c9d3171220b0a78db5d61da72ee9ae355f89ad3"
+    },
+    {
+      "path": "account_binding.json",
+      "sha256": "b776ddde9bfe7eefe68d2dbe03e95df75b114b8e54e886cbc83cd93e1867bd58"
+    },
+    {
+      "path": "selection.json",
+      "sha256": "558a7060e80ca5ad8ce25dcf976bf37c91cd22814bd92a637ea9833dff49e143"
+    },
+    {
+      "path": "normalized_fixture_input.json",
+      "sha256": "2d00ff0999acaecfb706b789496fbe6d221019cb628ca7be9f3d9feb4529f8c5"
+    },
+    {
+      "path": "cashflow_result.json",
+      "sha256": "2a75b8ce75203f7431938a19b509f390ffd60d31b89871f69ff5199a94d5c0cd"
+    }
+  ]
+}

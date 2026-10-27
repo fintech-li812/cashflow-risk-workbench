@@ -1,0 +1,100 @@
+{
+  "company_id": "fixture-company",
+  "current_effective_record_id": "ev-212f869b8ba67f53723dfdd3",
+  "entries": [
+    {
+      "fixture": true,
+      "is_current_effective": false,
+      "payload_sha256": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456",
+      "record_id": "ev-78f10ce9748f620073921054",
+      "request_id": "st-01",
+      "run_id": "fixture-run-1",
+      "source_revision": "fixture-rev-1",
+      "stored_at": "2026-10-24T11:17:50.787Z"
+    },
+    {
+      "fixture": true,
+      "is_current_effective": false,
+      "payload_sha256": "a40d3c1813c29e4f2d4f32cfcb2dadd8cb75a0ad4d549611a2a415267533a4c1",
+      "record_id": "ev-e5cce79c0880a5c3a8e295d8",
+      "request_id": "st-03",
+      "run_id": "fixture-run-1",
+      "source_revision": "fixture-rev-1",
+      "stored_at": "2026-10-24T11:17:51.277Z"
+    },
+    {
+      "fixture": true,
+      "is_current_effective": false,
+      "payload_sha256": "74a7e7aaa186adf336068e5e549723665a30e918cc1eece33a725237aca20c81",
+      "record_id": "ev-156f796278cbfbe15c17e307",
+      "request_id": "st-04",
+      "run_id": "fixture-run-1",
+      "source_revision": "fixture-rev-1",
+      "stored_at": "2026-10-24T11:17:51.539Z"
+    },
+    {
+      "fixture": true,
+      "is_current_effective": false,
+      "payload_sha256": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456",
+      "record_id": "ev-413b3e6508abc172a4a53dab",
+      "request_id": "st-11",
+      "run_id": "fixture-run-1",
+      "source_revision": "fixture-rev-1",
+      "stored_at": "2026-10-24T11:17:53.630Z"
+    },
+    {
+      "fixture": true,
+      "is_current_effective": false,
+      "payload_sha256": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456",
+      "record_id": "ev-bc980df0caa05ed5a49e732a",
+      "request_id": "st-15",
+      "run_id": "fixture-run-1",
+      "source_revision": "fixture-rev-1",
+      "stored_at": "2026-10-24T11:17:55.184Z"
+    },
+    {
+      "fixture": true,
+      "is_current_effective": false,
+      "payload_sha256": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456",
+      "record_id": "ev-ed25bf66cf7178c983f96b6c",
+      "request_id": "st-16",
+      "run_id": "fixture-run-1",
+      "source_revision": "fixture-rev-1",
+      "stored_at": "2026-10-24T11:17:55.438Z"
+    },
+    {
+      "fixture": true,
+      "is_current_effective": false,
+      "payload_sha256": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456",
+      "record_id": "ev-630dd5f4745dd4e52e2ad4b1",
+      "request_id": "st-17",
+      "run_id": "fixture-run-1",
+      "source_revision": "fixture-rev-1",
+      "stored_at": "2026-10-24T11:17:56.166Z"
+    },
+    {
+      "fixture": true,
+      "is_current_effective": false,
+      "payload_sha256": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456",
+      "record_id": "ev-338712a2ab87e288f77e10ef",
+      "request_id": "st-17b",
+      "run_id": "fixture-run-1",
+      "source_revision": "fixture-rev-1",
+      "stored_at": "2026-10-24T11:17:56.456Z"
+    },
+    {
+      "fixture": true,
+      "is_current_effective": true,
+      "payload_sha256": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456",
+      "record_id": "ev-212f869b8ba67f53723dfdd3",
+      "request_id": "st-18",
+      "run_id": "fixture-run-1",
+      "source_revision": "fixture-rev-1",
+      "stored_at": "2026-10-24T11:17:56.820Z"
+    }
+  ],
+  "period": "2026-08",
+  "selection_rule": "同tenant_id+company_id+period内stored_at最新（并列取record_id字典序最小）；不跨主体取MAX",
+  "status": "ok",
+  "tenant_id": "fixture-tenant"
+}

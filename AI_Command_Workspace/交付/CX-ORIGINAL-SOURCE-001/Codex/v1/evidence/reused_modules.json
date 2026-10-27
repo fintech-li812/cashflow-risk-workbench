@@ -1,0 +1,14 @@
+[
+  {
+    "module": "account_binding.py",
+    "source": "D:\\AI_Command_Workspace\\交付\\CX-ACCOUNT-BIND-001\\Codex\\v1\\src\\account_binding.py",
+    "sha256": "4341c7d591751111226f13bf068e4c2216fd46f820de77a05b3a8eb9b3188034",
+    "original_modified": false
+  },
+  {
+    "module": "cash_selection.py",
+    "source": "D:\\AI_Command_Workspace\\交付\\CX-CASH-SELECT-001\\Codex\\v1\\src\\cash_selection.py",
+    "sha256": "02d84a600a1756111ec6d71480e462b38874303a3c03aa46b2fe4f0aaf3c313e",
+    "original_modified": false
+  }
+]

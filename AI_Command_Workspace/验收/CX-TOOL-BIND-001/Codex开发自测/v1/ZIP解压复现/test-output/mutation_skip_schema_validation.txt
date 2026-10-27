@@ -1,0 +1,21 @@
+test_all_of_conditional_required (test_tool_call_guard.GuardTests.test_all_of_conditional_required) ... FAIL
+
+======================================================================
+FAIL: test_all_of_conditional_required (test_tool_call_guard.GuardTests.test_all_of_conditional_required)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 70, in test_all_of_conditional_required
+    self.a['event']='fixture-review'; self.assertBlocked('required')
+                                      ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 51, in assertBlocked
+    self.assertEqual(r['status'],'blocked',r)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'prepared' != 'blocked'
+- prepared
++ blocked
+ : {'status': 'prepared', 'called': False, 'schema_dialect': 'https://json-schema.org/draft/2020-12/schema', 'call_sha256': '1cf846d6e9ab867ef1d45fb942fb76c0e8da24b8d0549c1d6b5f737e41ff446c', 'call': {'name': 'synthetic_fixture_save', 'arguments': {'context': {'tenant_id': 'fixture-tenant', 'company_id': 'fixture-company', 'period': '2026-10', 'source_revision': 'fixture-revision', 'run_id': 'fixture-run'}, 'request_id': 'fixture-request', 'event': 'fixture-review', 'occurred_at': '2026-10-23T23:00:00+08:00', 'payload': {'amount': '1.00'}}}, 'descriptor_sha256': '7f4e0d6011c1233f3335a1ea67e81203f884a220ca5d30eedbe83432f211305c', 'notice': 'offline validation only; descriptor provenance/authentication unverified'}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.049s
+
+FAILED (failures=1)

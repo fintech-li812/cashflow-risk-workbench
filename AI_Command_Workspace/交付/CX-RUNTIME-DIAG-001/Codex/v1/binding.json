@@ -1,0 +1,37 @@
+{
+  "schema_version": "mfg-launch-diagnostic-binding.v1",
+  "project_root": "D:\\AI_Command_Workspace\\交付\\CX-WORKBENCH-INTEGRATE-001\\Codex\\v1",
+  "python_executable": "D:/AI_Command_Workspace/runtime/cashflow_v1/Scripts/python.exe",
+  "source_file": "D:/CashflowRiskWorkbench/data/制造业_样例数据.xlsx",
+  "source_sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+  "files": [
+    {
+      "path": "qa_entry.py",
+      "sha256": "0090f4aa94378c654ffd5d9cf0fabe5fb8c256f508bad0c6e6ad473965f909bd"
+    },
+    {
+      "path": "src/app.py",
+      "sha256": "df4de4978af1684c2168af3fb044e2655f6092858388e1bd700216b807622323"
+    },
+    {
+      "path": "src/config.py",
+      "sha256": "3ad30070e367df82de8d4b0967889670d89f05f8a471a284fcf68160fecac6e1"
+    },
+    {
+      "path": "src/service.py",
+      "sha256": "4f1b1dadbea7072af39672b08980a81daf6ad28c2a928c77ccfb27c1b1df046d"
+    },
+    {
+      "path": "src/workbench.py",
+      "sha256": "d2f3fac04701dc9cbd6bed74858a16a7b76ddde6df32368f6a09b75a1d8bc16b"
+    },
+    {
+      "path": "fixtures/calculated_result_v1.json",
+      "sha256": "e6470f7adeba00804b178be5dc17a3087a88758178b9482cfd64b8cf81cf36d7"
+    },
+    {
+      "path": "requirements.lock.txt",
+      "sha256": "b0065af0d2d4c0bc5d84d8a7783f09ad2ce1c0405968310db8cd43980dcbe2db"
+    }
+  ]
+}

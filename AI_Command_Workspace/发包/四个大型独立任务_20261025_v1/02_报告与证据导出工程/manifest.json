@@ -1,0 +1,514 @@
+{
+  "task_id": "MEM-REPORT-002",
+  "task_version": "20261025.large.v1",
+  "files": [
+    {
+      "path": "00_先读这里.md",
+      "sha256": "5dc24de3a25daa3d6303942db1270a727ddd3f04c55e713ebd34728f2ced590d"
+    },
+    {
+      "path": "01_完整项目背景.md",
+      "sha256": "4ed75d255343d02f0565e91c8d0722b786026dfe1c9b36196877950876406828"
+    },
+    {
+      "path": "02_角色职责与上下游.md",
+      "sha256": "142a4ea3f32e3005560cb28a32044d04b15bfa3ce4c4125c0d1a232a5668d830"
+    },
+    {
+      "path": "03_任务与详细产物.md",
+      "sha256": "f9db863fed29b15ab8d10f7cb4af447f76516fc63f34214f1d8fac43279e04df"
+    },
+    {
+      "path": "04_共同接口环境与边界.md",
+      "sha256": "2b3c12675f33feecd7d5047cc423aa927ab651ec286fdebdd45c0ea772ce2ef4"
+    },
+    {
+      "path": "05_自行审核与交付标准.md",
+      "sha256": "6e92e7da408ea08d07db1fc31c6056f8b8926055cdb9323e89263159748def04"
+    },
+    {
+      "path": "06_必测矩阵.md",
+      "sha256": "1e53ca6e7d2e01cc9bb027c40ce09013b02d177cb6b33052f7ed56bc43d945b1"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "f412ae6c3c5e86a0b2296cc9247d7f046ffd0bb48c4abe5fa984cfdb78a1b903"
+    },
+    {
+      "path": "fixtures/context.json",
+      "sha256": "a6a34fcdc911a22c0df8ae04dffe3ee71069856e71066b4f81ba84d15c4f4a63"
+    },
+    {
+      "path": "fixtures/receipt.json",
+      "sha256": "622adf867d62064d1ca8d6e0cb52f517e867728d02ed2477a9ce33b8c88c80ef"
+    },
+    {
+      "path": "fixtures/result.json",
+      "sha256": "e6470f7adeba00804b178be5dc17a3087a88758178b9482cfd64b8cf81cf36d7"
+    },
+    {
+      "path": "task.json",
+      "sha256": "4cc0b841640f252fe19403d358a85b23a803dafdd32565a6e764996fc6e714dc"
+    },
+    {
+      "path": "交付回执_模板.json",
+      "sha256": "661d58b219659f75510912dc67f8d914853891dcba4834bfebb3d6acdbe29472"
+    },
+    {
+      "path": "冻结基线验收/AGENTS.md",
+      "sha256": "affa623d09e73ac1f2e9f9f179a84925e87bafd01cf7f0c3c12b24d3b8e5dedc"
+    },
+    {
+      "path": "冻结基线验收/fixtures/context.json",
+      "sha256": "a6a34fcdc911a22c0df8ae04dffe3ee71069856e71066b4f81ba84d15c4f4a63"
+    },
+    {
+      "path": "冻结基线验收/fixtures/receipt.json",
+      "sha256": "622adf867d62064d1ca8d6e0cb52f517e867728d02ed2477a9ce33b8c88c80ef"
+    },
+    {
+      "path": "冻结基线验收/fixtures/result.json",
+      "sha256": "e6470f7adeba00804b178be5dc17a3087a88758178b9482cfd64b8cf81cf36d7"
+    },
+    {
+      "path": "冻结基线验收/manifest.json",
+      "sha256": "dbce490f6228bfb25eb30c8448a367df64a447484563b4bd31ab318823a657d3"
+    },
+    {
+      "path": "冻结基线验收/README_先读我.md",
+      "sha256": "b59fbd48c98ea85fd05a8f09023fffcf4c1f252e4f6993e73ec94b29bae9bb14"
+    },
+    {
+      "path": "冻结基线验收/source/agent_guard.py",
+      "sha256": "eb99d420e2ac7ef1352b448d0c29e1430d0a65cd80a76111eee3dc27c96055c1"
+    },
+    {
+      "path": "冻结基线验收/source/统一接口_v1.md",
+      "sha256": "b17a22386d0931093e1bcf6e02d52895bf825c96234f0b2590143d448f6e2fbb"
+    },
+    {
+      "path": "冻结基线验收/task.json",
+      "sha256": "9fc2199066431000b69642117f0f0e3be0ee97dceaf745914515fd71862d3e95"
+    },
+    {
+      "path": "冻结基线验收/交付回执模板.md",
+      "sha256": "115bd38e824b1648085ef023be06624c03937f7dd834daa7c96211dfcdef5125"
+    },
+    {
+      "path": "冻结基线验收/共同要求_接口端口自验交接.md",
+      "sha256": "067acd9a51d24501fff421256c5d6ea2ef732c79368e46d19527e8c947b06994"
+    },
+    {
+      "path": "冻结基线验收/实现与需求映射_模板.json",
+      "sha256": "d5ca799413cae2d92d714f8e17d8ac301c74c9a1a290ab2c52507ae5052b77c0"
+    },
+    {
+      "path": "冻结基线验收/自验入口.py",
+      "sha256": "f5cb334a21a82d93f44ee637263cc7192e3eb721d7f3743dc61a3167207a83c2"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/01_需求与实现映射.csv",
+      "sha256": "d17656c8c44b9984b0e3ee69cfcb98318f5fa0b0fb97eab8d9df2b634c0e701f"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/02_测试结果.csv",
+      "sha256": "ace4d3e42c014b54ffaff516333a812d0da8af2894707297c756ffd138e468d1"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/03_证据索引.csv",
+      "sha256": "8d8f75a05182e2c5bb4bed45d2ae6d27aa93bf8c41b72d925958e1bec74b10c5"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/04_继承与改动.csv",
+      "sha256": "fda3183c9e160d8b8d6ae543b05b03c23a06253bded4ac03c2ea905d092dfeb3"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/expected/expected_values.json",
+      "sha256": "027ef382957918308b80ec651864df0bfdabc45df936ad1532299747707e5dad"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/result_bad_amount.json",
+      "sha256": "95ed3d114b727371ca8b58c8c57ee17c5e279e141d3cc337bd850aa9a6f2c577"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/result_identity_mismatch.json",
+      "sha256": "c8bf0c97498e44cf318b45ae855149ceffa707d7bfcf061a953f573ca222302d"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/result_missing_field.json",
+      "sha256": "c1cc91eaacff386a2aa5beceb3de6a72e477c789b18f194d198214a7e8b7afeb"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/result_non_success.json",
+      "sha256": "dedfd1f85c8834650961667e77d49b9ccf1363652e65ae9174d4557607bf1012"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/result_nonfinite.json",
+      "sha256": "f514b1f7676e7b8eac9835f8ba12f99fe9415117dadfbdccd9ce73137cc446f5"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/result_recon_mismatch.json",
+      "sha256": "70705086ec213f2953f7a903c6df949dc30a999801076a4f73d56ae784a258c6"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/result_rev_mismatch.json",
+      "sha256": "50b33c3317e638cafac531b204817b6a241e098fcb9049f16dee76fe941787f1"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/result_source_rev2.json",
+      "sha256": "9c5033a8b58ccd80cbf5588efaa36167e7da920a4aed3e0fe9feb94d7463f9af"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/result_sql_special.json",
+      "sha256": "1e3baeb4afe127d33ad4bb71d185cfb7f6cafff33e6120984a8966963a64c6b9"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/synthetic_success.json",
+      "sha256": "2ea015ae8f00c051eb5b917b9fc7dd493a89c33d5529e91b2fa8f918e3bc5887"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/synthetic_success_diff_cent.json",
+      "sha256": "8b4bfac45ccf525a71c899c6784cb613393e9d96fb647894eba19cacc953d4ca"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/synthetic_success_no_actual.json",
+      "sha256": "4d2c80926745f24115568d81a3802101c4769aa54df0342fcd048cd4b7e7f653"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/synthetic_success_variant.json",
+      "sha256": "cba274a7d61166edaa4f5310a3d0f0e52f9ce614e22f88fab62db3aa8b2ac697"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/synthetic_success_zero.json",
+      "sha256": "9c727a67275283f3799e373795145d569285727a1f03ba0e20989e0c496a8a6e"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/trusted_context.json",
+      "sha256": "d9181228a6eec91b60b177814ccde4df4c55e0ffa600a3eb50f9ceba4f16aba9"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/trusted_context_other.json",
+      "sha256": "89d63f2c0671c3e7ef0164476c0e76b8e3bb4ee16edb7e95025a225fbf47412a"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/trusted_context_rev2.json",
+      "sha256": "f7501db33f15f16b3416cb6d911418503c51e63a6bfd9e823d7889d6b03627c4"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/fixtures/trusted_context_sql_special.json",
+      "sha256": "09ec6d1f0a2c5eb6d2a109fdb376c96116e8c5fd54a3cbac2c589e55ab6dc272"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/manifest.json",
+      "sha256": "8d1e97e13e90e2b4b59e48ae9bbab610a7375e364f6c9248df7aefca0e448b32"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/README.md",
+      "sha256": "2040b875ff2778014064984e1b689505b9320ee30cceea280b86817b34139e19"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/requirements.lock.txt",
+      "sha256": "ad0386dce992407da30ca58eb561374d923765a25ea1948ba38a4799940a763f"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/SHA256SUMS.txt",
+      "sha256": "7acc790b46e4d1262b3b988cc46a2101d0c5549e27e0a041c0d569e9f53e687e"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/src/cli.py",
+      "sha256": "f05ac13b97d7fd7737f8a0b35b67cb0d326b777b4a80643aa7f6369606d500d0"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/src/evidence_store.py",
+      "sha256": "5b5e6ddea7a25692524cbd3ad92d3372e80c6b21f72d978b69d7d0a2b717686b"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/src/result_guard.py",
+      "sha256": "c2e0d46c1b480187466708ea4627b0f0f38e30c57688114bea317507743b118d"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/src/selftest.py",
+      "sha256": "ca51be75d9decad66c7ea8530ae67295c06377f2ad51896c5e6e36b183ce28cb"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-01.out",
+      "sha256": "4e7d25d813b8c2e59f5985b116042a3acf15899f919e174a2ae6e490841e5164"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-01b.out",
+      "sha256": "0e2e51566049499e3be0c351bb7068aeb36d3bd3351acf8b211bf57aace837e7"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-02.out",
+      "sha256": "65f3159c7e22c7cc014ef436b20e642eeac191b7103ba059aeb5dcaaa5ad7a27"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-03.out",
+      "sha256": "94148e37494e82fcce6c083d99670ce10ef308419c20c973aeddb9e658d8a98d"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-04.out",
+      "sha256": "5cf736b09461240e6031e0e9907d77e977137082fcdca869bda2b7b1c50c0913"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-05.out",
+      "sha256": "3fa1e8cb714cf2f02ab37f2a2327c167121107344de11368f2eaf61985e206f1"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-07.out",
+      "sha256": "5e2a315f88c1b6f8fb64791395a6fbcecf91565900fd9582ce140d9db3aa34b5"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-08.out",
+      "sha256": "22ac366f68e1af39f95db962d80c7ce87b380efa46253123a8d01ef80ef990df"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-11.out",
+      "sha256": "85097f4604c7070e839dfdbbef7d4484e14670d50296d3a6e63ecc4d08ae73d0"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-12.out",
+      "sha256": "c2a1a0245ef867318e08d9d4e068d08a3bbbda63e4380282f0078cf69f70b809"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-13.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-14.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-15.out",
+      "sha256": "c595ccd5f396dad9c12610120a91f9d1ee3a7de780211ad56ebfa6e06e2a6b49"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-16.out",
+      "sha256": "43160d0dabd3ba04f864be96b5e4e9852d6d6cd05487d7dea081d51ba0f4adba"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-17.out",
+      "sha256": "f1905f1e00fb9c6df17606ea81e0b3658c44b3fa44f9550e27674d214d7d9241"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-18.out",
+      "sha256": "f5b3d54c71b11c014c3a8af50b0ee30e48c217944e8db5cabe05c3ced7a05e3c"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-19.out",
+      "sha256": "0f3c4eedca05eefba2252dafe6550d5adeaa61bd8a9aee3a8c0488945d4c0178"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-20.out",
+      "sha256": "3ec50fd65164c15c3d0e0c037000565d85bf6ca7d7ad366fb6ec520bcb2c22f8"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-21.out",
+      "sha256": "1986af3b70b26aa568b7a4ab19353e70a9b737d248d3fbd6af9a59222da1c070"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-22.out",
+      "sha256": "e0c63b17229b742add59ac16c430cb69dc8f9def6f764a0805da64a2cef6f1a9"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-23.out",
+      "sha256": "41a800c01b43538317a1f1c59e6d8a087f18b1f55650738b5292741eda921aae"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-24.out",
+      "sha256": "d94ad68181430fa4a4ef2d898f9b395a4d715f91970ddf38bc1ddd3d4e57ed3e"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-25.out",
+      "sha256": "1d9b6bbbd4109eb32980e4b274c640abe57383d83f160b65d8f57df0feb40c7c"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/cases/TC-27.out",
+      "sha256": "4d88785caed95c0d651d7e14eaf6d59e29d2c4ea5bf069aed2052787bddebf41"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/fresh_copy_run.json",
+      "sha256": "bfcd9fbb4a677f999ec8ea942759054323ffdd4d3d2e4b7851a6b7f68a367a6d"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/inject_failure_run.err",
+      "sha256": "efded7f8e4bf8bbea9e07425ad34636280e884e84240d64269e145b3776ba8e1"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/inject_failure_run.json",
+      "sha256": "a83da6818e96840aa81d82690c1541aa8cbaae5276b4ea995248abc903fe30d9"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/results.csv",
+      "sha256": "892aecc56fb2854c1af90822bf009caa9037f87847d45ea0c5e15cba35989375"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/results.json",
+      "sha256": "cd25aace93a473fe44ba407071cfb44a8af88032a991c14344e25773d1109739"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/run_log.txt",
+      "sha256": "4421ec322832750a8036c1b7da5e3fdb8e378be761855fc758901aaa37e93831"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/test-output/summary.md",
+      "sha256": "8774912897519a02388f868269636650df2131f5d1edc9223e781fd0390b6a38"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/tests/regression_review.py",
+      "sha256": "704a9207e29f6a05642dc958812b7a396d45cc1ba22425a20ee439a7d09d3d21"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/tests/run_tests.py",
+      "sha256": "9f75b90c2f8936fd75f3c33f9e16049e17e837dd5e436888ef928eef43cb9ad9"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/tests/static_boundary_check.py",
+      "sha256": "42d1954c95e638aad872ca4f07f4a6fd1d03a62616cf16eac77e744a3fb2e3ca"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/tests/tamper_db.py",
+      "sha256": "451896cd1bc26d596ec6ae819cfcace3dc189c3f08ed9895082d18fef7139784"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/trust_boundary.md",
+      "sha256": "1bbf5f9187a30d514154f47e24f04ba112b3f9193c2b0e18206c18835a652ab7"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/历史README_v1.md",
+      "sha256": "44907c2be0673b22f70bc917d08faaedf4b1d42ccfd46e12c488a9ea35af568d"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/审批修订说明.md",
+      "sha256": "04bd2bb779ad8d263fb12f08438b6f1f2e2e42dbd5ee559aa973702377257e34"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/未实现与待确认.md",
+      "sha256": "107e943b63ca811bc2463bee764ab848281c8fe136eddc3620f091bd1c911673"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/设计与接口说明.md",
+      "sha256": "48c639c057e4eeb333ce4dc38128fe02cbea358f1b4153d283b810223d0f2d3b"
+    },
+    {
+      "path": "参考候选/本地证据修订v2_仅供边界参考/错误码说明.md",
+      "sha256": "c658ad1e7027d50889ad701c495f986304725a79340e2edf3b8ef99f1bcb283a"
+    },
+    {
+      "path": "参考文档/制造业文档v2/01_千问报告修正候选/README.md",
+      "sha256": "deb70c4c584a3495f52484d1ed58288202e7b3b0b6f3d4d56219b01b90c1781a"
+    },
+    {
+      "path": "参考文档/制造业文档v2/01_千问报告修正候选/只读取数证据.json",
+      "sha256": "c7e25e56680e7d3af353a66ceb08d67215754c8cf92d875aa2e34cff9661b930"
+    },
+    {
+      "path": "参考文档/制造业文档v2/01_千问报告修正候选/平台接入口核实.md",
+      "sha256": "cec8d65c6b2cd4bb81785b47be147c0767edab3886212358e123bb4312090074"
+    },
+    {
+      "path": "参考文档/制造业文档v2/01_千问报告修正候选/问题清单.md",
+      "sha256": "72f8502344e28fb519f1c938a0a061928e483e847621ab0223d9d4807448dd96"
+    },
+    {
+      "path": "参考文档/制造业文档v2/02_统计范围.csv",
+      "sha256": "50ff92fc4d5089977fd0430bd6439a9bd1a96de363362e3e04403a6295d38b51"
+    },
+    {
+      "path": "参考文档/制造业文档v2/02_负责人及统计范围.md",
+      "sha256": "09771f293d281e1046cdbe3d3f0891aa39643c36e5ffcf18de1dc91c01f100f2"
+    },
+    {
+      "path": "参考文档/制造业文档v2/02_责任分工.csv",
+      "sha256": "f69557c27a60bebbb9ff59e4fb68eab2f41b1ee425d44fd45c050e5685f1e040"
+    },
+    {
+      "path": "参考文档/制造业文档v2/03_字段合同.csv",
+      "sha256": "7279d594cf2d330ec2073d28d04d7da6d344b64d6632d5f042bafca6d0d2132c"
+    },
+    {
+      "path": "参考文档/制造业文档v2/03_字段合同.md",
+      "sha256": "ebfedd2827d58bbc8ae13d3a2345e4e198f803a579bd60a63f310476357f9670"
+    },
+    {
+      "path": "参考文档/制造业文档v2/04_差异回溯报告模板.md",
+      "sha256": "acc39f3b025463e3624fcb5913c8db7c3b3b8a0614a566604ec6b0862742fcd8"
+    },
+    {
+      "path": "参考文档/制造业文档v2/04_现金流核对报告模板.md",
+      "sha256": "4ffa96eca2f8378aaee6bfb92a2d6541ec22210460f3d9c7413a23d310722b0e"
+    },
+    {
+      "path": "参考文档/制造业文档v2/04_结果状态说明.md",
+      "sha256": "8ab37469c97d4dc3c4f7fae57ab86e951cf814b2dde90f5d1ff7d8dea3df495e"
+    },
+    {
+      "path": "参考文档/制造业文档v2/05_制造业现金流使用手册_候选.md",
+      "sha256": "0180b7faeaca5eafdd7923d9ef72b3c4411a7853aac0440ba82633be6074e4ac"
+    },
+    {
+      "path": "参考文档/制造业文档v2/06_看板与Agent文案稿.md",
+      "sha256": "c8159a6d6f5120e71a1114d6baeaf4fa0c9d4ee88be1591ed78d5cedb9ecc135"
+    },
+    {
+      "path": "参考文档/制造业文档v2/06_看板文案修改表.csv",
+      "sha256": "52cdcce1999df4ff3794a282af9c47ff058c0ee83183af7e0c1e0a54ded6ea0d"
+    },
+    {
+      "path": "参考文档/制造业文档v2/07_逐条修订记录.csv",
+      "sha256": "8f77eeff3121bd3d570195791d329072321a3d76f474022005148acac52375aa"
+    },
+    {
+      "path": "参考文档/制造业文档v2/08_证据索引.csv",
+      "sha256": "cd9b89e2e65f7dda407cab12f117d20fae4659181d67ec5aa4b2eba498980b26"
+    },
+    {
+      "path": "参考文档/制造业文档v2/09_待X确认事项.csv",
+      "sha256": "6c06be763b0999daba9af4ac4a4b99f063fa7b91161168bf8ccde38f016245ba"
+    },
+    {
+      "path": "参考文档/制造业文档v2/10_自查验收.csv",
+      "sha256": "7b8d70d74d25f3b83e16ee478421807cd3244bb760aa878f307dbc1018423d2a"
+    },
+    {
+      "path": "参考文档/制造业文档v2/manifest.json",
+      "sha256": "74a255960dad281997ac8b781c4ddac610392fb8762947a85e19c9a2af2062b2"
+    },
+    {
+      "path": "参考文档/制造业文档v2/README.md",
+      "sha256": "4f0b26f318c94dec55c6a9ef9e6dd12ca42f875d59a3446e32d472253fcd495f"
+    },
+    {
+      "path": "参考文档/制造业文档v2/SHA256SUMS.txt",
+      "sha256": "8a55dd521365988b2bb66fb9411d2450ae924a9eb9bb9fd8a9189f0dcdf04914"
+    },
+    {
+      "path": "参考文档/最新审批结论.md",
+      "sha256": "c93597d235c4fec17dbd36ed3ae0d41cc31c47384e19c1b69c820d259702efc3"
+    },
+    {
+      "path": "实现与需求映射_模板.json",
+      "sha256": "f12d4b1c53d0f7c6255c23f2ec0a08cc5792177b40235be1c29a03fcbcf58295"
+    },
+    {
+      "path": "源文件索引.json",
+      "sha256": "2276addaa6b783c1a8e42d75d177fa5a067b982a7900af9d62e75cd414da5b38"
+    },
+    {
+      "path": "自验入口.py",
+      "sha256": "97d40ae512c289f443e22783d99d2f84418bc53c35fbc7feee9a5b0e8af5d612"
+    },
+    {
+      "path": "规则/AGENTS.md",
+      "sha256": "bb6ffd5ad2f7cb5dacc2370c1bc813c0b6f2e607cf64a539a2e737a93e0a2a50"
+    },
+    {
+      "path": "规则/制造业Agent周边工程统一接口_v1.md",
+      "sha256": "b17a22386d0931093e1bcf6e02d52895bf825c96234f0b2590143d448f6e2fbb"
+    },
+    {
+      "path": "规则/制造业现金流一期范围_v1.md",
+      "sha256": "dd0037ff843cff75fb308090f32eb1a0b735fe46432d85b3be95f0931e183b5c"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{"code":"SCOPE_DENIED","details":{},"message":"record is outside the trusted identity scope","ok":false,"status":"denied"}
+
+{"ambiguous_versions":false,"code":"OK","count":0,"current_record_id":null,"current_selection_rule":"仅在同一 tenant_id + company_id + period 内按 (stored_at, id) 排序取最后一条为当前有效；绝不跨企业/跨租户取 MAX(id)。存在多条 source_revision 时新旧版本共存、旧版不删除也不改写，调用方须用 --source-revision 显式锁定目标版本。","distinct_run_ids":[],"distinct_source_revisions":[],"ok":true,"records":[],"scope":{"company_id":"other-company","period":"2026-08","tenant_id":"other-tenant"}}
+
+{"code":"SCOPE_DENIED","details":{},"message":"--tenant-id does not match the trusted context; self-filled identity is not authentication","ok":false,"status":"denied"}

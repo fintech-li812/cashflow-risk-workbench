@@ -1,0 +1,131 @@
+D:\AI_Command_Workspace\交付\CX-V1-CHAIN-001\Codex\v2\tests\test_transport_v2.py:5: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient
+test_bad_money_blocked (test_arithmetic.ArithmeticTests.test_bad_money_blocked) ... ok
+test_changed_inflow_difference_not_autozero (test_arithmetic.ArithmeticTests.test_changed_inflow_difference_not_autozero) ... ok
+test_fixture_must_be_explicit (test_arithmetic.ArithmeticTests.test_fixture_must_be_explicit) ... ok
+test_independent_august_example (test_arithmetic.ArithmeticTests.test_independent_august_example) ... ok
+test_missing_actual_preserved (test_arithmetic.ArithmeticTests.test_missing_actual_preserved) ... ok
+test_missing_group_blocked (test_arithmetic.ArithmeticTests.test_missing_group_blocked) ... ok
+test_missing_not_zero (test_arithmetic.ArithmeticTests.test_missing_not_zero) ... ok
+test_negative_balance_retained (test_arithmetic.ArithmeticTests.test_negative_balance_retained) ... ok
+test_negative_gross_blocked (test_arithmetic.ArithmeticTests.test_negative_gross_blocked) ... ok
+test_qwen_origin_not_faked (test_arithmetic.ArithmeticTests.test_qwen_origin_not_faked) ... ok
+test_zero_not_missing (test_arithmetic.ArithmeticTests.test_zero_not_missing) ... ok
+test_bound_flag_cannot_claim_native_platform_verification (test_config_entry_v2.ConfigEntryTests.test_bound_flag_cannot_claim_native_platform_verification) ... ok
+test_fixture_cannot_be_enabled_for_nonqa_account (test_config_entry_v2.ConfigEntryTests.test_fixture_cannot_be_enabled_for_nonqa_account) ... ok
+test_launcher_overrides_inherited_production_configuration (test_config_entry_v2.ConfigEntryTests.test_launcher_overrides_inherited_production_configuration) ... ok
+test_launcher_rejects_nonqa_runtime_and_boolean_port (test_config_entry_v2.ConfigEntryTests.test_launcher_rejects_nonqa_runtime_and_boolean_port) ... ok
+test_ports_reject_bool_string_zero_and_overflow (test_config_entry_v2.ConfigEntryTests.test_ports_reject_bool_string_zero_and_overflow) ... ok
+test_remote_host_is_rejected (test_config_entry_v2.ConfigEntryTests.test_remote_host_is_rejected) ... ok
+test_root_cannot_connect_to_business_database (test_config_entry_v2.ConfigEntryTests.test_root_cannot_connect_to_business_database) ... ok
+test_security_flags_require_booleans (test_config_entry_v2.ConfigEntryTests.test_security_flags_require_booleans) ... ok
+test_tampered_fixture_is_rejected_before_start (test_config_entry_v2.ConfigEntryTests.test_tampered_fixture_is_rejected_before_start) ... ok
+test_01_commit_and_exact_query (test_service.MySQLTests.test_01_commit_and_exact_query) ... ok
+test_02_idempotent_replay_one_row (test_service.MySQLTests.test_02_idempotent_replay_one_row) ... ok
+test_03_process_state_not_required (test_service.MySQLTests.test_03_process_state_not_required) ... ok
+test_04_context_revision_conflict (test_service.MySQLTests.test_04_context_revision_conflict) ... ok
+test_05_different_approved_payload_conflict (test_service.MySQLTests.test_05_different_approved_payload_conflict) ... ok
+test_06_hallucinated_amounts_rejected (test_service.MySQLTests.test_06_hallucinated_amounts_rejected) ... ok
+test_07_trusted_company_rejected (test_service.MySQLTests.test_07_trusted_company_rejected) ... ok
+test_08_default_fixture_rejected (test_service.MySQLTests.test_08_default_fixture_rejected) ... ok
+test_09_missing_db_is_pending_not_success (test_service.MySQLTests.test_09_missing_db_is_pending_not_success) ... ok
+test_10_query_failure_is_not_notfound (test_service.MySQLTests.test_10_query_failure_is_not_notfound) ... ok
+test_11_corrupt_stored_hash_detected (test_service.MySQLTests.test_11_corrupt_stored_hash_detected) ... ok
+test_12_request_sql_characters_parameterized (test_service.MySQLTests.test_12_request_sql_characters_parameterized) ... ok
+test_13_invalid_request (test_service.MySQLTests.test_13_invalid_request) ... ok
+test_14_root_production_rejected (test_service.MySQLTests.test_14_root_production_rejected) ... ok
+test_15_changed_snapshot_stops_read (test_service.MySQLTests.test_15_changed_snapshot_stops_read) ... ok
+test_16_before_commit_failure_no_row (test_service.MySQLTests.test_16_before_commit_failure_no_row) ... ok
+test_17_after_commit_receipt_loss_then_replay (test_service.MySQLTests.test_17_after_commit_receipt_loss_then_replay) ... ok
+test_actual_tools_list (test_transport_v2.MCPHTTPTests.test_actual_tools_list) ... StreamableHTTP session manager started
+Processing request of type ListToolsRequest
+HTTP Request: POST http://127.0.0.1:18765/mcp/ "HTTP/1.1 200 OK"
+Terminating session: None
+StreamableHTTP session manager shutting down
+ok
+test_read_tool_is_explicit_fixture (test_transport_v2.MCPHTTPTests.test_read_tool_is_explicit_fixture) ... StreamableHTTP session manager started
+Processing request of type CallToolRequest
+HTTP Request: POST http://127.0.0.1:18765/mcp/ "HTTP/1.1 200 OK"
+Terminating session: None
+StreamableHTTP session manager shutting down
+ok
+test_unknown_tool_no_success (test_transport_v2.MCPHTTPTests.test_unknown_tool_no_success) ... StreamableHTTP session manager started
+Processing request of type CallToolRequest
+Tool 'arbitrary_sql' not listed, no validation will be performed
+HTTP Request: POST http://127.0.0.1:18765/mcp/ "HTTP/1.1 200 OK"
+Terminating session: None
+StreamableHTTP session manager shutting down
+ok
+test_wrong_host_rejected (test_transport_v2.MCPHTTPTests.test_wrong_host_rejected) ... StreamableHTTP session manager started
+Invalid Host header: other.invalid
+HTTP Request: POST http://127.0.0.1:18765/mcp/ "HTTP/1.1 421 Misdirected Request"
+Terminating session: None
+StreamableHTTP session manager shutting down
+ok
+test_wrong_origin_rejected (test_transport_v2.MCPHTTPTests.test_wrong_origin_rejected) ... StreamableHTTP session manager started
+Invalid Origin header: https://other.invalid
+HTTP Request: POST http://127.0.0.1:18765/mcp/ "HTTP/1.1 403 Forbidden"
+Terminating session: None
+StreamableHTTP session manager shutting down
+ok
+test_api_passes_fingerprint_without_guess (test_transport_v2.WebTests.test_api_passes_fingerprint_without_guess) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 200 OK"
+ok
+test_bad_json (test_transport_v2.WebTests.test_bad_json) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_duplicate_json_key (test_transport_v2.WebTests.test_duplicate_json_key) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_empty_id (test_transport_v2.WebTests.test_empty_id) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_extra_identity (test_transport_v2.WebTests.test_extra_identity) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_fixture_notice (test_transport_v2.WebTests.test_fixture_notice) ... HTTP Request: GET http://127.0.0.1:18765/ "HTTP/1.1 200 OK"
+ok
+test_health_failure_not_ready (test_transport_v2.WebTests.test_health_failure_not_ready) ... HTTP Request: GET http://127.0.0.1:18765/api/health "HTTP/1.1 503 Service Unavailable"
+ok
+test_invalid_fingerprint (test_transport_v2.WebTests.test_invalid_fingerprint) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_missing_fingerprint (test_transport_v2.WebTests.test_missing_fingerprint) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_no_origin (test_transport_v2.WebTests.test_no_origin) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 403 Forbidden"
+ok
+test_nonjson_media_type (test_transport_v2.WebTests.test_nonjson_media_type) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 415 Unsupported Media Type"
+ok
+test_query_failure_not_notfound (test_transport_v2.WebTests.test_query_failure_not_notfound) ... HTTP Request: POST http://127.0.0.1:18765/api/query "HTTP/1.1 503 Service Unavailable"
+ok
+test_run_uncertainty_is_pending (test_transport_v2.WebTests.test_run_uncertainty_is_pending) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 503 Service Unavailable"
+ok
+test_source_fingerprint_changes_with_file_hash (test_transport_v2.WebTests.test_source_fingerprint_changes_with_file_hash) ... HTTP Request: GET http://127.0.0.1:18765/api/source "HTTP/1.1 200 OK"
+ok
+test_stream_body_size_limit (test_transport_v2.WebTests.test_stream_body_size_limit) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 413 Request Entity Too Large"
+ok
+test_unknown_route (test_transport_v2.WebTests.test_unknown_route) ... HTTP Request: POST http://127.0.0.1:18765/api/no "HTTP/1.1 404 Not Found"
+ok
+test_wrong_host (test_transport_v2.WebTests.test_wrong_host) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 403 Forbidden"
+ok
+test_wrong_origin (test_transport_v2.WebTests.test_wrong_origin) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 403 Forbidden"
+ok
+test_bad_json (test_web_guard.WebGuardTests.test_bad_json) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_empty_request (test_web_guard.WebGuardTests.test_empty_request) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_extra_fields (test_web_guard.WebGuardTests.test_extra_fields) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_home_discloses_fixture (test_web_guard.WebGuardTests.test_home_discloses_fixture) ... HTTP Request: GET http://127.0.0.1:18765/ "HTTP/1.1 200 OK"
+ok
+test_no_origin (test_web_guard.WebGuardTests.test_no_origin) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 403 Forbidden"
+ok
+test_run_failure_is_pending_not_claimed_failed (test_web_guard.WebGuardTests.test_run_failure_is_pending_not_claimed_failed) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 503 Service Unavailable"
+ok
+test_text_is_not_json (test_web_guard.WebGuardTests.test_text_is_not_json) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 415 Unsupported Media Type"
+ok
+test_unknown_route (test_web_guard.WebGuardTests.test_unknown_route) ... HTTP Request: POST http://127.0.0.1:18765/api/unknown "HTTP/1.1 404 Not Found"
+ok
+test_wrong_host (test_web_guard.WebGuardTests.test_wrong_host) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 403 Forbidden"
+ok
+test_wrong_origin (test_web_guard.WebGuardTests.test_wrong_origin) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 403 Forbidden"
+ok
+
+----------------------------------------------------------------------
+Ran 70 tests in 109.251s
+
+OK

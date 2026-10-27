@@ -1,0 +1,1 @@
+{"action":"确认是否按数值处理并更新映射","address":"D3","code":"NUMERIC_TEXT_NOT_CONVERTED","file":"fixture.xlsx","issue_id":"ISS-0001","raw":"123.45","reason":"数字以文本存储，未经批准规则不偷转数值","row":3,"sheet":"现金流水"}

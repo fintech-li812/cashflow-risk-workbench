@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-24T10:32:26.053903+00:00",
+  "read_only": true,
+  "database": "cfqa_v2_20261024_043125",
+  "business_schemas": [
+    {
+      "schema_name": "new_project",
+      "table_count": 0
+    },
+    {
+      "schema_name": "cf_workbench",
+      "table_count": 0
+    }
+  ],
+  "qwen_request_rows": [],
+  "qwen_request_count": 0,
+  "verified_browser_request_count": 1,
+  "native_tools_list_observed_in_qwen": true,
+  "native_agent_flow_confirmed": false,
+  "note": "A row alone is insufficient for native acceptance; pair with actual Qwen call trace."
+}

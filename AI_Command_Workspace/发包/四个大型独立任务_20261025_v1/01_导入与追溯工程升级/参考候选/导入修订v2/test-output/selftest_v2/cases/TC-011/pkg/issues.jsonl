@@ -1,0 +1,1 @@
+{"action":"在源系统打开重算后重新导出，或改提供固定值","address":"D3","code":"FORMULA_CACHE_MISSING","file":"fixture.xlsx","issue_id":"ISS-0001","raw":"D3*2","reason":"公式存在但缓存缺失，无法取得已算值；不调用外部程序代算","row":3,"sheet":"现金流水"}

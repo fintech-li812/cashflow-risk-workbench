@@ -1,0 +1,38 @@
+﻿证据ID,证据来源性质,相对路径,定位,SHA256(见SHA256SUMS),执行人,时间,证明内容,不能证明什么
+EV-001,合成自测输出,test-output/selftest_v2/cases/TC-001/pkg/inventory.json,TC-001 正常三行扫描产物,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,scan 能产出规范包且金额/日期与来源地址正确,不能证明真实企业文件已扫描通过
+EV-002,合成自测输出,test-output/selftest_v2/selftest_results.json,31 项用例汇总,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,自测 PASS=31/FAIL=0/BLOCKED=0/NOT_RUN=0,不能替代 DeepSeek 独立审核
+EV-003,合成自测输出,test-output/selftest_v2/cases/TC-023/pkg/manifest.json,同源重跑 source_revision 稳定,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,同一源+映射产生稳定 source_revision 与字节一致输出,不能证明跨机器字节一致（未测）
+EV-004,合成自测输出,test-output/selftest_v2/cases/TC-024/pkg/manifest.json,源改变后 revision 变化,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,源内容改变必然改变 source_revision 并被 verify 检出,不能证明源的历史真相
+EV-005,交付配置,mapping/mfg_sample_mapping.json,样例映射（表头行/起始行/别名/原单位）,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,映射只覆盖样例实际存在的 6 个 Sheet 与列,不等于真实企业口径已确认
+EV-006,样例扫描输出,test-output/sample_scan_v1/inventory.json,受控样例 8 Sheet 映射登记,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,行业参数/数据字典仅登记不删除、不当真值执行,不证明字典中"错误清单"为真
+EV-007,合成自测输出,test-output/selftest_v2/cases/TC-010/pkg/records.jsonl,公式有缓存保留公式与缓存值,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,公式原文与 cache_status=cached 被记录,不能证明公式语义正确（不执行公式）
+EV-008,合成自测输出,test-output/selftest_v2/cases/TC-011/pkg/issues.jsonl,公式无缓存报缺口,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,FORMULA_CACHE_MISSING 且不 eval 代算,不能证明源系统重算后的值
+EV-009,合成自测输出,test-output/selftest_v2/cases/TC-008/pkg/records.jsonl,0/空白/空串/空格四态区分,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,四种形态各自独立状态,不能证明业务含义
+EV-010,合成自测输出,test-output/selftest_v2/cases/TC-018/pkg/records.jsonl,1900 序列日期,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,serial 45961→2025-10-31 且记录 date_system,不能证明单元格数字格式是日期（未读样式）
+EV-011,合成自测输出,test-output/selftest_v2/cases/TC-019/pkg/issues.jsonl,Excel1900 虚构闰日,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,serial=60 明确报错且值 null,不能证明业务上无该日期需求
+EV-012,交付配置,unit_exceptions.json,EXC-MFG-D8-001 绑定样例外,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,例外绑定源SHA+Sheet+地址，不全局硬编码,不等于 D8 真实单位已核实
+EV-013,样例扫描输出,test-output/sample_scan_v1/issues.jsonl,ISS-0001 UNIT_SUSPECT_PENDING,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,D8=1631300 规范值 null、原值保留、不乘10000,不能证明真实单位
+EV-014,样例扫描输出,test-output/sample_scan_v1/issues.jsonl,ISS-0002/0003 行12与15重复证据,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,重复两行均保留且各有独立 source_record_key,不能判定是否应删除（人工决）
+EV-015,合成自测输出,test-output/selftest_v2/cases/TC-022/pkg/records.jsonl,合法分次到账未被判错,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,应收/已收并存且无金额错误 issue,不证明账期合理性
+EV-016,样例扫描输出,test-output/sample_scan_v1/inventory.json,样例 8 Sheet 只读核对结果,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,实际 Sheet 名称与结构已核对后再映射,不证明其他行业文件结构相同
+EV-017,交付文档,未实现与待确认.md,U5 真实企业数据未接入,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,如实登记未做项,不是遗漏清单的完整边界
+EV-018,样例扫描日志,test-output/sample_scan_stdout.txt,样例 scan 实际输出,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,记录 66 条 / 问题 3 条 / source_revision,不代表数据合格
+EV-019,合成自测输出,test-output/selftest_v2/cases/TC-031（verify 通过）,干净包 verify,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,结构/哈希/记录数/字段来源一致,不证明源真实
+EV-020,篡改实验日志,test-output/tamper_verify_log.txt,样例包篡改后 verify 输出,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,退出码1并指出 现金流水!行3 D3 与真实值,若源与哈希同时被替换则无法检出（见 README 第5节）
+EV-021,篡改实验步骤,test-output/tamper_steps.txt,篡改+重算清单哈希步骤,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,实验可复现（改值→重算哈希→verify）,不是真实攻击记录
+EV-022,交付文档,设计与接口说明.md,第6节威胁边界,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,明确说明不能自证历史真相,不是安全认证
+EV-023,合成自测输出,test-output/selftest_v2/cases/TC-026/pkg/report.html,HTML 转义与离线,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,<script> 被转义、无外链,未做完整 XSS 模糊测试
+EV-024,合成自测输出,test-output/selftest_v2/cases/TC-009（csv_safe 断言）,CSV 防公式注入,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,= + @ 等危险文本导出加前缀,不覆盖所有 Excel 注入向量
+EV-025,合成自测输出,test-output/selftest_v2/cases/TC-028（退出码）,路径越界/重名拒绝,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,输出重名退出2、.. 与绝对路径均拒绝,符号链接逃逸在无权限环境未实跑
+EV-026,合成自测输出,test-output/selftest_v2/cases/TC-005/pkg/issues.jsonl,重名列不取第一项,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,DUPLICATE_COLUMN 且规范值 null,不证明应保留哪一列
+EV-027,合成自测输出,test-output/selftest_v2/cases/TC-006/pkg/issues.jsonl,别名歧义不覆盖,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,ALIAS_AMBIGUITY 且不取值,不证明应保留哪个别名
+EV-028,样例扫描输出,test-output/sample_scan_v1/manifest.json,包清单（files 不含自身）,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,files[path,sha256,record_count] 合规,清单自洽不等于内容正确
+EV-029,合成自测输出,test-output/selftest_v2/cases/TC-013/pkg/records.jsonl,万元精度 1.234567→12345.67,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,先乘后落分，未先截两位,不证明源单位声明无误
+EV-030,合成自测输出,test-output/selftest_v2/cases/TC-029（退出码）,故意失败退出码,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,非法period=2、缺文件verify=1,不覆盖所有异常分支
+EV-031,样例扫描输出,test-output/sample_scan_v1/manifest.json,五字段与 unit=CNY,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,tenant/company/period/source_revision/run_id 齐备,身份仅为调用者显式提供，不是认证
+EV-032,独立预期文件,tests/expected/expected_values.json,冻结预期,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,运行前后 SHA256 一致（selftest 断言）,预期值由人工编写，不是真值权威
+EV-033,合成自测日志,test-output/selftest_v2/selftest_log.txt,31 条逐条结果,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,每条含输入/预期/实际/退出码,不替代他人复核
+EV-034,交付源码,fixtures/make_fixtures.py,夹具生成器源码,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,夹具可程序化重建（含改 XML 造公式/空串/serial60）,夹具非真实业务数据
+EV-035,交付文档,未实现与待确认.md,U1–U8 未实现项,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,如实登记边界外事项,不代表后续计划已批准
+EV-036,源件前后哈希,test-output/sample_source_sha_before.txt,样例扫描前 SHA256,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,7e32b1ec…c13d0a3b 与包内声明一致,仅证明本轮只读，不证明历史上未被动过
+EV-037,源件前后哈希,test-output/sample_source_sha_after.txt,样例扫描后 SHA256,见SHA256SUMS.txt,WorkBuddy(AI),2026-10-24+08:00,与扫描前一致，源件未变,同上

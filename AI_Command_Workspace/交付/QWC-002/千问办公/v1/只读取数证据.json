@@ -1,0 +1,551 @@
+{
+ "meta": {
+  "任务号": "QWC-002",
+  "执行者": "千问办公（QwenWork 桌面端）",
+  "执行时间": "2026-10-23T19:01:53+08:00",
+  "读取方式": "本地 Python 3 标准库 zipfile+ElementTree 解析 OOXML；非千问平台原生表格读取、非第三方库",
+  "源文件": "D:\\CashflowRiskWorkbench\\data\\制造业_样例数据.xlsx",
+  "sha256_before": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+  "sha256_after": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+  "sha256_与Codex预期一致": true,
+  "原件是否变化": true,
+  "读取的zip内部部件": [
+   "[文件头/中央目录-结构枚举]",
+   "xl/workbook.xml",
+   "xl/_rels/workbook.xml.rels",
+   "xl/worksheets/sheet1.xml",
+   "xl/worksheets/sheet2.xml"
+  ],
+  "证据范围声明": "企业基本信息!A1:C10 与 现金流水!A1:I15；范围外单元格未采集、未报告",
+  "openpyxl": "未安装（未使用，遵守不安装依赖）",
+  "执行时间补记": "2026-10-23（Asia/Shanghai）；复检 F2/G2 为表头内联文本，修正统计口径"
+ },
+ "企业基本信息_A1C10": {
+  "sheet_part": "xl/worksheets/sheet1.xml",
+  "行1标题": "制造业｜企业基本信息",
+  "字段行": {
+   "1": [
+    "制造业｜企业基本信息",
+    null,
+    null
+   ],
+   "2": [
+    "字段",
+    "值",
+    "说明"
+   ],
+   "3": [
+    "企业名称",
+    "恒驰精密制造（苏州）有限公司",
+    "工商登记全称"
+   ],
+   "4": [
+    "行业代码（GB/T 4754-2017）",
+    "C13",
+    "数据闸→行业代码校验"
+   ],
+   "5": [
+    "所属行业",
+    "制造业",
+    ""
+   ],
+   "6": [
+    "企业规模",
+    "中型",
+    "按工信部中小企业划型标准"
+   ],
+   "7": [
+    "在职人数（人）",
+    "320",
+    "数据闸→规模合理性校验（人数<1 判异常）"
+   ],
+   "8": [
+    "上年度营业收入（万元）",
+    "12800",
+    "数据闸→规模合理性校验（营收<0 判异常）"
+   ],
+   "9": [
+    "月均现金缓冲（万元）",
+    "260",
+    "用于红黄绿判定的测算基数"
+   ],
+   "10": [
+    "月均经营性流出 M（万元）",
+    "161.2",
+    "近12个月经营性流出均值，定时任务每月重算（v8 基数）"
+   ]
+  }
+ },
+ "现金流水_A1I15": {
+  "sheet_part": "xl/worksheets/sheet2.xml",
+  "第1行标题": [
+   "制造业｜月度现金流水（2025-10 ~ 2026-09）",
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "第2行表头": [
+   "月份",
+   "月末日期",
+   "流水类型",
+   "经营性流入（万元）",
+   "经营性流出（万元）",
+   "净现金流（万元）",
+   "期末现金余额（万元）",
+   "说明",
+   "数据闸结果"
+  ],
+  "月份清单_行号_值": [
+   [
+    3,
+    "2025-10"
+   ],
+   [
+    4,
+    "2025-11"
+   ],
+   [
+    5,
+    "2025-12"
+   ],
+   [
+    6,
+    "2026-01"
+   ],
+   [
+    7,
+    "2026-02"
+   ],
+   [
+    8,
+    "2026-03"
+   ],
+   [
+    9,
+    "2026-04"
+   ],
+   [
+    10,
+    "2026-05"
+   ],
+   [
+    11,
+    "2026-06"
+   ],
+   [
+    12,
+    "2026-07"
+   ],
+   [
+    13,
+    "2026-08"
+   ],
+   [
+    14,
+    "2026-09"
+   ],
+   [
+    15,
+    "2026-07"
+   ]
+  ],
+  "重复期间": [
+   {
+    "月份": "2026-07",
+    "行": [
+     12,
+     15
+    ]
+   }
+  ],
+  "D8": {
+   "ref": "D8",
+   "row": 8,
+   "col": "D",
+   "col_index": 4,
+   "cell_type_attr": "n",
+   "has_formula": false,
+   "formula": null,
+   "cached_raw": "1631300",
+   "value": "1631300",
+   "value_kind": "number",
+   "声明单位": "万元（列头：经营性流入（万元））",
+   "单位疑点": {
+    "D8原值": "1631300",
+    "同列D3:D15非空数值个数": 13,
+    "同列绝对值中位数": 180.69,
+    "D8绝对值÷中位数": 9028.2,
+    "疑点描述": "原值1631300，按声明单位万元则折合16.31亿元量级，与列内其余值(百位级万元)差约4个数量级；仅标记疑点，不修正、不缩放、不删"
+   }
+  },
+  "行12_行15_逐格对比": [
+   {
+    "列": "A",
+    "行12值": "2026-07",
+    "行15值": "2026-07",
+    "值相同": true,
+    "行12有公式": false,
+    "行15有公式": false
+   },
+   {
+    "列": "B",
+    "行12值": "46234",
+    "行15值": "46234",
+    "值相同": true,
+    "行12有公式": false,
+    "行15有公式": false
+   },
+   {
+    "列": "C",
+    "行12值": "经营性",
+    "行15值": "经营性",
+    "值相同": true,
+    "行12有公式": false,
+    "行15有公式": false
+   },
+   {
+    "列": "D",
+    "行12值": "180.69",
+    "行15值": "180.69",
+    "值相同": true,
+    "行12有公式": false,
+    "行15有公式": false
+   },
+   {
+    "列": "E",
+    "行12值": "144.94",
+    "行15值": "144.94",
+    "值相同": true,
+    "行12有公式": false,
+    "行15有公式": false
+   },
+   {
+    "列": "F",
+    "行12值": "35.75",
+    "行15值": "35.75",
+    "值相同": true,
+    "行12有公式": false,
+    "行15有公式": false
+   },
+   {
+    "列": "G",
+    "行12值": "301.73",
+    "行15值": "301.73",
+    "值相同": true,
+    "行12有公式": false,
+    "行15有公式": false
+   },
+   {
+    "列": "H",
+    "行12值": "销售回款/工程款/订阅收入",
+    "行15值": "销售回款/工程款/订阅收入",
+    "值相同": true,
+    "行12有公式": false,
+    "行15有公式": false
+   },
+   {
+    "列": "I",
+    "行12值": "正常",
+    "行15值": "正常",
+    "值相同": true,
+    "行12有公式": false,
+    "行15有公式": false
+   }
+  ],
+  "F_G_公式或固定值": [
+   {
+    "ref": "F2",
+    "行": 2,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": null,
+    "value": "净现金流（万元）",
+    "value_kind": "inlineStr"
+   },
+   {
+    "ref": "G2",
+    "行": 2,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": null,
+    "value": "期末现金余额（万元）",
+    "value_kind": "inlineStr"
+   },
+   {
+    "ref": "F3",
+    "行": 3,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "63.45",
+    "value": "63.45",
+    "value_kind": "number"
+   },
+   {
+    "ref": "G3",
+    "行": 3,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "314.92",
+    "value": "314.92",
+    "value_kind": "number"
+   },
+   {
+    "ref": "F4",
+    "行": 4,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "-15.19",
+    "value": "-15.19",
+    "value_kind": "number"
+   },
+   {
+    "ref": "G4",
+    "行": 4,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "299.15",
+    "value": "299.15",
+    "value_kind": "number"
+   },
+   {
+    "ref": "F5",
+    "行": 5,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "-25.47",
+    "value": "-25.47",
+    "value_kind": "number"
+   },
+   {
+    "ref": "G5",
+    "行": 5,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "269.53",
+    "value": "269.53",
+    "value_kind": "number"
+   },
+   {
+    "ref": "F6",
+    "行": 6,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "-22.77",
+    "value": "-22.77",
+    "value_kind": "number"
+   },
+   {
+    "ref": "G6",
+    "行": 6,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "248.05",
+    "value": "248.05",
+    "value_kind": "number"
+   },
+   {
+    "ref": "F7",
+    "行": 7,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "-25.02",
+    "value": "-25.02",
+    "value_kind": "number"
+   },
+   {
+    "ref": "G7",
+    "行": 7,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "221.62",
+    "value": "221.62",
+    "value_kind": "number"
+   },
+   {
+    "ref": "F8",
+    "行": 8,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "-51.72",
+    "value": "-51.72",
+    "value_kind": "number"
+   },
+   {
+    "ref": "G8",
+    "行": 8,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "170.74",
+    "value": "170.74",
+    "value_kind": "number"
+   },
+   {
+    "ref": "F9",
+    "行": 9,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "-33.37",
+    "value": "-33.37",
+    "value_kind": "number"
+   },
+   {
+    "ref": "G9",
+    "行": 9,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "140.73",
+    "value": "140.73",
+    "value_kind": "number"
+   },
+   {
+    "ref": "F10",
+    "行": 10,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "89.12",
+    "value": "89.12",
+    "value_kind": "number"
+   },
+   {
+    "ref": "G10",
+    "行": 10,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "229.36",
+    "value": "229.36",
+    "value_kind": "number"
+   },
+   {
+    "ref": "F11",
+    "行": 11,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "34.23",
+    "value": "34.23",
+    "value_kind": "number"
+   },
+   {
+    "ref": "G11",
+    "行": 11,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "263.94",
+    "value": "263.94",
+    "value_kind": "number"
+   },
+   {
+    "ref": "F12",
+    "行": 12,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "35.75",
+    "value": "35.75",
+    "value_kind": "number"
+   },
+   {
+    "ref": "G12",
+    "行": 12,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "301.73",
+    "value": "301.73",
+    "value_kind": "number"
+   },
+   {
+    "ref": "F13",
+    "行": 13,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "-28.08",
+    "value": "-28.08",
+    "value_kind": "number"
+   },
+   {
+    "ref": "G13",
+    "行": 13,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "276.59",
+    "value": "276.59",
+    "value_kind": "number"
+   },
+   {
+    "ref": "F14",
+    "行": 14,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "-27.49",
+    "value": "-27.49",
+    "value_kind": "number"
+   },
+   {
+    "ref": "G14",
+    "行": 14,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "253",
+    "value": "253",
+    "value_kind": "number"
+   },
+   {
+    "ref": "F15",
+    "行": 15,
+    "列": "F",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "35.75",
+    "value": "35.75",
+    "value_kind": "number"
+   },
+   {
+    "ref": "G15",
+    "行": 15,
+    "列": "G",
+    "has_formula": false,
+    "formula": null,
+    "cached_raw": "301.73",
+    "value": "301.73",
+    "value_kind": "number"
+   }
+  ],
+  "全表公式单元格统计": {
+   "有公式单元格数": 0,
+   "说明": "F/G 及其他列如含公式将以 has_formula=true 与 formula 文本呈现；缓存值是否存在见 cached_raw",
+   "修正说明": "此前统计中“无缓存值格数:2”为 F2/G2 表头内联文本（inlineStr 无 <v>），非数据缺失；数据行 F3:F15、G3:G15 全部有固定数值",
+   "数据行_F3F15_G3G15_公式数": 0,
+   "数据行_F3F15_G3G15_固定数值数": 26,
+   "数据行_空缺": 0
+  }
+ }
+}

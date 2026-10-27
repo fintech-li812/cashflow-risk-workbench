@@ -1,0 +1,125 @@
+{
+  "task_id": "MEM-REPORT-002",
+  "requirements": [
+    {
+      "case_id": "R01",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R02",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R03",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R04",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R05",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R06",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R07",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R08",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R09",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R10",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R11",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R12",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R13",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R14",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R15",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R16",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R17",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R18",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R19",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "R20",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    }
+  ]
+}

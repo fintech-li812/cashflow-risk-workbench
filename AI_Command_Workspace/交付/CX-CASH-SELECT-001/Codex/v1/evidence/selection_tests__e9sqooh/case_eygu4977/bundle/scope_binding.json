@@ -1,0 +1,64 @@
+{
+  "schema_version": "mfg-account-balance-binding.v1",
+  "status": "ready",
+  "scope_ready": true,
+  "balance_binding_ready": true,
+  "can_save_source_result": false,
+  "can_claim_full_cashflow": false,
+  "native_sheet_verified": false,
+  "source_authenticity_verified": false,
+  "scope_summary": {
+    "reporting_entity_id": "fixture-entity",
+    "included_accounts": 2,
+    "excluded_accounts": 0,
+    "opening_as_of": "2026-07-31",
+    "closing_as_of": "2026-08-31",
+    "unit": "CNY"
+  },
+  "balance_totals": {
+    "opening": "100000.00",
+    "independent_closing": "140000.00",
+    "unit": "CNY"
+  },
+  "accounts": [
+    {
+      "account_id": "fixture-account-A",
+      "opening": "60000.00",
+      "independent_closing": "90000.00"
+    },
+    {
+      "account_id": "fixture-account-B",
+      "opening": "40000.00",
+      "independent_closing": "50000.00"
+    }
+  ],
+  "issues": [],
+  "evidence_checks": [
+    {
+      "evidence_id": "fixture-statement-A",
+      "sha256": "6abfefd0df1442fadf00b58613bed9a723f9a863235b379f69d7266d04bb40ed",
+      "hash_matches": true,
+      "independence": "operator_registration_only_not_independent_authentication"
+    },
+    {
+      "evidence_id": "fixture-statement-B",
+      "sha256": "986be9088f56a4531873d35a413ae049455a224cbcfb71be50c5c898170d7fcb",
+      "hash_matches": true,
+      "independence": "operator_registration_only_not_independent_authentication"
+    }
+  ],
+  "mutations_performed": false,
+  "context": {
+    "tenant_id": "fixture-tenant",
+    "company_id": "fixture-manufacturing",
+    "period": "2026-08",
+    "source_revision": "other",
+    "run_id": "fixture-run-202608"
+  },
+  "fixture": true,
+  "binding_sha256": "71b2977fd87316040231d1b72822e20052558575f0fa6b3d48e2e19fe3145cdc",
+  "limitations": [
+    "Source hashes bind operator-selected records; authenticity and authority are not independently verified.",
+    "No cashflow completeness, native recalculation or database save is authorized by this binding."
+  ]
+}

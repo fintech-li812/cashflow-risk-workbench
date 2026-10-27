@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-24T10:28:35.546485+00:00",
+  "read_only": true,
+  "python": "D:\\AI_Command_Workspace\\runtime\\cashflow_v1\\Scripts\\python.exe",
+  "mcp": "1.30.0",
+  "PyMySQL": "1.1.2",
+  "tools": [
+    "read_cashflow_result",
+    "save_cashflow_result",
+    "query_cashflow_result"
+  ],
+  "fixture": true,
+  "platform_native_verified": false,
+  "qwen_request_existing_rows": 0,
+  "qwen_agent_called_by_this_probe": false,
+  "source_file_sha256": "e6470f7adeba00804b178be5dc17a3087a88758178b9482cfd64b8cf81cf36d7",
+  "production_deployed": false
+}

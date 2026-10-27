@@ -1,0 +1,18 @@
+{
+  "status": "passed_offline_only",
+  "release_authorized": false,
+  "steps": [
+    {
+      "name": "unit",
+      "exit_code": 0
+    },
+    {
+      "name": "mutations",
+      "exit_code": 0
+    }
+  ],
+  "platform_calls": 0,
+  "database_operations": 0,
+  "package_sha256": "eaa5acc7bf0d79a3bd6c2da90d2cd8a163fcf3d5a04714b5512fe32c66fdd5a8",
+  "manifest_files": 35
+}

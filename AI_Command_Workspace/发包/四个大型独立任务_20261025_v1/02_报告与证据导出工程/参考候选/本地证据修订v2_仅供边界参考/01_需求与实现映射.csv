@@ -1,0 +1,15 @@
+﻿需求ID,需求原文定位,实现文件与位置,关联用例ID,状态,证据ID,未实现与待确认
+REQ-01,任务书1：五字段/request_id/结果/mfg-evidence.v1 回执按统一接口；CLI 参数与返回格式有文档及实例,src/result_guard.py（字段与状态闭集）、src/evidence_store.py:_receipt、src/cli.py:build_parser、README.md 第3/4节,"TC-01,TC-02,TC-11,TC-24",已实现,"EV-01,EV-02",
+REQ-02,任务书2：落本地事务库，重启可读回；回执只在 commit 后产生；committed 不是 MySQL 证明,src/evidence_store.py:Store.save/DDL_V1、src/cli.py:cmd_save、设计与接口说明.md 第2/4节,"TC-01,TC-13,TC-14",已实现,"EV-01,EV-05,EV-06",
+REQ-03,任务书3：只接 success 且勾稽合格；缺实际余额允许双 null 且标记未完成；reconciliation 只放本地元数据,src/result_guard.py:validate_result/reconciliation_state、src/evidence_store.py:save,"TC-05,TC-06,TC-07,TC-11,TC-12",已实现,"EV-01,EV-14",
+REQ-04,任务书4：幂等唯一键 tenant/company/operation/request_id；同摘要回放、异摘要冲突；版本变化不误复用,src/evidence_store.py:DDL_V1 UNIQUE、Store.save、make_record_id,"TC-02,TC-03,TC-10,TC-17",已实现,"EV-01,EV-08,EV-17",
+REQ-05,任务书5：受控子进程竞争提交验证唯一约束与事务；锁超时明确返回，不无限重试,src/evidence_store.py:Store.open(busy_timeout=3000)、Store.save BEGIN IMMEDIATE、src/cli.py:lock-hold,"TC-15,TC-16",已实现,"EV-07,EV-12",
+REQ-06,任务书6：提交前故障不留半条；提交后回执丢失先回查再同 ID 重试返回原记录,src/evidence_store.py:save(fault_before_commit/fault_after_commit/simulate_unknown)、src/cli.py 故障注入参数,"TC-13,TC-14,TC-25",已实现,"EV-05,EV-06",
+REQ-07,任务书7：历史只追加；当前有效选择依赖同主体/期间/来源版本；不 MAX(id) 跨企业,src/evidence_store.py:Store.history、append-only 触发器、设计与接口说明.md 第6节,"TC-17,TC-18",已实现,"EV-17,EV-09",
+REQ-08,任务书8：读时/verify-store 复核摘要、回执与身份关联；篡改检测并说明边界,src/evidence_store.py:Store.verify/Store.get、tests/tamper_db.py,"TC-19,TC-20,TC-21,TC-22,TC-24",已实现,"EV-10,EV-16",不能抵御可重写整个库及全部可信摘要的攻击者（ISSUE-01）
+REQ-09,任务书9：可信上下文限制企业/租户；CLI 自填不是认证；交 trust_boundary.md；跨身份负例用固定独立可信上下文,src/cli.py:_identity_guard、src/evidence_store.py:Store.get/history、trust_boundary.md,TC-18,已实现,EV-09,未接生产认证（ISSUE-02）
+REQ-10,任务书10：库只在测试工作目录；参数化 SQL；路径穿越拒绝；日志脱敏；默认拒 fixture、显式允许带标识,src/evidence_store.py:resolve_store_path、src/cli.py 各命令、src/result_guard.py:load_result_json,"TC-12,TC-23,TC-24,TC-27",已实现,"EV-11,EV-16",
+REQ-11,任务书1/原任务：实装 save/get/history/verify-store/selftest 五个命令,src/cli.py:build_parser、src/selftest.py:run_selftest、tests/run_tests.py,TC-01..TC-28,已实现,"EV-01,EV-03",
+REQ-12,交付格式：README/src/tests/fixtures/expected/test-output/锁定依赖/设计说明/错误码/未实现/四张 CSV/manifest/SHA256SUMS；新环境一条命令 selftest,包根目录全部交付文件,TC-01..TC-28,已实现,"EV-01,EV-18",
+REQ-13,独立预期不运行时重写；运行前后核哈希；失败退出码非 0 真实触发,expected/expected_values.json、src/selftest.py:snapshot_tree/TC-28、tests/tamper_db.py,"TC-08,TC-26,TC-28",已实现,"EV-13,EV-14",
+REQ-14,边界：不做主算法/其他行业/部署/连生产库；不改共同接口字段与金额口径,设计与接口说明.md 第10节、未实现与待确认.md、tests/static_boundary_check.py,TC-27,已实现,EV-16,

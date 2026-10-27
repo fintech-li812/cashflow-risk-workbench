@@ -1,0 +1,9 @@
+{
+  "args": [
+    "click",
+    "#fresh"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"success\":true,\"data\":{\"clicked\":\"#fresh\"},\"error\":null}\n",
+  "stderr": ""
+}

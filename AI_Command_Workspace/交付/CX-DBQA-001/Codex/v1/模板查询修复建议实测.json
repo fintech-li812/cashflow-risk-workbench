@@ -1,0 +1,14 @@
+{
+  "exit": 0,
+  "stdout": "supersedes\t1\treplacement\ntie\t1\tsecond\nfuture_not_active\t1\tcurrent\ndraft_not_active\t1\tpublished\nrows_after_rollback\t0\n",
+  "stderr": "",
+  "expected": [
+    "supersedes\t1\treplacement",
+    "tie\t1\tsecond",
+    "future_not_active\t1\tcurrent",
+    "draft_not_active\t1\tpublished",
+    "rows_after_rollback\t0"
+  ],
+  "passed": true,
+  "applied_to_business_database": false
+}

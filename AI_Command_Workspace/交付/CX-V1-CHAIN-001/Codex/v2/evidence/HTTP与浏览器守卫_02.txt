@@ -1,0 +1,74 @@
+D:\AI_Command_Workspace\交付\CX-V1-CHAIN-001\Codex\v2\tests\test_transport_v2.py:5: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient
+test_actual_tools_list (__main__.MCPHTTPTests.test_actual_tools_list) ... StreamableHTTP session manager started
+Processing request of type ListToolsRequest
+HTTP Request: POST http://127.0.0.1:18765/mcp/ "HTTP/1.1 200 OK"
+Terminating session: None
+StreamableHTTP session manager shutting down
+ok
+test_read_tool_is_explicit_fixture (__main__.MCPHTTPTests.test_read_tool_is_explicit_fixture) ... StreamableHTTP session manager started
+Processing request of type CallToolRequest
+HTTP Request: POST http://127.0.0.1:18765/mcp/ "HTTP/1.1 200 OK"
+Terminating session: None
+StreamableHTTP session manager shutting down
+ok
+test_unknown_tool_no_success (__main__.MCPHTTPTests.test_unknown_tool_no_success) ... StreamableHTTP session manager started
+Processing request of type CallToolRequest
+Tool 'arbitrary_sql' not listed, no validation will be performed
+HTTP Request: POST http://127.0.0.1:18765/mcp/ "HTTP/1.1 200 OK"
+Terminating session: None
+StreamableHTTP session manager shutting down
+ok
+test_wrong_host_rejected (__main__.MCPHTTPTests.test_wrong_host_rejected) ... StreamableHTTP session manager started
+Invalid Host header: other.invalid
+HTTP Request: POST http://127.0.0.1:18765/mcp/ "HTTP/1.1 421 Misdirected Request"
+Terminating session: None
+StreamableHTTP session manager shutting down
+ok
+test_wrong_origin_rejected (__main__.MCPHTTPTests.test_wrong_origin_rejected) ... StreamableHTTP session manager started
+Invalid Origin header: https://other.invalid
+HTTP Request: POST http://127.0.0.1:18765/mcp/ "HTTP/1.1 403 Forbidden"
+Terminating session: None
+StreamableHTTP session manager shutting down
+ok
+test_api_passes_fingerprint_without_guess (__main__.WebTests.test_api_passes_fingerprint_without_guess) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 200 OK"
+ok
+test_bad_json (__main__.WebTests.test_bad_json) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_duplicate_json_key (__main__.WebTests.test_duplicate_json_key) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_empty_id (__main__.WebTests.test_empty_id) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_extra_identity (__main__.WebTests.test_extra_identity) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_fixture_notice (__main__.WebTests.test_fixture_notice) ... HTTP Request: GET http://127.0.0.1:18765/ "HTTP/1.1 200 OK"
+ok
+test_health_failure_not_ready (__main__.WebTests.test_health_failure_not_ready) ... HTTP Request: GET http://127.0.0.1:18765/api/health "HTTP/1.1 503 Service Unavailable"
+ok
+test_invalid_fingerprint (__main__.WebTests.test_invalid_fingerprint) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_missing_fingerprint (__main__.WebTests.test_missing_fingerprint) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 400 Bad Request"
+ok
+test_no_origin (__main__.WebTests.test_no_origin) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 403 Forbidden"
+ok
+test_nonjson_media_type (__main__.WebTests.test_nonjson_media_type) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 415 Unsupported Media Type"
+ok
+test_query_failure_not_notfound (__main__.WebTests.test_query_failure_not_notfound) ... HTTP Request: POST http://127.0.0.1:18765/api/query "HTTP/1.1 503 Service Unavailable"
+ok
+test_run_uncertainty_is_pending (__main__.WebTests.test_run_uncertainty_is_pending) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 503 Service Unavailable"
+ok
+test_source_fingerprint_changes_with_file_hash (__main__.WebTests.test_source_fingerprint_changes_with_file_hash) ... HTTP Request: GET http://127.0.0.1:18765/api/source "HTTP/1.1 200 OK"
+ok
+test_stream_body_size_limit (__main__.WebTests.test_stream_body_size_limit) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 413 Request Entity Too Large"
+ok
+test_unknown_route (__main__.WebTests.test_unknown_route) ... HTTP Request: POST http://127.0.0.1:18765/api/no "HTTP/1.1 404 Not Found"
+ok
+test_wrong_host (__main__.WebTests.test_wrong_host) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 403 Forbidden"
+ok
+test_wrong_origin (__main__.WebTests.test_wrong_origin) ... HTTP Request: POST http://127.0.0.1:18765/api/run "HTTP/1.1 403 Forbidden"
+ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.257s
+
+OK

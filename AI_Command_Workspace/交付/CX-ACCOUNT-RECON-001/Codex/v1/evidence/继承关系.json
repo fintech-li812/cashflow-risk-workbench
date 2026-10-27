@@ -1,0 +1,7 @@
+{
+  "baseline_arithmetic_source": "D:\\AI_Command_Workspace\\交付\\CX-V1-CHAIN-001\\Codex\\v2\\src\\arithmetic.py",
+  "original_sha256": "8fcda95f051a32786ff9581cd2544df7c1e5062e3739f0e7c2802aa80f5249ac",
+  "financial_formula_changed": false,
+  "only_modification": "import strict_result/canonical from JSON-only local adapter instead of database service module",
+  "source_class": "approved offline fixture arithmetic, not Qwen native computation"
+}

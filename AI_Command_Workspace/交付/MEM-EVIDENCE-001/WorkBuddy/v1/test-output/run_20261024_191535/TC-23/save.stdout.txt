@@ -1,0 +1,4 @@
+{
+  "reason": "store 路径越界：必须位于指定 workdir 之内",
+  "status": "invalid"
+}

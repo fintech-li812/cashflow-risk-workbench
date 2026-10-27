@@ -1,0 +1,72 @@
+{
+  "case_count": 9,
+  "matched": 9,
+  "real_platform": 0,
+  "real_mysql": 0,
+  "original_sample_sha256_before_after": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+  "cases": [
+    {
+      "case": "normal-run-1",
+      "expected": "通过",
+      "actual": "通过",
+      "matched": true,
+      "nature": "explicit offline fixture + process memory receipt, not MySQL"
+    },
+    {
+      "case": "normal-run-2",
+      "expected": "通过",
+      "actual": "通过",
+      "matched": true,
+      "nature": "explicit offline fixture + process memory receipt, not MySQL"
+    },
+    {
+      "case": "forged-committed-rejected",
+      "expected": "失败",
+      "actual": "失败",
+      "matched": true,
+      "nature": "explicit offline fixture + process memory receipt, not MySQL"
+    },
+    {
+      "case": "foreign-receipt-rejected",
+      "expected": "失败",
+      "actual": "失败",
+      "matched": true,
+      "nature": "explicit offline fixture + process memory receipt, not MySQL"
+    },
+    {
+      "case": "lost-reply-recovered-one-record",
+      "expected": "通过",
+      "actual": "通过",
+      "matched": true,
+      "nature": "explicit offline fixture + process memory receipt, not MySQL"
+    },
+    {
+      "case": "same-request-other-content-conflict",
+      "expected": "conflict/no overwrite",
+      "actual": "conflict",
+      "matched": true,
+      "nature": "offline reference store"
+    },
+    {
+      "case": "real-sample-d8-stays-unresolved",
+      "expected": "通过",
+      "actual": "通过",
+      "matched": true,
+      "nature": "one protected sample cell only; not complete manufacturing cashflow or importer acceptance"
+    },
+    {
+      "case": "real-sample-tamper-rehashed",
+      "expected": "失败",
+      "actual": "失败",
+      "matched": true,
+      "nature": "one protected sample cell only; not complete manufacturing cashflow or importer acceptance"
+    },
+    {
+      "case": "real-sample-illegal-unit-conversion",
+      "expected": "失败",
+      "actual": "失败",
+      "matched": true,
+      "nature": "one protected sample cell only; not complete manufacturing cashflow or importer acceptance"
+    }
+  ]
+}

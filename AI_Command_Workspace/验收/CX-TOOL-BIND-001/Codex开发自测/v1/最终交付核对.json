@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-10-23T23:56:28+08:00",
+  "candidate_manifest_unchanged": true,
+  "packages": [
+    {
+      "name": "MEM-QA-001_Codex_v2_候选待独审.zip",
+      "sha256": "b660c53f181a856feb9353c98c699a18d1c19195e3beac0beeb9b1f132c56c5f",
+      "manifest_files": 40
+    },
+    {
+      "name": "CX-AGENT-FIX-001_Codex_v1_候选待独审.zip",
+      "sha256": "9dbf885f434be777e139855c871c97f89b8033f67dbef0e9e1f9ab8971558a6c",
+      "manifest_files": 30
+    },
+    {
+      "name": "CX-RELEASE-001_Codex_v1_发布前检查候选.zip",
+      "sha256": "8282994d328863da47cc032b282c91bd801a3ae03cf4b2a93b7c92ecfcbb04cb",
+      "manifest_files": 9
+    },
+    {
+      "name": "CX-TOOL-BIND-001_Codex_v1_调用前契约检查_候选待独审.zip",
+      "sha256": "eaa5acc7bf0d79a3bd6c2da90d2cd8a163fcf3d5a04714b5512fe32c66fdd5a8",
+      "manifest_files": 35
+    }
+  ],
+  "zip_unit_methods": 61,
+  "zip_mutations_caught": 6,
+  "no_dependency_cli_exit_expected": 2,
+  "source_protection_record": "D:\\AI_Command_Workspace\\验收\\CX-TOOL-BIND-001\\Codex开发自测\\v1\\封包与原件保护.json",
+  "review_status": "pending independent review",
+  "platform_calls": 0,
+  "database_operations": 0
+}

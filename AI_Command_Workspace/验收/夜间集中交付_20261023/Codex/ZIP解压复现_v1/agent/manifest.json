@@ -1,0 +1,144 @@
+{
+  "task_id": "CX-AGENT-FIX-001",
+  "package_version": "v1",
+  "author": "Codex",
+  "status": "candidate",
+  "inherits": "WB-AGENT-003/WorkBuddy/v1",
+  "tests": {
+    "total": 71,
+    "new": 27,
+    "inherited": 44,
+    "before_after_same_cases": 7,
+    "qa_integration_expected_matched": 9,
+    "real_platform": 0,
+    "real_mysql": 0
+  },
+  "changed_code_files": [
+    "adapters.py",
+    "persistence.py",
+    "request_flow.py",
+    "runtime_adapter.py"
+  ],
+  "files": [
+    {
+      "path": "agent/八条制造业现金流追问_v2_继承原文.md",
+      "sha256": "71589ae30164e8eb0e02f23b3b9df428063b80e6a5aeb060f09df51cfdb30882"
+    },
+    {
+      "path": "agent/八条制造业现金流追问_v3.md",
+      "sha256": "59612d38290f2bb6edaaf290839281a8f24189f30bb7138963af937a0b83dafe"
+    },
+    {
+      "path": "agent/制造业现金流主提示词_v2_继承原文.txt",
+      "sha256": "79f58367f001c815db325923a2ea1a1a7934a0e975ca50cf81bccbceacc3e3c6"
+    },
+    {
+      "path": "agent/制造业现金流主提示词_v3.txt",
+      "sha256": "dabdda6ba45f244548351468f4f24e5371b3eea409dcc22c6a6a7532894cca80"
+    },
+    {
+      "path": "candidate/__init__.py",
+      "sha256": "6820218f14ce7acdafda68fa158bebd0eadebe0be7e1a754ecd91167c19219a5"
+    },
+    {
+      "path": "candidate/adapters.py",
+      "sha256": "c7e1e4d52cdcd1f8f69ce31f5b3642e5c878ca13f62a52d5133f5f90dd29d9b5"
+    },
+    {
+      "path": "candidate/agent_guard.py",
+      "sha256": "eb99d420e2ac7ef1352b448d0c29e1430d0a65cd80a76111eee3dc27c96055c1"
+    },
+    {
+      "path": "candidate/persistence.py",
+      "sha256": "4bf6f0436d88fd42ebb27556925b63d961f17ad0846f43b85620277068bdc875"
+    },
+    {
+      "path": "candidate/request_flow.py",
+      "sha256": "17039cea3c37a7db3d8c0741b884d5a45b0fdbc2e6c5bdcebdfaa5e4d0fc20ee"
+    },
+    {
+      "path": "candidate/runtime_adapter.py",
+      "sha256": "4159d501467098a919ab19bdb3a25c0e870bfc6c6677d393772ed4e8fe96e87d"
+    },
+    {
+      "path": "docs/X千问配置操作单.md",
+      "sha256": "86d629bd39d3b274d8528fb05ca1949e36cc05a92513a72668a32e4b0827857e"
+    },
+    {
+      "path": "docs/修复逐条说明.md",
+      "sha256": "15712b3e6fbce70f8e8f4481f3095930391b964e213e4a726f30576896e43b4a"
+    },
+    {
+      "path": "docs/接口映射.md",
+      "sha256": "234bb14c43f869be43f7ac1177a5b3c7936350324239dacfee3baa1335444791"
+    },
+    {
+      "path": "docs/未实现清单.md",
+      "sha256": "bef5cd5b995c28623d79aeff3d810a2ef298451fcc44fc93ac836888f1b50bfe"
+    },
+    {
+      "path": "docs/来源继承与差异说明.md",
+      "sha256": "05e3e27dc0fd68edbd559052f3b1ec6307303489b88dfc9c0a4ef90cde4b14c5"
+    },
+    {
+      "path": "docs/源码差异.patch",
+      "sha256": "0fda9d277423daa896d8fbc754434aa2a52e57123246cacd5f831beed2a83943"
+    },
+    {
+      "path": "docs/继承README_原文.md",
+      "sha256": "9423c4e6e89a0154fd95a3bbdb30b0877a70d23ff7351814d74f21cbb133700c"
+    },
+    {
+      "path": "docs/继承代码SHA256.json",
+      "sha256": "2de1e8cc9797ab152ded9333c87f56691e2c9320602380a9bf8326ceddfc50f0"
+    },
+    {
+      "path": "expected/original-boundary-counterexamples.json",
+      "sha256": "9d63d16598428b6326a0c15ec4381804ec3cb9b2b863069d93f2a9c19d550ac2"
+    },
+    {
+      "path": "expected/regression_expected.json",
+      "sha256": "4c00dec27d897bff07dd7804cd5f2714ee3d6225fd8a3e83bd500da139b33549"
+    },
+    {
+      "path": "README.md",
+      "sha256": "3627100864fd009f3ae0cb23ea8b7ec69fa0bd665aae79c0622955f607ad7549"
+    },
+    {
+      "path": "requirements.lock.txt",
+      "sha256": "a471097ecfe6a9c6dcc511917dcf7a894120bed3ed1fb86c2ad8595129935327"
+    },
+    {
+      "path": "run_tests.py",
+      "sha256": "4ee79c8f2cae1db337541c55c70aaff6d27f6c1736d73251c1f6e38cc13e6c2e"
+    },
+    {
+      "path": "test-output/before-after-summary.json",
+      "sha256": "852b1238118803ee162be694d991a9b4b7ed09a40ddbcaba8987e063fb780f12"
+    },
+    {
+      "path": "test-output/integration-summary.json",
+      "sha256": "0ef3cb4c4c9a6ad39b7b2ed09a52fb01041972fb06f13f7f7975383fe795cda1"
+    },
+    {
+      "path": "test-output/unittest-output.txt",
+      "sha256": "1a84f336b0817fd6a016a4bd2f79b82ddcd32a8bd2661f643d741119ffc253dc"
+    },
+    {
+      "path": "tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/test_boundary_regressions.py",
+      "sha256": "437f38d6dae0074b4850980cb1f94583f9e77cdaa61026f5ea227ba2123e566f"
+    },
+    {
+      "path": "tests/test_flow_and_persistence.py",
+      "sha256": "cafad10b18f5d357f915353713e8683f09ffc331877cfa8b5b6026cda585a248"
+    },
+    {
+      "path": "tests/test_inherited_guard.py",
+      "sha256": "9e89b484f9b6d514a7e140552a7b0126d15073918211f103ce71553e992a1af2"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "diag_id": "diag-b8e6766084974141bf5d75b9",
+  "idempotent_replay": false,
+  "note": "非 success 结果仅入诊断表，未产生正式保存回执",
+  "status": "diagnosed"
+}

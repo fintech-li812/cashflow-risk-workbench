@@ -1,0 +1,7 @@
+{
+  "database": "cfqa_v2_20261024_043125",
+  "port": 13317,
+  "tunnel_pid": 6268,
+  "scope": "isolated QA; no production tables or grants",
+  "authentication": "existing SSH key forwards remote Unix socket; no DB password read or copied"
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\33847\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-RELEASE-002\\假交付\\src\\release_cli.py",
+    "assess",
+    "--bundle",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-RELEASE-002\\验收输出\\G_B01_candidate_not_live\\bundle",
+    "--output-dir",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-RELEASE-002\\验收输出\\G_B01_candidate_not_live\\assessment",
+    "--allow-fixture"
+  ],
+  "expected_exit": 0,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

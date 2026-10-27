@@ -1,0 +1,113 @@
+{
+  "mapping_version": "mfg-mapping 1.0.0",
+  "industry": "manufacturing",
+  "notes": "仅映射本包制造业样例实际存在的 Sheet/列；不硬套其他行业；金额原单位以表头声明的（万元）为准，统一转元十进制字符串。",
+  "sheets": {
+    "企业基本信息": {
+      "layout": "vertical",
+      "required": true,
+      "header_row": 2,
+      "key_column": "A",
+      "value_column": "B",
+      "fields": [
+        {"name": "企业名称", "type": "text", "required": true},
+        {"name": "行业代码（GB/T 4754-2017）", "type": "text", "required": false,
+         "aliases": ["行业代码"]},
+        {"name": "所属行业", "type": "text", "required": false},
+        {"name": "企业规模", "type": "text", "required": false},
+        {"name": "在职人数（人）", "type": "number", "required": false,
+         "aliases": ["在职人数"]},
+        {"name": "上年度营业收入（万元）", "type": "amount", "unit": "万元",
+         "required": false, "aliases": ["上年度营业收入"]},
+        {"name": "月均经营性流出 M（万元）", "type": "amount", "unit": "万元",
+         "required": false, "aliases": ["月均经营性流出 M"]}
+      ]
+    },
+    "现金流水": {
+      "layout": "horizontal",
+      "required": true,
+      "header_row": 2,
+      "data_start_row": 3,
+      "fields": [
+        {"name": "月份", "type": "month", "required": true},
+        {"name": "月末日期", "type": "date", "formats": ["YYYY-MM-DD"], "required": true},
+        {"name": "流水类型", "type": "text", "required": true},
+        {"name": "经营性流入（万元）", "type": "amount", "unit": "万元", "required": true,
+         "aliases": ["经营性流入(万元)", "经营性流入"]},
+        {"name": "经营性流出（万元）", "type": "amount", "unit": "万元", "required": true,
+         "aliases": ["经营性流出(万元)", "经营性流出"]},
+        {"name": "净现金流（万元）", "type": "amount", "unit": "万元", "required": true,
+         "aliases": ["净现金流(万元)", "净现金流"]},
+        {"name": "期末现金余额（万元）", "type": "amount", "unit": "万元", "required": true,
+         "aliases": ["期末现金余额(万元)", "期末现金余额"]},
+        {"name": "说明", "type": "text", "required": false},
+        {"name": "数据闸结果", "type": "text", "required": false}
+      ]
+    },
+    "应收账款": {
+      "layout": "horizontal",
+      "required": true,
+      "header_row": 2,
+      "data_start_row": 3,
+      "fields": [
+        {"name": "单据编号", "type": "text", "required": true},
+        {"name": "客户名称", "type": "text", "required": true},
+        {"name": "开票日期", "type": "date", "formats": ["YYYY-MM-DD"], "required": true},
+        {"name": "到期日", "type": "date", "formats": ["YYYY-MM-DD"], "required": true},
+        {"name": "应收金额（万元）", "type": "amount", "unit": "万元", "required": true,
+         "aliases": ["应收金额(万元)", "应收金额"]},
+        {"name": "已收金额（万元）", "type": "amount", "unit": "万元", "required": true,
+         "aliases": ["已收金额(万元)", "已收金额"]},
+        {"name": "实际收款日期", "type": "date", "formats": ["YYYY-MM-DD"], "required": false},
+        {"name": "到账状态", "type": "text", "required": false},
+        {"name": "备注", "type": "text", "required": false},
+        {"name": "数据闸结果", "type": "text", "required": false}
+      ]
+    },
+    "筹资信息": {
+      "layout": "horizontal",
+      "required": true,
+      "header_row": 2,
+      "data_start_row": 3,
+      "fields": [
+        {"name": "融资类型", "type": "text", "required": true},
+        {"name": "机构", "type": "text", "required": true},
+        {"name": "金额/额度（万元）", "type": "amount", "unit": "万元", "required": true,
+         "aliases": ["金额/额度(万元)"]},
+        {"name": "条件说明", "type": "text", "required": false},
+        {"name": "到期日", "type": "date", "formats": ["YYYY-MM-DD"], "required": false}
+      ]
+    },
+    "投资现金流": {
+      "layout": "horizontal",
+      "required": true,
+      "header_row": 2,
+      "data_start_row": 3,
+      "fields": [
+        {"name": "项目", "type": "text", "required": true},
+        {"name": "类型", "type": "text", "required": true},
+        {"name": "发生/计划日期", "type": "date", "formats": ["YYYY-MM-DD"], "required": true},
+        {"name": "金额（万元，支出为负）", "type": "amount", "unit": "万元", "required": true,
+         "aliases": ["金额(万元，支出为负)"]},
+        {"name": "状态", "type": "text", "required": false},
+        {"name": "备注", "type": "text", "required": false}
+      ]
+    },
+    "银行流水": {
+      "layout": "horizontal",
+      "required": true,
+      "header_row": 2,
+      "data_start_row": 3,
+      "fields": [
+        {"name": "到账日期", "type": "date", "formats": ["YYYY-MM-DD"], "required": true},
+        {"name": "付款方", "type": "text", "required": true},
+        {"name": "到账金额（万元）", "type": "amount", "unit": "万元", "required": true,
+         "aliases": ["到账金额(万元)"]},
+        {"name": "用途", "type": "text", "required": false},
+        {"name": "关联单据号", "type": "text", "required": false},
+        {"name": "验证方式", "type": "text", "required": false}
+      ]
+    }
+  },
+  "registered_only_sheets": ["行业参数", "数据字典"]
+}

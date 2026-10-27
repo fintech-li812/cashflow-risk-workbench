@@ -1,0 +1,7 @@
+﻿改动ID,源文件与SHA256,原行为,候选实现位置,修改与原因,独立反例,实际结果
+CHG-01,发包参考候选/agent_guard.py eb99d420e2ac7ef1352b448d0c29e1430d0a65cd80a76111eee3dc27c96055c1,内存内校验金额格式/勾稽/状态闭集无持久化,src/evidence_store.py validate_result,继承其校验口径并接入事务保存流程；非success分流到诊断表,TC-05;TC-06;TC-07;TC-08;TC-09,PASS（负例均被exit4拒绝）
+CHG-02,发包参考候选/persistence.py 13f9a688efe3622965914f7d6ee8112e1eb0c54ef64ea4b90e1ce208fc217720,MemoryEvidenceStore进程内字典不持久不跨进程,src/evidence_store.py EvidenceStore（SQLite WAL）,按任务书第2条改为落本地事务库；回执只在commit后产生；重启可读回,TC-02;TC-16;TC-22,PASS
+CHG-03,同上persistence.py,幂等键为tenant/company/request_id三元,src/evidence_store.py UNIQUE(tenant_id,company_id,operation,request_id),按统一接口mfg-evidence.v1补operation成四元键,TC-12;TC-13;TC-17,PASS
+CHG-04,同上persistence.py record_id=local-+sha256(tenant|company|request_id)前16位,record_id不含payload摘要无法复核关联,src/evidence_store.py make_record_id（含payload_sha256截24位）,使verify-store可重算record_id关联以检出身份/摘要篡改,TC-20;TC-21,PASS
+CHG-05,发包合成夹具/synthetic_success.json d0e79eceeed7c59de944393c5261ea6772b65c3d92289fb5d0a10208fae4dcb5,单一成功夹具,fixtures/共11个合成JSON,复制原文为result_success_fixture.json并派生0金额/缺余额/差一分/非法值/缺字段/非success/qwen标签/context变体,TC-03;TC-04;TC-05;TC-06;TC-07;TC-08;TC-09;TC-10;TC-11,PASS
+CHG-06,发包参考候选/request_flow.py与runtime_adapter.py（仅参考未复用）,超时不确定态由内存模型演示,src/evidence_store.py fault-inject after_commit + TC-16,用真实子进程崩溃（exit42）演示commit后回执丢失并以同request_id回放恢复,TC-16,PASS

@@ -1,0 +1,12 @@
+{
+  "synthetic_nonempty_files": "阻塞",
+  "self_declared_all_pass": "阻塞",
+  "missing_or_empty_server_file": "失败",
+  "actual_project_snapshot_counts": {
+    "通过": 3,
+    "失败": 3,
+    "阻塞": 9,
+    "未执行": 0
+  },
+  "release_authorized": false
+}

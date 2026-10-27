@@ -1,0 +1,55 @@
+test_aggregate_overflow (test_account_binding.BindingTests.test_aggregate_overflow) ... ok
+test_amount_rehash_still_differs_from_source (test_account_binding.BindingTests.test_amount_rehash_still_differs_from_source) ... ok
+test_approval_hash_not_recomputed_by_tool (test_account_binding.BindingTests.test_approval_hash_not_recomputed_by_tool) ... ok
+test_binding_hash_stable (test_account_binding.BindingTests.test_binding_hash_stable) ... ok
+test_cli_blocked_exit_nonzero (test_account_binding.BindingTests.test_cli_blocked_exit_nonzero) ... ok
+test_cli_success_and_collision (test_account_binding.BindingTests.test_cli_success_and_collision) ... ok
+test_complete_two_account_binding (test_account_binding.BindingTests.test_complete_two_account_binding) ... ok
+test_computed_derivation_rejected (test_account_binding.BindingTests.test_computed_derivation_rejected) ... ok
+test_computed_source_class_rejected (test_account_binding.BindingTests.test_computed_source_class_rejected) ... ok
+test_context_company_mismatch (test_account_binding.BindingTests.test_context_company_mismatch) ... ok
+test_default_fixture_rejected (test_account_binding.BindingTests.test_default_fixture_rejected) ... ok
+test_detect_input_changed_during_check (test_account_binding.BindingTests.test_detect_input_changed_during_check) ... ok
+test_duplicate_account (test_account_binding.BindingTests.test_duplicate_account) ... ok
+test_duplicate_balance (test_account_binding.BindingTests.test_duplicate_balance) ... ok
+test_duplicate_json_key (test_account_binding.BindingTests.test_duplicate_json_key) ... ok
+test_duplicate_record_id (test_account_binding.BindingTests.test_duplicate_record_id) ... ok
+test_empty_scope (test_account_binding.BindingTests.test_empty_scope) ... ok
+test_evidence_hash_tampered (test_account_binding.BindingTests.test_evidence_hash_tampered) ... ok
+test_excluded_account_not_aggregated (test_account_binding.BindingTests.test_excluded_account_not_aggregated) ... ok
+test_exclusion_requires_reason (test_account_binding.BindingTests.test_exclusion_requires_reason) ... ok
+test_exponent_amount_rejected (test_account_binding.BindingTests.test_exponent_amount_rejected) ... ok
+test_file_size_limit (test_account_binding.BindingTests.test_file_size_limit) ... ok
+test_float_amount_rejected (test_account_binding.BindingTests.test_float_amount_rejected) ... ok
+test_foreign_currency_not_converted (test_account_binding.BindingTests.test_foreign_currency_not_converted) ... ok
+test_leap_and_year_cutoffs (test_account_binding.BindingTests.test_leap_and_year_cutoffs) ... ok
+test_missing_closing (test_account_binding.BindingTests.test_missing_closing) ... ok
+test_missing_evidence_reference (test_account_binding.BindingTests.test_missing_evidence_reference) ... ok
+test_missing_opening (test_account_binding.BindingTests.test_missing_opening) ... ok
+test_negative_balance_preserved (test_account_binding.BindingTests.test_negative_balance_preserved) ... ok
+test_no_independent_registration (test_account_binding.BindingTests.test_no_independent_registration) ... ok
+test_nonfinite_json (test_account_binding.BindingTests.test_nonfinite_json) ... ok
+test_null_is_not_zero (test_account_binding.BindingTests.test_null_is_not_zero) ... ok
+test_operator_registered_mode_does_not_claim_authenticity (test_account_binding.BindingTests.test_operator_registered_mode_does_not_claim_authenticity) ... ok
+test_other_entity_account (test_account_binding.BindingTests.test_other_entity_account) ... ok
+test_period_invalid (test_account_binding.BindingTests.test_period_invalid) ... ok
+test_raw_account_number_not_exported (test_account_binding.BindingTests.test_raw_account_number_not_exported) ... ok
+test_run_mismatch (test_account_binding.BindingTests.test_run_mismatch) ... ok
+test_scope_unconfirmed (test_account_binding.BindingTests.test_scope_unconfirmed) ... ok
+test_source_absolute_path (test_account_binding.BindingTests.test_source_absolute_path) ... ok
+test_source_and_expected_preserved (test_account_binding.BindingTests.test_source_and_expected_preserved) ... ok
+test_source_location_missing (test_account_binding.BindingTests.test_source_location_missing) ... ok
+test_source_path_escape (test_account_binding.BindingTests.test_source_path_escape) ... ok
+test_true_zero_balances (test_account_binding.BindingTests.test_true_zero_balances) ... ok
+test_trust_fixture_flag_required (test_account_binding.BindingTests.test_trust_fixture_flag_required) ... ok
+test_trust_must_be_outside_upload (test_account_binding.BindingTests.test_trust_must_be_outside_upload) ... ok
+test_unknown_account (test_account_binding.BindingTests.test_unknown_account) ... ok
+test_wrong_balance_date (test_account_binding.BindingTests.test_wrong_balance_date) ... ok
+test_wrong_month_cutoff (test_account_binding.BindingTests.test_wrong_month_cutoff) ... ok
+test_wrong_source_record_context (test_account_binding.BindingTests.test_wrong_source_record_context) ... ok
+test_wrong_unit (test_account_binding.BindingTests.test_wrong_unit) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 1.218s
+
+OK

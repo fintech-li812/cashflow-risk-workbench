@@ -1,0 +1,14 @@
+test_package_conversion_rounding_loses_precision (test_qa_tool.QA.test_package_conversion_rounding_loses_precision) ... FAIL
+
+======================================================================
+FAIL: test_package_conversion_rounding_loses_precision (test_qa_tool.QA.test_package_conversion_rounding_loses_precision)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_money_conversion\test_qa_tool.py", line 303, in test_package_conversion_rounding_loses_precision
+    self.assertIn('NORMALIZATION_VALUE', {v['code'] for v in r.issues})
+AssertionError: 'NORMALIZATION_VALUE' not found in set()
+
+----------------------------------------------------------------------
+Ran 1 test in 0.007s
+
+FAILED (failures=1)

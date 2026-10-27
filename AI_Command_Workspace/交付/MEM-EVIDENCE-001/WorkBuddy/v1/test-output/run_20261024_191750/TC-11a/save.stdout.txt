@@ -1,0 +1,4 @@
+{
+  "reason": "默认拒绝 offline_fixture；测试须显式 --allow-fixture",
+  "status": "invalid"
+}

@@ -1,0 +1,37 @@
+{
+  "_说明": "冻结的独立预期。由人工按任务书与统一接口编写，tests/run_tests.py 只读比对，运行前后核本文件SHA256，禁止运行期改写。record_id/payload_sha256为确定性算法（见设计与接口说明.md）预先算出的绝对值，计算口径与算法已在文档公开，非运行期由被测程序回写。",
+  "fixture_payload_sha256": {
+    "result_success_fixture.json": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456"
+  },
+  "deterministic_record_id": {
+    "request_id=st-01": "ev-78f10ce9748f620073921054"
+  },
+  "cases": {
+    "TC-01": {"expect_exit": 0, "expect_status": "committed", "note": "正常提交（fixture显式允许）"},
+    "TC-02": {"expect_exit": 0, "expect_status": "ok", "note": "跨进程重启读回，payload_sha256一致"},
+    "TC-03": {"expect_exit": 0, "expect_status": "committed", "note": "全0金额允许"},
+    "TC-04": {"expect_exit": 0, "expect_status": "committed", "note": "缺独立余额双null允许"},
+    "TC-05": {"expect_exit": 4, "expect_status": "invalid", "note": "net差一分拒绝"},
+    "TC-06": {"expect_exit": 4, "expect_status": "invalid", "note": "非法金额字符串拒绝"},
+    "TC-07": {"expect_exit": 4, "expect_status": "invalid", "note": "缺company_id拒绝"},
+    "TC-08": {"expect_exit": 4, "expect_status": "invalid", "note": "payload与context身份不一致拒绝"},
+    "TC-09": {"expect_exit": 4, "expect_status": "invalid", "note": "source_revision不一致拒绝"},
+    "TC-10": {"expect_exit": 7, "expect_status": "diagnosed", "note": "非success只入诊断无回执"},
+    "TC-11a": {"expect_exit": 4, "expect_status": "invalid", "note": "默认拒绝offline_fixture"},
+    "TC-11b": {"expect_exit": 0, "expect_status": "committed", "note": "显式允许fixture且输出带合成标识"},
+    "TC-12": {"expect_exit": 0, "expect_status": "committed", "expect_idempotent_replay": true, "expect_record_id": "ev-78f10ce9748f620073921054", "note": "同键同参回放原record_id且行数不增"},
+    "TC-13": {"expect_exit": 2, "expect_status": "conflict", "note": "同键异参冲突，旧记录不覆盖"},
+    "TC-14": {"expect_exit": 3, "expect_status": "not_found", "note": "跨身份get返回not_found不泄露"},
+    "TC-15": {"expect_exit": 5, "expect_status": "store_error", "note": "commit前故障无半条；随后正常重试应exit 0"},
+    "TC-16": {"expect_exit": 0, "expect_status": "committed", "expect_idempotent_replay": true, "note": "commit后回执丢失（子进程exit 42），同ID重试返回原record_id，行数仍为1"},
+    "TC-17": {"expect_exit_set": [0, 2], "expect_final_rows": 1, "note": "受控竞争同键：唯一约束兜底，最终仅1条正式记录"},
+    "TC-18": {"expect_exit": 0, "expect_entries": 2, "note": "历史追加不覆盖，同period两条均保留"},
+    "TC-19": {"expect_exit": 0, "note": "当前有效=同主体同期间stored_at最新，不跨企业MAX"},
+    "TC-20": {"expect_exit": 6, "expect_status": "tampered", "note": "篡改payload_json被verify检出"},
+    "TC-21": {"expect_exit": 6, "expect_status": "tampered", "note": "篡改索引列tenant_id被verify检出"},
+    "TC-22": {"expect_exit": 0, "expect_status": "ok", "note": "关库重开后verify通过"},
+    "TC-23": {"expect_exit": 4, "expect_status": "invalid", "note": "store路径越界workdir拒绝"},
+    "TC-24": {"expect_exit": 0, "expect_status": "committed", "note": "request_id含SQL特殊字符被参数化安全处理且可回查"},
+    "TC-25": {"expect_exit": 1, "note": "selftest --selftest-fail-inject 必须非0退出"}
+  }
+}

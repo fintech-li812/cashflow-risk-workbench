@@ -1,0 +1,8 @@
+{
+  "task_id": "MEM-REPORT-002",
+  "status": "failed",
+  "human_review_required": false,
+  "error": "FileNotFoundError",
+  "detail": "[Errno 2] No such file or directory: 'D:\\\\AI_Command_Workspace\\\\验收\\\\四大任务包自身核验_20261025\\\\Codex\\\\v1\\\\MEM-REPORT-002\\\\验收输出\\\\baseline_checks\\\\B01_valid_receipt\\\\export\\\\result.json'",
+  "directly_submittable": false
+}

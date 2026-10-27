@@ -1,0 +1,8 @@
+{
+  "task_id": "MEM-IMPORT-002",
+  "status": "failed",
+  "human_review_required": false,
+  "error": "AssertionError",
+  "detail": "('exit mismatch', 2, 0, 'D:\\\\AI_Command_Workspace\\\\验收\\\\20261025_用户归档交付复审\\\\Codex\\\\v1\\\\运行证据\\\\最新导入冻结验收\\\\selftest_process.json')",
+  "directly_submittable": false
+}

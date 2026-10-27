@@ -1,0 +1,41 @@
+{
+  "schema_version": "mfg-local-runtime-diagnostic.v1",
+  "status": "blocked",
+  "checks": [
+    {
+      "check": "bound_project_integrity",
+      "status": "passed",
+      "reason": "all_seven_bound_files_match"
+    },
+    {
+      "check": "launcher_fixture_pin",
+      "status": "passed",
+      "reason": "approved_fixture_unchanged_not_source_workbook"
+    },
+    {
+      "check": "isolated_QA_configuration",
+      "status": "passed",
+      "reason": "isolated_database_and_valid_loopback_port"
+    },
+    {
+      "check": "manufacturing_source_integrity",
+      "status": "passed",
+      "reason": "registered_source_hash_matches_no_cell_edits"
+    },
+    {
+      "check": "runtime_dependencies",
+      "status": "passed",
+      "reason": "all_locked_versions_match"
+    },
+    {
+      "check": "tunnel_TCP_reachability",
+      "status": "blocked",
+      "reason": "loopback_tcp_unreachable"
+    }
+  ],
+  "scope": "local_QA_launch_preflight_only",
+  "database_authenticated": false,
+  "native_sheet_verified": false,
+  "production_deployed": false,
+  "mutations_performed": false
+}

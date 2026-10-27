@@ -1,0 +1,2 @@
+﻿issue_id,code,file,sheet,address,row,raw,reason,action
+ISS-0001,MISSING_COLUMN,fixture.xlsx,现金流水,,,,"缺少必需列: 经营性流出（万元）（别名 ['经营性流出（万元）', '经营性流出']）",补齐源表列或更新映射后重导

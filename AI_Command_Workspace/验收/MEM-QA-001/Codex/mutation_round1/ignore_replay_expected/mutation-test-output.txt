@@ -1,0 +1,17 @@
+test_replay_cannot_turn_wrong_outcome_into_match (test_qa_tool.QA.test_replay_cannot_turn_wrong_outcome_into_match) ... FAIL
+
+======================================================================
+FAIL: test_replay_cannot_turn_wrong_outcome_into_match (test_qa_tool.QA.test_replay_cannot_turn_wrong_outcome_into_match)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_replay_expected\test_qa_tool.py", line 522, in test_replay_cannot_turn_wrong_outcome_into_match
+    self.assertEqual(q.replay(cases, pinned).status, '失败')
+AssertionError: '通过' != '失败'
+- 通过
++ 失败
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.005s
+
+FAILED (failures=1)

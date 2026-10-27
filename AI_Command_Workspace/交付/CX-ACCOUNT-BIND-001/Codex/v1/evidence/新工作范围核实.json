@@ -1,0 +1,18 @@
+{
+  "prior_implementation_found": false,
+  "search_scope": [
+    "交付下现有Python候选",
+    "原mcp-server及模型目录"
+  ],
+  "existing_only_placeholders": [
+    "account_scope_missing",
+    "opening_balance_not_bound",
+    "independent_closing_not_bound"
+  ],
+  "excluded_work": [
+    "four outsourced modules",
+    "completed MCP and MySQL flows",
+    "second-stage algorithms"
+  ],
+  "real_business_data_bound": false
+}

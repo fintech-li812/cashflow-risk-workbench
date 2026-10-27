@@ -1,0 +1,1 @@
+{"check_count":230,"exit_code":2,"issues":[{"action":"工件齐备不等于代码执行正确或平台通过","actual":"检查未满足；见定位及原始工件","code":"EXECUTION_NOT_OBSERVED","expected":"独立执行验证","location":"delivery","state":"阻塞"}],"notes":["离线工件检查；没有执行主算法、平台操作或数据库提交。","不运行交付中的代码、shell或ZIP；仅检查文件和哈希，未做代码安全背书。"],"operation":"verify-delivery","schema_version":"mfg-qa.v1","status":"阻塞"}

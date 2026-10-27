@@ -1,0 +1,30 @@
+{
+  "amounts": {
+    "actual_closing": "140000.00",
+    "closing": "140000.00",
+    "difference": "0.00",
+    "inflow": "130000.00",
+    "net": "40000.00",
+    "opening": "100000.00",
+    "outflow": "90000.00"
+  },
+  "calculation_version": "fixture.v1",
+  "company_id": "c\"); DELETE FROM evidence_record;--",
+  "coverage": "full_cashflow",
+  "industry": "manufacturing",
+  "issues": [],
+  "origin": "offline_fixture",
+  "period": "2026-08",
+  "run_id": "run;--",
+  "schema_version": "mfg-agent-result.v1",
+  "source": {
+    "range": "A1:H2",
+    "sheet": "synthetic-result",
+    "snapshot_ref": "fixture-snapshot",
+    "workbook_ref": "synthetic-book"
+  },
+  "source_revision": "rev';--",
+  "status": "success",
+  "tenant_id": "t'\"--;DROP TABLE evidence_record;--",
+  "unit": "CNY"
+}

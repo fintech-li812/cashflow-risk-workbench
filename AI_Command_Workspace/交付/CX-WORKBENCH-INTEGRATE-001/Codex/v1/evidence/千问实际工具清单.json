@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-10-24T16:10:14.411Z",
+  "source": "Qwen desktop connector expanded UI",
+  "connector": "制造业现金流_隔离联调_v2",
+  "tools": [
+    "get_workbench_status",
+    "list_manufacturing_sources",
+    "inspect_manufacturing_source",
+    "get_manufacturing_readiness",
+    "read_cashflow_result",
+    "save_cashflow_result",
+    "query_cashflow_result"
+  ],
+  "agent_execution_verified": false
+}

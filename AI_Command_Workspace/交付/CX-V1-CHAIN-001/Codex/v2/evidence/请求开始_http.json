@@ -1,0 +1,6 @@
+{
+  "transport": "http",
+  "request_id": "v2-http-7b9d50a3dad64d718800e14bf2b72ab0",
+  "fixture": true,
+  "qwen_agent_called": false
+}

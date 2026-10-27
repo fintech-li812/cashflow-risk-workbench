@@ -1,0 +1,27 @@
+{
+  "consolidated": {
+    "opening": "100000.00",
+    "inflow": "1400.00",
+    "outflow": "100.00",
+    "net": "1300.00",
+    "closing": "101300.00",
+    "actual_closing": "140000.00",
+    "difference": "38700.00"
+  },
+  "per_account": {
+    "fixture-account-A": {
+      "inflow": "1400.00",
+      "outflow": "300.00",
+      "net": "1100.00",
+      "calculated_closing": "61100.00",
+      "difference": "28900.00"
+    },
+    "fixture-account-B": {
+      "inflow": "200.00",
+      "outflow": "0.00",
+      "net": "200.00",
+      "calculated_closing": "40200.00",
+      "difference": "9800.00"
+    }
+  }
+}

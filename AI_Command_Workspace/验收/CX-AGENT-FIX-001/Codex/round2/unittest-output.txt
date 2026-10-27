@@ -1,0 +1,89 @@
+test_caller_cannot_mutate_cached_nested_amounts (tests.test_boundary_regressions.BoundaryRegressions.test_caller_cannot_mutate_cached_nested_amounts) ... ok
+test_commit_then_lost_reply_is_pending_then_precise_replay (tests.test_boundary_regressions.BoundaryRegressions.test_commit_then_lost_reply_is_pending_then_precise_replay) ... ok
+test_declared_foreign_snapshot_identity_rejected (tests.test_boundary_regressions.BoundaryRegressions.test_declared_foreign_snapshot_identity_rejected) ... ok
+test_explicit_empty_fixture_is_not_replaced_by_success (tests.test_boundary_regressions.BoundaryRegressions.test_explicit_empty_fixture_is_not_replaced_by_success) ... ok
+test_explicit_false_fixture_mode_overrides_fixture_backend (tests.test_boundary_regressions.BoundaryRegressions.test_explicit_false_fixture_mode_overrides_fixture_backend) ... ok
+test_fixture_instances_and_defaults_do_not_share_nested_values (tests.test_boundary_regressions.BoundaryRegressions.test_fixture_instances_and_defaults_do_not_share_nested_values) ... ok
+test_formula_version_hint_invalidates_old_cache (tests.test_boundary_regressions.BoundaryRegressions.test_formula_version_hint_invalidates_old_cache) ... ok
+test_formula_version_hint_mismatch_rejected (tests.test_boundary_regressions.BoundaryRegressions.test_formula_version_hint_mismatch_rejected) ... ok
+test_non_success_payload_cannot_be_flow_ok (tests.test_boundary_regressions.BoundaryRegressions.test_non_success_payload_cannot_be_flow_ok) ... ok
+test_p01_new_run_reads_new_result (tests.test_boundary_regressions.BoundaryRegressions.test_p01_new_run_reads_new_result) ... ok
+test_p02_invalid_response_never_cached (tests.test_boundary_regressions.BoundaryRegressions.test_p02_invalid_response_never_cached) ... ok
+test_p03_each_source_locator_must_match_snapshot (tests.test_boundary_regressions.BoundaryRegressions.test_p03_each_source_locator_must_match_snapshot) ... ok
+test_p04_existing_receipt_wrong_payload_is_conflict (tests.test_boundary_regressions.BoundaryRegressions.test_p04_existing_receipt_wrong_payload_is_conflict) ... ok
+test_p04_valid_saved_receipt_replay_is_same_record (tests.test_boundary_regressions.BoundaryRegressions.test_p04_valid_saved_receipt_replay_is_same_record) ... ok
+test_p05_bad_money_rejected_at_public_and_store_boundaries (tests.test_boundary_regressions.BoundaryRegressions.test_p05_bad_money_rejected_at_public_and_store_boundaries) ... ok
+test_p05_save_foreign_result_never_calls_backend (tests.test_boundary_regressions.BoundaryRegressions.test_p05_save_foreign_result_never_calls_backend) ... ok
+test_p06_mapping_ready_is_not_committed (tests.test_boundary_regressions.BoundaryRegressions.test_p06_mapping_ready_is_not_committed) ... ok
+test_p07_pending_result_is_blocked (tests.test_boundary_regressions.BoundaryRegressions.test_p07_pending_result_is_blocked) ... ok
+test_p07_pending_snapshot_is_blocked (tests.test_boundary_regressions.BoundaryRegressions.test_p07_pending_snapshot_is_blocked) ... ok
+test_pending_different_payload_cannot_overwrite_hash (tests.test_boundary_regressions.BoundaryRegressions.test_pending_different_payload_cannot_overwrite_hash) ... ok
+test_public_query_must_match_current_full_context (tests.test_boundary_regressions.BoundaryRegressions.test_public_query_must_match_current_full_context) ... ok
+test_public_save_rejects_bad_receipt_even_after_backend_claim (tests.test_boundary_regressions.BoundaryRegressions.test_public_save_rejects_bad_receipt_even_after_backend_claim) ... ok
+test_query_connection_failure_does_not_trigger_resubmit (tests.test_boundary_regressions.BoundaryRegressions.test_query_connection_failure_does_not_trigger_resubmit) ... ok
+test_read_wrong_capability_cannot_be_accepted (tests.test_boundary_regressions.BoundaryRegressions.test_read_wrong_capability_cannot_be_accepted) ... ok
+test_same_run_same_snapshot_reuses_valid_cache (tests.test_boundary_regressions.BoundaryRegressions.test_same_run_same_snapshot_reuses_valid_cache) ... ok
+test_snapshot_changed_same_source_version_invalidates_old_cache (tests.test_boundary_regressions.BoundaryRegressions.test_snapshot_changed_same_source_version_invalidates_old_cache) ... ok
+test_unknown_query_status_never_resubmits (tests.test_boundary_regressions.BoundaryRegressions.test_unknown_query_status_never_resubmits) ... ok
+test_01_normal_success (tests.test_flow_and_persistence.FlowTests.test_01_normal_success) ... ok
+test_02_missing_input_binding (tests.test_flow_and_persistence.FlowTests.test_02_missing_input_binding) ... ok
+test_03_amount_and_unit_errors (tests.test_flow_and_persistence.FlowTests.test_03_amount_and_unit_errors) ... ok
+test_04_source_revision_stale_invalidates (tests.test_flow_and_persistence.FlowTests.test_04_source_revision_stale_invalidates) ... ok
+test_05_company_mismatch_rejected (tests.test_flow_and_persistence.FlowTests.test_05_company_mismatch_rejected) ... ok
+test_06_partial_cashflow_not_full (tests.test_flow_and_persistence.FlowTests.test_06_partial_cashflow_not_full) ... ok
+test_07_missing_actual_closing (tests.test_flow_and_persistence.FlowTests.test_07_missing_actual_closing) ... ok
+test_08_algorithm_unavailable (tests.test_flow_and_persistence.FlowTests.test_08_algorithm_unavailable) ... ok
+test_08b_read_table_unavailable_blocks_earlier (tests.test_flow_and_persistence.FlowTests.test_08b_read_table_unavailable_blocks_earlier) ... ok
+test_09_save_before_success_blocked (tests.test_flow_and_persistence.FlowTests.test_09_save_before_success_blocked) ... ok
+test_10_timeout_then_retry_same_id (tests.test_flow_and_persistence.FlowTests.test_10_timeout_then_retry_same_id) ... ok
+test_11_query_errors (tests.test_flow_and_persistence.FlowTests.test_11_query_errors) ... ok
+test_build_save_payload_maps_required (tests.test_flow_and_persistence.MappingTests.test_build_save_payload_maps_required) ... ok
+test_build_save_payload_needs_real_schema (tests.test_flow_and_persistence.MappingTests.test_build_save_payload_needs_real_schema) ... ok
+test_canonical_json_stable_and_refuses_nan (tests.test_flow_and_persistence.MappingTests.test_canonical_json_stable_and_refuses_nan) ... ok
+test_cross_company_query_isolated (tests.test_flow_and_persistence.RedLineTests.test_cross_company_query_isolated) ... ok
+test_duplicate_write_is_idempotent_not_appended (tests.test_flow_and_persistence.RedLineTests.test_duplicate_write_is_idempotent_not_appended) ... FAIL
+test_fixture_never_leaks_to_production (tests.test_flow_and_persistence.RedLineTests.test_fixture_never_leaks_to_production) ... ok
+test_illegal_amounts_rejected (tests.test_flow_and_persistence.RedLineTests.test_illegal_amounts_rejected) ... ok
+test_timeout_never_reported_as_saved (tests.test_flow_and_persistence.RedLineTests.test_timeout_never_reported_as_saved) ... ok
+test_version_mismatch_rejected (tests.test_flow_and_persistence.RedLineTests.test_version_mismatch_rejected) ... ok
+test_calculation_version_required (tests.test_inherited_guard.GuardTests.test_calculation_version_required) ... ok
+test_context_identity_and_revision (tests.test_inherited_guard.GuardTests.test_context_identity_and_revision) ... ok
+test_coverage (tests.test_inherited_guard.GuardTests.test_coverage) ... ok
+test_fixture_requires_explicit_mode (tests.test_inherited_guard.GuardTests.test_fixture_requires_explicit_mode) ... ok
+test_invalid_month (tests.test_inherited_guard.GuardTests.test_invalid_month) ... ok
+test_missing_actual_cannot_fake_zero_difference (tests.test_inherited_guard.GuardTests.test_missing_actual_cannot_fake_zero_difference) ... ok
+test_missing_actual_not_zero (tests.test_inherited_guard.GuardTests.test_missing_actual_not_zero) ... ok
+test_missing_trusted_context (tests.test_inherited_guard.GuardTests.test_missing_trusted_context) ... ok
+test_money_formats (tests.test_inherited_guard.GuardTests.test_money_formats) ... ok
+test_negative_balance_preserved (tests.test_inherited_guard.GuardTests.test_negative_balance_preserved) ... ok
+test_negative_gross (tests.test_inherited_guard.GuardTests.test_negative_gross) ... ok
+test_no_nan_crash (tests.test_inherited_guard.GuardTests.test_no_nan_crash) ... ok
+test_non_manufacturing (tests.test_inherited_guard.GuardTests.test_non_manufacturing) ... ok
+test_pending_algorithm_no_fake_success (tests.test_inherited_guard.GuardTests.test_pending_algorithm_no_fake_success) ... ok
+test_pending_cannot_contain_amounts (tests.test_inherited_guard.GuardTests.test_pending_cannot_contain_amounts) ... ok
+test_source_required (tests.test_inherited_guard.GuardTests.test_source_required) ... ok
+test_success_cannot_hide_issues (tests.test_inherited_guard.GuardTests.test_success_cannot_hide_issues) ... ok
+test_success_fixture (tests.test_inherited_guard.GuardTests.test_success_fixture) ... ok
+test_unknown_status (tests.test_inherited_guard.GuardTests.test_unknown_status) ... ok
+test_unreconciled_actual_visible (tests.test_inherited_guard.GuardTests.test_unreconciled_actual_visible) ... ok
+test_wrong_balance (tests.test_inherited_guard.GuardTests.test_wrong_balance) ... ok
+test_wrong_difference (tests.test_inherited_guard.GuardTests.test_wrong_difference) ... ok
+test_wrong_net (tests.test_inherited_guard.GuardTests.test_wrong_net) ... ok
+
+======================================================================
+FAIL: test_duplicate_write_is_idempotent_not_appended (tests.test_flow_and_persistence.RedLineTests.test_duplicate_write_is_idempotent_not_appended)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-AGENT-FIX-001\Codex\v1\tests\test_flow_and_persistence.py", line 264, in test_duplicate_write_is_idempotent_not_appended
+    self.assertEqual(conflict.status, CONFLICT)
+AssertionError: 'unavailable' != 'conflict'
+- unavailable
++ conflict
+
+
+----------------------------------------------------------------------
+Ran 71 tests in 0.007s
+
+FAILED (failures=1)
+
+ran=71 failures=1 errors=0 skipped=0

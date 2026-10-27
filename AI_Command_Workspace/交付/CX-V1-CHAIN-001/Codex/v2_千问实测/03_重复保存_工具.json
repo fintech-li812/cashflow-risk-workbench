@@ -1,0 +1,89 @@
+{
+  "source": "Qwen desktop tool detail UI",
+  "chat": "mvm9gfc0dn7c9a7h",
+  "arguments": {
+    "arguments": {
+      "request_id": "qwen-v2-native-20261024-01",
+      "result": {
+        "amounts": {
+          "actual_closing": "140000.00",
+          "closing": "140000.00",
+          "difference": "0.00",
+          "inflow": "130000.00",
+          "net": "40000.00",
+          "opening": "100000.00",
+          "outflow": "90000.00"
+        },
+        "calculation_version": "baseline-cashflow-arithmetic.v1",
+        "company_id": "fixture-manufacturing",
+        "coverage": "full_cashflow",
+        "industry": "manufacturing",
+        "issues": [],
+        "origin": "offline_fixture",
+        "period": "2026-08",
+        "run_id": "fixture-run-202608",
+        "schema_version": "mfg-agent-result.v1",
+        "source": {
+          "range": "A1:G2",
+          "sheet": "fixture-result",
+          "snapshot_ref": "fixture-snapshot-202608",
+          "workbook_ref": "synthetic-manufacturing-v1"
+        },
+        "source_revision": "fixture-source-v1",
+        "status": "success",
+        "tenant_id": "fixture-tenant",
+        "unit": "CNY"
+      }
+    },
+    "toolName": "mcp__制造业现金流_隔离联调_v2__save_cashflow_result"
+  },
+  "result": {
+    "status": "committed",
+    "result": {
+      "unit": "CNY",
+      "issues": [],
+      "origin": "offline_fixture",
+      "period": "2026-08",
+      "run_id": "fixture-run-202608",
+      "source": {
+        "range": "A1:G2",
+        "sheet": "fixture-result",
+        "snapshot_ref": "fixture-snapshot-202608",
+        "workbook_ref": "synthetic-manufacturing-v1"
+      },
+      "status": "success",
+      "amounts": {
+        "net": "40000.00",
+        "inflow": "130000.00",
+        "closing": "140000.00",
+        "opening": "100000.00",
+        "outflow": "90000.00",
+        "difference": "0.00",
+        "actual_closing": "140000.00"
+      },
+      "coverage": "full_cashflow",
+      "industry": "manufacturing",
+      "tenant_id": "fixture-tenant",
+      "company_id": "fixture-manufacturing",
+      "schema_version": "mfg-agent-result.v1",
+      "source_revision": "fixture-source-v1",
+      "calculation_version": "baseline-cashflow-arithmetic.v1"
+    },
+    "receipt": {
+      "schema_version": "mfg-evidence.v1",
+      "kind": "receipt",
+      "operation": "save_cashflow_result",
+      "tenant_id": "fixture-tenant",
+      "company_id": "fixture-manufacturing",
+      "period": "2026-08",
+      "source_revision": "fixture-source-v1",
+      "run_id": "fixture-run-202608",
+      "request_id": "qwen-v2-native-20261024-01",
+      "record_id": "d7f97377-2fd2-45ff-8046-49297bf15c61",
+      "payload_sha256": "356c833f3234cf25c5703888e4da398b4b7889445f6925365bda1e973c582b7b",
+      "stored_at": "2026-10-24T10:33:51.749147+00:00",
+      "status": "committed"
+    },
+    "fixture": true
+  }
+}

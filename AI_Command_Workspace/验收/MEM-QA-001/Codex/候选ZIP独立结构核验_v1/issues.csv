@@ -1,0 +1,2 @@
+﻿state,code,location,expected,actual,action
+阻塞,EXECUTION_NOT_OBSERVED,delivery,独立执行验证,检查未满足；见定位及原始工件,工件齐备不等于代码执行正确或平台通过

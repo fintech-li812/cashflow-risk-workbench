@@ -1,0 +1,67 @@
+{
+  "task_id": "MEM-IMPORT-002",
+  "human_review_required": false,
+  "created_at": "2026-10-24T23:58:19.790528+08:00",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "affa623d09e73ac1f2e9f9f179a84925e87bafd01cf7f0c3c12b24d3b8e5dedc"
+    },
+    {
+      "path": "fixtures/context.json",
+      "sha256": "a6a34fcdc911a22c0df8ae04dffe3ee71069856e71066b4f81ba84d15c4f4a63"
+    },
+    {
+      "path": "fixtures/mapping.json",
+      "sha256": "330f9da8298a7bfc17cbcb007213921e28d50279a6cd47156ef89dc65fc70550"
+    },
+    {
+      "path": "fixtures/result.json",
+      "sha256": "e6470f7adeba00804b178be5dc17a3087a88758178b9482cfd64b8cf81cf36d7"
+    },
+    {
+      "path": "fixtures/unit_exceptions.json",
+      "sha256": "faba6f86554a645db55bd7e8c495f0fa134722d929859dfc6eca83afe3433aa6"
+    },
+    {
+      "path": "README_先读我.md",
+      "sha256": "6258edbda01216959d251044c93b59c3393bfd354dbc4f1dfc726cf3926f6360"
+    },
+    {
+      "path": "source/agent_guard.py",
+      "sha256": "eb99d420e2ac7ef1352b448d0c29e1430d0a65cd80a76111eee3dc27c96055c1"
+    },
+    {
+      "path": "source/history/旧任务书_v1_非当前执行要求.md",
+      "sha256": "c94847a8a8a22dd9d50fab919fb129a5ff23f8bee7349c2f8150cee41b2cec16"
+    },
+    {
+      "path": "source/制造业_样例数据.xlsx",
+      "sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b"
+    },
+    {
+      "path": "source/统一接口_v1.md",
+      "sha256": "b17a22386d0931093e1bcf6e02d52895bf825c96234f0b2590143d448f6e2fbb"
+    },
+    {
+      "path": "task.json",
+      "sha256": "1e58aef9c665d4222edbb262e2a103c5e905e703bf22b4a340efa37e54817026"
+    },
+    {
+      "path": "交付回执模板.md",
+      "sha256": "115bd38e824b1648085ef023be06624c03937f7dd834daa7c96211dfcdef5125"
+    },
+    {
+      "path": "共同要求_接口端口自验交接.md",
+      "sha256": "067acd9a51d24501fff421256c5d6ea2ef732c79368e46d19527e8c947b06994"
+    },
+    {
+      "path": "实现与需求映射_模板.json",
+      "sha256": "ee058b3ce219c32da880df3744fca04dcfe2d089524f583a185dbc23e9ad9d2d"
+    },
+    {
+      "path": "自验入口.py",
+      "sha256": "f5cb334a21a82d93f44ee637263cc7192e3eb721d7f3743dc61a3167207a83c2"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "previous_port_was_not_listening": true,
+  "restored_tunnel_pid": 6268,
+  "port": 13317,
+  "only_isolated_tunnel": true,
+  "ddl_performed": false,
+  "grants_changed": false,
+  "browser_before": "网页04_真实断库修复前.png",
+  "browser_after": "网页05_真实断库修复后.png"
+}

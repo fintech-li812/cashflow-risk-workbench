@@ -1,0 +1,22 @@
+test_01_commit_and_exact_query (__main__.MySQLTests.test_01_commit_and_exact_query) ... ok
+test_02_idempotent_replay_one_row (__main__.MySQLTests.test_02_idempotent_replay_one_row) ... ok
+test_03_process_state_not_required (__main__.MySQLTests.test_03_process_state_not_required) ... ok
+test_04_context_revision_conflict (__main__.MySQLTests.test_04_context_revision_conflict) ... ok
+test_05_different_approved_payload_conflict (__main__.MySQLTests.test_05_different_approved_payload_conflict) ... ok
+test_06_hallucinated_amounts_rejected (__main__.MySQLTests.test_06_hallucinated_amounts_rejected) ... ok
+test_07_trusted_company_rejected (__main__.MySQLTests.test_07_trusted_company_rejected) ... ok
+test_08_default_fixture_rejected (__main__.MySQLTests.test_08_default_fixture_rejected) ... ok
+test_09_missing_db_is_pending_not_success (__main__.MySQLTests.test_09_missing_db_is_pending_not_success) ... ok
+test_10_query_failure_is_not_notfound (__main__.MySQLTests.test_10_query_failure_is_not_notfound) ... ok
+test_11_corrupt_stored_hash_detected (__main__.MySQLTests.test_11_corrupt_stored_hash_detected) ... ok
+test_12_request_sql_characters_parameterized (__main__.MySQLTests.test_12_request_sql_characters_parameterized) ... ok
+test_13_invalid_request (__main__.MySQLTests.test_13_invalid_request) ... ok
+test_14_root_production_rejected (__main__.MySQLTests.test_14_root_production_rejected) ... ok
+test_15_changed_snapshot_stops_read (__main__.MySQLTests.test_15_changed_snapshot_stops_read) ... ok
+test_16_before_commit_failure_no_row (__main__.MySQLTests.test_16_before_commit_failure_no_row) ... ok
+test_17_after_commit_receipt_loss_then_replay (__main__.MySQLTests.test_17_after_commit_receipt_loss_then_replay) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 118.512s
+
+OK

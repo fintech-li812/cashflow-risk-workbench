@@ -1,0 +1,1 @@
+{"context": {"tenant_id": "fixture-tenant", "company_id": "fixture-company", "period": "2026-10", "source_revision": "fixture-revision", "run_id": "fixture-run"}, "request_id": "fixture-request", "event": "fixture-review", "occurred_at": "2026-10-23T23:00:00+08:00", "payload": {"amount": "1.00"}}

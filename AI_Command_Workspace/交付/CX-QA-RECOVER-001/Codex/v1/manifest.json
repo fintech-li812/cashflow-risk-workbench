@@ -1,0 +1,63 @@
+{
+  "task_id": "CX-QA-RECOVER-001",
+  "scope": "authorized isolated SSH recovery and readonly validation",
+  "production_changed": false,
+  "files": [
+    {
+      "path": "evidence/MCP_stderr.txt",
+      "sha256": "34384c4d314ebc68c99ce99f1d6c50bcc83941ac5205ac2f6d9bd05dacfd4fe0"
+    },
+    {
+      "path": "evidence/ssh_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/ssh_stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/七工具契约与六次只读调用.json",
+      "sha256": "692e429c9657a5bfb284617a597941718c559a41abab98b1295c4fd248ff47c7"
+    },
+    {
+      "path": "evidence/启动记录.json",
+      "sha256": "b8f9bf94faf3672d8bcddd6577bd0b0948b36ae2e72efbfb1256edef87284021"
+    },
+    {
+      "path": "evidence/恢复后本机诊断.json",
+      "sha256": "79b261aec81e4471fe3d3958975a729ad15fc8f5e3976e563706e0fd8015380b"
+    },
+    {
+      "path": "evidence/恢复后诊断命令.json",
+      "sha256": "06c5d78370d51302e4f348a3539c589d83f2a7a80912ff0ee0f8bc16de133f8f"
+    },
+    {
+      "path": "evidence/恢复脚本占用拒绝核验.json",
+      "sha256": "2e3c8e0a39df123c8e632842e8e0e05c8397225aa5f965a25f8c597108001354"
+    },
+    {
+      "path": "evidence/独立SQL只读核验.json",
+      "sha256": "ec7d3171e561f617fb1410796c34b433fab885509fd1bcb0cd7ee4bcdab96d0c"
+    },
+    {
+      "path": "README.md",
+      "sha256": "575e5a32c70d43c21e9253b264425096e04e25300f26271950308cd24f8ca25a"
+    },
+    {
+      "path": "start_qa_tunnel.ps1",
+      "sha256": "8f33c9c5dfe5eccb44af9034b696d50195d066e52afa99fb2d0f07e77319eb49"
+    },
+    {
+      "path": "verify_recovery.py",
+      "sha256": "8cccb0a954ff7703914c2271b046f76399447e3f8c252e2bbae764b77dae2364"
+    },
+    {
+      "path": "恢复报告.md",
+      "sha256": "b6b2454cfc739f899e98cf872b401315a5d8fa74756bbf5b8605a52f98e59a8c"
+    },
+    {
+      "path": "故障处理卡.md",
+      "sha256": "89b6b676dcbc129198d3e206485be9adf60e74c960d931cb72432e0befbcaf56"
+    }
+  ]
+}

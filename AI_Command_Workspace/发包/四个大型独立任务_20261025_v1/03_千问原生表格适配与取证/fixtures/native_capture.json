@@ -1,0 +1,118 @@
+{
+  "schema_version": "mfg-native-capture.v1",
+  "tenant_id": "fixture-tenant",
+  "company_id": "fixture-manufacturing",
+  "period": "2026-08",
+  "source_revision": "fixture-source-v1",
+  "run_id": "fixture-run-202608",
+  "workbook_ref": "synthetic-native-test",
+  "sheet": "原生重算验证",
+  "range": "B2:B8",
+  "unit": "CNY",
+  "capture_mode": "offline_fixture",
+  "native_execution_verified": false,
+  "phases": {
+    "before": {
+      "sequence": 1,
+      "cells": {
+        "B2": {
+          "value": "100000.00",
+          "formula": null
+        },
+        "B3": {
+          "value": "30000.00",
+          "formula": null
+        },
+        "B4": {
+          "value": "20000.00",
+          "formula": null
+        },
+        "B5": {
+          "value": "10000.00",
+          "formula": "=B3-B4"
+        },
+        "B6": {
+          "value": "110000.00",
+          "formula": "=B2+B5"
+        },
+        "B7": {
+          "value": "110000.00",
+          "formula": null
+        },
+        "B8": {
+          "value": "0.00",
+          "formula": "=B7-B6"
+        }
+      },
+      "raw_tool_ref": "synthetic-tool-call-before"
+    },
+    "after": {
+      "sequence": 2,
+      "cells": {
+        "B2": {
+          "value": "100000.00",
+          "formula": null
+        },
+        "B3": {
+          "value": "30000.00",
+          "formula": null
+        },
+        "B4": {
+          "value": "25000.00",
+          "formula": null
+        },
+        "B5": {
+          "value": "5000.00",
+          "formula": "=B3-B4"
+        },
+        "B6": {
+          "value": "105000.00",
+          "formula": "=B2+B5"
+        },
+        "B7": {
+          "value": "110000.00",
+          "formula": null
+        },
+        "B8": {
+          "value": "5000.00",
+          "formula": "=B7-B6"
+        }
+      },
+      "raw_tool_ref": "synthetic-tool-call-after"
+    },
+    "reopened": {
+      "sequence": 3,
+      "cells": {
+        "B2": {
+          "value": "100000.00",
+          "formula": null
+        },
+        "B3": {
+          "value": "30000.00",
+          "formula": null
+        },
+        "B4": {
+          "value": "25000.00",
+          "formula": null
+        },
+        "B5": {
+          "value": "5000.00",
+          "formula": "=B3-B4"
+        },
+        "B6": {
+          "value": "105000.00",
+          "formula": "=B2+B5"
+        },
+        "B7": {
+          "value": "110000.00",
+          "formula": null
+        },
+        "B8": {
+          "value": "5000.00",
+          "formula": "=B7-B6"
+        }
+      },
+      "raw_tool_ref": "synthetic-tool-call-reopened"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+[1F37BC7D5D6DE08F5D2A4DA8FDDB0B37] GET http://127.0.0.1:18765/ (Document) 200
+[23636.2] GET http://127.0.0.1:18765/favicon.ico (Other) 404
+[23636.3] POST http://127.0.0.1:18765/api/run (Fetch) 200
+[2FEDA2E0A6ED105DFFEA22D0CB9BD31F] GET http://127.0.0.1:18765/ (Document) 200
+[23636.5] POST http://127.0.0.1:18765/api/run (Fetch) 200
+[23636.6] POST http://127.0.0.1:18765/api/query (Fetch) 200

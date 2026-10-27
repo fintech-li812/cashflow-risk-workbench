@@ -1,0 +1,3 @@
+{"code":"VALIDATION_FAILED","details":{},"message":"only success results can be stored as formal evidence; use --save-diagnostic for non-success","ok":false,"status":"rejected"}
+
+{"code":"OK","exit_note":"诊断已记录，未生成 mfg-evidence.v1 committed 回执","note":"诊断记录，不是 mfg-evidence.v1 正式回执，不表示结果已保存","ok":true,"outcome":"diagnostic","payload_sha256":"4755ebfcf545fbd9854b2c765c994e12e0961f00b0d766cba612918b5055144e","receipt":null,"request_id":"req-diag-001","result_status":"missing_inputs","status":"blocked","stored_at":"2026-10-24T15:07:44Z"}

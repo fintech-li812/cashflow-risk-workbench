@@ -1,0 +1,156 @@
+{
+  "task_id": "CX-TOOL-BIND-001",
+  "author": "Codex",
+  "package_version": "v1",
+  "status": "candidate_pending_independent_review",
+  "tests": {
+    "unit_methods": 52,
+    "agent_bridge_methods": 9,
+    "mutation_caught": 6,
+    "candidate_schemas_compatible": 14,
+    "platform_calls": 0,
+    "database_operations": 0
+  },
+  "files": [
+    {
+      "path": "catalog_probe.py",
+      "sha256": "dcd779df5c70129d9336fd25a7b531c95092a89b071779c6dc3b75ec115b459a"
+    },
+    {
+      "path": "docs/合入步骤与验收边界.md",
+      "sha256": "5b50047ea427325307a1ec4af51c486affd261c66a286da7cb90b999125a543f"
+    },
+    {
+      "path": "docs/测试报告.md",
+      "sha256": "8be8d2fb892480620a1b0930359820f3ac9e4af8cf431b788069d800f4c9386a"
+    },
+    {
+      "path": "docs/独立审核任务_排队副本.md",
+      "sha256": "76d95efe1f0c4f386fdb037675c552ddfecd696a08aea5491b4782a5322b9675"
+    },
+    {
+      "path": "mutation_check.py",
+      "sha256": "d3f9251142aabdd0e584643eef77225fbbf3ccfd7ebcca114d86b52c0be76949"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b7aa929522044a7e38b99eaf414f8a331ef426fdb8f3ccf3f548bb4260167d7c"
+    },
+    {
+      "path": "reference-agent/agent_guard.py",
+      "sha256": "eb99d420e2ac7ef1352b448d0c29e1430d0a65cd80a76111eee3dc27c96055c1"
+    },
+    {
+      "path": "reference-agent/persistence.py",
+      "sha256": "4bf6f0436d88fd42ebb27556925b63d961f17ad0846f43b85620277068bdc875"
+    },
+    {
+      "path": "reference-agent/runtime_adapter.py",
+      "sha256": "4159d501467098a919ab19bdb3a25c0e870bfc6c6677d393772ed4e8fe96e87d"
+    },
+    {
+      "path": "reference-agent/来源与哈希.json",
+      "sha256": "bf553dd7b975b9ea3e1019a7326ec3561489ddeec7480dc0f0f81e05c51346fa"
+    },
+    {
+      "path": "reference-catalog/候选工具定义_历史参考非真实tools-list.json",
+      "sha256": "6df4bc8022270d8e3af5767de951ba66624b93d39c56c0d05b6c0288e440db9b"
+    },
+    {
+      "path": "requirements.lock.txt",
+      "sha256": "fee82f47557ca0039568a9d3d59c50521b698c9ec684b68e3f89df7e27b69f1a"
+    },
+    {
+      "path": "test-output/arguments.json",
+      "sha256": "f23fef7bc3a4067b2ff52fbed7b6b9c260664c6188a70b405b3ee73762f4c0eb"
+    },
+    {
+      "path": "test-output/binding.json",
+      "sha256": "7a6735a70e96c1e755af6eff7ab18018b990947bc08888e6bf956732076ef1b6"
+    },
+    {
+      "path": "test-output/bridge_observations.jsonl",
+      "sha256": "82d407166578419356439dc5db0c64874f16a2eba11582f0dfd1c51388446685"
+    },
+    {
+      "path": "test-output/catalog_compatibility.json",
+      "sha256": "a1b134a31f7f43691a73772eca5f3ab8fe0866457b89dd71bee3f80815e2b3d6"
+    },
+    {
+      "path": "test-output/cli_blocked.txt",
+      "sha256": "1f9304a6e38ffd44e95be9753eb1e92a091db084bf46d6bd9009f26f6486374a"
+    },
+    {
+      "path": "test-output/cli_prepared.txt",
+      "sha256": "cf57b20c22c816e015663ad015bef8b3c1bc7e3fdabf34e4f84459e4907389f7"
+    },
+    {
+      "path": "test-output/descriptor.json",
+      "sha256": "5414b10a6c959aa6bdf399a547f40398f972b76baa2b393f3b022be91e5c9801"
+    },
+    {
+      "path": "test-output/duplicate.json",
+      "sha256": "d38245cfdb5d2239d67fe2a719312768b668a6928d8d97d04fbce83215e50b44"
+    },
+    {
+      "path": "test-output/mutation_skip_context_comparison.txt",
+      "sha256": "f526892e5c7f043bc5f597b27de2dac187c990011ef23a86eb28232065dae3d1"
+    },
+    {
+      "path": "test-output/mutation_skip_format_check.txt",
+      "sha256": "0af3326a1b73ac12a215af0c4e2ecd297b2ba58b1c2d1f7b31866e64eda7ecd9"
+    },
+    {
+      "path": "test-output/mutation_skip_reference_policy.txt",
+      "sha256": "b88884a1c1f8c97a23f26e98188e4ed3a464a5141f78eca38baef432c2709c44"
+    },
+    {
+      "path": "test-output/mutation_skip_request_comparison.txt",
+      "sha256": "ab9d4b6758713109fcd4cd38d45851842076c1b904000abd99c3ecd863685506"
+    },
+    {
+      "path": "test-output/mutation_skip_schema_validation.txt",
+      "sha256": "c374f0e1ca2b7a3f69d9748eeb615f694445c1c150ce7274d0d5f08c46f6ce17"
+    },
+    {
+      "path": "test-output/mutation_skip_tool_name.txt",
+      "sha256": "3f74d2d541591aeb4b9d326a31f0b9f13399f31204078e92ca1f3fef954dbe71"
+    },
+    {
+      "path": "test-output/mutation_summary.json",
+      "sha256": "423a091e99ddc87dd18aa3830de0df093ba6c9bb8464d5a71f8acfbb56f8251b"
+    },
+    {
+      "path": "test-output/overflow.json",
+      "sha256": "cb013dcc16fe0e5ca4b3588e94fedb08d57d0671c0bc216f27e5cd61b59d77b0"
+    },
+    {
+      "path": "test-output/unit_and_bridge_run_3.txt",
+      "sha256": "808d6ba536ae81a1914157ec161a6076fe968fe69d58e189a6f07fdb673dce20"
+    },
+    {
+      "path": "test-output/unit_run_1.txt",
+      "sha256": "b9eb22c60b6fdb42f8d822719ed2ba399bc55c3f55bf7c03685a1c906ea3bad8"
+    },
+    {
+      "path": "test-output/unit_run_2.txt",
+      "sha256": "7aadfa411c2502b93558fdada5fbb4293e8240f8c45a9d5dc2951ec222d8671d"
+    },
+    {
+      "path": "test-output/首次启动失败.txt",
+      "sha256": "c3481ffbb0b49bc071f39b25036d3eb6416947ffcf76ef6671685fcde59121f2"
+    },
+    {
+      "path": "test_agent_bridge.py",
+      "sha256": "dc343731b93f15063c1071d20ee7660a01a938a5848d38a7b2a20ee8bc343d23"
+    },
+    {
+      "path": "test_tool_call_guard.py",
+      "sha256": "65a48921405966c28a7a039f5bd9fcf7353b1bdf176d4d674dab67e874c20da1"
+    },
+    {
+      "path": "tool_call_guard.py",
+      "sha256": "bf62e9d04200834d95a3c720364f3564430aaa2865ccd4503e7acadb7eb4555f"
+    }
+  ]
+}

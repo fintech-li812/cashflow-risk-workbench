@@ -1,0 +1,48 @@
+{
+  "mapping_version": "fixture-mapping 1.0.0",
+  "industry": "manufacturing",
+  "notes": "仅用于 selftest 合成夹具的映射；不代表真实企业映射。",
+  "sheets": {
+    "企业基本信息": {
+      "layout": "vertical",
+      "required": true,
+      "header_row": 2,
+      "key_column": "A",
+      "value_column": "B",
+      "fields": [
+        {"name": "企业名称", "type": "text", "required": true},
+        {"name": "在职人数（人）", "type": "number", "required": true,
+         "aliases": ["在职人数"]},
+        {"name": "上年度营业收入（万元）", "type": "amount", "unit": "万元",
+         "required": true}
+      ]
+    },
+    "现金流水": {
+      "layout": "horizontal",
+      "required": true,
+      "header_row": 2,
+      "data_start_row": 3,
+      "fields": [
+        {"name": "月份", "type": "month", "required": true},
+        {"name": "月末日期", "type": "date", "formats": ["YYYY-MM-DD"], "required": true},
+        {"name": "流水类型", "type": "text", "required": true},
+        {"name": "经营性流入（万元）", "type": "amount", "unit": "万元", "required": true,
+         "aliases": ["经营性流入"]},
+        {"name": "经营性流出（万元）", "type": "amount", "unit": "万元", "required": true,
+         "aliases": ["经营性流出"]}
+      ]
+    },
+    "应收账款": {
+      "layout": "horizontal",
+      "required": false,
+      "header_row": 2,
+      "data_start_row": 3,
+      "fields": [
+        {"name": "单据编号", "type": "text", "required": true},
+        {"name": "应收金额（万元）", "type": "amount", "unit": "万元", "required": true},
+        {"name": "已收金额（万元）", "type": "amount", "unit": "万元", "required": true},
+        {"name": "到账状态", "type": "text", "required": false}
+      ]
+    }
+  }
+}

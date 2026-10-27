@@ -1,0 +1,98 @@
+{
+  "hashes": [
+    {
+      "file": "candidate/__init__.py",
+      "ok": true
+    },
+    {
+      "file": "candidate/adapters.py",
+      "ok": true
+    },
+    {
+      "file": "candidate/agent_guard.py",
+      "ok": true
+    },
+    {
+      "file": "candidate/persistence.py",
+      "ok": true
+    },
+    {
+      "file": "candidate/request_flow.py",
+      "ok": true
+    },
+    {
+      "file": "candidate/runtime_adapter.py",
+      "ok": true
+    },
+    {
+      "file": "agent/八条制造业现金流追问_v2_继承原文.md",
+      "ok": true
+    },
+    {
+      "file": "agent/八条制造业现金流追问_v3.md",
+      "ok": true
+    },
+    {
+      "file": "agent/制造业现金流主提示词_v2_继承原文.txt",
+      "ok": true
+    },
+    {
+      "file": "agent/制造业现金流主提示词_v3.txt",
+      "ok": true
+    },
+    {
+      "file": "docs/X千问配置操作单.md",
+      "ok": true
+    },
+    {
+      "file": "docs/接口映射.md",
+      "ok": true
+    },
+    {
+      "file": "docs/未实现清单.md",
+      "ok": true
+    },
+    {
+      "file": "docs/来源继承与差异说明.md",
+      "ok": true
+    },
+    {
+      "file": "fixtures/synthetic_success.json",
+      "ok": true
+    },
+    {
+      "file": "tests/__init__.py",
+      "ok": true
+    },
+    {
+      "file": "tests/test_flow_and_persistence.py",
+      "ok": true
+    },
+    {
+      "file": "tests/test_inherited_guard.py",
+      "ok": true
+    },
+    {
+      "file": "test-output/selftest_v1.txt",
+      "ok": true
+    },
+    {
+      "file": "README.md",
+      "ok": true
+    },
+    {
+      "file": "run_tests.py",
+      "ok": true
+    },
+    {
+      "file": "requirements.lock.txt",
+      "ok": true
+    },
+    {
+      "file": "config.example.json",
+      "ok": true
+    }
+  ],
+  "exit_code": 0,
+  "scope": "offline fixture rerun only; no platform binding or independent security audit"
+}

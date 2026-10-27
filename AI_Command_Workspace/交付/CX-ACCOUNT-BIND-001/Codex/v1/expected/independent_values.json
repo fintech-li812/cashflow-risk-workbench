@@ -1,0 +1,35 @@
+{
+  "complete": {
+    "status": "ready",
+    "opening": "100000.00",
+    "independent_closing": "140000.00",
+    "can_save_source_result": false,
+    "can_claim_full_cashflow": false
+  },
+  "zero": {
+    "opening": "0.00",
+    "independent_closing": "0.00"
+  },
+  "negative": {
+    "opening": "-100.00",
+    "independent_closing": "-50.00"
+  },
+  "missing_closing": {
+    "status": "blocked",
+    "balance_totals": null
+  },
+  "cutoffs": {
+    "2026-02": [
+      "2026-01-31",
+      "2026-02-28"
+    ],
+    "2024-02": [
+      "2024-01-31",
+      "2024-02-29"
+    ],
+    "2026-01": [
+      "2025-12-31",
+      "2026-01-31"
+    ]
+  }
+}

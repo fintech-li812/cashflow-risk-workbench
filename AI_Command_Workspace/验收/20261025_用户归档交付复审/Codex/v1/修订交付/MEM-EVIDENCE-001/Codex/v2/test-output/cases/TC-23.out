@@ -1,0 +1,7 @@
+{"code":"USAGE","details":{},"message":"store path escapes the workdir: outside-evidence.sqlite3","ok":false,"status":"rejected"}
+
+{"code":"USAGE","details":{},"message":"store path escapes the workdir: outside-evidence.sqlite3","ok":false,"status":"rejected"}
+
+{"code":"USAGE","details":{},"message":"store file must use .sqlite3 suffix","ok":false,"status":"rejected"}
+
+{"ok": false, "code": "USAGE", "status": "rejected", "message": "workdir already exists and is not empty: D:\\AI_Command_Workspace\\验收\\20261025_用户归档交付复审\\Codex\\v1\\运行证据\\evidence_selftest", "details": {}}

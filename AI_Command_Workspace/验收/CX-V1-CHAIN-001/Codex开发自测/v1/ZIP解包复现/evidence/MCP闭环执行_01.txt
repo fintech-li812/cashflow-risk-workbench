@@ -1,0 +1,17 @@
+{
+  "scope": "synthetic fixture; isolated real MySQL; not Qwen native",
+  "request_id": "mcp-e2e-74cf1e38edd94625ac4ca482fe0e20a1",
+  "protocol": "official mcp SDK 1.30.0 stdio",
+  "server": {
+    "name": "manufacturing-cashflow-v1-candidate",
+    "title": null,
+    "version": "1.30.0",
+    "websiteUrl": null,
+    "icons": null
+  },
+  "restart_readback": true,
+  "status": "passed",
+  "independent_database_readback": true,
+  "qwen_platform": false,
+  "production_deployed": false
+}

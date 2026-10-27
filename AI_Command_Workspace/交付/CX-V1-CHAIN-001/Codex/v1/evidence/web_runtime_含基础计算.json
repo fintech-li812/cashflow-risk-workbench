@@ -1,0 +1,7 @@
+{
+  "pid": 32072,
+  "ready": true,
+  "url": "http://127.0.0.1:18765",
+  "fixture_file": "D:\\AI_Command_Workspace\\交付\\CX-V1-CHAIN-001\\Codex\\v1\\fixtures\\calculated_result_v1.json",
+  "mode": "fixture QA, not production"
+}

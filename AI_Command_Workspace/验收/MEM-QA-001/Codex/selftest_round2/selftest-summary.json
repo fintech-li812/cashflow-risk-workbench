@@ -1,0 +1,10 @@
+{
+  "tests_run": 49,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "nature": "offline_synthetic_and_source_package_fixtures",
+  "platform_tests": 0,
+  "database_tests": 0,
+  "note": "通过用例包括预期拒绝的负例；不是被测系统全部通过。"
+}

@@ -1,0 +1,23 @@
+# 文件说明：preflight.json
+
+- 仓库路径：AI_Command_Workspace/交付/夜间集中交付_20261023/Codex/v1/最新发布前检查/preflight.json
+- 查看文件：[打开原文件](../AI_Command_Workspace/%E4%BA%A4%E4%BB%98/%E5%A4%9C%E9%97%B4%E9%9B%86%E4%B8%AD%E4%BA%A4%E4%BB%98_20261023/Codex/v1/%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83%E5%89%8D%E6%A3%80%E6%9F%A5/preflight.json)
+- 归属：交付或存档材料；包/文档不等于发布或验收通过
+- 大小：5520字节
+- 导出SHA256：eef28841fa94dc9f24ba06acf6b9f130674dc23db7770a6754bf8815a2fe73af
+
+## 内容与作用
+
+顶层字段：schema_version, status, release_authorized, target, counts, checks, notes
+
+schema_version：mfg-release-preflight-report.v1
+
+status：失败
+
+## 打开与使用
+
+文本编辑器或所属程序的只读查看命令。
+
+## 状态与限制
+
+这是2026-10-27归档时的静态说明，不证明本文件已执行、已部署或业务验证通过。优先阅读仓库根README和主工作台最新交接；历史文件口径可能已被用户后续决定覆盖。

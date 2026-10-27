@@ -1,0 +1,126 @@
+test_p01_new_run_reads_new_result (regression_cases.BoundaryRegressions.test_p01_new_run_reads_new_result) ... ERROR
+test_p02_invalid_response_never_cached (regression_cases.BoundaryRegressions.test_p02_invalid_response_never_cached) ... FAIL
+test_p03_each_source_locator_must_match_snapshot (regression_cases.BoundaryRegressions.test_p03_each_source_locator_must_match_snapshot) ... 
+  test_p03_each_source_locator_must_match_snapshot (regression_cases.BoundaryRegressions.test_p03_each_source_locator_must_match_snapshot) (key='workbook_ref') ... FAIL
+  test_p03_each_source_locator_must_match_snapshot (regression_cases.BoundaryRegressions.test_p03_each_source_locator_must_match_snapshot) (key='sheet') ... FAIL
+  test_p03_each_source_locator_must_match_snapshot (regression_cases.BoundaryRegressions.test_p03_each_source_locator_must_match_snapshot) (key='range') ... FAIL
+  test_p03_each_source_locator_must_match_snapshot (regression_cases.BoundaryRegressions.test_p03_each_source_locator_must_match_snapshot) (key='snapshot_ref') ... FAIL
+test_p04_existing_receipt_wrong_payload_is_conflict (regression_cases.BoundaryRegressions.test_p04_existing_receipt_wrong_payload_is_conflict) ... FAIL
+test_p05_save_foreign_result_never_calls_backend (regression_cases.BoundaryRegressions.test_p05_save_foreign_result_never_calls_backend) ... FAIL
+test_p06_mapping_ready_is_not_committed (regression_cases.BoundaryRegressions.test_p06_mapping_ready_is_not_committed) ... FAIL
+test_p07_pending_result_is_blocked (regression_cases.BoundaryRegressions.test_p07_pending_result_is_blocked) ... FAIL
+
+======================================================================
+ERROR: test_p01_new_run_reads_new_result (regression_cases.BoundaryRegressions.test_p01_new_run_reads_new_result)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\request_flow.py", line 147, in run
+    agent_guard.validate_result(result, binding.as_dict(), allow_fixture=allow_fixture)
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\agent_guard.py", line 27, in validate_result
+    require(data.get(key) == context[key], "context mismatch: " + key)
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\agent_guard.py", line 15, in require
+    raise ResultError(reason)
+agent_guard.ResultError: context mismatch: run_id
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\regression_cases.py", line 37, in test_p01_new_run_reads_new_result
+    second = flow.run(binding(run_id='reg-run-2'), allow_fixture=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\request_flow.py", line 153, in run
+    raise _block(CAP_READ_RESULT, "guard", reason, [reason], steps)
+request_flow.FlowBlocked: guard: context mismatch: run_id
+
+======================================================================
+FAIL: test_p02_invalid_response_never_cached (regression_cases.BoundaryRegressions.test_p02_invalid_response_never_cached)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\regression_cases.py", line 51, in test_p02_invalid_response_never_cached
+    self.assertEqual(flow.cache, {})
+AssertionError: {('reg-tenant', 'reg-company', '2026-08'):[663 chars]1'})} != {}
+Diff is 1950 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_p03_each_source_locator_must_match_snapshot (regression_cases.BoundaryRegressions.test_p03_each_source_locator_must_match_snapshot) (key='workbook_ref')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\regression_cases.py", line 78, in test_p03_each_source_locator_must_match_snapshot
+    with self.assertRaises(FlowBlocked) as cm:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: FlowBlocked not raised
+
+======================================================================
+FAIL: test_p03_each_source_locator_must_match_snapshot (regression_cases.BoundaryRegressions.test_p03_each_source_locator_must_match_snapshot) (key='sheet')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\regression_cases.py", line 78, in test_p03_each_source_locator_must_match_snapshot
+    with self.assertRaises(FlowBlocked) as cm:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: FlowBlocked not raised
+
+======================================================================
+FAIL: test_p03_each_source_locator_must_match_snapshot (regression_cases.BoundaryRegressions.test_p03_each_source_locator_must_match_snapshot) (key='range')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\regression_cases.py", line 78, in test_p03_each_source_locator_must_match_snapshot
+    with self.assertRaises(FlowBlocked) as cm:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: FlowBlocked not raised
+
+======================================================================
+FAIL: test_p03_each_source_locator_must_match_snapshot (regression_cases.BoundaryRegressions.test_p03_each_source_locator_must_match_snapshot) (key='snapshot_ref')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\regression_cases.py", line 78, in test_p03_each_source_locator_must_match_snapshot
+    with self.assertRaises(FlowBlocked) as cm:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: FlowBlocked not raised
+
+======================================================================
+FAIL: test_p04_existing_receipt_wrong_payload_is_conflict (regression_cases.BoundaryRegressions.test_p04_existing_receipt_wrong_payload_is_conflict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\regression_cases.py", line 106, in test_p04_existing_receipt_wrong_payload_is_conflict
+    self.assertEqual(out.status, CONFLICT)
+AssertionError: 'committed' != 'conflict'
+- committed
++ conflict
+
+
+======================================================================
+FAIL: test_p05_save_foreign_result_never_calls_backend (regression_cases.BoundaryRegressions.test_p05_save_foreign_result_never_calls_backend)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\regression_cases.py", line 123, in test_p05_save_foreign_result_never_calls_backend
+    self.assertEqual(save_result(backend, binding(), data, 'r').status, UNAVAILABLE)
+AssertionError: 'committed' != 'unavailable'
+- committed
++ unavailable
+
+
+======================================================================
+FAIL: test_p06_mapping_ready_is_not_committed (regression_cases.BoundaryRegressions.test_p06_mapping_ready_is_not_committed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\regression_cases.py", line 141, in test_p06_mapping_ready_is_not_committed
+    self.assertEqual(out.status, 'ok'); self.assertNotEqual(out.status, COMMITTED)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'committed' != 'ok'
+- committed
++ ok
+
+
+======================================================================
+FAIL: test_p07_pending_result_is_blocked (regression_cases.BoundaryRegressions.test_p07_pending_result_is_blocked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-AGENT-FIX-001\Codex\七反例同用例前后对照_v1\before\regression_cases.py", line 156, in test_p07_pending_result_is_blocked
+    with self.assertRaises(FlowBlocked) as cm:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: FlowBlocked not raised
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.003s
+
+FAILED (failures=9, errors=1)

@@ -1,0 +1,27 @@
+{
+  "schema_version": "mfg-cash-evidence-selection.v1",
+  "status": "invalid",
+  "context": {
+    "tenant_id": "fixture-tenant",
+    "company_id": "fixture-manufacturing",
+    "period": "2026-08",
+    "source_revision": "fixture-source-v1",
+    "run_id": "fixture-run-202608"
+  },
+  "fixture": false,
+  "can_claim_full_cashflow": false,
+  "can_save_source_result": false,
+  "source_authenticity_verified": false,
+  "native_sheet_verified": false,
+  "selected_records": [],
+  "record_decisions": [],
+  "approved_transfer_pairs": [],
+  "issues": [
+    {
+      "code": "CONTEXT_FIELD_REQUIRED"
+    }
+  ],
+  "counts": null,
+  "cashflow_totals": null,
+  "mutations_performed": false
+}

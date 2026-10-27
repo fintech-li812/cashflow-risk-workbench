@@ -1,0 +1,2 @@
+﻿state,code,location,expected,actual,action
+失败,TEST,"'=HYPERLINK(""x"")<script>alert(1)</script>",<img src=x onerror=x>,检查未满足；见定位及原始工件,fix

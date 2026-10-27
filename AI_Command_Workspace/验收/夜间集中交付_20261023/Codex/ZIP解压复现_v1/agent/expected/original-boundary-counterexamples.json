@@ -1,0 +1,110 @@
+{
+  "scope": "offline synthetic boundary probes, no platform/DB; not full DeepSeek review",
+  "results": [
+    {
+      "id": "AG-P01",
+      "title": "同源版本的新run误复用旧缓存",
+      "expected": "新run重新读结果或安全复用重新绑定，不因旧run卡死",
+      "actual": {
+        "blocked_stage": "guard",
+        "reason": "context mismatch: run_id"
+      },
+      "reproduced": true,
+      "files": [
+        "request_flow.py"
+      ]
+    },
+    {
+      "id": "AG-P02",
+      "title": "未过守卫的坏响应先进入缓存",
+      "expected": "坏响应不得缓存，下次可重新取得已修正响应",
+      "actual": {
+        "blocked_stage": "guard",
+        "reason": "net does not reconcile",
+        "cached_net": "40000.01"
+      },
+      "reproduced": true,
+      "files": [
+        "request_flow.py"
+      ]
+    },
+    {
+      "id": "AG-P03",
+      "title": "结果来源未与本次实际快照绑定",
+      "expected": "不匹配的source.snapshot_ref必须阻断",
+      "actual": {
+        "ok": true,
+        "read_snapshot_ref": "new-observed-snapshot",
+        "result_snapshot_ref": "fixture-snapshot"
+      },
+      "reproduced": true,
+      "files": [
+        "request_flow.py",
+        "runtime_adapter.py"
+      ]
+    },
+    {
+      "id": "AG-P04",
+      "title": "超时回查不核载荷就宣称当前请求已提交",
+      "expected": "同ID异载荷冲突，不可用旧内容回执确认新内容",
+      "actual": {
+        "status": "committed",
+        "returned_payload_hash": "5105b07b7cb563ca183876070e1731dc04c9c20990cb945f98287dbab73b4f31",
+        "submitted_payload_hash": "98e8def7de45fc8baf0f14221ebb772f6ec6b3b77616a1a82fbcf239ede69c09",
+        "same_content": false
+      },
+      "reproduced": true,
+      "files": [
+        "persistence.py"
+      ]
+    },
+    {
+      "id": "AG-P05",
+      "title": "保存边界只查success未核结果身份及金额",
+      "expected": "保存前按可信binding验证完整结果与身份",
+      "actual": {
+        "status": "committed",
+        "receipt_company": "probe-company",
+        "submitted_company": "other-company",
+        "stored_count": 1
+      },
+      "reproduced": true,
+      "files": [
+        "runtime_adapter.py",
+        "persistence.py"
+      ]
+    },
+    {
+      "id": "AG-P06",
+      "title": "仅构造保存参数就标committed",
+      "expected": "映射成功与真正提交成功分离，不产生已提交语义",
+      "actual": {
+        "mapping_status": "committed",
+        "payload": {
+          "request_id": "logical-2"
+        },
+        "network_or_store_called": false
+      },
+      "reproduced": true,
+      "files": [
+        "persistence.py"
+      ]
+    },
+    {
+      "id": "AG-P07",
+      "title": "读取处于pending却继续成完整成功",
+      "expected": "读取状态只有显式成功方可进入下一步，pending阻断",
+      "actual": {
+        "flow_ok": true,
+        "snapshot_outcome": "pending",
+        "result_outcome": "pending"
+      },
+      "reproduced": true,
+      "files": [
+        "runtime_adapter.py",
+        "request_flow.py"
+      ]
+    }
+  ],
+  "source_unchanged": true
+}

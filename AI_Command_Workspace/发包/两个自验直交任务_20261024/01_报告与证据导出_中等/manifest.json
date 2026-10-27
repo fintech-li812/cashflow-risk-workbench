@@ -1,0 +1,55 @@
+{
+  "task_id": "MEM-REPORT-002",
+  "human_review_required": false,
+  "created_at": "2026-10-24T23:58:19.759202+08:00",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "affa623d09e73ac1f2e9f9f179a84925e87bafd01cf7f0c3c12b24d3b8e5dedc"
+    },
+    {
+      "path": "fixtures/context.json",
+      "sha256": "a6a34fcdc911a22c0df8ae04dffe3ee71069856e71066b4f81ba84d15c4f4a63"
+    },
+    {
+      "path": "fixtures/receipt.json",
+      "sha256": "622adf867d62064d1ca8d6e0cb52f517e867728d02ed2477a9ce33b8c88c80ef"
+    },
+    {
+      "path": "fixtures/result.json",
+      "sha256": "e6470f7adeba00804b178be5dc17a3087a88758178b9482cfd64b8cf81cf36d7"
+    },
+    {
+      "path": "README_先读我.md",
+      "sha256": "b59fbd48c98ea85fd05a8f09023fffcf4c1f252e4f6993e73ec94b29bae9bb14"
+    },
+    {
+      "path": "source/agent_guard.py",
+      "sha256": "eb99d420e2ac7ef1352b448d0c29e1430d0a65cd80a76111eee3dc27c96055c1"
+    },
+    {
+      "path": "source/统一接口_v1.md",
+      "sha256": "b17a22386d0931093e1bcf6e02d52895bf825c96234f0b2590143d448f6e2fbb"
+    },
+    {
+      "path": "task.json",
+      "sha256": "9fc2199066431000b69642117f0f0e3be0ee97dceaf745914515fd71862d3e95"
+    },
+    {
+      "path": "交付回执模板.md",
+      "sha256": "115bd38e824b1648085ef023be06624c03937f7dd834daa7c96211dfcdef5125"
+    },
+    {
+      "path": "共同要求_接口端口自验交接.md",
+      "sha256": "067acd9a51d24501fff421256c5d6ea2ef732c79368e46d19527e8c947b06994"
+    },
+    {
+      "path": "实现与需求映射_模板.json",
+      "sha256": "d5ca799413cae2d92d714f8e17d8ac301c74c9a1a290ab2c52507ae5052b77c0"
+    },
+    {
+      "path": "自验入口.py",
+      "sha256": "f5cb334a21a82d93f44ee637263cc7192e3eb721d7f3743dc61a3167207a83c2"
+    }
+  ]
+}

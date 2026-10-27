@@ -1,0 +1,8 @@
+{
+  "enumerated_questionnaire_combinations": 1250,
+  "template_candidates": 1000,
+  "manual_review": 250,
+  "missing_data_and_three_invalid_inputs_checked": true,
+  "real_companies_validated": 0,
+  "qwen_platform_tested": false
+}

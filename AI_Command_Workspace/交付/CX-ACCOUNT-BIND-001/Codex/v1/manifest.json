@@ -1,0 +1,99 @@
+{
+  "task_id": "CX-ACCOUNT-BIND-001",
+  "status": "candidate",
+  "production_deployed": false,
+  "files": [
+    {
+      "path": "docs/审批登记说明.md",
+      "sha256": "6526701c34429fdb02cfd31192505dcd27ee9b192a83bf39a2a020e0a501acc4"
+    },
+    {
+      "path": "docs/缺项与接入边界.md",
+      "sha256": "a2659984f92c1db4441e69ea509335913f922e13e3563ba90ca9374f5771140a"
+    },
+    {
+      "path": "docs/输入合同.md",
+      "sha256": "5785957c893c52fb8d52ea216172ae1e95ef6047ec7ee5aa9a425a83fb76208e"
+    },
+    {
+      "path": "evidence/冻结前自测/selftest.json",
+      "sha256": "3318fe150e9f89792577a7e2213118267217cf5583baefebbebf6bd2000a81ca"
+    },
+    {
+      "path": "evidence/冻结前自测/unittest.log",
+      "sha256": "1573cd058f95a1349baa1825e9a8b96a9620c53cc7fbadb7a6e236e0df31b81f"
+    },
+    {
+      "path": "evidence/新工作范围核实.json",
+      "sha256": "8329daa0454a84941008299c3ec448d042390bafd7b3165946db18ef2a75edf8"
+    },
+    {
+      "path": "evidence/自测入口命令.json",
+      "sha256": "34f47f50e93466a901b9a10ea3262f084c55123f5059d85d2f7e463d3796bafa"
+    },
+    {
+      "path": "evidence/首次完整夹具核验/binding_result.json",
+      "sha256": "b776ddde9bfe7eefe68d2dbe03e95df75b114b8e54e886cbc83cd93e1867bd58"
+    },
+    {
+      "path": "expected/independent_values.json",
+      "sha256": "fac253db3c31de6c5f02b5d638cf9d196a50d3a62a8e7ee3fcc631f849dfead2"
+    },
+    {
+      "path": "fixtures/complete_bundle/balances.json",
+      "sha256": "073111bdba7e20fcab659d01784de3e35676921b3d5e5af3178f58b2d10ec92d"
+    },
+    {
+      "path": "fixtures/complete_bundle/context.json",
+      "sha256": "67d2ef3bd97b6b5b4b0e880aca1b2ce4ff3ff2ba838b7801f14808ca61a36eb9"
+    },
+    {
+      "path": "fixtures/complete_bundle/evidence_manifest.json",
+      "sha256": "8e37c1b4a08529b893faeecc3bd9ba3a3706228ed7cda0dcbe5b8edd227dc020"
+    },
+    {
+      "path": "fixtures/complete_bundle/scope.json",
+      "sha256": "7ab6b7418727daa6c608ce8477d14b83c26cdcc77976567d77d21d2f1d91ea69"
+    },
+    {
+      "path": "fixtures/complete_bundle/sources/statement-A.json",
+      "sha256": "6abfefd0df1442fadf00b58613bed9a723f9a863235b379f69d7266d04bb40ed"
+    },
+    {
+      "path": "fixtures/complete_bundle/sources/statement-B.json",
+      "sha256": "986be9088f56a4531873d35a413ae049455a224cbcfb71be50c5c898170d7fcb"
+    },
+    {
+      "path": "fixtures/trusted_binding.json",
+      "sha256": "86b908be2e5ec109a1da40056463052af895b44f60d00e8ea7698ec06520d641"
+    },
+    {
+      "path": "README.md",
+      "sha256": "97009d2d1534a5e29f6ba7d8d2b1bd2eba543da93c84b858c3e0c91ee3a0af62"
+    },
+    {
+      "path": "requirements.lock.txt",
+      "sha256": "9bc9d439dc8d4e353ee7bfee9b9b317358443ef1ea460516c1d8265048306c47"
+    },
+    {
+      "path": "selftest.py",
+      "sha256": "185f67529dab5b828e9aacdbb0665ecac47776b2f6a3aac468ab3bac5fda0719"
+    },
+    {
+      "path": "src/account_binding.py",
+      "sha256": "4341c7d591751111226f13bf068e4c2216fd46f820de77a05b3a8eb9b3188034"
+    },
+    {
+      "path": "src/binding_cli.py",
+      "sha256": "f5033286f644729793053089465a4e8c1703e1ece46e4258acf28ae6d7cb2888"
+    },
+    {
+      "path": "tests/test_account_binding.py",
+      "sha256": "43a81a26ec1cb62df5469ea87136c5fab89e49835ecb0c9ebda682130a3c9846"
+    },
+    {
+      "path": "交付报告.md",
+      "sha256": "5ed2e2b0cf1b085dcd97dfcb217b204f28afd5de01f598c089fde0f2cdccfd32"
+    }
+  ]
+}

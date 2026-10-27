@@ -1,0 +1,18 @@
+{
+  "_note": "独立预期：本文件为手工编写的冻结预期，不由被测函数生成；selftest 运行前后核对其 SHA256 不变，运行中不改写。",
+  "normal_inflow_yuan": ["1808700.00", "1843500.00", "1745700.00"],
+  "normal_outflow_yuan": ["1174200.00", "1995400.00", "2000400.00"],
+  "normal_months": ["2026-01", "2026-02", "2026-03"],
+  "normal_dates": ["2026-01-31", "2026-02-28", "2026-03-31"],
+  "revenue_yuan": "128000000.00",
+  "headcount": "320",
+  "wan_precision_cases": {"1.234567": "12345.67", "163.13": "1631300.00"},
+  "long_decimal_raw": "80.59999999999999",
+  "long_decimal_yuan": "806000.00",
+  "zero_amount_yuan": "0.00",
+  "serial_45961_1900": "2025-10-31",
+  "date_1904_fixture": "2026-01-31",
+  "exception_raw_kept": "1631300",
+  "partial_payment": {"receivable_yuan": "1000000.00", "received_yuan": "400000.00"},
+  "csv_injection_samples": ["=1+1", "+SUM(A1:A2)", "@cmd", "=HYPERLINK(\"http://x\")"]
+}

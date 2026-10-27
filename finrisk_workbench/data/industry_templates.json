@@ -1,0 +1,198 @@
+{
+  "MFG": {
+    "name": "制造业",
+    "cash_buffer_yellow_wan": 200.0,
+    "cash_buffer_red_wan": 120.0,
+    "time_buffer_yellow_days": 45,
+    "time_buffer_red_days": 25,
+    "financing_buffer_weight": 0.4,
+    "ops_adjust_buffer_weight": 0.3,
+    "ar_turnover_days_base": 60,
+    "inv_turnover_days_base": 90,
+    "current_ratio_base": 1.5,
+    "debt_ratio警戒": 0.70,
+    "approval_line_dept_mgr_wan": 50.0,
+    "approval_line_cfo_wan": 200.0,
+    "special_rules": [
+      "存货周转天数超过基准30%时标记为运营风险",
+      "原材料价格波动超过20%时触发成本冲击模拟"
+    ],
+    "seasonal_uplift": [],
+    "provenance": {
+      "cash_buffer_yellow_wan": {
+        "source": "上市公司年报（证监会指定披露平台）",
+        "year": 2024,
+        "sample": "120家",
+        "method": "取样本 P25 分位",
+        "status": "预设值，参赛前需重核最新年报并标注页码"
+      },
+      "cash_buffer_red_wan": {
+        "source": "上市公司年报（证监会指定披露平台）",
+        "year": 2024,
+        "sample": "120家",
+        "method": "取样本 P10 分位",
+        "status": "预设值，参赛前需重核最新年报并标注页码"
+      },
+      "ar_turnover_days_base": {
+        "source": "《中国统计年鉴》",
+        "year": 2024,
+        "sample": "—",
+        "method": "规模以上工业企业均值",
+        "status": "待补页码"
+      },
+      "inv_turnover_days_base": {
+        "source": "《中国统计年鉴》",
+        "year": 2024,
+        "sample": "—",
+        "method": "规模以上工业企业均值",
+        "status": "待补页码"
+      },
+      "current_ratio_base": {
+        "source": "《中国统计年鉴》",
+        "year": 2024,
+        "sample": "—",
+        "method": "规模以上工业企业均值",
+        "status": "待补页码"
+      }
+    }
+  },
+  "RET": {
+    "name": "零售业",
+    "cash_buffer_yellow_wan": 100.0,
+    "cash_buffer_red_wan": 50.0,
+    "time_buffer_yellow_days": 30,
+    "time_buffer_red_days": 15,
+    "financing_buffer_weight": 0.2,
+    "ops_adjust_buffer_weight": 0.5,
+    "ar_turnover_days_base": 15,
+    "inv_turnover_days_base": 45,
+    "current_ratio_base": 1.2,
+    "debt_ratio警戒": 0.65,
+    "approval_line_dept_mgr_wan": 20.0,
+    "approval_line_cfo_wan": 100.0,
+    "special_rules": [
+      "春节、双十一期间预警线自动上浮30%",
+      "库存积压超过60天时触发折价清仓方案推演"
+    ],
+    "seasonal_uplift": [
+      {"months": [1, 2, 11], "uplift": 0.30, "reason": "春节 / 双十一旺季，备货与兑付集中"},
+      {"months": [7], "uplift": -0.15, "reason": "淡季，阈值下调避免误报"}
+    ],
+    "provenance": {
+      "cash_buffer_yellow_wan": {
+        "source": "上市公司年报",
+        "year": 2024,
+        "sample": "60家",
+        "method": "P25 分位",
+        "status": "预设值，待重核"
+      },
+      "cash_buffer_red_wan": {
+        "source": "上市公司年报",
+        "year": 2024,
+        "sample": "60家",
+        "method": "P10 分位",
+        "status": "预设值，待重核"
+      },
+      "ar_turnover_days_base": {
+        "source": "《中国统计年鉴》",
+        "year": 2024,
+        "sample": "—",
+        "method": "限额以上零售业均值",
+        "status": "待补页码"
+      }
+    }
+  },
+  "CON": {
+    "name": "建筑业",
+    "cash_buffer_yellow_wan": 300.0,
+    "cash_buffer_red_wan": 180.0,
+    "time_buffer_yellow_days": 60,
+    "time_buffer_red_days": 30,
+    "financing_buffer_weight": 0.5,
+    "ops_adjust_buffer_weight": 0.2,
+    "ar_turnover_days_base": 120,
+    "inv_turnover_days_base": 180,
+    "current_ratio_base": 1.8,
+    "debt_ratio警戒": 0.80,
+    "approval_line_dept_mgr_wan": 100.0,
+    "approval_line_cfo_wan": 500.0,
+    "special_rules": [
+      "完工百分比低于付款比例时触发预警",
+      "甲方付款逾期超过30天自动升级风险等级"
+    ],
+    "seasonal_uplift": [],
+    "provenance": {
+      "cash_buffer_yellow_wan": {
+        "source": "上市公司年报",
+        "year": 2024,
+        "sample": "45家",
+        "method": "P25 分位",
+        "status": "预设值，待重核"
+      },
+      "cash_buffer_red_wan": {
+        "source": "上市公司年报",
+        "year": 2024,
+        "sample": "45家",
+        "method": "P10 分位",
+        "status": "预设值，待重核"
+      },
+      "ar_turnover_days_base": {
+        "source": "《中国统计年鉴》",
+        "year": 2024,
+        "sample": "—",
+        "method": "资质以上建筑业均值",
+        "status": "待补页码"
+      },
+      "inv_turnover_days_base": {
+        "source": "《中国统计年鉴》",
+        "year": 2024,
+        "sample": "—",
+        "method": "在建工程计入存货",
+        "status": "待补页码"
+      }
+    }
+  },
+  "TEC": {
+    "name": "科技服务业",
+    "cash_buffer_yellow_wan": 80.0,
+    "cash_buffer_red_wan": 40.0,
+    "time_buffer_yellow_days": 20,
+    "time_buffer_red_days": 10,
+    "financing_buffer_weight": 0.15,
+    "ops_adjust_buffer_weight": 0.55,
+    "ar_turnover_days_base": 45,
+    "inv_turnover_days_base": 30,
+    "current_ratio_base": 2.0,
+    "debt_ratio警戒": 0.55,
+    "approval_line_dept_mgr_wan": 30.0,
+    "approval_line_cfo_wan": 150.0,
+    "special_rules": [
+      "人力成本占比超过70%时触发人力结构方案推演",
+      "项目毛利率低于20%时标记为盈利风险"
+    ],
+    "seasonal_uplift": [],
+    "provenance": {
+      "cash_buffer_yellow_wan": {
+        "source": "上市公司年报",
+        "year": 2024,
+        "sample": "55家",
+        "method": "P25 分位",
+        "status": "预设值，待重核"
+      },
+      "cash_buffer_red_wan": {
+        "source": "上市公司年报",
+        "year": 2024,
+        "sample": "55家",
+        "method": "P10 分位",
+        "status": "预设值，待重核"
+      },
+      "ar_turnover_days_base": {
+        "source": "《中国统计年鉴》",
+        "year": 2024,
+        "sample": "—",
+        "method": "规模以上服务业均值",
+        "status": "待补页码"
+      }
+    }
+  }
+}

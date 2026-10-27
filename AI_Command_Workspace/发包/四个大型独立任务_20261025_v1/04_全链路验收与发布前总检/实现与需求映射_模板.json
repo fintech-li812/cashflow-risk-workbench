@@ -1,0 +1,257 @@
+{
+  "task_id": "MEM-RELEASE-002",
+  "requirements": [
+    {
+      "case_id": "G01",
+      "requirement": "合法离线包待平台",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G02",
+      "requirement": "文件摘要不符",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G03",
+      "requirement": "金额篡改后重算哈希",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G04",
+      "requirement": "回执企业不符",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G05",
+      "requirement": "回执摘要不符",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G06",
+      "requirement": "伪造生产已部署",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G07",
+      "requirement": "相对路径穿越",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G08",
+      "requirement": "回放冒充原生",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G09",
+      "requirement": "上下文run错配",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G10",
+      "requirement": "已有输出不覆盖",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G11",
+      "requirement": "来源修订错配",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G12",
+      "requirement": "请求编号关联",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G13",
+      "requirement": "同编号幂等一致",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G14",
+      "requirement": "同编号不同结果冲突",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G15",
+      "requirement": "缺实际余额不能勾稽完成",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G16",
+      "requirement": "仅经营不能冒充全口径",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G17",
+      "requirement": "非成功金额必须null",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G18",
+      "requirement": "结果状态闭集",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G19",
+      "requirement": "来源与fixture分离",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G20",
+      "requirement": "缺真实工具调用原文",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G21",
+      "requirement": "独立SQL证据缺失",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G22",
+      "requirement": "统计数量不闭合",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G23",
+      "requirement": "未执行项不能记通过",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G24",
+      "requirement": "回执后端SQLite与MySQL区分",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G25",
+      "requirement": "输入原件与预期不变",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G26",
+      "requirement": "缺导入报告模块明确列出",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G27",
+      "requirement": "原生重算证据不完整",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G28",
+      "requirement": "字典自报不当执行证据",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G29",
+      "requirement": "端口与进程归属只读检查",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G30",
+      "requirement": "断库状态不得报已保存",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G31",
+      "requirement": "超时先精确回查",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G32",
+      "requirement": "审计报告HTML转义及离线",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G33",
+      "requirement": "清单嵌套文件完整",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G34",
+      "requirement": "ZIP解包复现",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G35",
+      "requirement": "失败退出码非0",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "G36",
+      "requirement": "全链路不完整禁止放行",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "mfg-account-binding-report.v1",
+  "files": [
+    {
+      "path": "binding_result.json",
+      "sha256": "b776ddde9bfe7eefe68d2dbe03e95df75b114b8e54e886cbc83cd93e1867bd58"
+    }
+  ]
+}

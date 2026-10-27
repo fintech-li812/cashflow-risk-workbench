@@ -1,0 +1,101 @@
+{
+  "task_id": "MEM-EVIDENCE-001",
+  "version": "v1",
+  "kind": "outsource_source_bundle",
+  "source_snapshot_id": "MEM-EVIDENCE-001.20261023.v1",
+  "source_count": 15,
+  "files": [
+    {
+      "path": "00_先读这里.md",
+      "sha256": "ce25b17ec95b6db2be856af21299d052b8c1d5d371cbeea6ec93cce679a9d6b8"
+    },
+    {
+      "path": "01_源文件/原任务/结果快照存储任务.md",
+      "sha256": "51bbeac366e0157e4867277d7b086b3a5b0822d2344521f80fb5755ff18b4ce8"
+    },
+    {
+      "path": "01_源文件/参考/Agent接口映射.md",
+      "sha256": "234bb14c43f869be43f7ac1177a5b3c7936350324239dacfee3baa1335444791"
+    },
+    {
+      "path": "01_源文件/参考/Agent未实现清单.md",
+      "sha256": "bef5cd5b995c28623d79aeff3d810a2ef298451fcc44fc93ac836888f1b50bfe"
+    },
+    {
+      "path": "01_源文件/参考候选/agent_guard.py",
+      "sha256": "eb99d420e2ac7ef1352b448d0c29e1430d0a65cd80a76111eee3dc27c96055c1"
+    },
+    {
+      "path": "01_源文件/参考候选/persistence.py",
+      "sha256": "13f9a688efe3622965914f7d6ee8112e1eb0c54ef64ea4b90e1ce208fc217720"
+    },
+    {
+      "path": "01_源文件/参考候选/request_flow.py",
+      "sha256": "4acf699159af53cdbf5fb1ad0341a7ccc286f7c9d5dbc7c584b914a4ae4b832b"
+    },
+    {
+      "path": "01_源文件/参考候选/requirements.lock.txt",
+      "sha256": "a471097ecfe6a9c6dcc511917dcf7a894120bed3ed1fb86c2ad8595129935327"
+    },
+    {
+      "path": "01_源文件/参考候选/runtime_adapter.py",
+      "sha256": "bbd33e29cf65549c2265bda47ffec6859eefba2be317f0d0b6f74dd4402bdb8f"
+    },
+    {
+      "path": "01_源文件/合成夹具/synthetic_success.json",
+      "sha256": "d0e79eceeed7c59de944393c5261ea6772b65c3d92289fb5d0a10208fae4dcb5"
+    },
+    {
+      "path": "01_源文件/审核/最新审批与反例.md",
+      "sha256": "2fb29c317878f7621cb1b976ca08969836b2bf9a9d6557b0b309d43e6b5d6a66"
+    },
+    {
+      "path": "01_源文件/规则/AGENTS.md",
+      "sha256": "d7a016d2a3802059bba58a915ffe063d15aa4508a1afd145a839f8b1fab4ab21"
+    },
+    {
+      "path": "01_源文件/规则/一期范围.md",
+      "sha256": "dd0037ff843cff75fb308090f32eb1a0b735fe46432d85b3be95f0931e183b5c"
+    },
+    {
+      "path": "01_源文件/规则/算法迭代与接口约定.md",
+      "sha256": "bd1fc66ea6c129b526e0261bfe3a3d5995e566e531737c6a7a98236dd4cf5414"
+    },
+    {
+      "path": "01_源文件/规则/结果边界接口.md",
+      "sha256": "a5f894f10262a842a75e9489495fa062828242c0f1e2250227700d28e83f068b"
+    },
+    {
+      "path": "01_源文件/规则/统一接口_v1.md",
+      "sha256": "b17a22386d0931093e1bcf6e02d52895bf825c96234f0b2590143d448f6e2fbb"
+    },
+    {
+      "path": "02_交接模板/01_需求与实现映射.csv",
+      "sha256": "b61617369b421bf7da5d37c38b274d6e74017dd422e3a59bbc72d8dcd868f27b"
+    },
+    {
+      "path": "02_交接模板/02_测试结果.csv",
+      "sha256": "b01a6001f41445066b52a49ddbe8a6a511903497c3851a55cd871e0edb511a07"
+    },
+    {
+      "path": "02_交接模板/03_证据索引.csv",
+      "sha256": "1d1dc026bdeb0c7b34d5e6c61b339a40a35a0e7f1c9b4bf51db1f5ffe7fd3ba9"
+    },
+    {
+      "path": "02_交接模板/04_继承与改动.csv",
+      "sha256": "3b2519eb5ffc51476ec7135fcd6b35f147dae4feb050ad40f3a988b1c8b70d25"
+    },
+    {
+      "path": "任务书_要求与验收.md",
+      "sha256": "7d50a38e8a71d5a78f2468c7f01ac9d690d66494dba22f51e7d66495cb84dd61"
+    },
+    {
+      "path": "合成测试context_非生产认证.json",
+      "sha256": "833d3f580caa1ff12870ecd8cf67f991a66c5b4b64d6653d0f952ebc83904406"
+    },
+    {
+      "path": "源文件索引.csv",
+      "sha256": "5ce4a4e44aedd11abbf2219f0708602266940389da947e4a312b9bfe0111dc93"
+    }
+  ]
+}

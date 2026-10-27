@@ -1,0 +1,114 @@
+﻿WB-ENG-001 独立审核 · 脱敏测试证据
+任务: DS-AUD-001（用户 2026-10-22 20:23 直接指令启动）
+审核员: DeepSeek Harness
+候选快照: D:\AI_Command_Workspace\交付\WB-ENG-001\WorkBuddy\v1（12 份受审文件，不含 tools/venv）
+执行环境: 本机 Windows；Python 3.13.12（作者隔离 venv，仅用于 jsonschema 4.26.0 标准库调用）
+连接声明: 未连接 MySQL、未连接服务器、未操作千问、未修改候选与源项目
+脱敏说明: 本文件不含口令、密钥、令牌或连接串；未记录任何凭据
+
+复现命令（审核员侧）:
+  $env:PYTHONIOENCODING='utf-8'; & "<候选>\tools\venv\Scripts\python.exe" "<临时脚本>\evidence.py"
+==============================================================================
+[E1] 快照完整性：文件 SHA256 与作者 SHA256SUMS.txt 比对
+==============================================================================
+作者清单条目: 11（清单不含自身与 tools/venv，属正常）
+  一致       29817 cacb421a41e4ddb0e426772cf557b9a4633c1f4a788559034832e24dff300c0d candidate\docs\千问办公_MySQL_MCP对接协议_v1.1.md
+  一致       31646 efda98cf2c3b7060501cf4cf87335d5838e4ba65707cb34be71133c68a7d453d candidate\docs\千问办公_MySQL_MCP工具定义_v1.1.json
+  一致        1561 2b4b84f2118df59cd7beffb17e8a5c62bcf8040b8b6fce487cfcfea27f86ad8c candidate\sql\grants_admin_view_候选.sql
+  一致       42340 c588fedfcf6ebc2e13c2f6c2190ce965c78bcad0cb099992c9af541fde45802e candidate\sql\init_v1.1.sql
+  一致        3317 3c034155141f70bac10f0fa5d2c1e21100b53bc439c93c8ea88057b5ddeb5473 README.md
+  清单未列      1438 7f5e9f7d6976eb368f94ed9de5b5c961acf92637db7c64a177e40bdb8729539f SHA256SUMS.txt
+  一致        8197 87dc07ab6d01db0a93dd908313b67dcb7724252b79aaec779b7eca86404dc4b2 test-output\validate_output.txt
+  一致         355 fee82f47557ca0039568a9d3d59c50521b698c9ec684b68e3f89df7e27b69f1a tools\requirements.txt
+  一致       29145 7d9c5b56bf0041a6cecc5444507af2dae7c373ecfe6530dc7b6a8439c9aaccae tools\validate_contract.py
+  一致        8869 e82494aa0c02dd0c5c1a73daa18c79185e71a2f81b6f72165e66fc71e1da3f5f 改动清单.md
+  一致        4236 77679d14cf0a8f6f4a913fcbb11376a0ada9b523d6fe1542fedc7c32db31084e 未决项.md
+  一致        3937 8c29de59c35c3b427ed8c89c1fb67cb3228d0796dfb8eaf56c99d30970392041 测试报告.md
+汇总: 一致=11 不一致=0 清单未列=1
+
+==============================================================================
+[E2] 复现作者校验脚本（使用作者隔离 venv，仅调用标准 jsonschema 库）
+==============================================================================
+退出码: 0
+末行: 汇总: PASS=66 FAIL=0 SKIP=1 BLOCKED=2 合计=69
+结论: 结论: 无 FAIL（BLOCKED/SKIP 项见明细，不构成通过证据）
+与作者留档逐行一致: True
+
+==============================================================================
+[E3] 独立探针（审核员自写，不调用作者断言逻辑）
+==============================================================================
+E3.1 Draft2020-12 元校验: 14/14 通过
+E3.2 event_type: JSON=24 DDL=24 协议出现=24  三方相等=True
+E3.3 11 表中无写入工具的: ['deada_score_log', 'quality_log']
+E3.4 pending 反馈省略 actual_value -> (False, "'actual_value' is a required property")
+E3.5 audit_id='A-demo-001'（协议示例形态）-> (True, '') | DDL audit_id=BIGINT
+E3.6 save_param_template params={} -> (True, '')
+E3.7 rf_predict 输入是否含 company_id: False（DDL 该列 NOT NULL）
+E3.7 rf_predict 输入是否含 record_key: False（DDL 该列 NOT NULL）
+E3.7 rf_predict 输入是否含 rule_version: False（DDL 该列 NOT NULL）
+E3.7 rf_predict 输入是否含 data_snapshot_id: False（DDL 该列 NOT NULL）
+
+==============================================================================
+[E4] 源项目只读核对
+==============================================================================
+源 init.sql 视图定义数: 7
+源文件第417行期望值: ["--   SHOW FULL TABLES WHERE Table_type='VIEW';      -- 期望 8 个视图"]
+19:50 后源项目被修改文件数: 0
+
+==============================================================================
+[E5] 稳定性复核（同一进程内二次哈希，针对 11 份受清单约束的文件）
+==============================================================================
+二次哈希与清单不一致的文件: 无
+说明: 审核开始时(20:23)与本次复核之间未发现候选变动；若审核期间作者继续写入，结论只对上述快照有效。
+
+环境: Windows + Python 3.13.14 | 未连接 MySQL/服务器/千问 | 数据均为本地文件
+
+==============================================================================
+[E6] 环境声明核对
+==============================================================================
+README 声明 Python 3.13.12（README.md L28）；venv 解释器实测: Python 3.13.14
+pyvenv.cfg: home=...3.13.12, version=3.13.14, executable=WorkBuddy vendor python
+解释: 路径名与运行时版本不一致；不影响 jsonschema 行为，但复现描述应按实测版本写。
+依赖实测（与 tools/requirements.txt 逐项一致）:
+attrs==26.1.0
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+referencing==0.37.0
+rpds-py==2026.9.1
+
+==============================================================================
+[E7] 权限与本地 MySQL 事实核对（用于缺陷 R-06/R-10，不含凭据）
+==============================================================================
+本机 MySQL84 服务状态: Running ；3306 监听: 是（:::3306）
+本机存在 mysql.exe / mysqld.exe（8.4）；审核员无任何本机 MySQL 凭据，未能连接（root/空口令亦被拒：ERROR 1045）。
+SHOW GRANTS 证据（来源：D:\AI_Command_Workspace\交付\WB-SRV-001\WorkBuddy\v1\脱敏只读证据.txt L96-98）:
+cf_admin          localhost
+cf_app            localhost
+cf_backup         localhost
+-- cf_admin@localhost
+GRANT USAGE ON *.* TO `cf_admin`@`localhost`
+GRANT SELECT, INSERT, UPDATE, CREATE, DROP, REFERENCES, INDEX, ALTER ON `cf_workbench`.* TO `cf_admin`@`localhost`
+GRANT USAGE ON *.* TO `cf_admin`@`localhost`
+GRANT SELECT, INSERT, UPDATE, CREATE, DROP, REFERENCES, INDEX, ALTER ON `cf_workbench`.* TO `cf_admin`@`localhost`
+-- cf_read@localhost
+GRANT SELECT, INSERT, UPDATE, CREATE, DROP, REFERENCES, INDEX, ALTER ON `cf_workbench`.* TO `cf_admin`@`localhost`
+-- cf_read@localhost
+GRANT USAGE ON *.* TO `cf_read`@`localhost`
+结论: cf_admin 仅持有 cf_workbench.* 库级权限，无全局 CREATE；第 46 行 CREATE DATABASE 所需的权限等级与既有授权不一致，需隔离实测确认。
+
+==============================================================================
+[E8] 测试报告计数复核（依据 test-output/validate_output.txt 实际行）
+==============================================================================
+  A-JSON静态 PASS -> 15
+  B-Schema正反例 PASS -> 30
+  B-Schema正反例 SKIP -> 1
+  C-DDL静态 PASS -> 21
+  D-真实MySQL BLOCKED -> 2
+A 节 15 项、B 节 31 项（30 PASS + 1 SKIP）、C 节 21 项、D 节 2 项 BLOCKED；合计 69，PASS 66。
+与 测试报告.md §一表格（B 31 PASS / C 20 PASS）不一致；与 改动清单.md §四（B 31 项 / C 21 项）部分一致。
+
+==============================================================================
+[E9] 声明
+==============================================================================
+本证据由审核员在本机只读运行生成；所有结论仅对应 2026-10-22 20:23—20:30（报告整理至 20:32） 的候选快照。
+未执行任何 MySQL DDL、未写入任何数据库、未连接服务器、未操作千问。

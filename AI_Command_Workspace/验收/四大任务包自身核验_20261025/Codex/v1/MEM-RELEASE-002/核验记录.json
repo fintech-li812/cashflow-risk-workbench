@@ -1,0 +1,15 @@
+{
+  "task_id": "MEM-RELEASE-002",
+  "mandatory_case_count": 36,
+  "fake_all_pass_submission_rejected": true,
+  "exit_code": 2,
+  "admission": {
+    "task_id": "MEM-RELEASE-002",
+    "engineering_admission": "failed",
+    "production_deployed": false,
+    "human_review_required_for_this_delivery": false,
+    "detail": "[Errno 2] No such file or directory: 'D:\\\\AI_Command_Workspace\\\\验收\\\\四大任务包自身核验_20261025\\\\Codex\\\\v1\\\\MEM-RELEASE-002\\\\验收输出\\\\G_B01_candidate_not_live\\\\assessment\\\\assessment.json'",
+    "error": "FileNotFoundError",
+    "directly_submittable": false
+  }
+}

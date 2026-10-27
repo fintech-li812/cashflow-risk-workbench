@@ -1,0 +1,8 @@
+{
+  "status": "blocked",
+  "release_authorized": false,
+  "steps": [],
+  "platform_calls": 0,
+  "database_operations": 0,
+  "reason": "package_sha256_mismatch_no_code_executed"
+}

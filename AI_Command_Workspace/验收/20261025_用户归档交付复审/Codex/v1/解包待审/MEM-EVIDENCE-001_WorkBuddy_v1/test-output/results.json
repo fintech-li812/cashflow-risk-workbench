@@ -1,0 +1,1193 @@
+{
+  "cases": [
+    {
+      "actual_exit": 0,
+      "case_id": "TC-01",
+      "checks": [
+        {
+          "actual": 0,
+          "desc": "退出码",
+          "expected": 0
+        },
+        {
+          "actual": "created",
+          "desc": "outcome",
+          "expected": "created"
+        },
+        {
+          "actual": "committed",
+          "desc": "回执状态",
+          "expected": "committed"
+        },
+        {
+          "actual": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456",
+          "desc": "摘要一致",
+          "expected": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456"
+        },
+        {
+          "actual": "loc-8b0eccb1d1979b5df9d4d4d0",
+          "desc": "record_id",
+          "expected": "loc-8b0eccb1d1979b5df9d4d4d0"
+        },
+        {
+          "actual": 0,
+          "desc": "新进程读回退出码",
+          "expected": 0
+        },
+        {
+          "actual": "loc-8b0eccb1d1979b5df9d4d4d0",
+          "desc": "重启读回 record_id 相同",
+          "expected": "loc-8b0eccb1d1979b5df9d4d4d0"
+        },
+        {
+          "actual": "140000.00",
+          "desc": "精度保留 140000.00",
+          "expected": "140000.00"
+        }
+      ],
+      "command": "python -m src.cli save ... --allow-fixture && python -m src.cli get ...",
+      "expected_exit": 0,
+      "expected_ref": "expected/expected_values.json#TC-01",
+      "facts": {
+        "outcome": "created",
+        "readback_closing": "140000.00",
+        "record_id": "loc-8b0eccb1d1979b5df9d4d4d0"
+      },
+      "inputs": "fixtures/synthetic_success.json + 可信上下文",
+      "name": "正常提交后新进程重启读回",
+      "nature": "正例",
+      "note": "提交与读回分别在不同进程，证明跨进程持久化",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 0,
+      "case_id": "TC-02",
+      "checks": [
+        {
+          "actual": 0,
+          "desc": "退出码",
+          "expected": 0
+        },
+        {
+          "actual": "replay",
+          "desc": "outcome",
+          "expected": "replay"
+        },
+        {
+          "actual": "loc-8b0eccb1d1979b5df9d4d4d0",
+          "desc": "record_id 不变",
+          "expected": "loc-8b0eccb1d1979b5df9d4d4d0"
+        },
+        {
+          "actual": 1,
+          "desc": "业务记录数",
+          "expected": 1
+        }
+      ],
+      "command": "python -m src.cli save --request-id req-main-001",
+      "expected_exit": 0,
+      "expected_ref": "expected/expected_values.json#TC-02",
+      "facts": {
+        "outcome": "replay",
+        "record_id": "loc-8b0eccb1d1979b5df9d4d4d0",
+        "rows": 1
+      },
+      "inputs": "同一 request-id + 同一 payload",
+      "name": "同键同摘要回放返回原 record_id",
+      "nature": "正例",
+      "note": "幂等不新增记录；断言内容与身份而非仅计数",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 4,
+      "case_id": "TC-03",
+      "checks": [
+        {
+          "actual": 4,
+          "desc": "退出码",
+          "expected": 4
+        },
+        {
+          "actual": "CONFLICT",
+          "desc": "错误码",
+          "expected": "CONFLICT"
+        },
+        {
+          "actual": 1,
+          "desc": "业务记录数仍为 1",
+          "expected": 1
+        },
+        {
+          "actual": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456",
+          "desc": "原记录摘要未被覆盖",
+          "expected": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456"
+        }
+      ],
+      "command": "python -m src.cli save --request-id req-main-001（payload 已变）",
+      "expected_exit": 4,
+      "expected_ref": "expected/expected_values.json#TC-03",
+      "facts": {
+        "code": "CONFLICT",
+        "rows": 1,
+        "stored_digest": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456"
+      },
+      "inputs": "fixtures/synthetic_success_variant.json",
+      "name": "同键不同 payload 冲突且不覆盖",
+      "nature": "负例",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 0,
+      "case_id": "TC-04",
+      "checks": [
+        {
+          "actual": 0,
+          "desc": "退出码",
+          "expected": 0
+        },
+        {
+          "actual": "created",
+          "desc": "outcome",
+          "expected": "created"
+        },
+        {
+          "actual": "0.00",
+          "desc": "opening 保留 0.00",
+          "expected": "0.00"
+        },
+        {
+          "actual": "completed",
+          "desc": "勾稽状态",
+          "expected": "completed"
+        }
+      ],
+      "command": "python -m src.cli save --input synthetic_success_zero.json",
+      "expected_exit": 0,
+      "expected_ref": "expected/expected_values.json#TC-04",
+      "facts": {
+        "opening": "0.00",
+        "outcome": "created"
+      },
+      "inputs": "fixtures/synthetic_success_zero.json",
+      "name": "全 0 金额（真实 0 不等于缺项）",
+      "nature": "正例",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 0,
+      "case_id": "TC-05",
+      "checks": [
+        {
+          "actual": 0,
+          "desc": "退出码",
+          "expected": 0
+        },
+        {
+          "actual": "not_performed",
+          "desc": "勾稽状态",
+          "expected": "not_performed"
+        },
+        {
+          "actual": null,
+          "desc": "difference 为 null",
+          "expected": null
+        },
+        {
+          "actual": null,
+          "desc": "actual_closing 为 null",
+          "expected": null
+        },
+        {
+          "actual": true,
+          "desc": "提示未完成勾稽",
+          "expected": true
+        }
+      ],
+      "command": "python -m src.cli save --input synthetic_success_no_actual.json",
+      "expected_exit": 0,
+      "expected_ref": "expected/expected_values.json#TC-05",
+      "facts": {
+        "difference": null,
+        "reconciliation_state": "not_performed"
+      },
+      "inputs": "fixtures/synthetic_success_no_actual.json",
+      "name": "缺实际余额可保存但勾稽未完成",
+      "nature": "正例（业务未核对）",
+      "note": "缺项不得伪造差异 0",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 0,
+      "case_id": "TC-06",
+      "checks": [
+        {
+          "actual": 0,
+          "desc": "退出码",
+          "expected": 0
+        },
+        {
+          "actual": "difference_pending_review",
+          "desc": "勾稽状态",
+          "expected": "difference_pending_review"
+        },
+        {
+          "actual": "0.01",
+          "desc": "difference 精确到分",
+          "expected": "0.01"
+        }
+      ],
+      "command": "python -m src.cli save --input synthetic_success_diff_cent.json",
+      "expected_exit": 0,
+      "expected_ref": "expected/expected_values.json#TC-06",
+      "facts": {
+        "difference": "0.01",
+        "reconciliation_state": "difference_pending_review"
+      },
+      "inputs": "fixtures/synthetic_success_diff_cent.json",
+      "name": "差异一分保存并标记待核",
+      "nature": "正例（差异待核）",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 3,
+      "case_id": "TC-07",
+      "checks": [
+        {
+          "actual": 3,
+          "desc": "非法金额退出码",
+          "expected": 3
+        },
+        {
+          "actual": "VALIDATION_FAILED",
+          "desc": "非法金额错误码",
+          "expected": "VALIDATION_FAILED"
+        },
+        {
+          "actual": 3,
+          "desc": "非有限值退出码",
+          "expected": 3
+        },
+        {
+          "actual": 3,
+          "desc": "勾稽错误退出码",
+          "expected": 3
+        },
+        {
+          "actual": 0,
+          "desc": "未写入任何记录",
+          "expected": 0
+        }
+      ],
+      "command": "python -m src.cli save --input result_bad_amount.json / result_nonfinite.json / result_recon_mismatch.json",
+      "expected_exit": 3,
+      "expected_ref": "expected/expected_values.json#TC-07",
+      "facts": {
+        "bad_code": "VALIDATION_FAILED",
+        "nan_code": "VALIDATION_FAILED",
+        "recon_code": "VALIDATION_FAILED"
+      },
+      "inputs": "result_bad_amount.json、result_nonfinite.json、result_recon_mismatch.json",
+      "name": "非法金额/非有限值/勾稽错误全部拒绝",
+      "nature": "负例",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 3,
+      "case_id": "TC-08",
+      "checks": [
+        {
+          "actual": 3,
+          "desc": "退出码",
+          "expected": 3
+        },
+        {
+          "actual": "VALIDATION_FAILED",
+          "desc": "错误码",
+          "expected": "VALIDATION_FAILED"
+        },
+        {
+          "actual": 0,
+          "desc": "未写入记录",
+          "expected": 0
+        }
+      ],
+      "command": "python -m src.cli save --input result_missing_field.json",
+      "expected_exit": 3,
+      "expected_ref": "expected/expected_values.json#TC-08",
+      "facts": {
+        "code": "VALIDATION_FAILED"
+      },
+      "inputs": "fixtures/result_missing_field.json",
+      "name": "缺必填字段拒绝保存",
+      "nature": "负例",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 3,
+      "case_id": "TC-09",
+      "checks": [
+        {
+          "actual": 3,
+          "desc": "退出码",
+          "expected": 3
+        },
+        {
+          "actual": "VALIDATION_FAILED",
+          "desc": "错误码",
+          "expected": "VALIDATION_FAILED"
+        },
+        {
+          "actual": 0,
+          "desc": "未写入记录",
+          "expected": 0
+        }
+      ],
+      "command": "python -m src.cli save --input result_identity_mismatch.json",
+      "expected_exit": 3,
+      "expected_ref": "expected/expected_values.json#TC-09",
+      "facts": {
+        "code": "VALIDATION_FAILED"
+      },
+      "inputs": "fixtures/result_identity_mismatch.json",
+      "name": "payload 身份与可信上下文不一致拒绝",
+      "nature": "负例",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 3,
+      "case_id": "TC-10",
+      "checks": [
+        {
+          "actual": 3,
+          "desc": "退出码",
+          "expected": 3
+        },
+        {
+          "actual": "VALIDATION_FAILED",
+          "desc": "错误码",
+          "expected": "VALIDATION_FAILED"
+        }
+      ],
+      "command": "python -m src.cli save --input result_rev_mismatch.json",
+      "expected_exit": 3,
+      "expected_ref": "expected/expected_values.json#TC-10",
+      "facts": {
+        "code": "VALIDATION_FAILED"
+      },
+      "inputs": "fixtures/result_rev_mismatch.json",
+      "name": "源版本与上下文不一致拒绝（不误复用旧快照）",
+      "nature": "负例",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 3,
+      "case_id": "TC-11",
+      "checks": [
+        {
+          "actual": 3,
+          "desc": "正式保存退出码",
+          "expected": 3
+        },
+        {
+          "actual": "VALIDATION_FAILED",
+          "desc": "正式保存错误码",
+          "expected": "VALIDATION_FAILED"
+        },
+        {
+          "actual": 0,
+          "desc": "诊断通道退出码",
+          "expected": 0
+        },
+        {
+          "actual": 0,
+          "desc": "正式记录数",
+          "expected": 0
+        },
+        {
+          "actual": 1,
+          "desc": "诊断记录数",
+          "expected": 1
+        },
+        {
+          "actual": null,
+          "desc": "诊断不返回回执",
+          "expected": null
+        }
+      ],
+      "command": "python -m src.cli save --save-diagnostic",
+      "expected_exit": 3,
+      "expected_ref": "expected/expected_values.json#TC-11",
+      "facts": {
+        "diag_receipt": null,
+        "diag_rows": 1,
+        "formal_rows": 0
+      },
+      "inputs": "fixtures/result_non_success.json",
+      "name": "非 success 不产生正式回执，仅可存诊断",
+      "nature": "负例+诊断",
+      "note": "业务状态 BLOCKED 与测试状态分开：本用例测试状态为通过",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 3,
+      "case_id": "TC-12",
+      "checks": [
+        {
+          "actual": 3,
+          "desc": "默认退出码",
+          "expected": 3
+        },
+        {
+          "actual": "VALIDATION_FAILED",
+          "desc": "默认错误码",
+          "expected": "VALIDATION_FAILED"
+        },
+        {
+          "actual": 0,
+          "desc": "显式允许退出码",
+          "expected": 0
+        },
+        {
+          "actual": true,
+          "desc": "回执标记 is_fixture",
+          "expected": true
+        },
+        {
+          "actual": true,
+          "desc": "输出含醒目标识",
+          "expected": true
+        }
+      ],
+      "command": "python -m src.cli save（无 --allow-fixture） vs save --allow-fixture",
+      "expected_exit": 3,
+      "expected_ref": "expected/expected_values.json#TC-12",
+      "facts": {
+        "default_code": "VALIDATION_FAILED",
+        "fixture_warning": "【合成数据·非生产·offline_fi",
+        "is_fixture": true
+      },
+      "inputs": "fixtures/synthetic_success.json（origin=offline_fixture）",
+      "name": "默认拒绝 offline_fixture，显式允许产生醒目标识",
+      "nature": "负例+正例",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 9,
+      "case_id": "TC-13",
+      "checks": [
+        {
+          "actual": 9,
+          "desc": "故障子进程退出码",
+          "expected": 9
+        },
+        {
+          "actual": 0,
+          "desc": "崩溃后无部分记录",
+          "expected": 0
+        },
+        {
+          "actual": 1,
+          "desc": "重试后记录数",
+          "expected": 1
+        },
+        {
+          "actual": "committed",
+          "desc": "重试返回 committed",
+          "expected": "committed"
+        }
+      ],
+      "command": "python -m src.cli save --fault-before-commit",
+      "expected_exit": 9,
+      "expected_ref": "expected/expected_values.json#TC-13",
+      "facts": {
+        "child_exit": 9,
+        "rows_after_crash": 0,
+        "rows_after_retry": 1
+      },
+      "inputs": "子进程 --fault-before-commit",
+      "name": "COMMIT 前进程终止：不留半条记录",
+      "nature": "故障注入",
+      "note": "仅终止本包自己启动的子进程，不停止任何外部进程",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 9,
+      "case_id": "TC-14",
+      "checks": [
+        {
+          "actual": 9,
+          "desc": "故障子进程退出码",
+          "expected": 9
+        },
+        {
+          "actual": 1,
+          "desc": "崩溃前已落库记录数",
+          "expected": 1
+        },
+        {
+          "actual": 0,
+          "desc": "重试退出码",
+          "expected": 0
+        },
+        {
+          "actual": "loc-0a62c2bce6bf5ea6728582b3",
+          "desc": "重试返回原 record_id",
+          "expected": "loc-0a62c2bce6bf5ea6728582b3"
+        },
+        {
+          "actual": 1,
+          "desc": "重试未新增记录",
+          "expected": 1
+        }
+      ],
+      "command": "python -m src.cli save --fault-after-commit 后同 request-id 再 save",
+      "expected_exit": 9,
+      "expected_ref": "expected/expected_values.json#TC-14",
+      "facts": {
+        "child_exit": 9,
+        "committed_rows_before_retry": 1,
+        "retry_record_id": "loc-0a62c2bce6bf5ea6728582b3",
+        "rows_after_retry": 1
+      },
+      "inputs": "子进程 --fault-after-commit 后同 ID 重试",
+      "name": "COMMIT 后回执丢失：回查命中原记录，重试返回同一 record_id",
+      "nature": "故障注入+恢复",
+      "note": "核心故障恢复证据：原 record_id + 摘要 + 主体边界一致",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 0,
+      "case_id": "TC-15",
+      "checks": [
+        {
+          "actual": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "desc": "全部子进程退出码为 0",
+          "expected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "actual": 1,
+          "desc": "唯一业务记录",
+          "expected": 1
+        },
+        {
+          "actual": 1,
+          "desc": "record_id 唯一",
+          "expected": 1
+        },
+        {
+          "actual": "loc-dceed6fb1d08a8d57b9897c1",
+          "desc": "record_id 与预期一致",
+          "expected": "loc-dceed6fb1d08a8d57b9897c1"
+        }
+      ],
+      "command": "python -m src.cli save --request-id req-race-001 ×6 并发",
+      "expected_exit": 0,
+      "expected_ref": "expected/expected_values.json#TC-15",
+      "facts": {
+        "distinct_record_ids": [
+          "loc-dceed6fb1d08a8d57b9897c1"
+        ],
+        "exit_codes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rows": 1
+      },
+      "inputs": "6×子进程同 request-id 同 payload",
+      "name": "6 个受控子进程竞争同一幂等键",
+      "nature": "并发负例",
+      "note": "仅本机受控测试库，不代表允许多方并行施工",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 7,
+      "case_id": "TC-16",
+      "checks": [
+        {
+          "actual": 7,
+          "desc": "退出码",
+          "expected": 7
+        },
+        {
+          "actual": "STORAGE_BUSY",
+          "desc": "错误码",
+          "expected": "STORAGE_BUSY"
+        },
+        {
+          "actual": true,
+          "desc": "等待时间小于 15 秒",
+          "expected": true
+        },
+        {
+          "actual": 0,
+          "desc": "锁期间未写入",
+          "expected": 0
+        }
+      ],
+      "command": "python -m src.cli lock-hold --seconds 8 与 save 并行",
+      "expected_exit": 7,
+      "expected_ref": "expected/expected_values.json#TC-16",
+      "facts": {
+        "code": "STORAGE_BUSY",
+        "elapsed_sec": 5.34,
+        "rows": 0
+      },
+      "inputs": "子进程 lock-hold 8s + 主进程 save",
+      "name": "写锁被占用时明确返回锁超时，不无限重试",
+      "nature": "故障注入",
+      "note": "锁等待上限由 busy_timeout=3000ms 控制，不做重试循环",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 0,
+      "case_id": "TC-17",
+      "checks": [
+        {
+          "actual": 0,
+          "desc": "退出码",
+          "expected": 0
+        },
+        {
+          "actual": 2,
+          "desc": "历史条数",
+          "expected": 2
+        },
+        {
+          "actual": "loc-ab9f6fc900e4c22a3ab0c95f",
+          "desc": "当前有效为 rev2 记录",
+          "expected": "loc-ab9f6fc900e4c22a3ab0c95f"
+        },
+        {
+          "actual": [
+            "fixture-rev-1",
+            "fixture-rev-2"
+          ],
+          "desc": "存在两个源版本",
+          "expected": [
+            "fixture-rev-1",
+            "fixture-rev-2"
+          ]
+        },
+        {
+          "actual": 1,
+          "desc": "按 rev1 过滤只剩 1 条",
+          "expected": 1
+        },
+        {
+          "actual": true,
+          "desc": "给出选择规则说明",
+          "expected": true
+        }
+      ],
+      "command": "python -m src.cli history --period 2026-08 / --source-revision fixture-rev-1",
+      "expected_exit": 0,
+      "expected_ref": "expected/expected_values.json#TC-17",
+      "facts": {
+        "count": 2,
+        "current": "loc-ab9f6fc900e4c22a3ab0c95f",
+        "rev1_only_count": 1,
+        "revisions": [
+          "fixture-rev-1",
+          "fixture-rev-2"
+        ]
+      },
+      "inputs": "rev1 与 rev2 两条同期间不同源版本",
+      "name": "历史只追加、旧版不覆盖、当前版本选择可解释",
+      "nature": "正例",
+      "note": "旧版本记录保留且未被静默改写",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 6,
+      "case_id": "TC-18",
+      "checks": [
+        {
+          "actual": 6,
+          "desc": "他身份 get 退出码",
+          "expected": 6
+        },
+        {
+          "actual": "SCOPE_DENIED",
+          "desc": "他身份 get 错误码",
+          "expected": "SCOPE_DENIED"
+        },
+        {
+          "actual": 0,
+          "desc": "他身份 history 条数",
+          "expected": 0
+        },
+        {
+          "actual": 6,
+          "desc": "自填身份与上下文不符退出码",
+          "expected": 6
+        },
+        {
+          "actual": false,
+          "desc": "响应不含 payload",
+          "expected": false
+        }
+      ],
+      "command": "python -m src.cli get --context trusted_context_other.json",
+      "expected_exit": 6,
+      "expected_ref": "expected/expected_values.json#TC-18",
+      "facts": {
+        "get_code": "SCOPE_DENIED",
+        "other_history_count": 0,
+        "selffill_code": "SCOPE_DENIED"
+      },
+      "inputs": "固定独立可信上下文 trusted_context_other.json",
+      "name": "跨租户/跨企业读取被拒且不泄露内容",
+      "nature": "负例",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 0,
+      "case_id": "TC-19",
+      "checks": [
+        {
+          "actual": 0,
+          "desc": "首次退出码",
+          "expected": 0
+        },
+        {
+          "actual": 0,
+          "desc": "问题数",
+          "expected": 0
+        },
+        {
+          "actual": 0,
+          "desc": "重开后退出码",
+          "expected": 0
+        },
+        {
+          "actual": 1,
+          "desc": "记录数一致",
+          "expected": 1
+        }
+      ],
+      "command": "python -m src.cli verify-store --store tc01.sqlite3（两次独立进程）",
+      "expected_exit": 0,
+      "expected_ref": "expected/expected_values.json#TC-19",
+      "facts": {
+        "formal_records": 1,
+        "problems": 0
+      },
+      "inputs": "tc01.sqlite3（含 1 条记录）",
+      "name": "verify-store 通过，且关闭库后重开结果一致",
+      "nature": "正例",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 8,
+      "case_id": "TC-20",
+      "checks": [
+        {
+          "actual": 0,
+          "desc": "保存退出码",
+          "expected": 0
+        },
+        {
+          "actual": 0,
+          "desc": "篡改脚本执行成功",
+          "expected": 0
+        },
+        {
+          "actual": 8,
+          "desc": "退出码",
+          "expected": 8
+        },
+        {
+          "actual": "VERIFY_FAILED",
+          "desc": "错误码",
+          "expected": "VERIFY_FAILED"
+        },
+        {
+          "actual": true,
+          "desc": "检出问题码含 PAYLOAD_HASH_MISMATCH",
+          "expected": true
+        }
+      ],
+      "command": "python -m src.cli verify-store --store tc20.sqlite3（已篡改）",
+      "expected_exit": 8,
+      "expected_ref": "expected/expected_values.json#TC-20",
+      "facts": {
+        "codes": [
+          "PAYLOAD_HASH_MISMATCH",
+          "AMOUNT_RECONCILE_FAILED"
+        ],
+        "tamper_exit": 0
+      },
+      "inputs": "tests/tamper_db.py --mode payload",
+      "name": "篡改检测：篡改 payload 业务值",
+      "nature": "负例",
+      "note": "篡改需先移除 append-only 触发器，模拟具备库文件写权限者",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 8,
+      "case_id": "TC-21",
+      "checks": [
+        {
+          "actual": 0,
+          "desc": "保存退出码",
+          "expected": 0
+        },
+        {
+          "actual": 0,
+          "desc": "篡改脚本执行成功",
+          "expected": 0
+        },
+        {
+          "actual": 8,
+          "desc": "退出码",
+          "expected": 8
+        },
+        {
+          "actual": "VERIFY_FAILED",
+          "desc": "错误码",
+          "expected": "VERIFY_FAILED"
+        },
+        {
+          "actual": true,
+          "desc": "检出问题码含 PAYLOAD_HASH_MISMATCH",
+          "expected": true
+        }
+      ],
+      "command": "python -m src.cli verify-store --store tc21.sqlite3（已篡改）",
+      "expected_exit": 8,
+      "expected_ref": "expected/expected_values.json#TC-21",
+      "facts": {
+        "codes": [
+          "PAYLOAD_HASH_MISMATCH"
+        ],
+        "tamper_exit": 0
+      },
+      "inputs": "tests/tamper_db.py --mode digest",
+      "name": "篡改检测：篡改 payload_sha256",
+      "nature": "负例",
+      "note": "篡改需先移除 append-only 触发器，模拟具备库文件写权限者",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 8,
+      "case_id": "TC-22",
+      "checks": [
+        {
+          "actual": 0,
+          "desc": "保存退出码",
+          "expected": 0
+        },
+        {
+          "actual": 0,
+          "desc": "篡改脚本执行成功",
+          "expected": 0
+        },
+        {
+          "actual": 8,
+          "desc": "退出码",
+          "expected": 8
+        },
+        {
+          "actual": "VERIFY_FAILED",
+          "desc": "错误码",
+          "expected": "VERIFY_FAILED"
+        },
+        {
+          "actual": true,
+          "desc": "检出问题码含 IDENTITY_LINK_BROKEN",
+          "expected": true
+        }
+      ],
+      "command": "python -m src.cli verify-store --store tc22.sqlite3（已篡改）",
+      "expected_exit": 8,
+      "expected_ref": "expected/expected_values.json#TC-22",
+      "facts": {
+        "codes": [
+          "IDENTITY_LINK_BROKEN",
+          "AMOUNT_RECONCILE_FAILED"
+        ],
+        "tamper_exit": 0
+      },
+      "inputs": "tests/tamper_db.py --mode identity",
+      "name": "篡改检测：篡改关联身份字段",
+      "nature": "负例",
+      "note": "篡改需先移除 append-only 触发器，模拟具备库文件写权限者",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 2,
+      "case_id": "TC-23",
+      "checks": [
+        {
+          "actual": 2,
+          "desc": "相对穿越退出码",
+          "expected": 2
+        },
+        {
+          "actual": "USAGE",
+          "desc": "相对穿越错误码",
+          "expected": "USAGE"
+        },
+        {
+          "actual": 2,
+          "desc": "绝对路径越界退出码",
+          "expected": 2
+        },
+        {
+          "actual": 2,
+          "desc": "非法后缀退出码",
+          "expected": 2
+        },
+        {
+          "actual": 2,
+          "desc": "非空 workdir 退出码",
+          "expected": 2
+        }
+      ],
+      "command": "python -m src.cli save --store ../outside-evidence.sqlite3",
+      "expected_exit": 2,
+      "expected_ref": "expected/expected_values.json#TC-23",
+      "facts": {
+        "abs_code": "USAGE",
+        "nonempty_workdir_exit": 2,
+        "rel_code": "USAGE",
+        "suffix_code": "USAGE"
+      },
+      "inputs": "../outside-evidence.sqlite3、绝对路径、tc23.txt、非空 workdir",
+      "name": "路径穿越/绝对路径越界/非法后缀/非空工作目录全部拒绝",
+      "nature": "负例",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 0,
+      "case_id": "TC-24",
+      "checks": [
+        {
+          "actual": 0,
+          "desc": "保存退出码",
+          "expected": 0
+        },
+        {
+          "actual": 0,
+          "desc": "读回退出码",
+          "expected": 0
+        },
+        {
+          "actual": 0,
+          "desc": "表结构完好可复核",
+          "expected": 0
+        },
+        {
+          "actual": "loc-c432425310c54d24017dde37",
+          "desc": "record_id 与预期一致",
+          "expected": "loc-c432425310c54d24017dde37"
+        }
+      ],
+      "command": "python -m src.cli save --context trusted_context_sql_special.json",
+      "expected_exit": 0,
+      "expected_ref": "expected/expected_values.json#TC-24",
+      "facts": {
+        "get_exit": 0,
+        "record_id": "loc-c432425310c54d24017dde37",
+        "verify_exit": 0
+      },
+      "inputs": "trusted_context_sql_special.json",
+      "name": "身份含 SQL 特殊字符仍安全存取（全参数化）",
+      "nature": "正例",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 11,
+      "case_id": "TC-25",
+      "checks": [
+        {
+          "actual": 11,
+          "desc": "退出码",
+          "expected": 11
+        },
+        {
+          "actual": "UNKNOWN_STATE",
+          "desc": "错误码",
+          "expected": "UNKNOWN_STATE"
+        },
+        {
+          "actual": false,
+          "desc": "未报成功",
+          "expected": false
+        },
+        {
+          "actual": 1,
+          "desc": "库中已有该提交",
+          "expected": 1
+        },
+        {
+          "actual": "loc-2a8ed58da5c93a9f1a1fd87b",
+          "desc": "同 ID 重试返回同一 record_id",
+          "expected": "loc-2a8ed58da5c93a9f1a1fd87b"
+        },
+        {
+          "actual": 1,
+          "desc": "重试后仍仅 1 条",
+          "expected": 1
+        }
+      ],
+      "command": "python -m src.cli save --simulate-unknown",
+      "expected_exit": 11,
+      "expected_ref": "expected/expected_values.json#TC-25",
+      "facts": {
+        "code": "UNKNOWN_STATE",
+        "retry_record_id": "loc-2a8ed58da5c93a9f1a1fd87b",
+        "rows": 1
+      },
+      "inputs": "--simulate-unknown",
+      "name": "提交后回执未确定：返回未确定态且不报成功",
+      "nature": "故障注入",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 10,
+      "case_id": "TC-26",
+      "checks": [
+        {
+          "actual": 10,
+          "desc": "退出码",
+          "expected": 10
+        },
+        {
+          "actual": "SELFTEST_FAILED",
+          "desc": "返回码",
+          "expected": "SELFTEST_FAILED"
+        },
+        {
+          "actual": true,
+          "desc": "内部失败数大于 0",
+          "expected": true
+        }
+      ],
+      "command": "python -m src.cli selftest --workdir <空目录> --inject-failure",
+      "expected_exit": 10,
+      "expected_ref": "expected/expected_values.json#TC-26",
+      "facts": {
+        "exit": 10,
+        "inner_code": "SELFTEST_FAILED",
+        "inner_failed": 2
+      },
+      "inputs": "嵌套 selftest --inject-failure",
+      "name": "故意断言失败的自测必须非 0 退出",
+      "nature": "元测试",
+      "note": "验证失败退出码能真实触发，不是 catch 后仍报 PASS",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 0,
+      "case_id": "TC-27",
+      "checks": [
+        {
+          "actual": 0,
+          "desc": "退出码",
+          "expected": 0
+        },
+        {
+          "actual": 0,
+          "desc": "无违规发现",
+          "expected": 0
+        },
+        {
+          "actual": true,
+          "desc": "扫描文件数大于 0",
+          "expected": true
+        }
+      ],
+      "command": "python tests/static_boundary_check.py",
+      "expected_exit": 0,
+      "expected_ref": "expected/expected_values.json#TC-27",
+      "facts": {
+        "findings": 0,
+        "scanned": 7
+      },
+      "inputs": "src/*.py, tests/*.py",
+      "name": "源码静态边界检查：无外连/无删除逻辑/无凭据读取",
+      "nature": "静态检查",
+      "note": "",
+      "status": "通过"
+    },
+    {
+      "actual_exit": 0,
+      "case_id": "TC-28",
+      "checks": [
+        {
+          "actual": true,
+          "desc": "expected 哈希一致",
+          "expected": true
+        },
+        {
+          "actual": true,
+          "desc": "fixtures 哈希一致",
+          "expected": true
+        },
+        {
+          "actual": true,
+          "desc": "expected 文件数大于 0",
+          "expected": true
+        }
+      ],
+      "command": "（selftest 内部自动核验）",
+      "expected_exit": 0,
+      "expected_ref": "expected/expected_values.json#TC-28",
+      "facts": {
+        "expected_files": 1,
+        "fixture_files": 18
+      },
+      "inputs": "expected/ 与 fixtures/ 全量文件",
+      "name": "运行前后独立预期与夹具哈希未被改写",
+      "nature": "元测试",
+      "note": "独立预期来自冻结文件，运行不重写",
+      "status": "通过"
+    }
+  ],
+  "summary": {
+    "blocked": 0,
+    "duration_sec": 121.55,
+    "failed": 0,
+    "inject_failure": false,
+    "not_executed": 0,
+    "note": "全部为合成夹具与本地 SQLite 测试库，不代表千问/生产 MySQL 行为",
+    "passed": 28,
+    "python": "3.13.14",
+    "run_at": "2026-10-24T23:09:29+0800",
+    "task_id": "MEM-EVIDENCE-001",
+    "total": 28,
+    "workdir": "C:\\Users\\Lenovo\\WorkBuddy\\2026-10-24-19-04-52\\_run_v1"
+  }
+}

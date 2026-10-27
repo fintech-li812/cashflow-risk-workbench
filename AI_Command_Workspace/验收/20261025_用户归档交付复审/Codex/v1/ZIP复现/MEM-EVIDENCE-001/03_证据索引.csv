@@ -1,0 +1,19 @@
+﻿证据ID,证据来源性质,相对路径,定位,SHA256,执行人,时间,证明内容,不能证明什么
+EV-01,机器生成（本机合成夹具运行）,test-output/results.json,全量用例结构化结果,a03a853246dcc114ddae16b65ef358f763b994c571b8c3e75723e3746d8d943b,WorkBuddy,2026-10-24T23:09:29+08:00,28 个用例的输入、独立预期引用、实际值、退出码与状态,完整覆盖不代表生产/平台运行通过
+EV-02,机器生成,test-output/summary.md,人类可读汇总,555878ddb7cb70135816ad3e1a23a380dc19b41cc5fa74c5074067451495b135,WorkBuddy,2026-10-24T23:09:29+08:00,总数与四状态统计、各用例退出码,不能证明平台能力
+EV-03,机器生成,test-output/results.csv,机器可读结果表,9e26be1b2c94d4d694c578425a478958ec0172987aeccded1ef2d3ea7a1f7397,WorkBuddy,2026-10-24T23:09:29+08:00,与 results.json 同源的表格化结果,同上
+EV-04,机器生成,test-output/run_log.txt,逐条断言明细,f62a737d3f4aebedb0dd0a7b1c02e0896ebe83c27597611a15fa55c3a54e179f,WorkBuddy,2026-10-24T23:09:29+08:00,每个断言的期望值与实际值,同上
+EV-05,故障注入原始输出,test-output/cases/TC-13.out,提交前崩溃,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,WorkBuddy,2026-10-24T23:09:29+08:00,子进程退出码 9、崩溃后 0 条、重试后 1 条,只覆盖本包注入点，不覆盖真实宕机全场景
+EV-06,故障注入原始输出,test-output/cases/TC-14.out,提交后回执丢失恢复,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,WorkBuddy,2026-10-24T23:09:29+08:00,库内 1 条、同 ID 重试返回原 record_id 且未新增,同上
+EV-07,并发原始输出,test-output/cases/TC-15.out,6 进程竞争同一幂等键,c595ccd5f396dad9c12610120a91f9d1ee3a7de780211ad56ebfa6e06e2a6b49,WorkBuddy,2026-10-24T23:09:29+08:00,6×退出码 0、唯一 record_id、1 条记录,仅本机受控测试库，不代表多方并行施工被允许
+EV-08,负例原始输出,test-output/cases/TC-03.out,同键异摘要冲突,94148e37494e82fcce6c083d99670ce10ef308419c20c973aeddb9e658d8a98d,WorkBuddy,2026-10-24T23:09:29+08:00,退出码 4、原记录摘要未变,不能证明服务端一致性
+EV-09,负例原始输出,test-output/cases/TC-18.out,跨身份隔离,f5b3d54c71b11c014c3a8af50b0ee30e48c217944e8db5cabe05c3ced7a05e3c,WorkBuddy,2026-10-24T23:09:29+08:00,他身份 get/history 退出码 6、响应无 payload,可信上下文由测试提供，不是平台鉴权
+EV-10,篡改检测原始输出,"test-output/cases/TC-20.out,TC-21.out,TC-22.out",payload/摘要/关联字段三类篡改,(目录/多文件，见同目录 .out),WorkBuddy,2026-10-24T23:09:29+08:00,verify-store 退出码 8 并给出问题码,不能抵御重写整个库及全部摘要的攻击者
+EV-11,负例原始输出,test-output/cases/TC-23.out,路径穿越与重名拒绝,2b7270c096957abbda20d3c4114449fd37936cda1442fcb31d799b0a3e8f5433,WorkBuddy,2026-10-24T23:09:29+08:00,相对穿越/绝对路径/非法后缀/非空工作目录均退出码 2,只覆盖本包入口的路径校验
+EV-12,故障注入原始输出,test-output/cases/TC-16.out,SQLite 写锁占用,43160d0dabd3ba04f864be96b5e4e9852d6d6cd05487d7dea081d51ba0f4adba,WorkBuddy,2026-10-24T23:09:29+08:00,退出码 7 STORAGE_BUSY、等待 <15 秒、未写入,不代表真实并发规模下的表现
+EV-13,元测试原始输出,test-output/inject_failure_run.json,故意断言失败,a83da6818e96840aa81d82690c1541aa8cbaae5276b4ea995248abc903fe30d9,WorkBuddy,2026-10-24T23:09:29+08:00,注入运行返回 SELFTEST_FAILED 且退出码 10,只证明退出码机制，不证明业务逻辑
+EV-14,冻结人工预期,expected/expected_values.json,独立预期基准,027ef382957918308b80ec651864df0bfdabc45df936ad1532299747707e5dad,WorkBuddy,2026-10-24T23:09:29+08:00,规范摘要、确定性 record_id、各用例预期退出码；运行前后哈希不变,预期本身需由独立审核确认
+EV-15,合成夹具,fixtures/,合成输入集合,(目录/多文件，见同目录 .out),WorkBuddy,2026-10-24T23:09:29+08:00,正常/0金额/缺余额/差一分/异参/版本变化/非success/非法/SQL特殊字符/他身份,全部为合成，不代表任何真实企业数据
+EV-16,静态检查,test-output/cases/TC-27.out,源码边界扫描,4d88785caed95c0d651d7e14eaf6d59e29d2c4ea5bf069aed2052787bddebf41,WorkBuddy,2026-10-24T23:09:29+08:00,无外连/无删除逻辑/无凭据读取/无 git push,静态文本扫描不能证明运行时网络行为
+EV-17,正例原始输出,test-output/cases/TC-17.out,历史追加与当前版本选择,5ca4f14fc21816602162237e99e25e08f073575867402536633f4fc05f2770a8,WorkBuddy,2026-10-24T23:09:29+08:00,2 条共存、当前为 rev2、按 rev1 过滤只剩 1 条,版本规则为本包定义，待共同基线裁决
+EV-18,人工核验,04_继承与改动.csv,源件只读核验,fda3183c9e160d8b8d6ae543b05b03c23a06253bded4ac03c2ea905d092dfeb3,WorkBuddy,2026-10-24T23:09:29+08:00,源包 23 项文件 SHA256 与 manifest.json 一致,只证明本次解压副本未改，不证明上游历史

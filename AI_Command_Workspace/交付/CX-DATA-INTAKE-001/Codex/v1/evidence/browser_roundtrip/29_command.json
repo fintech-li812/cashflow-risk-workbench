@@ -1,0 +1,10 @@
+{
+  "args": [
+    "eval",
+    "-b",
+    "d2luZG93Ll9faW50YWtlRG93bmxvYWRlZEJsb2IudGV4dCgp"
+  ],
+  "exit_code": 1,
+  "stdout": "{\"success\":false,\"data\":null,\"error\":\"Evaluation error: TypeError: Cannot read properties of undefined (reading 'text')\\n    at <anonymous>:1:31\"}\n",
+  "stderr": ""
+}

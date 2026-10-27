@@ -1,0 +1,1500 @@
+{
+  "status": "passed",
+  "transport": "official_MCP_SDK_stdio",
+  "seven_tools_listed": [
+    "get_manufacturing_readiness",
+    "get_workbench_status",
+    "inspect_manufacturing_source",
+    "list_manufacturing_sources",
+    "query_cashflow_result",
+    "read_cashflow_result",
+    "save_cashflow_result"
+  ],
+  "readonly_successful_calls": 6,
+  "negative_source_rejected": true,
+  "save_tool_invoked": false,
+  "qa_row_count_unchanged": true,
+  "qwen_native_call": false,
+  "native_sheet_recalculation_verified": false,
+  "calls": [
+    {
+      "tool": "get_workbench_status",
+      "arguments": {},
+      "result": {
+        "schema_version": "mfg-workbench-status.v1",
+        "integration_version": "workbench-integration.v1",
+        "mode": "manufacturing_qa",
+        "components": {
+          "mcp_stdio_transport": "implemented",
+          "read_save_exact_query": "implemented",
+          "database": "connected",
+          "bound_manufacturing_source": "available",
+          "fixture_baseline_arithmetic": "implemented_fixture_only",
+          "result_guard": "implemented",
+          "excel_import_package": "awaiting_external_delivery",
+          "report_exporter": "awaiting_external_delivery",
+          "native_sheet_recalculation": "not_bound",
+          "rolling_and_advanced_three_state": "phase_two"
+        },
+        "result_profile": {
+          "origin": "offline_fixture",
+          "fixture": true,
+          "company_id": "fixture-manufacturing",
+          "period": "2026-08",
+          "source_revision": "fixture-source-v1"
+        },
+        "production_deployed": false,
+        "source_data_read_only": true,
+        "financial_result_source_is_separate_from_inspected_workbook": true
+      }
+    },
+    {
+      "tool": "list_manufacturing_sources",
+      "arguments": {},
+      "result": {
+        "schema_version": "mfg-source-catalog.v1",
+        "sources": [
+          {
+            "source_id": "manufacturing_sample_v1",
+            "logical_name": "制造业_样例数据.xlsx",
+            "kind": "controlled_sample",
+            "status": "available",
+            "expected_sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+            "actual_sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+            "native_qwen_workbook": false
+          }
+        ],
+        "other_industries_enabled": false
+      }
+    },
+    {
+      "tool": "inspect_manufacturing_source",
+      "arguments": {
+        "source_id": "manufacturing_sample_v1"
+      },
+      "result": {
+        "schema_version": "mfg-source-inspection.v1",
+        "status": "inspected",
+        "source_id": "manufacturing_sample_v1",
+        "source_kind": "controlled_sample",
+        "source_file_sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+        "sheet_names": [
+          "企业基本信息",
+          "现金流水",
+          "应收账款",
+          "筹资信息",
+          "投资现金流",
+          "银行流水",
+          "行业参数",
+          "数据字典"
+        ],
+        "date_system": "1900",
+        "read_at": "2026-10-25T06:42:39.403220+00:00",
+        "blocks": {
+          "企业基本信息": {
+            "range": "A1:C10",
+            "cells": {
+              "A1": {
+                "value": "制造业｜企业基本信息",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A2": {
+                "value": "字段",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B2": {
+                "value": "值",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C2": {
+                "value": "说明",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A3": {
+                "value": "企业名称",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B3": {
+                "value": "恒驰精密制造（苏州）有限公司",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C3": {
+                "value": "工商登记全称",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A4": {
+                "value": "行业代码（GB/T 4754-2017）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B4": {
+                "value": "C13",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C4": {
+                "value": "数据闸→行业代码校验",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A5": {
+                "value": "所属行业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B5": {
+                "value": "制造业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C5": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A6": {
+                "value": "企业规模",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B6": {
+                "value": "中型",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C6": {
+                "value": "按工信部中小企业划型标准",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A7": {
+                "value": "在职人数（人）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B7": {
+                "value": "320",
+                "cell_type": "n",
+                "raw_xml_value": "320",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C7": {
+                "value": "数据闸→规模合理性校验（人数<1 判异常）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A8": {
+                "value": "上年度营业收入（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B8": {
+                "value": "12800",
+                "cell_type": "n",
+                "raw_xml_value": "12800",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C8": {
+                "value": "数据闸→规模合理性校验（营收<0 判异常）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A9": {
+                "value": "月均现金缓冲（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B9": {
+                "value": "260",
+                "cell_type": "n",
+                "raw_xml_value": "260",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C9": {
+                "value": "用于红黄绿判定的测算基数",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A10": {
+                "value": "月均经营性流出 M（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B10": {
+                "value": "161.2",
+                "cell_type": "n",
+                "raw_xml_value": "161.2",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C10": {
+                "value": "近12个月经营性流出均值，定时任务每月重算（v8 基数）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              }
+            }
+          },
+          "现金流水": {
+            "range": "A1:I15",
+            "cells": {
+              "A1": {
+                "value": "制造业｜月度现金流水（2025-10 ~ 2026-09）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A2": {
+                "value": "月份",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B2": {
+                "value": "月末日期",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C2": {
+                "value": "流水类型",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D2": {
+                "value": "经营性流入（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E2": {
+                "value": "经营性流出（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F2": {
+                "value": "净现金流（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G2": {
+                "value": "期末现金余额（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H2": {
+                "value": "说明",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I2": {
+                "value": "数据闸结果",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A3": {
+                "value": "2025-10",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B3": {
+                "value": "45961",
+                "cell_type": "n",
+                "raw_xml_value": "45961",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C3": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D3": {
+                "value": "180.87",
+                "cell_type": "n",
+                "raw_xml_value": "180.87",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E3": {
+                "value": "117.42",
+                "cell_type": "n",
+                "raw_xml_value": "117.42",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F3": {
+                "value": "63.45",
+                "cell_type": "n",
+                "raw_xml_value": "63.45",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G3": {
+                "value": "314.92",
+                "cell_type": "n",
+                "raw_xml_value": "314.92",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H3": {
+                "value": "销售回款/工程款/订阅收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I3": {
+                "value": "正常",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A4": {
+                "value": "2025-11",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B4": {
+                "value": "45991",
+                "cell_type": "n",
+                "raw_xml_value": "45991",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C4": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D4": {
+                "value": "184.35",
+                "cell_type": "n",
+                "raw_xml_value": "184.35",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E4": {
+                "value": "199.54",
+                "cell_type": "n",
+                "raw_xml_value": "199.54",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F4": {
+                "value": "-15.19",
+                "cell_type": "n",
+                "raw_xml_value": "-15.19",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G4": {
+                "value": "299.15",
+                "cell_type": "n",
+                "raw_xml_value": "299.15",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H4": {
+                "value": "销售回款/工程款/订阅收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I4": {
+                "value": "正常",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A5": {
+                "value": "2025-12",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B5": {
+                "value": "46022",
+                "cell_type": "n",
+                "raw_xml_value": "46022",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C5": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D5": {
+                "value": "174.57",
+                "cell_type": "n",
+                "raw_xml_value": "174.57",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E5": {
+                "value": "200.04",
+                "cell_type": "n",
+                "raw_xml_value": "200.04",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F5": {
+                "value": "-25.47",
+                "cell_type": "n",
+                "raw_xml_value": "-25.47",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G5": {
+                "value": "269.53",
+                "cell_type": "n",
+                "raw_xml_value": "269.53",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H5": {
+                "value": "销售回款/工程款/订阅收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I5": {
+                "value": "正常",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A6": {
+                "value": "2026-01",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B6": {
+                "value": "46053",
+                "cell_type": "n",
+                "raw_xml_value": "46053",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C6": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D6": {
+                "value": "172.19",
+                "cell_type": "n",
+                "raw_xml_value": "172.19",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E6": {
+                "value": "194.96",
+                "cell_type": "n",
+                "raw_xml_value": "194.96",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F6": {
+                "value": "-22.77",
+                "cell_type": "n",
+                "raw_xml_value": "-22.77",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G6": {
+                "value": "248.05",
+                "cell_type": "n",
+                "raw_xml_value": "248.05",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H6": {
+                "value": "销售回款/工程款/订阅收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I6": {
+                "value": "正常",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A7": {
+                "value": "2026-02",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B7": {
+                "value": "46081",
+                "cell_type": "n",
+                "raw_xml_value": "46081",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C7": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D7": {
+                "value": "171.9",
+                "cell_type": "n",
+                "raw_xml_value": "171.9",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E7": {
+                "value": "196.92",
+                "cell_type": "n",
+                "raw_xml_value": "196.92",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F7": {
+                "value": "-25.02",
+                "cell_type": "n",
+                "raw_xml_value": "-25.02",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G7": {
+                "value": "221.62",
+                "cell_type": "n",
+                "raw_xml_value": "221.62",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H7": {
+                "value": "销售回款/工程款/订阅收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I7": {
+                "value": "正常",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A8": {
+                "value": "2026-03",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B8": {
+                "value": "46112",
+                "cell_type": "n",
+                "raw_xml_value": "46112",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C8": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D8": {
+                "value": "1631300",
+                "cell_type": "n",
+                "raw_xml_value": "1631300",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E8": {
+                "value": "214.85",
+                "cell_type": "n",
+                "raw_xml_value": "214.85",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F8": {
+                "value": "-51.72",
+                "cell_type": "n",
+                "raw_xml_value": "-51.72",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G8": {
+                "value": "170.74",
+                "cell_type": "n",
+                "raw_xml_value": "170.74",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H8": {
+                "value": "销售回款/工程款/订阅收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I8": {
+                "value": "正常",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A9": {
+                "value": "2026-04",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B9": {
+                "value": "46142",
+                "cell_type": "n",
+                "raw_xml_value": "46142",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C9": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D9": {
+                "value": "148.88",
+                "cell_type": "n",
+                "raw_xml_value": "148.88",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E9": {
+                "value": "182.25",
+                "cell_type": "n",
+                "raw_xml_value": "182.25",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F9": {
+                "value": "-33.37",
+                "cell_type": "n",
+                "raw_xml_value": "-33.37",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G9": {
+                "value": "140.73",
+                "cell_type": "n",
+                "raw_xml_value": "140.73",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H9": {
+                "value": "销售回款/工程款/订阅收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I9": {
+                "value": "正常",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A10": {
+                "value": "2026-05",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B10": {
+                "value": "46173",
+                "cell_type": "n",
+                "raw_xml_value": "46173",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C10": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D10": {
+                "value": "152.61",
+                "cell_type": "n",
+                "raw_xml_value": "152.61",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E10": {
+                "value": "63.49",
+                "cell_type": "n",
+                "raw_xml_value": "63.49",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F10": {
+                "value": "89.12",
+                "cell_type": "n",
+                "raw_xml_value": "89.12",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G10": {
+                "value": "229.36",
+                "cell_type": "n",
+                "raw_xml_value": "229.36",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H10": {
+                "value": "销售回款/工程款/订阅收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I10": {
+                "value": "正常",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A11": {
+                "value": "2026-06",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B11": {
+                "value": "46203",
+                "cell_type": "n",
+                "raw_xml_value": "46203",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C11": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D11": {
+                "value": "181.66",
+                "cell_type": "n",
+                "raw_xml_value": "181.66",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E11": {
+                "value": "147.43",
+                "cell_type": "n",
+                "raw_xml_value": "147.43",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F11": {
+                "value": "34.23",
+                "cell_type": "n",
+                "raw_xml_value": "34.23",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G11": {
+                "value": "263.94",
+                "cell_type": "n",
+                "raw_xml_value": "263.94",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H11": {
+                "value": "销售回款/工程款/订阅收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I11": {
+                "value": "正常",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A12": {
+                "value": "2026-07",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B12": {
+                "value": "46234",
+                "cell_type": "n",
+                "raw_xml_value": "46234",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C12": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D12": {
+                "value": "180.69",
+                "cell_type": "n",
+                "raw_xml_value": "180.69",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E12": {
+                "value": "144.94",
+                "cell_type": "n",
+                "raw_xml_value": "144.94",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F12": {
+                "value": "35.75",
+                "cell_type": "n",
+                "raw_xml_value": "35.75",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G12": {
+                "value": "301.73",
+                "cell_type": "n",
+                "raw_xml_value": "301.73",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H12": {
+                "value": "销售回款/工程款/订阅收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I12": {
+                "value": "正常",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A13": {
+                "value": "2026-08",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B13": {
+                "value": "46265",
+                "cell_type": "n",
+                "raw_xml_value": "46265",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C13": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D13": {
+                "value": "189.13",
+                "cell_type": "n",
+                "raw_xml_value": "189.13",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E13": {
+                "value": "217.21",
+                "cell_type": "n",
+                "raw_xml_value": "217.21",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F13": {
+                "value": "-28.08",
+                "cell_type": "n",
+                "raw_xml_value": "-28.08",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G13": {
+                "value": "276.59",
+                "cell_type": "n",
+                "raw_xml_value": "276.59",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H13": {
+                "value": "销售回款/工程款/订阅收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I13": {
+                "value": "正常",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A14": {
+                "value": "2026-09",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B14": {
+                "value": "46295",
+                "cell_type": "n",
+                "raw_xml_value": "46295",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C14": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D14": {
+                "value": "164.6",
+                "cell_type": "n",
+                "raw_xml_value": "164.6",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E14": {
+                "value": "192.09",
+                "cell_type": "n",
+                "raw_xml_value": "192.09",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F14": {
+                "value": "-27.49",
+                "cell_type": "n",
+                "raw_xml_value": "-27.49",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G14": {
+                "value": "253",
+                "cell_type": "n",
+                "raw_xml_value": "253",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H14": {
+                "value": "销售回款/工程款/订阅收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I14": {
+                "value": "正常",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A15": {
+                "value": "2026-07",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B15": {
+                "value": "46234",
+                "cell_type": "n",
+                "raw_xml_value": "46234",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "C15": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D15": {
+                "value": "180.69",
+                "cell_type": "n",
+                "raw_xml_value": "180.69",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E15": {
+                "value": "144.94",
+                "cell_type": "n",
+                "raw_xml_value": "144.94",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F15": {
+                "value": "35.75",
+                "cell_type": "n",
+                "raw_xml_value": "35.75",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G15": {
+                "value": "301.73",
+                "cell_type": "n",
+                "raw_xml_value": "301.73",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H15": {
+                "value": "销售回款/工程款/订阅收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I15": {
+                "value": "正常",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              }
+            }
+          }
+        },
+        "read_method": "local OOXML read-only; not Qwen native sheet API",
+        "money_conversion_performed": false,
+        "formula_execution_performed": false,
+        "source_modified": false
+      }
+    },
+    {
+      "tool": "get_manufacturing_readiness",
+      "arguments": {},
+      "result": {
+        "schema_version": "mfg-workbench-readiness.v1",
+        "status": "blocked",
+        "source_id": "manufacturing_sample_v1",
+        "source_kind": "controlled_sample",
+        "source_file_sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+        "can_claim_full_cashflow": false,
+        "can_save_source_result": false,
+        "issues": [
+          {
+            "code": "unit_confirmation_required",
+            "source": "现金流水!D8",
+            "observed": "1631300",
+            "detail": "已知单位疑点，保留原值，不自动缩放或放大。"
+          },
+          {
+            "code": "duplicate_rows_preserved",
+            "source": "现金流水!A12:I12 / A15:I15",
+            "detail": "两行原值相同；不自行删除或合并。"
+          },
+          {
+            "code": "native_recalculation_not_bound",
+            "detail": "未登记千问原生工作簿及本次重算证据；本地固定值不是原生公式执行结果。"
+          },
+          {
+            "code": "full_cashflow_mapping_incomplete",
+            "detail": "当前只绑定经营现金流水取证；投资及筹资未接入完整映射，不假定为0。"
+          },
+          {
+            "code": "account_scope_missing",
+            "detail": "尚未绑定统计账户范围。"
+          },
+          {
+            "code": "opening_balance_not_bound",
+            "detail": "尚未绑定用于本次全口径核对的期初余额来源。"
+          },
+          {
+            "code": "independent_closing_not_bound",
+            "detail": "尚未绑定独立实际期末余额，不能自己与计算期末对平。"
+          }
+        ],
+        "gate_rules_executed": false,
+        "normal_partial_receipts_treated_as_errors": false,
+        "note": "工程演示的offline_fixture结果属于另一来源，不能拿来填补这个源文件的缺项。"
+      }
+    },
+    {
+      "tool": "read_cashflow_result",
+      "arguments": {},
+      "result": {
+        "status": "ok",
+        "result": {
+          "tenant_id": "fixture-tenant",
+          "company_id": "fixture-manufacturing",
+          "period": "2026-08",
+          "source_revision": "fixture-source-v1",
+          "run_id": "fixture-run-202608",
+          "schema_version": "mfg-agent-result.v1",
+          "industry": "manufacturing",
+          "status": "success",
+          "origin": "offline_fixture",
+          "unit": "CNY",
+          "coverage": "full_cashflow",
+          "calculation_version": "baseline-cashflow-arithmetic.v1",
+          "source": {
+            "workbook_ref": "synthetic-manufacturing-v1",
+            "sheet": "fixture-result",
+            "range": "A1:G2",
+            "snapshot_ref": "fixture-snapshot-202608"
+          },
+          "issues": [],
+          "amounts": {
+            "opening": "100000.00",
+            "inflow": "130000.00",
+            "outflow": "90000.00",
+            "net": "40000.00",
+            "closing": "140000.00",
+            "actual_closing": "140000.00",
+            "difference": "0.00"
+          }
+        },
+        "explanation": "【合成数据离线演示】2026-08现金流（元）：流入130000.00，流出90000.00，净额40000.00，计算期末余额140000.00。实际期末余额140000.00，差异0.00。来源：synthetic-manufacturing-v1 / fixture-result / A1:G2。此结果不代表已入库或已通知。",
+        "source_file_sha256": "e6470f7adeba00804b178be5dc17a3087a88758178b9482cfd64b8cf81cf36d7",
+        "platform_native_verified": false,
+        "fixture": true
+      }
+    },
+    {
+      "tool": "query_cashflow_result",
+      "arguments": {
+        "request_id": "qwen-v2-native-20261024-01",
+        "period": "2026-08",
+        "source_revision": "fixture-source-v1",
+        "run_id": "fixture-run-202608"
+      },
+      "result": {
+        "status": "committed",
+        "result": {
+          "unit": "CNY",
+          "issues": [],
+          "origin": "offline_fixture",
+          "period": "2026-08",
+          "run_id": "fixture-run-202608",
+          "source": {
+            "range": "A1:G2",
+            "sheet": "fixture-result",
+            "snapshot_ref": "fixture-snapshot-202608",
+            "workbook_ref": "synthetic-manufacturing-v1"
+          },
+          "status": "success",
+          "amounts": {
+            "net": "40000.00",
+            "inflow": "130000.00",
+            "closing": "140000.00",
+            "opening": "100000.00",
+            "outflow": "90000.00",
+            "difference": "0.00",
+            "actual_closing": "140000.00"
+          },
+          "coverage": "full_cashflow",
+          "industry": "manufacturing",
+          "tenant_id": "fixture-tenant",
+          "company_id": "fixture-manufacturing",
+          "schema_version": "mfg-agent-result.v1",
+          "source_revision": "fixture-source-v1",
+          "calculation_version": "baseline-cashflow-arithmetic.v1"
+        },
+        "receipt": {
+          "schema_version": "mfg-evidence.v1",
+          "kind": "receipt",
+          "operation": "save_cashflow_result",
+          "tenant_id": "fixture-tenant",
+          "company_id": "fixture-manufacturing",
+          "period": "2026-08",
+          "source_revision": "fixture-source-v1",
+          "run_id": "fixture-run-202608",
+          "request_id": "qwen-v2-native-20261024-01",
+          "record_id": "d7f97377-2fd2-45ff-8046-49297bf15c61",
+          "payload_sha256": "356c833f3234cf25c5703888e4da398b4b7889445f6925365bda1e973c582b7b",
+          "stored_at": "2026-10-24T10:33:51.749147+00:00",
+          "status": "committed"
+        },
+        "fixture": true
+      }
+    }
+  ]
+}

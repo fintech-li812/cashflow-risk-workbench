@@ -1,0 +1,12 @@
+{
+  "task_id": "CX-ACCOUNT-BIND-001",
+  "total": 50,
+  "passed": 50,
+  "failed": 0,
+  "blocked": 0,
+  "not_run": 0,
+  "independent_inputs_and_expected_unchanged": true,
+  "failures": [],
+  "origin": "offline_fixture",
+  "native_sheet_verified": false
+}

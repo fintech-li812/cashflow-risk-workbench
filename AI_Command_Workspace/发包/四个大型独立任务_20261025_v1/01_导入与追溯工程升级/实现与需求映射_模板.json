@@ -1,0 +1,257 @@
+{
+  "task_id": "MEM-IMPORT-002",
+  "requirements": [
+    {
+      "case_id": "I01",
+      "requirement": "标准扫描",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I02",
+      "requirement": "表头乱序",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I03",
+      "requirement": "缺Sheet",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I04",
+      "requirement": "缺列",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I05",
+      "requirement": "重复列",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I06",
+      "requirement": "别名歧义",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I07",
+      "requirement": "纵向字段换行",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I08",
+      "requirement": "零与缺失区分",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I09",
+      "requirement": "数字文本",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I10",
+      "requirement": "公式有缓存",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I11",
+      "requirement": "公式无缓存",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I12",
+      "requirement": "万元长小数",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I13",
+      "requirement": "非法日期",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I14",
+      "requirement": "两位年份",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I15",
+      "requirement": "1904日期",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I16",
+      "requirement": "1900序列1和59和60和61",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I17",
+      "requirement": "重复行保留",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I18",
+      "requirement": "正常部分到账",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I19",
+      "requirement": "稳定来源键",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I20",
+      "requirement": "输入变化改版本",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I21",
+      "requirement": "D8三要素绑定",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I22",
+      "requirement": "D8不同源不误拦",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I23",
+      "requirement": "篡改且重算清单仍失败",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I24",
+      "requirement": "HTML和CSV注入",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I25",
+      "requirement": "输出重名不覆盖",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I26",
+      "requirement": "非法路径及符号链接",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I27",
+      "requirement": "重复JSON键与非有限数",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I28",
+      "requirement": "ZIP及XML资源上限",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I29",
+      "requirement": "无效外链与关系路径",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I30",
+      "requirement": "完整清单覆盖",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I31",
+      "requirement": "多文件逻辑名碰撞",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I32",
+      "requirement": "扫描中源件变化",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I33",
+      "requirement": "坏包不输出假成功",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I34",
+      "requirement": "新目录复现",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I35",
+      "requirement": "全部原件与预期哈希不变",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "I36",
+      "requirement": "最新冻结自验通过",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    }
+  ]
+}

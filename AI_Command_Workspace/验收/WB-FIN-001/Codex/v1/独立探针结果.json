@@ -1,0 +1,77 @@
+{
+  "hashes": [
+    {
+      "file": "README.md",
+      "ok": true,
+      "sha256": "88b3bb1ecc423a9426a444aec396c9f4cedfc1aee4d297b60bf62d357bc0b020"
+    },
+    {
+      "file": "财务公式与口径总表.md",
+      "ok": true,
+      "sha256": "92503d2755d152290c8655cf08e196db955b0b2840a258a943f79a738f8553c4"
+    },
+    {
+      "file": "待确认问题.md",
+      "ok": true,
+      "sha256": "334d768e694aaf2f2981bcc204b76d77edd3f230e7ca0681ab22b13284624547"
+    },
+    {
+      "file": "手算与边界用例.csv",
+      "ok": true,
+      "sha256": "96fa26aba2ac4077296f85da6a85009dd616c5345ddd05d1064b42b74f813598"
+    },
+    {
+      "file": "verify_financial_formulas.py",
+      "ok": true,
+      "sha256": "de174ad1d55ba310398e518bf1f3486aaf5ffdf346c6b5d140e882cc867e41dd"
+    },
+    {
+      "file": "校验结果.txt",
+      "ok": true,
+      "sha256": "c0a643b254b2233588f7c8b0511ea476417fab4b41fe75ead6d7fdfcd004c71d"
+    }
+  ],
+  "baseline_return_code": 0,
+  "probes": [
+    {
+      "id": "P01a_red_boundary",
+      "result": "{'exact': '1.49999', 'rounded': '1.5000', 'lamp': '黄灯', 'expected': '红灯'}"
+    },
+    {
+      "id": "P01b_yellow_boundary",
+      "result": "{'exact': '2.49999', 'rounded': '2.5000', 'lamp': '绿灯', 'expected': '黄灯'}"
+    },
+    {
+      "id": "P02_conversion",
+      "result": "1.23 万元 = 12300.00 元"
+    },
+    {
+      "id": "P03_invalid",
+      "result": "AttributeError: 'NoneType' object has no attribute 'is_nan'"
+    },
+    {
+      "id": "P03_nonfinite",
+      "result": "{Decimal('NaN'): 'NaN', Decimal('Infinity'): 'Infinity', '+Infinity': 'Infinity'}"
+    },
+    {
+      "id": "P04_incomplete_window",
+      "result": "(Decimal('66.6667'), '')"
+    },
+    {
+      "id": "P05_failure_exit",
+      "result": {
+        "return_code": 0,
+        "has_FAIL_1": true
+      }
+    },
+    {
+      "id": "P06_blocked_masks_exception",
+      "result": {
+        "return_code": 0,
+        "blocked": true,
+        "error_visible": true
+      }
+    }
+  ],
+  "source_unchanged": true
+}

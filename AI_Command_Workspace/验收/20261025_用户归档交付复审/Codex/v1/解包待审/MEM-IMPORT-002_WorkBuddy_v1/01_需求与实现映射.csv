@@ -1,0 +1,26 @@
+﻿需求ID,需求原文定位,实现文件与位置,关联用例ID,状态,证据ID,未实现与待确认
+REQ-001,任务书第1条：实装 scan/verify/selftest 并输出 inventory.json/records.jsonl/issues.jsonl/manifest.json/report.html,src/mfg_import/scanner.py:scan() 与 __main__.py 三个子命令,TC-001;TC-031,已实现,EV-001;EV-002,无
+REQ-002,任务书第1条：按统一接口生成 source_revision 和 source_record_key，规范JSON与排序算法不另起一套,src/mfg_import/canon.py:compute_source_revision()/compute_record_key(),TC-023;TC-024,已实现,EV-003;EV-004,无
+REQ-003,任务书第2条：映射配置提供源表名/表头行/数据起始行/字段别名/原单位/例外依据；不硬套样例中不存在的 Sheet/列,mapping/mfg_sample_mapping.json 与 fixtures/mapping_fixture.json,TC-003;TC-004,已实现,EV-005,无
+REQ-004,任务书第2条：未知字段保留原证据，不为凑统一输出伪造投资/筹资流量,scanner.py:_scan_horizontal() 未匹配字段即 null + issue；仅登记 registered_only_sheets,TC-004;TC-009,已实现,EV-006,无
+REQ-005,任务书第3条：金额/日期/类型解析留原 XML 及转换依据；公式不执行；缓存有无分清,src/mfg_import/xlsxraw.py:RawCell 与 convert.py；scanner.py:_convert_cell(),TC-010;TC-011;TC-012,已实现,EV-007;EV-008,无
+REQ-006,任务书第3条：空白/显式空串/空格/0/数字文本分开,scanner.py:_convert_cell() 状态机,TC-008;TC-009,已实现,EV-009,无
+REQ-007,任务书第3条：1900/1904 识别并记录；Excel1900 虚构闰日明确处理；两位年份不猜,convert.py:serial_to_date()/parse_date_text()；scanner 记录 date_system,TC-018;TC-019;TC-020;TC-017,已实现,EV-010;EV-011,无
+REQ-008,任务书第4条：D8=1631300 仅在源SHA+Sheet+地址匹配时标待核、规范金额 null,unit_exceptions.json + scanner.py 例外匹配分支,TC-014;TC-015,已实现,EV-012;EV-013,真实单位待核实（ISS-A1）
+REQ-009,任务书第4条：行12/15 保留且报重复证据；正常部分到账不判错误,scanner.py:_report_duplicates()；TC-022 断言无误判,TC-021;TC-022,已实现,EV-014;EV-015,无
+REQ-010,任务书第5条：样例只读、允许核对 8 个实际 Sheet 用于映射；数据字典不当真值,README 第4节；mapping 仅映射实际存在的 6 个 Sheet,TC-030,已实现,EV-016,无
+REQ-011,任务书第5条：无真实企业文件时先合成自测再样例扫描，不声称真实企业扫描通过,fixtures/make_fixtures.py；README 第4/5节；未实现与待确认.md U5,TC-001..TC-031,已实现,EV-017,真实企业数据待提供（ISS-A5）
+REQ-012,任务书第6条：verify 不仅核包哈希，还按真实源定位检查字段和值与转换,verifier.py:verify() 重导 + _locate_diff(),TC-024;TC-025,已实现,EV-018;EV-019,无
+REQ-013,任务书第6条：改字段并重算清单哈希仍须检出,verifier.py:_locate_diff() 输出 Sheet!行N 与期望值,TC-025,已实现,EV-020;EV-021,无
+REQ-014,任务书第6条：明确威胁边界（源+哈希同时替换不能自证历史真相）,设计与接口说明.md 第6节；README 第5节,（文档声明，无运行时断言）,已实现,EV-022,需外部固定可信源摘要（ISS-A4）
+REQ-015,任务书第7条：HTML 纯离线、内容转义、不加载外部脚本,report.py:html.escape 全转义；无 src=/http 外链,TC-026,已实现,EV-023,无
+REQ-016,任务书第7条：CSV 导出防公式注入，原文在 JSON 保留,scanner.py:csv_safe() 与 _write_issues_csv(),TC-027,已实现,EV-024,无
+REQ-017,任务书第7条：路径拒绝 ..、绝对路径、输出重名；符号链接逃逸说明/测试,scanner.py:check_safe_relpath()/ensure_fresh_output_dir()；verifier 对 files[].path 校验,TC-028,已实现,EV-025,符号链接用例在无权限环境的说明见 未实现与待确认.md
+REQ-018,222 节三A：缺列/重名列/别名歧义不取第一项,scanner.py:_match_columns() 与 _scan_vertical(),TC-004;TC-005;TC-006,已实现,EV-026;EV-027,无
+REQ-019,222 节四：records 逐条含 source_record_key 与单元格级来源；manifest 不含自身哈希,scanner.py 输出；manifest files 排除自身,TC-001;TC-031,已实现,EV-028,无
+REQ-020,222 节三C：万元长小数到分（1.234567万→12345.67元）,convert.py:wan_to_yuan_fen(),TC-013,已实现,EV-029,无
+REQ-021,任务书：故意失败非 0 退出；业务缺项与程序异常分开,__main__.py 退出码表；selftest 意外异常记 FAIL,TC-029,已实现,EV-030,无
+REQ-022,统一接口：五字段 + unit=CNY + 元十进制字符串,scanner.py:manifest 组装,TC-001;TC-031,已实现,EV-031,无
+REQ-023,任务书最低测试矩阵：列重排/缺列/纵向换行/1904/重复/部分到账/源改变/键稳定等 21 项,selftest.py:CASES 31 项,TC-001..TC-031,已实现,EV-032;EV-033,无
+REQ-024,任务书：自造微型 xlsx 夹具生成器需源码,fixtures/make_fixtures.py（含 patch_cell 改 XML 造公式/空串/serial60）,TC-001..TC-031,已实现,EV-034,无
+REQ-025,统一接口/一期范围：完全不实现主算法、预测、评级、现金折扣、其他行业,未实现与待确认.md U1–U8，（边界声明，反向断言见 U 表）,已实现（按边界不做）,EV-035,真实千问/MySQL 端到端待 X（ISS-A2/ISS-A3）

@@ -1,0 +1,16 @@
+test_strict_json_duplicate_and_nonfinite (test_qa_tool.QA.test_strict_json_duplicate_and_nonfinite) ... 
+  test_strict_json_duplicate_and_nonfinite (test_qa_tool.QA.test_strict_json_duplicate_and_nonfinite) (raw=b'{"a":1,"a":2}') ... FAIL
+
+======================================================================
+FAIL: test_strict_json_duplicate_and_nonfinite (test_qa_tool.QA.test_strict_json_duplicate_and_nonfinite) (raw=b'{"a":1,"a":2}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\accept_duplicate_json\test_qa_tool.py", line 266, in test_strict_json_duplicate_and_nonfinite
+    with self.subTest(raw=raw), self.assertRaises(q.InputError):
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: InputError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)

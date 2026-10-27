@@ -1,0 +1,19 @@
+== swap tool ==
+swapon from util-linux 2.39.3
+
+== output raw ==
+/swapfile file 1073737728    0   -2 69aedad1-a876-46ab-9da0-de94dae95507 
+
+== proc swaps ==
+Filename				Type		Size		Used		Priority
+/swapfile                               file		1048572		0		-2
+
+== kernel swap totals ==
+SwapTotal:       1048572 kB
+SwapFree:        1048572 kB
+
+== target path exists ==
+target file absent
+
+== original swap fstab ==
+/swapfile none swap sw 0 0

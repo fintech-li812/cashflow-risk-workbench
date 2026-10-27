@@ -1,0 +1,2 @@
+92e70ae59ffd9cd4d37c1bee9381b57ac868acffd9cc8c5a2d961caf0feeef89  千问能力验证样表_v1.xlsx
+7e886f8b614d871515cec47578b2a25645deb7be6dabc1f319cf22a20db2d96c  本地验证结果.json

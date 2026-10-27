@@ -1,0 +1,296 @@
+{
+  "task_id": "CX-V1-CHAIN-001",
+  "package_version": "v2",
+  "author": "Codex",
+  "created_at": "2026-10-24T18:33:36.560602+08:00",
+  "status": "candidate_pending_independent_review",
+  "tests": {
+    "python_methods": 70,
+    "vm_browser_state_cases": 15,
+    "real_mysql_mcp_transport_flows": 2,
+    "real_browser_outage_recovery": true,
+    "qwen_tools_loaded": true,
+    "qwen_agent_flow_verified": false,
+    "qwen_native_sheet_recalculation_verified": false
+  },
+  "production_deployed": false,
+  "inherited_v1_files_unchanged": 58,
+  "files": [
+    {
+      "path": "docs/千问连接器配置修正.md",
+      "sha256": "27a922f56a8d9a878db2b8f99e7378ee36fd39da8e0ae0a449aca884c31b9c73"
+    },
+    {
+      "path": "docs/千问隔离联调指令.md",
+      "sha256": "315d94dae1bb82d951fab28229158da1102ee3d315ecb87bc80f8364555d0b4a"
+    },
+    {
+      "path": "docs/本轮范围.md",
+      "sha256": "ab7961c9723c30f706898123e80d0d626565383aac027c903ca58b5d0a8fd60c"
+    },
+    {
+      "path": "docs/独立审核任务.md",
+      "sha256": "b4524847443805467f4c823f2313287eb9519b0ad9f56753ceef7fc66205f07e"
+    },
+    {
+      "path": "docs/继承v1_manifest.json",
+      "sha256": "82cff408852b7ecd4caa80697483215bb44902a4dc9503e5e7f54bc59af9024b"
+    },
+    {
+      "path": "docs/继承v1交付报告.md",
+      "sha256": "95555654639c94955ab1af481929511ff1494f7436e365d81c417a0d86d28488"
+    },
+    {
+      "path": "docs/网页验证记录.md",
+      "sha256": "ecfea81ea3dd95eda15fb01bd9bc76650807913158ad7e9e952dff940da0a909"
+    },
+    {
+      "path": "docs/运行与恢复手册.md",
+      "sha256": "f9936663518656ceb3eab70709683520c38caf89460187863fe3a5a57fb110eb"
+    },
+    {
+      "path": "evidence/D盘入口只读实测_1830.json",
+      "sha256": "ceaadd277558e230bc42d17f0cbf180ab609a4b3900f1344a2005ea3c9b57223"
+    },
+    {
+      "path": "evidence/D盘运行环境检查.json",
+      "sha256": "043b9bd752e1e50a84dbea42536c71dd90ab81a9d00defa5cf56f5f92d50f662"
+    },
+    {
+      "path": "evidence/HTTP与浏览器守卫_01.txt",
+      "sha256": "5e79312f058be8fff81c2e582939ce68383cb42fb538803d9cdd02596bbea5e2"
+    },
+    {
+      "path": "evidence/HTTP与浏览器守卫_02.txt",
+      "sha256": "3466fa619a303b2b4723f8b26b0872770a34c702041190fe99c61ccc898ca0bf"
+    },
+    {
+      "path": "evidence/mysql-test-files/test-68ff58e26d4f444598db5c44c1bbeb19.json",
+      "sha256": "73bcfb94653ad4b5fdc2768903652c1b262845e92cc8493bda8b0bd3ba1c7730"
+    },
+    {
+      "path": "evidence/mysql-test-files/test-881cc909961f4f76a80438fa92a1e860.json",
+      "sha256": "73bcfb94653ad4b5fdc2768903652c1b262845e92cc8493bda8b0bd3ba1c7730"
+    },
+    {
+      "path": "evidence/MySQL隔离建表.json",
+      "sha256": "69c5dd8de71905c70e2c3bb41cad5b75521990a60527cf3d4153436cde05b93f"
+    },
+    {
+      "path": "evidence/qa_runtime.json",
+      "sha256": "2d4577355f7f5964404e5897619b18c3fedb19a5c98397498c773dc8a5a339e1"
+    },
+    {
+      "path": "evidence/双传输真实数据库闭环_01.txt",
+      "sha256": "efb294cbbecad8263ff3da98a77337352b3be79fe5fea6f747157c58e17867c6"
+    },
+    {
+      "path": "evidence/完整回归_01.txt",
+      "sha256": "4e4a27e168aaf7051096d8856f56e22df8087e430d2c838ffe0fa6b98a02bf2b"
+    },
+    {
+      "path": "evidence/完整回归_02.txt",
+      "sha256": "84c8b30405fd7dc1ebfc504601884e620300abab7784676815dad0e2c901f653"
+    },
+    {
+      "path": "evidence/工具过程_http.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/工具过程_stdio.txt",
+      "sha256": "699e54ae6d3f0681bedc9153d0d30d4b52a58d21c3c28f27dc8d14111dcb8adc"
+    },
+    {
+      "path": "evidence/恢复后启动检查.json",
+      "sha256": "043b9bd752e1e50a84dbea42536c71dd90ab81a9d00defa5cf56f5f92d50f662"
+    },
+    {
+      "path": "evidence/浏览器状态回归_VM.txt",
+      "sha256": "ff173e5f6024cc6a3a3d8a4e19f3f8d4485f3d0577cf8a713f958a8ae6f37ea5"
+    },
+    {
+      "path": "evidence/真实数据库闭环_http.json",
+      "sha256": "283da6e13ba6873dd890da389e25a0a39445cfeb5d9144ea44fa6de83ce13800"
+    },
+    {
+      "path": "evidence/真实数据库闭环_stdio.json",
+      "sha256": "a35fcca9bf2727c69182a2e4b98c959328d9b29de2faf721602442b14940f0e2"
+    },
+    {
+      "path": "evidence/真实断库与恢复.json",
+      "sha256": "8e001c8df868271814b7ec04afc6c2b8556c74c37991ee1412623ccca266e1cd"
+    },
+    {
+      "path": "evidence/续接1828_启动检查.json",
+      "sha256": "043b9bd752e1e50a84dbea42536c71dd90ab81a9d00defa5cf56f5f92d50f662"
+    },
+    {
+      "path": "evidence/续接_独立SQL状态.json",
+      "sha256": "3f651cc3b75daf4b2b33b2c2332ad71be0811848d257ca1f725cd0bb09e535ab"
+    },
+    {
+      "path": "evidence/网页01_就绪.png",
+      "sha256": "bda5e1daf61c24f89a9ceac0cb1f82abf850cfcf0abd9b5e04a1848b47c849dd"
+    },
+    {
+      "path": "evidence/网页02_真实提交.png",
+      "sha256": "8d20e71ba7444fe76f84bad743a592c3a75ab9adfa33d87fc19dd3044e8a6c63"
+    },
+    {
+      "path": "evidence/网页02_真实提交.txt",
+      "sha256": "71099973f42073f247909bdbbe57d04ebc66100177f24dc32d79fce6d2a0e208"
+    },
+    {
+      "path": "evidence/网页03_修复前连接中断旧回执.png",
+      "sha256": "987ada6467c214087fc58181ff55316a172625814a78c412af197bda14aa0a60"
+    },
+    {
+      "path": "evidence/网页03_修复前连接中断旧回执.txt",
+      "sha256": "2a64e1d35c1662d89d0460cf0db720ee5a165bf3f49c0c9271d76423175758f1"
+    },
+    {
+      "path": "evidence/网页03b_修复前最终错误.png",
+      "sha256": "c01b14a0fb2af953ddda49f74bc0968a82af7fc011e3246751c1104ab9d8cb30"
+    },
+    {
+      "path": "evidence/网页04_真实断库修复前.png",
+      "sha256": "e99cb8b986c8699ae87b61acc9438057657811abd3a537e360ec02aa84875db5"
+    },
+    {
+      "path": "evidence/网页04_真实断库修复前.txt",
+      "sha256": "944897af130a5316948b8805ad729b91125948b1bb9040ecfe3f0db0045dbb0d"
+    },
+    {
+      "path": "evidence/网页05_真实断库修复后.png",
+      "sha256": "de21cd7e09a9c6162b2d74904c12163db41957f71f9e06d82e79ec742b9ea98a"
+    },
+    {
+      "path": "evidence/网页05_真实断库修复后.txt",
+      "sha256": "327a244bf0fcbd6c0608f25f38cc3f7279686f7496d00246a8487e4689a2072c"
+    },
+    {
+      "path": "evidence/网页06_恢复后同编号回查.png",
+      "sha256": "8d20e71ba7444fe76f84bad743a592c3a75ab9adfa33d87fc19dd3044e8a6c63"
+    },
+    {
+      "path": "evidence/网页06_恢复后同编号回查.txt",
+      "sha256": "71099973f42073f247909bdbbe57d04ebc66100177f24dc32d79fce6d2a0e208"
+    },
+    {
+      "path": "evidence/请求开始_http.json",
+      "sha256": "8a626cf425bfe41fd5e85a8a19cf22c2552ce4ddad7d924e3a5b78a2f28e896f"
+    },
+    {
+      "path": "evidence/请求开始_stdio.json",
+      "sha256": "c5d5fa2f14ab4affeb7bca8ac592098d7b2b0ef690467b199414d1e47fa65aba"
+    },
+    {
+      "path": "evidence/配置与启动守卫_修正后.txt",
+      "sha256": "6523f15e1f0d173736ce146da4d6ee5ceb7cb1aec475b8bec4ab3a13a43170e0"
+    },
+    {
+      "path": "evidence/隧道续接_1828.json",
+      "sha256": "4bbbbdb9f739581e66514d870654aac954d2041ed375fcaef0531c1016715440"
+    },
+    {
+      "path": "fixtures/approved_result.json",
+      "sha256": "638366d14254cdf468e9363f7e85aa34b933f55c168f32f01a469e593840d403"
+    },
+    {
+      "path": "fixtures/calculated_result_v1.json",
+      "sha256": "e6470f7adeba00804b178be5dc17a3087a88758178b9482cfd64b8cf81cf36d7"
+    },
+    {
+      "path": "fixtures/normalized_input.json",
+      "sha256": "d0bfb28ab0c1d1acbaf625ac6b9d8175ad53817a85c04e86100c7cb56387e1d9"
+    },
+    {
+      "path": "launch_preview.py",
+      "sha256": "594375045f03bd1a2087f15681d51a428a10c4c4d717a82d812923bb089e27c0"
+    },
+    {
+      "path": "qa_entry.py",
+      "sha256": "718b8c08bb6b7cbcf9cdf0aebd50bed770dfa8db5c821887fffd40f8a5e0d088"
+    },
+    {
+      "path": "requirements.lock.txt",
+      "sha256": "b0065af0d2d4c0bc5d84d8a7783f09ad2ce1c0405968310db8cd43980dcbe2db"
+    },
+    {
+      "path": "sql/isolated_schema.sql",
+      "sha256": "2ba18dee2898c8fc2e6827810eb40138b1b7e75c80f640ec00f92f36e1394468"
+    },
+    {
+      "path": "src/agent_guard.py",
+      "sha256": "eb99d420e2ac7ef1352b448d0c29e1430d0a65cd80a76111eee3dc27c96055c1"
+    },
+    {
+      "path": "src/app.py",
+      "sha256": "73e97c6017150599f62499e1767a1e4ae03519c861dd275ba36d05c5b35aeaa8"
+    },
+    {
+      "path": "src/arithmetic.py",
+      "sha256": "8fcda95f051a32786ff9581cd2544df7c1e5062e3739f0e7c2802aa80f5249ac"
+    },
+    {
+      "path": "src/config.py",
+      "sha256": "3ad30070e367df82de8d4b0967889670d89f05f8a471a284fcf68160fecac6e1"
+    },
+    {
+      "path": "src/service.py",
+      "sha256": "4f1b1dadbea7072af39672b08980a81daf6ad28c2a928c77ccfb27c1b1df046d"
+    },
+    {
+      "path": "src/web_server.py",
+      "sha256": "d6f20168a626fcb97b4cc7519acdd0a34fc3b79e2f6cc9f1417a054319325635"
+    },
+    {
+      "path": "tests/e2e_transports_v2.py",
+      "sha256": "7e1e36c5e551685aa63081e33f579b32a8df842f74bf42d161d3e487d8803b24"
+    },
+    {
+      "path": "tests/mcp_e2e.py",
+      "sha256": "ef92c9c0c8c59051b15676446e129fbfd8f8972a1fce722be158416a4b63df10"
+    },
+    {
+      "path": "tests/test_arithmetic.py",
+      "sha256": "5ac4b072aef6c2be889508db220e42d9c586d368dcb85dbb2cb23e42f9c1e14a"
+    },
+    {
+      "path": "tests/test_browser_state_v2.cjs",
+      "sha256": "86c13135c20553a17a45b3f96c08d1ed54b66c32a90a5da24c9cd469ceee0daa"
+    },
+    {
+      "path": "tests/test_config_entry_v2.py",
+      "sha256": "590d3281b7e05664b5d5b355272237d5254eae2594b8a19a0f964efffe806ad6"
+    },
+    {
+      "path": "tests/test_service.py",
+      "sha256": "40bdd49b875481df36dfe2210f50a6c1ed4314de68972e7085d0672121746847"
+    },
+    {
+      "path": "tests/test_transport_v2.py",
+      "sha256": "23e75d6dac3a78d0319a7b64c0f687ee134ae94eefed7e8c5c8bf033e2a3ffb7"
+    },
+    {
+      "path": "tests/test_web_guard.py",
+      "sha256": "289fe75a67c3d4a0070235b29ce8da0bad978343124fdcee79e70ca0627f9434"
+    },
+    {
+      "path": "tests/verify_stdio_entry.py",
+      "sha256": "abf03de03b4a4ef20ec57f794d055fd6f9126f289b6be93cccf6aaeb4711ecfc"
+    },
+    {
+      "path": "web/app.js",
+      "sha256": "631efaaf916f14ba6a35759b33f62b77787f6b2f24f707e55d3b02533143877e"
+    },
+    {
+      "path": "web/index.html",
+      "sha256": "5ec617040f4eff2f78331e650b6995c5af076391d999a532566e6dd8a13368ca"
+    },
+    {
+      "path": "交付报告.md",
+      "sha256": "cced31108ae886f88317936a900acf5e16bce31aab4b62db7853d802a7471b7a"
+    }
+  ]
+}

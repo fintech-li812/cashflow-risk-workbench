@@ -1,0 +1,138 @@
+{
+  "schema_version": "mfg-cash-evidence-selection.v1",
+  "status": "ready",
+  "context": {
+    "tenant_id": "fixture-tenant",
+    "company_id": "fixture-manufacturing",
+    "period": "2026-08",
+    "source_revision": "fixture-source-v1",
+    "run_id": "fixture-run-202608"
+  },
+  "fixture": true,
+  "can_claim_full_cashflow": false,
+  "can_save_source_result": false,
+  "source_authenticity_verified": false,
+  "native_sheet_verified": false,
+  "selected_records": [
+    {
+      "record_id": "bank-sale",
+      "source_id": "bank-A",
+      "source_record_key": "592d7f0c46a116d8a656f90af4d6d6def99896f5e5c7c9848c80a895ac736b95",
+      "account_id": "fixture-account-A",
+      "kind": "cash_in",
+      "amount": "400.00",
+      "unit": "CNY",
+      "settlement_date": "2026-08-15",
+      "category": "operating",
+      "transaction_id": "TX-SALE",
+      "internal_transfer_hint": false
+    },
+    {
+      "record_id": "bank-expense",
+      "source_id": "bank-A",
+      "source_record_key": "29a9448c1a8faa1e24ff52be41e06ef267fb819edecdf74850b05d5048094d6a",
+      "account_id": "fixture-account-A",
+      "kind": "cash_out",
+      "amount": "100.00",
+      "unit": "CNY",
+      "settlement_date": "2026-08-15",
+      "category": "operating",
+      "transaction_id": "TX-EXPENSE",
+      "internal_transfer_hint": false
+    },
+    {
+      "record_id": "bank-loan",
+      "source_id": "bank-A",
+      "source_record_key": "231e56f6c967a23230158733a785aa3b6af58d41c1e8080c088b2ffbd20e8c67",
+      "account_id": "fixture-account-A",
+      "kind": "cash_in",
+      "amount": "1000.00",
+      "unit": "CNY",
+      "settlement_date": "2026-08-15",
+      "category": "financing",
+      "transaction_id": "TX-LOAN",
+      "internal_transfer_hint": false
+    }
+  ],
+  "record_decisions": [
+    {
+      "record_id": "bank-sale",
+      "action": "count_external_actual",
+      "reason": "registered_primary_source"
+    },
+    {
+      "record_id": "bank-expense",
+      "action": "count_external_actual",
+      "reason": "registered_primary_source"
+    },
+    {
+      "record_id": "transfer-out",
+      "action": "eliminated_internal_transfer",
+      "reason": "operator_approved_matching_pair",
+      "pair_id": "PAIR-A-B"
+    },
+    {
+      "record_id": "transfer-in",
+      "action": "eliminated_internal_transfer",
+      "reason": "operator_approved_matching_pair",
+      "pair_id": "PAIR-A-B"
+    },
+    {
+      "record_id": "bank-loan",
+      "action": "count_external_actual",
+      "reason": "registered_primary_source"
+    },
+    {
+      "record_id": "business-sale",
+      "action": "corroborating_only",
+      "reason": "not_primary_actual_source",
+      "linked_primary_records": [
+        "bank-sale"
+      ]
+    },
+    {
+      "record_id": "invoice",
+      "action": "noncash_excluded",
+      "reason": "receivable_invoice",
+      "linked_primary_records": [
+        "bank-sale"
+      ]
+    },
+    {
+      "record_id": "depreciation",
+      "action": "noncash_excluded",
+      "reason": "noncash_adjustment"
+    },
+    {
+      "record_id": "unused-credit",
+      "action": "noncash_excluded",
+      "reason": "credit_limit"
+    }
+  ],
+  "approved_transfer_pairs": [
+    {
+      "pair_id": "PAIR-A-B",
+      "out_record_id": "transfer-out",
+      "in_record_id": "transfer-in",
+      "amount": "200.00",
+      "unit": "CNY"
+    }
+  ],
+  "issues": [],
+  "counts": {
+    "input_records": 9,
+    "primary_actual_records": 5,
+    "selected_actual_records": 3,
+    "approved_duplicate_records": 0,
+    "eliminated_transfer_records": 2,
+    "corroborating_only_records": 1,
+    "noncash_records": 3
+  },
+  "cashflow_totals": null,
+  "mutations_performed": false,
+  "selection_sha256": "3317918bdd2ea575ea7e7139b43af93b57fa5873272424e97128b304ac71f39a",
+  "limitations": [
+    "Explicit operator registration is not authenticated source truth.",
+    "No approximate matching, guessed classification or automatic write is performed."
+  ]
+}

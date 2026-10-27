@@ -1,0 +1,1 @@
+fault-inject: before_commit（事务已回滚，无半条记录）

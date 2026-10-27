@@ -1,0 +1,62 @@
+{
+  "mutations": [
+    {
+      "mutation": "skip_schema_validation",
+      "selected_test": "test_all_of_conditional_required",
+      "caught": true,
+      "testsRun": 1,
+      "failures": 1,
+      "errors": 0
+    },
+    {
+      "mutation": "skip_tool_name",
+      "selected_test": "test_tool_name_mismatch",
+      "caught": true,
+      "testsRun": 1,
+      "failures": 1,
+      "errors": 0
+    },
+    {
+      "mutation": "skip_context_comparison",
+      "selected_test": "test_every_context_field_compared",
+      "caught": true,
+      "testsRun": 1,
+      "failures": 5,
+      "errors": 0
+    },
+    {
+      "mutation": "skip_request_comparison",
+      "selected_test": "test_request_mismatch",
+      "caught": true,
+      "testsRun": 1,
+      "failures": 1,
+      "errors": 0
+    },
+    {
+      "mutation": "skip_reference_policy",
+      "selected_test": "test_unused_external_ref_blocked",
+      "caught": true,
+      "testsRun": 1,
+      "failures": 1,
+      "errors": 0
+    },
+    {
+      "mutation": "skip_format_check",
+      "selected_test": "test_datetime_format",
+      "caught": true,
+      "testsRun": 1,
+      "failures": 1,
+      "errors": 0
+    }
+  ],
+  "caught": 6,
+  "total": 6,
+  "runtime": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "jsonschema": "4.26.0",
+    "referencing": "0.37.0",
+    "attrs": "26.1.0",
+    "rpds-py": "2026.9.1",
+    "jsonschema-specifications": "2025.9.1"
+  }
+}

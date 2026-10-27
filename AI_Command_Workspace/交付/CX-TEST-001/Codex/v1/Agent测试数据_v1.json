@@ -1,0 +1,81 @@
+{
+  "dataset_id": "SYNTHETIC-QWEN-001",
+  "synthetic": true,
+  "unit": "万元",
+  "formula_version": "arithmetic-only-v1",
+  "risk_rules_approved": false,
+  "platform_tested": false,
+  "records": [
+    {
+      "row": 6,
+      "document_id": "DEMO001",
+      "customer": "甲",
+      "inflow_wan": "10",
+      "outflow_wan": "8"
+    },
+    {
+      "row": 7,
+      "document_id": "DEMO002",
+      "customer": "乙",
+      "inflow_wan": "20",
+      "outflow_wan": "12"
+    },
+    {
+      "row": 8,
+      "document_id": "DEMO003",
+      "customer": "丙",
+      "inflow_wan": "30",
+      "outflow_wan": "15"
+    },
+    {
+      "row": 9,
+      "document_id": "DEMO001",
+      "customer": "甲",
+      "inflow_wan": "20",
+      "outflow_wan": "9"
+    },
+    {
+      "row": 10,
+      "document_id": "DEMO005",
+      "customer": "丁",
+      "inflow_wan": "10",
+      "outflow_wan": "7"
+    },
+    {
+      "row": 11,
+      "document_id": "DEMO006",
+      "customer": "乙",
+      "inflow_wan": "40",
+      "outflow_wan": "20"
+    }
+  ],
+  "expected": {
+    "available": true,
+    "inflow_wan": "130",
+    "outflow_wan": "71",
+    "net_wan": "59",
+    "inflow_yuan": "1300000.00",
+    "outflow_yuan": "710000.00",
+    "net_yuan": "590000.00"
+  },
+  "variants": {
+    "change_D6_to_11": {
+      "available": true,
+      "inflow_wan": "131",
+      "outflow_wan": "71",
+      "net_wan": "60",
+      "inflow_yuan": "1310000.00",
+      "outflow_yuan": "710000.00",
+      "net_yuan": "600000.00"
+    },
+    "missing_E8": {
+      "available": false,
+      "reason": "流入或流出缺失，不能当作0"
+    }
+  },
+  "notes": [
+    "六行均保留；重复单据标识仅测试识别，不允许未经说明去重后仍沿用这些预期。",
+    "无M、S、刚性支出、K、Q/D/P/FUSE或13周预测口径；不得据此判断风险灯。",
+    "零值与空值不同；金额入工具前需核对单位和实际Schema。"
+  ]
+}

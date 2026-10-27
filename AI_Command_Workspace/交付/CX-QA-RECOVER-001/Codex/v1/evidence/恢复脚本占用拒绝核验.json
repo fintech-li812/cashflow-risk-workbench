@@ -1,0 +1,9 @@
+{
+  "test": "existing_listener_refuses_duplicate_start",
+  "expected_exit": 2,
+  "actual_exit": 2,
+  "stdout": "{\n    \"status\":  \"not_started\",\n    \"reason\":  \"port_already_in_use\",\n    \"port\":  13317,\n    \"owning_pid\":  [\n                       25096\n                   ]\n}\n",
+  "stderr": "",
+  "new_tunnel_started": false,
+  "key_content_read": false
+}

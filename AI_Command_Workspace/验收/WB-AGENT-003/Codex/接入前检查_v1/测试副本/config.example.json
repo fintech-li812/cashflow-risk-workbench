@@ -1,0 +1,38 @@
+{
+  "_说明": "只列配置项名称与来源，不含任何口令、密钥、令牌或真实连接串。",
+  "_纪律": "共享区不存放凭据；值一律由平台认证绑定或运行时生成。",
+
+  "binding": {
+    "tenant_id": "<由平台认证绑定提供，不由文件名或公司名推断>",
+    "company_id": "<由平台认证绑定提供>",
+    "period": "<YYYY-MM，月份须合法，如 2026-08>",
+    "source_revision": "<源数据版本；源数据变更必须换新值>",
+    "run_id": "<本次运行标识，每次运行一个新值>"
+  },
+
+  "snapshot_locator": {
+    "workbook_ref": "<步骤1 绑定后取得>",
+    "sheet": "<步骤1 绑定后取得>",
+    "range": "<步骤1 绑定后取得>",
+    "snapshot_ref": "<步骤1 绑定后取得>"
+  },
+
+  "result_requirements": {
+    "calculation_version": "<步骤2 公式版本，非空>",
+    "origin": "qwen_sheet（生产）；offline_fixture 仅显式测试且生产禁用",
+    "unit": "CNY",
+    "coverage": "full_cashflow（仅有经营部分时不得填此项）"
+  },
+
+  "storage": {
+    "request_id": "<每次逻辑保存的非空标识；超时重试沿用同一个值>",
+    "input_schema_fields": "<待平台确认：从实际绑定工具 tools/list 的 inputSchema.required 抄录>",
+    "operation": "save_cashflow_result"
+  },
+
+  "not_configured_here": [
+    "任何密码 / 密钥 / 令牌 / 私钥",
+    "服务器地址、root 账号、数据库连接串",
+    "真实 MCP 工具名（以平台 tools/list 为准）"
+  ]
+}

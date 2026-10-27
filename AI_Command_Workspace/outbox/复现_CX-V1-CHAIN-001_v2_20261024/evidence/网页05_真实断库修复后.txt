@@ -1,0 +1,45 @@
+- banner
+  - heading "制造业现金流工作台" [level=1, ref=e1]
+  - StaticText "基础版 · 现金流核对与结果留档"
+- main
+  - generic
+    - strong
+      - StaticText "合成数据工程联调"
+    - StaticText "　当前使用人工构造数据，连接真实MySQL隔离测试库。千问平台尚未接入；此页不代表真实企业已通过验收。"
+  - generic
+    - heading "现金流核对" [level=2, ref=e2]
+    - StaticText "来源版本尚未重新确认"
+    - LabelText
+      - StaticText "本次请求编号（同一次重试保持不变）"
+    - textbox "本次请求编号（同一次重试保持不变）" [ref=e3]
+    - button "读取、核对并留档" [disabled, ref=e4]
+    - button "按编号回查" [disabled, ref=e5]
+    - button "检查连接" [ref=e6]
+    - status
+      - StaticText "数据库尚未连通，请恢复授权隧道后再检查连接。"
+    - table
+      - rowgroup
+        - row
+          - columnheader "核对项目" [ref=e10]
+          - columnheader "金额（元）" [ref=e11]
+      - rowgroup
+        - row
+          - cell "尚未取得本次核对结果" [ref=e12]
+    - StaticText "净额 = 实际流入 − 实际流出；计算期末 = 期初 + 净额；差异 = 独立实际期末 − 计算期末。"
+  - generic
+    - heading "结果解释" [level=2, ref=e7]
+    - paragraph
+      - StaticText "等待本次已核对结果。"
+  - complementary
+    - generic
+      - heading "留档与回查" [level=2, ref=e8]
+      - StaticText "本次状态"
+      - StaticText "连接和来源正在重新确认；历史记录请按原编号回查。"
+    - generic
+      - heading "第一版运行范围" [level=2, ref=e9]
+      - paragraph
+        - StaticText "核对已有现金流结果、留档、按完整版本回查。保存结果须与批准快照一致。"
+      - paragraph
+        - StaticText "滚动预测、三态自动判定在第二阶段完善。本页不显示虚构预测或自动化解状态。"
+  - sectionfooter
+    - StaticText "本地候选联调界面。正式验收仍需千问真实读表、公式重算、MCP调用及MySQL独立回查。"

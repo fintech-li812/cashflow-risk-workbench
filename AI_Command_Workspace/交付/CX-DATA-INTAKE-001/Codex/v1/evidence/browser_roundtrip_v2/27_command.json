@@ -1,0 +1,9 @@
+{
+  "args": [
+    "scrollintoview",
+    "#exportDraft"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"success\":true,\"data\":{\"scrolled\":\"#exportDraft\"},\"error\":null}\n",
+  "stderr": ""
+}

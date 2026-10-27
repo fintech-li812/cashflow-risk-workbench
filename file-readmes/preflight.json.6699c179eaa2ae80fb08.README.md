@@ -1,0 +1,23 @@
+# 文件说明：preflight.json
+
+- 仓库路径：AI_Command_Workspace/验收/CX-RELEASE-001/Codex/实际项目检查_v1/preflight.json
+- 查看文件：[打开原文件](../AI_Command_Workspace/%E9%AA%8C%E6%94%B6/CX-RELEASE-001/Codex/%E5%AE%9E%E9%99%85%E9%A1%B9%E7%9B%AE%E6%A3%80%E6%9F%A5_v1/preflight.json)
+- 归属：历史验证证据或验收材料；须结合版本与实际日志阅读
+- 大小：5520字节
+- 导出SHA256：ff834adc5d6da7710888c79aac3a5daa7c0f79c0d3f116acb4863884dba45e9a
+
+## 内容与作用
+
+顶层字段：schema_version, status, release_authorized, target, counts, checks, notes
+
+schema_version：mfg-release-preflight-report.v1
+
+status：失败
+
+## 打开与使用
+
+文本编辑器或所属程序的只读查看命令。
+
+## 状态与限制
+
+这是2026-10-27归档时的静态说明，不证明本文件已执行、已部署或业务验证通过。优先阅读仓库根README和主工作台最新交接；历史文件口径可能已被用户后续决定覆盖。

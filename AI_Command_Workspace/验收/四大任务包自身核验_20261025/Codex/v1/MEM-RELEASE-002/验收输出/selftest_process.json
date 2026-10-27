@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Users\\33847\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-RELEASE-002\\假交付\\src\\selftest.py",
+    "--workdir",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-RELEASE-002\\验收输出\\selftest-work",
+    "--report",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-RELEASE-002\\验收输出\\selftest_result.json"
+  ],
+  "expected_exit": 0,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

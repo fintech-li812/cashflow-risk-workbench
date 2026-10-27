@@ -1,0 +1,8 @@
+{"code":"VALIDATION_FAILED","details":{},"message":"amount must be a finite decimal string in yuan, at most 18 integer digits and 2 decimals","ok":false,"status":"rejected"}
+
+
+{"code":"VALIDATION_FAILED","details":{},"message":"input is not a valid finite result json: non-finite number is not allowed in result json: NaN","ok":false,"status":"rejected"}
+
+
+{"code":"VALIDATION_FAILED","details":{},"message":"difference is incorrect","ok":false,"status":"rejected"}
+

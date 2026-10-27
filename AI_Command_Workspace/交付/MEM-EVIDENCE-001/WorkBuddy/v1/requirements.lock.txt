@@ -1,0 +1,16 @@
+# MEM-EVIDENCE-001 锁定依赖（候选 v1）
+# 实测环境：CPython 3.13.12（Windows，托管运行时）
+#   C:\Users\33847\.workbuddy\binaries\python\versions\3.13.12\python.exe
+# 最低适用：Python 3.10+
+
+python>=3.10
+
+# 第三方依赖：无。
+# 仅用标准库：sqlite3 / json / hashlib / re / argparse / decimal /
+#             pathlib / datetime / subprocess / time / sys。
+# 刻意不引入 PyMySQL / requests / pandas 等，保证"不连服务器、
+# 不读写生产库、不部署"的边界可被静态检查（grep 无第三方 import）。
+
+# 复现命令（在本目录）：
+#   python src/evidence_cli.py selftest --workdir test-output/新目录名
+#   python tests/run_tests.py

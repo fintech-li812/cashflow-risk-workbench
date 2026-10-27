@@ -1,0 +1,113 @@
+{
+  "mutation_count": 15,
+  "caught": 15,
+  "survived": 0,
+  "nature": "15 deliberately different mutations, sequential controlled negative tests; no production code changed",
+  "results": [
+    {
+      "mutation": "ignore_context",
+      "target_test": "test_each_context_dimension",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "e36368169c1c2110c4e1543f5bd3c589edd1776fede3643ec938f515c1958ec5"
+    },
+    {
+      "mutation": "ignore_net",
+      "target_test": "test_one_cent_net_error",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "93c97652398551be0b78cdceb0c4d0392b0afa8e95464b5ae6f4932bff4b773d"
+    },
+    {
+      "mutation": "ignore_closing",
+      "target_test": "test_closing_error",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "7c69683bb7055a63a47f43dd51298fe7ca382a2112ffee2de8d13ca658595c4c"
+    },
+    {
+      "mutation": "ignore_difference",
+      "target_test": "test_difference_direction",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "b37e51a23ee7d6ba133bba6edf13b14b4948b4556f10ef86c298420a47563e80"
+    },
+    {
+      "mutation": "allow_fixture_in_production",
+      "target_test": "test_fixture_default_rejected",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "169bea55222fdeacd7bf9fd87943954dd79d7c3033906a14d36fe03f8ddd9d63"
+    },
+    {
+      "mutation": "ignore_receipt_hash",
+      "target_test": "test_committed_receipt_wrong_payload",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "b3aa12c3bf1bb756335f8affff86d08b4d00694983c1d38a9f970f7503ee8cd2"
+    },
+    {
+      "mutation": "ignore_receipt_request",
+      "target_test": "test_receipt_other_request",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "3fe30d75c39f854bd65857989b7c53e0854d7d9057b579649f47fe2934a4cb33"
+    },
+    {
+      "mutation": "ignore_source_cell",
+      "target_test": "test_package_tamper_and_rehash_still_found",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "f5b380218353d20e81f219e90356d95ca3d9eb019a5886f40e199bce489b07ae"
+    },
+    {
+      "mutation": "ignore_unit_mapping",
+      "target_test": "test_package_unit_lie_rejected_by_mapping",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "513740a74843287e869ad642464428a38152b737a02df3ae2431fc446524de7f"
+    },
+    {
+      "mutation": "ignore_money_conversion",
+      "target_test": "test_package_conversion_rounding_loses_precision",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "2406409e8425a6ae7768a78d6dd809841fa97a9f16c4371b527756934855e3a5"
+    },
+    {
+      "mutation": "accept_duplicate_json",
+      "target_test": "test_strict_json_duplicate_and_nonfinite",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "f528dcac3f9cf677d2379aa06fcf3055d470d6c35c078324fce40e8610c1aa75"
+    },
+    {
+      "mutation": "ignore_package_hash",
+      "target_test": "test_package_hash_tamper",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "5f7c8cf0ff882ea86208432bb862a4026288e9074b355f61c2729ad7be1592bb"
+    },
+    {
+      "mutation": "allow_invented_actual",
+      "target_test": "test_fake_zero_actual_when_not_supplied",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "ad0bc89c79894d55f46a60e03973a502469b960080a8ce1dba4e179dd9487f69"
+    },
+    {
+      "mutation": "ignore_replay_expected",
+      "target_test": "test_replay_cannot_turn_wrong_outcome_into_match",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "8b865f8be198fe8decdd035cd4fd92d9a919a8ca384b4fe0ffa91e351be40bdf"
+    },
+    {
+      "mutation": "ignore_reason_type",
+      "target_test": "test_non_success_reason_must_be_nonempty_text",
+      "exit_code": 1,
+      "caught": true,
+      "stdout_sha256": "99d05eb1f09de13bbc2b9d1d5f1e9cc9cf6a750c935bf7a720d9da7179c6db66"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "args": [
+    "tab",
+    "t1"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"success\":true,\"data\":{\"label\":null,\"tabId\":\"t1\",\"title\":\"制造业现金流 · 资料补齐\",\"url\":\"file:///D:/AI_Command_Workspace/%E4%BA%A4%E4%BB%98/CX-DATA-INTAKE-001/Codex/v1/web/index.html\"},\"error\":null}\n",
+  "stderr": ""
+}

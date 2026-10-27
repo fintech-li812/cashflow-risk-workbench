@@ -1,0 +1,2 @@
+﻿issue_id,code,file,sheet,address,row,raw,reason,action
+ISS-0001,FORMULA_CACHE_MISSING,fixture.xlsx,现金流水,D3,3,D3*2,公式存在但缓存缺失，无法取得已算值；不调用外部程序代算,在源系统打开重算后重新导出，或改提供固定值

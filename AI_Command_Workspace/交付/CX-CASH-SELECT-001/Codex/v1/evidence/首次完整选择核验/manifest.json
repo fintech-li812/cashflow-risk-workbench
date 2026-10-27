@@ -1,0 +1,9 @@
+{
+  "schema_version": "mfg-cash-selection-report.v1",
+  "files": [
+    {
+      "path": "selection.json",
+      "sha256": "fd8a75cffeb1b024aa91fe85139c0c217d2ceb53d17f97b6b8a28d18a5c675bc"
+    }
+  ]
+}

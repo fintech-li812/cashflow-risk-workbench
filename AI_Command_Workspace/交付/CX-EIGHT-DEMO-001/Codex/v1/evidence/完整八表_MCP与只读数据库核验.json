@@ -1,0 +1,3486 @@
+{
+  "status": "passed",
+  "tools": [
+    "calculate_manufacturing_cashflow",
+    "get_manufacturing_data_audit",
+    "get_manufacturing_readiness",
+    "get_workbench_status",
+    "inspect_manufacturing_source",
+    "list_manufacturing_sources",
+    "query_cashflow_result",
+    "read_cashflow_result",
+    "save_cashflow_result"
+  ],
+  "readonly_successful_calls": 8,
+  "qa_rows_before": 21,
+  "qa_rows_after": 21,
+  "successful_new_source_save_verified": false,
+  "database_writes_performed": false,
+  "qwen_new_source_called": false,
+  "calls": [
+    {
+      "tool": "get_workbench_status",
+      "arguments": {},
+      "result": {
+        "schema_version": "mfg-workbench-status.v1",
+        "integration_version": "workbench-program.v1.2",
+        "mode": "manufacturing_qa",
+        "components": {
+          "mcp_stdio_transport": "implemented",
+          "read_save_exact_query": "implemented",
+          "database": "connected",
+          "bound_manufacturing_source": "available",
+          "fixture_baseline_arithmetic": "implemented_fixture_only",
+          "result_guard": "implemented",
+          "excel_import_package": "fixed_template_implemented_general_import_pending",
+          "report_exporter": "json_and_text_implemented_full_export_pending",
+          "native_sheet_recalculation": "not_required_user_architecture_20261026",
+          "rolling_and_advanced_three_state": "phase_two",
+          "program_calculation": "implemented_fixed_synthetic_template",
+          "complete_synthetic_eight_sheet": "implemented_source_bound_calculation",
+          "original_eight_sheet_inspection": "implemented",
+          "original_source_data_audit": "implemented_listed_checks_only",
+          "account_balance_binding": "module_connected_evidence_not_registered",
+          "cashflow_source_mapping": "preview_implemented_full_evidence_pending",
+          "cash_source_selection": "module_connected_pending_account_evidence"
+        },
+        "result_profile": {
+          "origin": "program_calculation",
+          "data_type": "SYNTHETIC",
+          "company_id": "fixture-manufacturing",
+          "period": "2026-08",
+          "source_revision": "program-00613baa679620b938c0",
+          "run_id": "calc-59c95872d9bdca4dba547fd42d323f42",
+          "fixture": true
+        },
+        "production_deployed": false,
+        "source_data_read_only": true,
+        "financial_result_source_is_separate_from_inspected_workbook": true,
+        "architecture": "qwen_entry_program_calculation",
+        "native_sheet_required": false,
+        "recommended_demo_source_id": "synthetic_eight_sheet_v1"
+      }
+    },
+    {
+      "tool": "list_manufacturing_sources",
+      "arguments": {},
+      "result": {
+        "schema_version": "mfg-source-catalog.v1",
+        "sources": [
+          {
+            "source_id": "manufacturing_sample_v1",
+            "logical_name": "制造业_样例数据.xlsx",
+            "kind": "controlled_sample",
+            "status": "available",
+            "expected_sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+            "actual_sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+            "native_qwen_workbook": false
+          },
+          {
+            "source_id": "program_demo_v1",
+            "logical_name": "制造业_程序计算合成输入.xlsx",
+            "kind": "synthetic_program_input",
+            "status": "available",
+            "native_qwen_workbook": false
+          },
+          {
+            "source_id": "program_difference_v1",
+            "logical_name": "制造业_余额差异合成输入.xlsx",
+            "kind": "synthetic_program_input",
+            "status": "available",
+            "native_qwen_workbook": false
+          },
+          {
+            "source_id": "synthetic_eight_sheet_v1",
+            "logical_name": "制造业_完整八表_合成演示_v1.xlsx",
+            "kind": "complete_synthetic_eight_sheet",
+            "status": "available",
+            "data_type": "SYNTHETIC",
+            "native_qwen_workbook": false
+          }
+        ],
+        "other_industries_enabled": false
+      }
+    },
+    {
+      "tool": "inspect_manufacturing_source",
+      "arguments": {
+        "source_id": "synthetic_eight_sheet_v1"
+      },
+      "result": {
+        "schema_version": "mfg-eight-sheet-inspection.v1",
+        "status": "inspected",
+        "source_id": "synthetic_eight_sheet_v1",
+        "data_type": "SYNTHETIC",
+        "source_file_sha256": "05b643cfa66c07fd51533e5ab7581e250ff480f26f6db6ab05963715d769ad4d",
+        "sheet_names": [
+          "企业基本信息",
+          "现金流水",
+          "应收账款",
+          "筹资信息",
+          "投资现金流",
+          "银行流水",
+          "行业参数",
+          "数据字典"
+        ],
+        "date_system": "1900",
+        "blocks": {
+          "企业基本信息": {
+            "range": "A1:C28",
+            "cells": {
+              "A1": {
+                "value": "完整八表合成演示｜全部数据为SYNTHETIC，不是真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A2": {
+                "value": "字段",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B2": {
+                "value": "值",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C2": {
+                "value": "说明",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A3": {
+                "value": "企业名称",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B3": {
+                "value": "合成制造企业_演示专用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C3": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A4": {
+                "value": "行业代码",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B4": {
+                "value": "C13",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C4": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A5": {
+                "value": "所属行业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B5": {
+                "value": "制造业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C5": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A6": {
+                "value": "企业规模",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B6": {
+                "value": "合成演示",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C6": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A7": {
+                "value": "在职人数",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B7": {
+                "value": "20",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C7": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A8": {
+                "value": "营业收入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B8": {
+                "value": "仅合成，不作为现金",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C8": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A9": {
+                "value": "缓冲",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B9": {
+                "value": "未启用风险模型",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C9": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A10": {
+                "value": "本月经营流出（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B10": {
+                "value": "7",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C10": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A11": {
+                "value": "黄灯阈值",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B11": {
+                "value": "本演示不启用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C11": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A12": {
+                "value": "红灯阈值",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B12": {
+                "value": "本演示不启用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C12": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A13": {
+                "value": "保留字段13",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B13": {
+                "value": "本期不使用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C13": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A14": {
+                "value": "保留字段14",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B14": {
+                "value": "本期不使用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C14": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A15": {
+                "value": "保留字段15",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B15": {
+                "value": "本期不使用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C15": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A16": {
+                "value": "保留字段16",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B16": {
+                "value": "本期不使用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C16": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A17": {
+                "value": "保留字段17",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B17": {
+                "value": "本期不使用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C17": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A18": {
+                "value": "保留字段18",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B18": {
+                "value": "本期不使用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C18": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A19": {
+                "value": "保留字段19",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B19": {
+                "value": "本期不使用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C19": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A20": {
+                "value": "保留字段20",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B20": {
+                "value": "本期不使用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C20": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A21": {
+                "value": "保留字段21",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B21": {
+                "value": "本期不使用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C21": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A22": {
+                "value": "保留字段22",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B22": {
+                "value": "本期不使用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C22": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A23": {
+                "value": "保留字段23",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B23": {
+                "value": "本期不使用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C23": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A24": {
+                "value": "保留字段24",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B24": {
+                "value": "本期不使用",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C24": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A25": {
+                "value": "数据区间",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B25": {
+                "value": "2026-08-01 至 2026-08-31",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C25": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A26": {
+                "value": "提供者",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B26": {
+                "value": "合成构造",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C26": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A27": {
+                "value": "数据版本",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B27": {
+                "value": "SYNTHETIC eight-sheet v1",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C27": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A28": {
+                "value": "使用边界",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B28": {
+                "value": "完整工程联调，不是真实银行/企业证据",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C28": {
+                "value": "人工构造的输入；结果由程序计算；非真实企业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              }
+            }
+          },
+          "现金流水": {
+            "range": "A1:I3",
+            "cells": {
+              "A1": {
+                "value": "合成月度经营汇总；期末列是独立合成余额的展示值",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A2": {
+                "value": "月份",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B2": {
+                "value": "月末日期",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C2": {
+                "value": "流水类型",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D2": {
+                "value": "经营性流入（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E2": {
+                "value": "经营性流出（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F2": {
+                "value": "净现金流（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G2": {
+                "value": "期末现金余额（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H2": {
+                "value": "说明",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I2": {
+                "value": "数据闸结果",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A3": {
+                "value": "2026-08",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B3": {
+                "value": "2026-08-31",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C3": {
+                "value": "经营性",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D3": {
+                "value": "13",
+                "cell_type": "n",
+                "raw_xml_value": "13",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E3": {
+                "value": "7",
+                "cell_type": "n",
+                "raw_xml_value": "7",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F3": {
+                "value": "6",
+                "cell_type": "n",
+                "raw_xml_value": "6",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G3": {
+                "value": "17.7",
+                "cell_type": "n",
+                "raw_xml_value": "17.7",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "H3": {
+                "value": "独立构造汇总，用于与银行实收付核对",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I3": {
+                "value": "由程序检查；非静态结论",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              }
+            }
+          },
+          "应收账款": {
+            "range": "A1:J3",
+            "cells": {
+              "A1": {
+                "value": "合成应收：正常部分到账，不能把20万元发票叠加现金",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A2": {
+                "value": "单据编号",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B2": {
+                "value": "客户名称",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C2": {
+                "value": "开票日期",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D2": {
+                "value": "到期日",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E2": {
+                "value": "应收金额（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F2": {
+                "value": "已收金额（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G2": {
+                "value": "实际收款日期",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H2": {
+                "value": "到账状态",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I2": {
+                "value": "备注",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "J2": {
+                "value": "数据闸结果",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A3": {
+                "value": "SYN-AR-001",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B3": {
+                "value": "合成客户A",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C3": {
+                "value": "2026-08-01",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D3": {
+                "value": "2026-08-31",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E3": {
+                "value": "20",
+                "cell_type": "n",
+                "raw_xml_value": "20",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "F3": {
+                "value": "13",
+                "cell_type": "n",
+                "raw_xml_value": "13",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "G3": {
+                "value": "2026-08-05",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H3": {
+                "value": "部分到账",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I3": {
+                "value": "余款7万元未收，属正常业务",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "J3": {
+                "value": "由程序检查",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              }
+            }
+          },
+          "筹资信息": {
+            "range": "A1:I6",
+            "cells": {
+              "A1": {
+                "value": "合成融资：额度/余额排除，仅实际收还款关联银行",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A2": {
+                "value": "融资类型",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B2": {
+                "value": "机构",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C2": {
+                "value": "金额/额度（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D2": {
+                "value": "条件说明",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E2": {
+                "value": "到期日",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F2": {
+                "value": "实际收付日期",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G2": {
+                "value": "方向",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H2": {
+                "value": "账户编号",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I2": {
+                "value": "关联流水号",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A3": {
+                "value": "银行授信额度",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B3": {
+                "value": "合成银行",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C3": {
+                "value": "10",
+                "cell_type": "n",
+                "raw_xml_value": "10",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "D3": {
+                "value": "非现金，不叠加",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E3": {
+                "value": "2027-08-31",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A4": {
+                "value": "贷款余额",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B4": {
+                "value": "合成银行",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C4": {
+                "value": "3.2",
+                "cell_type": "n",
+                "raw_xml_value": "3.2",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "D4": {
+                "value": "存量，不叠加",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E4": {
+                "value": "2027-08-31",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F4": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G4": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H4": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I4": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A5": {
+                "value": "实际借款收款",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B5": {
+                "value": "合成银行",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C5": {
+                "value": "5",
+                "cell_type": "n",
+                "raw_xml_value": "5",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "D5": {
+                "value": "已到账；合成",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E5": {
+                "value": "2027-08-31",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F5": {
+                "value": "2026-08-25",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G5": {
+                "value": "inflow",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H5": {
+                "value": "demo-bank-001",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I5": {
+                "value": "SYN-T5",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A6": {
+                "value": "实际偿还本金",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B6": {
+                "value": "合成银行",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C6": {
+                "value": "1.8",
+                "cell_type": "n",
+                "raw_xml_value": "1.8",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "D6": {
+                "value": "已支付；合成",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E6": {
+                "value": "2027-08-31",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F6": {
+                "value": "2026-08-26",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G6": {
+                "value": "outflow",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H6": {
+                "value": "demo-bank-001",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I6": {
+                "value": "SYN-T6",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              }
+            }
+          },
+          "投资现金流": {
+            "range": "A1:H4",
+            "cells": {
+              "A1": {
+                "value": "合成投资：支出为负，收款为正；关联银行，不重复计现",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A2": {
+                "value": "项目",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B2": {
+                "value": "类型",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C2": {
+                "value": "发生/计划日期",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D2": {
+                "value": "金额（万元，支出为负）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E2": {
+                "value": "状态",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F2": {
+                "value": "备注",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G2": {
+                "value": "账户编号",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H2": {
+                "value": "关联流水号",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A3": {
+                "value": "合成设备购置",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B3": {
+                "value": "资本支出",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C3": {
+                "value": "2026-08-12",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D3": {
+                "value": "-2",
+                "cell_type": "n",
+                "raw_xml_value": "-2",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E3": {
+                "value": "已支付",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F3": {
+                "value": "合成凭证",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G3": {
+                "value": "demo-bank-001",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H3": {
+                "value": "SYN-T3",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A4": {
+                "value": "合成旧设备处置",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B4": {
+                "value": "资产处置",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C4": {
+                "value": "2026-08-20",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D4": {
+                "value": "0.5",
+                "cell_type": "n",
+                "raw_xml_value": "0.5",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "E4": {
+                "value": "已收款",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F4": {
+                "value": "合成凭证",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G4": {
+                "value": "demo-bank-001",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H4": {
+                "value": "SYN-T4",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              }
+            }
+          },
+          "银行流水": {
+            "range": "A1:L8",
+            "cells": {
+              "A1": {
+                "value": "合成完整账户流水；仅此表为实际收付主来源",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A2": {
+                "value": "收付日期",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B2": {
+                "value": "对手方",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C2": {
+                "value": "金额（万元）",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D2": {
+                "value": "用途",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E2": {
+                "value": "关联单据号",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F2": {
+                "value": "证据性质",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G2": {
+                "value": "方向",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H2": {
+                "value": "账户编号",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I2": {
+                "value": "现金流类别",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "J2": {
+                "value": "流水编号",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "K2": {
+                "value": "来源角色",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "L2": {
+                "value": "是否内部转账",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A3": {
+                "value": "2026-08-05",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B3": {
+                "value": "合成客户A",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C3": {
+                "value": "13",
+                "cell_type": "n",
+                "raw_xml_value": "13",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "D3": {
+                "value": "货款",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E3": {
+                "value": "SYN-AR-001",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F3": {
+                "value": "SYNTHETIC",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G3": {
+                "value": "inflow",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H3": {
+                "value": "demo-bank-001",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I3": {
+                "value": "operating",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "J3": {
+                "value": "SYN-T1",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "K3": {
+                "value": "primary_actual",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "L3": {
+                "value": "false",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A4": {
+                "value": "2026-08-10",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B4": {
+                "value": "合成供应商",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C4": {
+                "value": "7",
+                "cell_type": "n",
+                "raw_xml_value": "7",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "D4": {
+                "value": "材料付款",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E4": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F4": {
+                "value": "SYNTHETIC",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G4": {
+                "value": "outflow",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H4": {
+                "value": "demo-bank-001",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I4": {
+                "value": "operating",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "J4": {
+                "value": "SYN-T2",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "K4": {
+                "value": "primary_actual",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "L4": {
+                "value": "false",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A5": {
+                "value": "2026-08-12",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B5": {
+                "value": "合成设备商",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C5": {
+                "value": "2",
+                "cell_type": "n",
+                "raw_xml_value": "2",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "D5": {
+                "value": "购置设备",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E5": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F5": {
+                "value": "SYNTHETIC",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G5": {
+                "value": "outflow",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H5": {
+                "value": "demo-bank-001",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I5": {
+                "value": "investing",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "J5": {
+                "value": "SYN-T3",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "K5": {
+                "value": "primary_actual",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "L5": {
+                "value": "false",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A6": {
+                "value": "2026-08-20",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B6": {
+                "value": "合成设备买方",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C6": {
+                "value": "0.5",
+                "cell_type": "n",
+                "raw_xml_value": "0.5",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "D6": {
+                "value": "设备处置",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E6": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F6": {
+                "value": "SYNTHETIC",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G6": {
+                "value": "inflow",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H6": {
+                "value": "demo-bank-001",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I6": {
+                "value": "investing",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "J6": {
+                "value": "SYN-T4",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "K6": {
+                "value": "primary_actual",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "L6": {
+                "value": "false",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A7": {
+                "value": "2026-08-25",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B7": {
+                "value": "合成银行",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C7": {
+                "value": "5",
+                "cell_type": "n",
+                "raw_xml_value": "5",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "D7": {
+                "value": "实际借款",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E7": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F7": {
+                "value": "SYNTHETIC",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G7": {
+                "value": "inflow",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H7": {
+                "value": "demo-bank-001",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I7": {
+                "value": "financing",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "J7": {
+                "value": "SYN-T5",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "K7": {
+                "value": "primary_actual",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "L7": {
+                "value": "false",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A8": {
+                "value": "2026-08-26",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B8": {
+                "value": "合成银行",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C8": {
+                "value": "1.8",
+                "cell_type": "n",
+                "raw_xml_value": "1.8",
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": true
+              },
+              "D8": {
+                "value": "偿还本金",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E8": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F8": {
+                "value": "SYNTHETIC",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G8": {
+                "value": "outflow",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H8": {
+                "value": "demo-bank-001",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I8": {
+                "value": "financing",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "J8": {
+                "value": "SYN-T6",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "K8": {
+                "value": "primary_actual",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "L8": {
+                "value": "false",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              }
+            }
+          },
+          "行业参数": {
+            "range": "A1:M3",
+            "cells": {
+              "A1": {
+                "value": "合成演示不启用评级或风险阈值",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A2": {
+                "value": "行业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B2": {
+                "value": "行业代码",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C2": {
+                "value": "说明",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D2": {
+                "value": "保留4",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E2": {
+                "value": "保留5",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F2": {
+                "value": "保留6",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G2": {
+                "value": "保留7",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H2": {
+                "value": "保留8",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I2": {
+                "value": "保留9",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "J2": {
+                "value": "保留10",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "K2": {
+                "value": "保留11",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "L2": {
+                "value": "保留12",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "M2": {
+                "value": "保留13",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A3": {
+                "value": "制造业",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B3": {
+                "value": "C13",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C3": {
+                "value": "现金流基础核对",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "G3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "H3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "I3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "J3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "K3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "L3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "M3": {
+                "value": "",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              }
+            }
+          },
+          "数据字典": {
+            "range": "A1:F6",
+            "cells": {
+              "A1": {
+                "value": "SYNTHETIC完整八表演示｜无故意埋错",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A2": {
+                "value": "编号",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B2": {
+                "value": "所在Sheet",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C2": {
+                "value": "位置",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D2": {
+                "value": "说明",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E2": {
+                "value": "处理规则",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F2": {
+                "value": "用途",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A3": {
+                "value": "SYN-01",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B3": {
+                "value": "全表",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C3": {
+                "value": "全部",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D3": {
+                "value": "人工构造，不是真实企业或银行资料",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E3": {
+                "value": "仅合成工程演示",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F3": {
+                "value": "醒目标识",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A4": {
+                "value": "SYN-02",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B4": {
+                "value": "银行流水",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C4": {
+                "value": "3:8",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D4": {
+                "value": "6笔主收付，其他表只佐证",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E4": {
+                "value": "不重复计现",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F4": {
+                "value": "可追溯计算",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A5": {
+                "value": "SYN-03",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B5": {
+                "value": "独立余额文件",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C5": {
+                "value": "期初/期末",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D5": {
+                "value": "分别明确构造100000及177000元，不由运行时计算回填",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E5": {
+                "value": "按登记文件核对",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F5": {
+                "value": "余额差异测试",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "A6": {
+                "value": "SYN-04",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "B6": {
+                "value": "全部输入",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "C6": {
+                "value": "编辑说明",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "D6": {
+                "value": "输入表只含静态测试输入，计算结果由程序返回",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "E6": {
+                "value": "改动后须另版登记，不自动更新摘要",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              },
+              "F6": {
+                "value": "保护历史结果",
+                "cell_type": "inlineStr",
+                "raw_xml_value": null,
+                "formula": null,
+                "has_formula": false,
+                "has_cached_value": false
+              }
+            }
+          }
+        },
+        "source_modified": false,
+        "native_qwen_workbook": false
+      }
+    },
+    {
+      "tool": "get_manufacturing_readiness",
+      "arguments": {
+        "source_id": "synthetic_eight_sheet_v1"
+      },
+      "result": {
+        "schema_version": "mfg-program-readiness.v1.2",
+        "status": "ready",
+        "source_id": "synthetic_eight_sheet_v1",
+        "data_type": "SYNTHETIC",
+        "fixture": true,
+        "can_claim_full_cashflow": true,
+        "can_save_source_result": true,
+        "gate_rules_executed": true,
+        "full_data_gate_executed": false,
+        "executed_checks": [
+          "eight_sheet_contract",
+          "explicit_units",
+          "unique_bank_transactions",
+          "cash_directions_and_categories",
+          "explicit_settlement_dates",
+          "business_bank_exact_links",
+          "noncash_financing_exclusion",
+          "invoice_bank_collected_comparison",
+          "monthly_operating_bank_reconciliation",
+          "independent_account_balance_binding",
+          "primary_cash_selection_and_no_double_count",
+          "all_three_cashflow_group_arithmetic",
+          "independent_closing_reconciliation"
+        ],
+        "issues": [],
+        "account_binding_ready": true,
+        "cash_selection_ready": true,
+        "native_sheet_required": false,
+        "note": "仅完整合成八表合同及证据绑定通过；不是全部历史数据闸或真实企业验收。"
+      }
+    },
+    {
+      "tool": "calculate_manufacturing_cashflow",
+      "arguments": {
+        "source_id": "synthetic_eight_sheet_v1"
+      },
+      "result": {
+        "status": "calculated",
+        "result": {
+          "tenant_id": "fixture-tenant",
+          "company_id": "fixture-manufacturing",
+          "period": "2026-08",
+          "source_revision": "eight-87de72c310f2dcb6a2c4",
+          "run_id": "eight-bf52800eefa0d6b89fea0e1449cb9692",
+          "schema_version": "mfg-agent-result.v1",
+          "industry": "manufacturing",
+          "status": "success",
+          "origin": "program_calculation",
+          "data_type": "SYNTHETIC",
+          "unit": "CNY",
+          "coverage": "full_cashflow",
+          "calculation_version": "manufacturing-eight-sheet-program.v1",
+          "issues": [],
+          "amounts": {
+            "opening": "100000.00",
+            "inflow": "185000.00",
+            "outflow": "108000.00",
+            "net": "77000.00",
+            "closing": "177000.00",
+            "actual_closing": "177000.00",
+            "difference": "0.00"
+          },
+          "source": {
+            "workbook_ref": "synthetic_eight_sheet_v1",
+            "sheet": "八表及独立余额证据",
+            "range": "银行流水!A3:L8",
+            "snapshot_ref": "87de72c310f2dcb6a2c4e055ddefc4a591b0ae0373be9e917251912499748cd9"
+          },
+          "execution": {
+            "input_sha256": "87de72c310f2dcb6a2c4e055ddefc4a591b0ae0373be9e917251912499748cd9",
+            "algorithm_sha256": "4a3ac7b60dd3bc234240ad73da3cab2b7f60e24f46f2109f454aaebadef0cb2f",
+            "engine": "Python Decimal",
+            "native_qwen_sheet": false,
+            "source_modified": false,
+            "workbook_sha256": "05b643cfa66c07fd51533e5ab7581e250ff480f26f6db6ab05963715d769ad4d",
+            "input_context": {
+              "tenant_id": "fixture-tenant",
+              "company_id": "fixture-manufacturing",
+              "period": "2026-08",
+              "source_revision": "synthetic-eight-evidence-v1",
+              "run_id": "synthetic-eight-binding-v1"
+            },
+            "account_binding_sha256": "bde53dc129a7709bc5a8cf7d5be97a8f3ceb89433fddc9bbcbfd3f3c45f8bebc",
+            "cash_selection_sha256": "fd7e6e2caa62e981c964cd6004db0e5acd799025e70711863d6bdbef9628e721"
+          },
+          "evidence": {
+            "account_scope": "demo-bank-001",
+            "opening_source": "synthetic-independent-opening-statement",
+            "closing_source": "synthetic-independent-closing-statement",
+            "source_assurance": "SYNTHETIC_DECLARED_NOT_REAL_BANK_EVIDENCE",
+            "selected_actual_record_count": 6,
+            "selection_counts": {
+              "input_records": 13,
+              "primary_actual_records": 6,
+              "selected_actual_records": 6,
+              "approved_duplicate_records": 0,
+              "eliminated_transfer_records": 0,
+              "corroborating_only_records": 4,
+              "noncash_records": 3
+            }
+          },
+          "reconciliation_state": "matched",
+          "risk_flags": [],
+          "cashflow_groups": {
+            "operating": {
+              "inflow": "130000.00",
+              "outflow": "70000.00",
+              "net": "60000.00"
+            },
+            "investing": {
+              "inflow": "5000.00",
+              "outflow": "20000.00",
+              "net": "-15000.00"
+            },
+            "financing": {
+              "inflow": "50000.00",
+              "outflow": "18000.00",
+              "net": "32000.00"
+            }
+          }
+        },
+        "fixture": true,
+        "platform_native_verified": false,
+        "can_save_source_result": true,
+        "source_file_sha256": "05b643cfa66c07fd51533e5ab7581e250ff480f26f6db6ab05963715d769ad4d",
+        "database_written": false,
+        "source_modified": false,
+        "checked_sheets": [
+          "企业基本信息",
+          "现金流水",
+          "应收账款",
+          "筹资信息",
+          "投资现金流",
+          "银行流水",
+          "行业参数",
+          "数据字典"
+        ],
+        "executed_checks": [
+          "eight_sheet_contract",
+          "explicit_units",
+          "unique_bank_transactions",
+          "cash_directions_and_categories",
+          "explicit_settlement_dates",
+          "business_bank_exact_links",
+          "noncash_financing_exclusion",
+          "invoice_bank_collected_comparison",
+          "monthly_operating_bank_reconciliation",
+          "independent_account_balance_binding",
+          "primary_cash_selection_and_no_double_count",
+          "all_three_cashflow_group_arithmetic",
+          "independent_closing_reconciliation"
+        ],
+        "observations": [
+          {
+            "code": "noncash_financing_excluded",
+            "source": "筹资信息!A3:I3",
+            "detail": "银行授信额度不重复计入现金。"
+          },
+          {
+            "code": "noncash_financing_excluded",
+            "source": "筹资信息!A4:I4",
+            "detail": "贷款余额不重复计入现金。"
+          },
+          {
+            "code": "normal_partial_receipt",
+            "source": "应收账款!E3:F3",
+            "detail": "部分到账正常；按银行实际收款计现，应收总额不叠加。"
+          }
+        ],
+        "scope": "registered_complete_synthetic_eight_sheet_demo_not_all_historical_gate_rules"
+      }
+    },
+    {
+      "tool": "read_cashflow_result",
+      "arguments": {
+        "source_id": "synthetic_eight_sheet_v1"
+      },
+      "result": {
+        "status": "ok",
+        "result": {
+          "tenant_id": "fixture-tenant",
+          "company_id": "fixture-manufacturing",
+          "period": "2026-08",
+          "source_revision": "eight-87de72c310f2dcb6a2c4",
+          "run_id": "eight-bf52800eefa0d6b89fea0e1449cb9692",
+          "schema_version": "mfg-agent-result.v1",
+          "industry": "manufacturing",
+          "status": "success",
+          "origin": "program_calculation",
+          "data_type": "SYNTHETIC",
+          "unit": "CNY",
+          "coverage": "full_cashflow",
+          "calculation_version": "manufacturing-eight-sheet-program.v1",
+          "issues": [],
+          "amounts": {
+            "opening": "100000.00",
+            "inflow": "185000.00",
+            "outflow": "108000.00",
+            "net": "77000.00",
+            "closing": "177000.00",
+            "actual_closing": "177000.00",
+            "difference": "0.00"
+          },
+          "source": {
+            "workbook_ref": "synthetic_eight_sheet_v1",
+            "sheet": "八表及独立余额证据",
+            "range": "银行流水!A3:L8",
+            "snapshot_ref": "87de72c310f2dcb6a2c4e055ddefc4a591b0ae0373be9e917251912499748cd9"
+          },
+          "execution": {
+            "input_sha256": "87de72c310f2dcb6a2c4e055ddefc4a591b0ae0373be9e917251912499748cd9",
+            "algorithm_sha256": "4a3ac7b60dd3bc234240ad73da3cab2b7f60e24f46f2109f454aaebadef0cb2f",
+            "engine": "Python Decimal",
+            "native_qwen_sheet": false,
+            "source_modified": false,
+            "workbook_sha256": "05b643cfa66c07fd51533e5ab7581e250ff480f26f6db6ab05963715d769ad4d",
+            "input_context": {
+              "tenant_id": "fixture-tenant",
+              "company_id": "fixture-manufacturing",
+              "period": "2026-08",
+              "source_revision": "synthetic-eight-evidence-v1",
+              "run_id": "synthetic-eight-binding-v1"
+            },
+            "account_binding_sha256": "bde53dc129a7709bc5a8cf7d5be97a8f3ceb89433fddc9bbcbfd3f3c45f8bebc",
+            "cash_selection_sha256": "fd7e6e2caa62e981c964cd6004db0e5acd799025e70711863d6bdbef9628e721"
+          },
+          "evidence": {
+            "account_scope": "demo-bank-001",
+            "opening_source": "synthetic-independent-opening-statement",
+            "closing_source": "synthetic-independent-closing-statement",
+            "source_assurance": "SYNTHETIC_DECLARED_NOT_REAL_BANK_EVIDENCE",
+            "selected_actual_record_count": 6,
+            "selection_counts": {
+              "input_records": 13,
+              "primary_actual_records": 6,
+              "selected_actual_records": 6,
+              "approved_duplicate_records": 0,
+              "eliminated_transfer_records": 0,
+              "corroborating_only_records": 4,
+              "noncash_records": 3
+            }
+          },
+          "reconciliation_state": "matched",
+          "risk_flags": [],
+          "cashflow_groups": {
+            "operating": {
+              "inflow": "130000.00",
+              "outflow": "70000.00",
+              "net": "60000.00"
+            },
+            "investing": {
+              "inflow": "5000.00",
+              "outflow": "20000.00",
+              "net": "-15000.00"
+            },
+            "financing": {
+              "inflow": "50000.00",
+              "outflow": "18000.00",
+              "net": "32000.00"
+            }
+          }
+        },
+        "fixture": true,
+        "platform_native_verified": false,
+        "can_save_source_result": true,
+        "source_file_sha256": "05b643cfa66c07fd51533e5ab7581e250ff480f26f6db6ab05963715d769ad4d",
+        "database_written": false,
+        "source_modified": false,
+        "checked_sheets": [
+          "企业基本信息",
+          "现金流水",
+          "应收账款",
+          "筹资信息",
+          "投资现金流",
+          "银行流水",
+          "行业参数",
+          "数据字典"
+        ],
+        "executed_checks": [
+          "eight_sheet_contract",
+          "explicit_units",
+          "unique_bank_transactions",
+          "cash_directions_and_categories",
+          "explicit_settlement_dates",
+          "business_bank_exact_links",
+          "noncash_financing_exclusion",
+          "invoice_bank_collected_comparison",
+          "monthly_operating_bank_reconciliation",
+          "independent_account_balance_binding",
+          "primary_cash_selection_and_no_double_count",
+          "all_three_cashflow_group_arithmetic",
+          "independent_closing_reconciliation"
+        ],
+        "observations": [
+          {
+            "code": "noncash_financing_excluded",
+            "source": "筹资信息!A3:I3",
+            "detail": "银行授信额度不重复计入现金。"
+          },
+          {
+            "code": "noncash_financing_excluded",
+            "source": "筹资信息!A4:I4",
+            "detail": "贷款余额不重复计入现金。"
+          },
+          {
+            "code": "normal_partial_receipt",
+            "source": "应收账款!E3:F3",
+            "detail": "部分到账正常；按银行实际收款计现，应收总额不叠加。"
+          }
+        ],
+        "scope": "registered_complete_synthetic_eight_sheet_demo_not_all_historical_gate_rules",
+        "explanation": "【合成数据 · 程序本次计算】2026-08现金流（元）：流入185000.00，流出108000.00，净额77000.00，计算期末余额177000.00。实际期末余额177000.00，差异0.00。来源：synthetic_eight_sheet_v1 / 八表及独立余额证据 / 银行流水!A3:L8。此结果不代表已入库或已通知。"
+      }
+    },
+    {
+      "tool": "calculate_manufacturing_cashflow",
+      "arguments": {
+        "source_id": "manufacturing_sample_v1"
+      },
+      "result": {
+        "status": "blocked",
+        "result": null,
+        "readiness": {
+          "schema_version": "mfg-program-readiness.v1.1",
+          "status": "blocked",
+          "source_id": "manufacturing_sample_v1",
+          "source_kind": "controlled_sample",
+          "source_file_sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+          "can_claim_full_cashflow": false,
+          "can_save_source_result": false,
+          "issues": [
+            {
+              "code": "operating_net_mismatch",
+              "source": "现金流水!D8:F8",
+              "detail": "按表头单位读取的流入减流出与表内净额不一致；不反推或覆盖原值。",
+              "category": "data_error",
+              "computed_net_yuan": "16310851500.00",
+              "reported_net_yuan": "-517200.00"
+            },
+            {
+              "code": "duplicate_rows_preserved",
+              "source": "现金流水!A12:I12 / A15:I15",
+              "detail": "原始行完全相同，保留两行并等待明确处置；本次不删除、不合计重复候选。",
+              "category": "data_review"
+            },
+            {
+              "code": "unit_confirmation_required",
+              "source": "现金流水!D8",
+              "detail": "已登记的单位疑点：原值1631300，表头万元；1631300元等于163.13万元。未获依据前保留原值，不自动换口径。",
+              "category": "data_review",
+              "observed": "1631300",
+              "rule_basis": "pinned_source_annotation_not_statistical_threshold"
+            },
+            {
+              "code": "bank_vs_recorded_collected_difference",
+              "source": "应收账款!F4",
+              "detail": "所列银行到账合计与应收表累计已收不同；需核对时间范围/分笔凭证，不按少于应收本身判错。",
+              "category": "data_review",
+              "linked_invoice": "AR202607002",
+              "listed_bank_yuan": "4113900.00",
+              "recorded_collected_yuan": "5713800.00"
+            },
+            {
+              "code": "negative_financing_amount",
+              "source": "筹资信息!C4",
+              "detail": "额度/金额为负，不能用于融资容量或现金流计算。",
+              "category": "data_error"
+            },
+            {
+              "code": "account_scope_missing",
+              "category": "missing_evidence",
+              "detail": "需登记纳入账户、统计主体和月份范围。"
+            },
+            {
+              "code": "opening_balance_not_bound",
+              "category": "missing_evidence",
+              "detail": "需提供同账户范围的期初余额及来源记录。"
+            },
+            {
+              "code": "independent_closing_not_bound",
+              "category": "missing_evidence",
+              "detail": "需提供同账户范围的独立实际期末及来源记录，不能使用计算期末。"
+            },
+            {
+              "code": "cash_selection_requires_account_binding",
+              "category": "mapping_review",
+              "detail": "现金主来源、账户内转和跨表防重计模块已接入；须先有通过的账户/余额绑定。"
+            },
+            {
+              "code": "full_cashflow_evidence_not_bound",
+              "category": "mapping_review",
+              "detail": "已生成八表字段/现金性质映射预览；账户、来源主从、实际收付凭证及筹资期间明细未齐，不合计为完整现金流。"
+            }
+          ],
+          "issue_groups": {
+            "data_error": [
+              {
+                "code": "operating_net_mismatch",
+                "source": "现金流水!D8:F8",
+                "detail": "按表头单位读取的流入减流出与表内净额不一致；不反推或覆盖原值。",
+                "category": "data_error",
+                "computed_net_yuan": "16310851500.00",
+                "reported_net_yuan": "-517200.00"
+              },
+              {
+                "code": "negative_financing_amount",
+                "source": "筹资信息!C4",
+                "detail": "额度/金额为负，不能用于融资容量或现金流计算。",
+                "category": "data_error"
+              }
+            ],
+            "data_review": [
+              {
+                "code": "duplicate_rows_preserved",
+                "source": "现金流水!A12:I12 / A15:I15",
+                "detail": "原始行完全相同，保留两行并等待明确处置；本次不删除、不合计重复候选。",
+                "category": "data_review"
+              },
+              {
+                "code": "unit_confirmation_required",
+                "source": "现金流水!D8",
+                "detail": "已登记的单位疑点：原值1631300，表头万元；1631300元等于163.13万元。未获依据前保留原值，不自动换口径。",
+                "category": "data_review",
+                "observed": "1631300",
+                "rule_basis": "pinned_source_annotation_not_statistical_threshold"
+              },
+              {
+                "code": "bank_vs_recorded_collected_difference",
+                "source": "应收账款!F4",
+                "detail": "所列银行到账合计与应收表累计已收不同；需核对时间范围/分笔凭证，不按少于应收本身判错。",
+                "category": "data_review",
+                "linked_invoice": "AR202607002",
+                "listed_bank_yuan": "4113900.00",
+                "recorded_collected_yuan": "5713800.00"
+              }
+            ],
+            "missing_evidence": [
+              {
+                "code": "account_scope_missing",
+                "category": "missing_evidence",
+                "detail": "需登记纳入账户、统计主体和月份范围。"
+              },
+              {
+                "code": "opening_balance_not_bound",
+                "category": "missing_evidence",
+                "detail": "需提供同账户范围的期初余额及来源记录。"
+              },
+              {
+                "code": "independent_closing_not_bound",
+                "category": "missing_evidence",
+                "detail": "需提供同账户范围的独立实际期末及来源记录，不能使用计算期末。"
+              }
+            ],
+            "mapping_review": [
+              {
+                "code": "cash_selection_requires_account_binding",
+                "category": "mapping_review",
+                "detail": "现金主来源、账户内转和跨表防重计模块已接入；须先有通过的账户/余额绑定。"
+              },
+              {
+                "code": "full_cashflow_evidence_not_bound",
+                "category": "mapping_review",
+                "detail": "已生成八表字段/现金性质映射预览；账户、来源主从、实际收付凭证及筹资期间明细未齐，不合计为完整现金流。"
+              }
+            ]
+          },
+          "gate_rules_executed": true,
+          "full_data_gate_executed": false,
+          "executed_checks": [
+            "field_contract",
+            "monthly_fields_and_dates",
+            "exact_duplicate_rows",
+            "monthly_continuity",
+            "operating_net_arithmetic",
+            "declared_period_coverage",
+            "receivable_amounts_and_dates",
+            "invoice_duplicate_ids",
+            "bank_link_and_collected_comparison",
+            "financing_amount_and_maturity",
+            "investment_amount_date_status_mapping"
+          ],
+          "pending_checks": [
+            {
+              "code": "statistical_unit_outlier",
+              "status": "not_executed_policy_pending",
+              "detail": "倍数阈值未批准；不自造上下界。"
+            },
+            {
+              "code": "full_balance_reconciliation",
+              "status": "not_executed_missing_scope_and_balances"
+            },
+            {
+              "code": "all_historical_gate_rules",
+              "status": "not_claimed_complete"
+            }
+          ],
+          "normal_partial_receipts_treated_as_errors": false,
+          "native_sheet_required": false,
+          "account_binding": {
+            "status": "blocked",
+            "module_version": "mfg-account-balance-binding.v1",
+            "module_connected": true,
+            "scope_ready": false,
+            "balance_binding_ready": false,
+            "opening_ready": false,
+            "independent_closing_ready": false,
+            "issues": [
+              {
+                "code": "account_scope_missing",
+                "category": "missing_evidence",
+                "detail": "需登记纳入账户、统计主体和月份范围。"
+              },
+              {
+                "code": "opening_balance_not_bound",
+                "category": "missing_evidence",
+                "detail": "需提供同账户范围的期初余额及来源记录。"
+              },
+              {
+                "code": "independent_closing_not_bound",
+                "category": "missing_evidence",
+                "detail": "需提供同账户范围的独立实际期末及来源记录，不能使用计算期末。"
+              }
+            ]
+          },
+          "cash_selection": {
+            "status": "blocked",
+            "module_version": "mfg-cash-evidence-selection.v1",
+            "module_connected": true,
+            "cashflow_totals": null,
+            "can_save_source_result": false,
+            "issues": [
+              {
+                "code": "cash_selection_requires_account_binding",
+                "category": "mapping_review",
+                "detail": "现金主来源、账户内转和跨表防重计模块已接入；须先有通过的账户/余额绑定。"
+              }
+            ]
+          },
+          "audit_tool": "get_manufacturing_data_audit",
+          "note": "新报告来自实际逐项读取；仅已列检查执行，不声称完整历史闸或真实来源已验证；原件未改。"
+        },
+        "database_written": false
+      }
+    },
+    {
+      "tool": "query_cashflow_result",
+      "arguments": {
+        "request_id": "qwen-program-20261026-first-01",
+        "period": "2026-08",
+        "source_revision": "program-00613baa679620b938c0",
+        "run_id": "calc-59c95872d9bdca4dba547fd42d323f42"
+      },
+      "result": {
+        "status": "committed",
+        "result": {
+          "unit": "CNY",
+          "issues": [],
+          "origin": "program_calculation",
+          "period": "2026-08",
+          "run_id": "calc-59c95872d9bdca4dba547fd42d323f42",
+          "source": {
+            "range": "A1:C22",
+            "sheet": "输入",
+            "snapshot_ref": "00613baa679620b938c009c20bb56f83baad14ef28bf5124b4db31dd5fdd9691",
+            "workbook_ref": "program_demo_v1"
+          },
+          "status": "success",
+          "amounts": {
+            "net": "40000.00",
+            "inflow": "130000.00",
+            "closing": "140000.00",
+            "opening": "100000.00",
+            "outflow": "90000.00",
+            "difference": "0.00",
+            "actual_closing": "140000.00"
+          },
+          "coverage": "full_cashflow",
+          "evidence": {
+            "account_scope": "synthetic-bank-001",
+            "closing_source": "synthetic-independent-closing-statement-20260831",
+            "opening_source": "synthetic-opening-statement-20260731",
+            "source_assurance": "synthetic_declared_not_audited"
+          },
+          "industry": "manufacturing",
+          "data_type": "SYNTHETIC",
+          "execution": {
+            "engine": "Python Decimal",
+            "input_sha256": "00613baa679620b938c009c20bb56f83baad14ef28bf5124b4db31dd5fdd9691",
+            "source_modified": false,
+            "algorithm_sha256": "17d3cfec5bc4051c4448010f644833eb93c033c519e86028d05c02daac1d266b",
+            "native_qwen_sheet": false
+          },
+          "tenant_id": "fixture-tenant",
+          "company_id": "fixture-manufacturing",
+          "risk_flags": [],
+          "schema_version": "mfg-agent-result.v1",
+          "source_revision": "program-00613baa679620b938c0",
+          "calculation_version": "manufacturing-program-arithmetic.v1",
+          "reconciliation_state": "matched"
+        },
+        "receipt": {
+          "schema_version": "mfg-evidence.v1",
+          "kind": "receipt",
+          "operation": "save_cashflow_result",
+          "tenant_id": "fixture-tenant",
+          "company_id": "fixture-manufacturing",
+          "period": "2026-08",
+          "source_revision": "program-00613baa679620b938c0",
+          "run_id": "calc-59c95872d9bdca4dba547fd42d323f42",
+          "request_id": "qwen-program-20261026-first-01",
+          "record_id": "5ad6af0b-d85a-448f-808f-c18aad1e9eda",
+          "payload_sha256": "67f2dd22e0684e89b1564319e9d8b9b2358f5f55acfdccc2fd2bb6919187fac7",
+          "stored_at": "2026-10-26T14:42:09.702105+00:00",
+          "status": "committed"
+        },
+        "fixture": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "actual_browser": "agent-browser Chromium",
+  "url": "http://127.0.0.1:18766",
+  "normal_case": {
+    "calculated_closing": "140000.00",
+    "save_enabled": true,
+    "database_write_performed": false
+  },
+  "difference_case": {
+    "difference": "-1000.00",
+    "save_disabled": true
+  },
+  "original_source_case": {
+    "status": "blocked",
+    "previous_amounts_cleared": true,
+    "save_disabled": true
+  },
+  "successful_save_in_new_version": "not_run_waiting_user_platform_flow",
+  "qwen_skill_import": "not_run",
+  "qwen_connector_switch": "not_run",
+  "screenshots": [
+    "正常计算页面.png",
+    "旧样例阻断页面.png"
+  ]
+}

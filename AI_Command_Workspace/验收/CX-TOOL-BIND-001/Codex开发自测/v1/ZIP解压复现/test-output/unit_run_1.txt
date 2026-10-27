@@ -1,0 +1,265 @@
+test_aliased_binding_paths (test_tool_call_guard.GuardTests.test_aliased_binding_paths) ... ok
+test_all_of_condition_complete (test_tool_call_guard.GuardTests.test_all_of_condition_complete) ... FAIL
+test_all_of_conditional_required (test_tool_call_guard.GuardTests.test_all_of_conditional_required) ... FAIL
+test_bad_period (test_tool_call_guard.GuardTests.test_bad_period) ... ok
+test_blank_approved_tool (test_tool_call_guard.GuardTests.test_blank_approved_tool) ... ok
+test_cli_prepared_and_blocked_exit_codes (test_tool_call_guard.GuardTests.test_cli_prepared_and_blocked_exit_codes) ... FAIL
+test_const_object_ref_is_data (test_tool_call_guard.GuardTests.test_const_object_ref_is_data) ... FAIL
+test_context_extra (test_tool_call_guard.GuardTests.test_context_extra) ... ok
+test_context_mapping_incomplete (test_tool_call_guard.GuardTests.test_context_mapping_incomplete) ... ok
+test_datetime_format (test_tool_call_guard.GuardTests.test_datetime_format) ... ok
+test_datetime_timezone_required (test_tool_call_guard.GuardTests.test_datetime_timezone_required) ... ok
+test_dependency_missing_fails_closed (test_tool_call_guard.GuardTests.test_dependency_missing_fails_closed) ... ok
+test_dialect_unsupported (test_tool_call_guard.GuardTests.test_dialect_unsupported) ... ok
+test_digest_changes_for_business_payload (test_tool_call_guard.GuardTests.test_digest_changes_for_business_payload) ... ERROR
+test_digest_ignores_object_key_order (test_tool_call_guard.GuardTests.test_digest_ignores_object_key_order) ... ERROR
+test_draft7 (test_tool_call_guard.GuardTests.test_draft7) ... FAIL
+test_duplicate_json_key (test_tool_call_guard.GuardTests.test_duplicate_json_key) ... ok
+test_empty_context (test_tool_call_guard.GuardTests.test_empty_context) ... ok
+test_empty_request (test_tool_call_guard.GuardTests.test_empty_request) ... ok
+test_enum (test_tool_call_guard.GuardTests.test_enum) ... FAIL
+test_error_redaction (test_tool_call_guard.GuardTests.test_error_redaction) ... FAIL
+test_every_context_field_compared (test_tool_call_guard.GuardTests.test_every_context_field_compared) ... ok
+test_exponent_overflow (test_tool_call_guard.GuardTests.test_exponent_overflow) ... ok
+test_invalid_pointer_escape (test_tool_call_guard.GuardTests.test_invalid_pointer_escape) ... ok
+test_missing_context_path (test_tool_call_guard.GuardTests.test_missing_context_path) ... ok
+test_missing_local_ref_fails_closed (test_tool_call_guard.GuardTests.test_missing_local_ref_fails_closed) ... FAIL
+test_nested_extra_argument (test_tool_call_guard.GuardTests.test_nested_extra_argument) ... FAIL
+test_nested_pattern (test_tool_call_guard.GuardTests.test_nested_pattern) ... FAIL
+test_nested_required (test_tool_call_guard.GuardTests.test_nested_required) ... FAIL
+test_nested_type (test_tool_call_guard.GuardTests.test_nested_type) ... FAIL
+test_no_network_external_ref (test_tool_call_guard.GuardTests.test_no_network_external_ref) ... ok
+test_no_schema_dialect_explicit_default (test_tool_call_guard.GuardTests.test_no_schema_dialect_explicit_default) ... ERROR
+test_non_json_key (test_tool_call_guard.GuardTests.test_non_json_key) ... ok
+test_nonfinite (test_tool_call_guard.GuardTests.test_nonfinite) ... ok
+test_nonobject_schema (test_tool_call_guard.GuardTests.test_nonobject_schema) ... ok
+test_prepared_cannot_alias_input (test_tool_call_guard.GuardTests.test_prepared_cannot_alias_input) ... ERROR
+test_request_mismatch (test_tool_call_guard.GuardTests.test_request_mismatch) ... ok
+test_resource_bytes (test_tool_call_guard.GuardTests.test_resource_bytes) ... ok
+test_resource_depth (test_tool_call_guard.GuardTests.test_resource_depth) ... ok
+test_schema_invalid (test_tool_call_guard.GuardTests.test_schema_invalid) ... FAIL
+test_tool_name_mismatch (test_tool_call_guard.GuardTests.test_tool_name_mismatch) ... ok
+test_unknown_format_is_blocked (test_tool_call_guard.GuardTests.test_unknown_format_is_blocked) ... ok
+test_unknown_top_level_argument (test_tool_call_guard.GuardTests.test_unknown_top_level_argument) ... FAIL
+test_unused_external_ref_blocked (test_tool_call_guard.GuardTests.test_unused_external_ref_blocked) ... ok
+test_valid_local_ref (test_tool_call_guard.GuardTests.test_valid_local_ref) ... FAIL
+test_vocabulary_not_silently_ignored (test_tool_call_guard.GuardTests.test_vocabulary_not_silently_ignored) ... ok
+
+======================================================================
+ERROR: test_digest_changes_for_business_payload (test_tool_call_guard.GuardTests.test_digest_changes_for_business_payload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 64, in test_digest_changes_for_business_payload
+    first=self.run_guard()['call_sha256']; self.a['payload']['amount']='2.00'
+          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'call_sha256'
+
+======================================================================
+ERROR: test_digest_ignores_object_key_order (test_tool_call_guard.GuardTests.test_digest_ignores_object_key_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 67, in test_digest_ignores_object_key_order
+    first=self.run_guard()['call_sha256']; self.a=dict(reversed(list(self.a.items())))
+          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'call_sha256'
+
+======================================================================
+ERROR: test_no_schema_dialect_explicit_default (test_tool_call_guard.GuardTests.test_no_schema_dialect_explicit_default)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 112, in test_no_schema_dialect_explicit_default
+    self.assertIn('2020-12',self.run_guard()['schema_dialect'])
+                            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'schema_dialect'
+
+======================================================================
+ERROR: test_prepared_cannot_alias_input (test_tool_call_guard.GuardTests.test_prepared_cannot_alias_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 62, in test_prepared_cannot_alias_input
+    self.assertEqual(r['call']['arguments']['payload']['amount'],'1.00')
+                     ~^^^^^^^^
+KeyError: 'call'
+
+======================================================================
+FAIL: test_all_of_condition_complete (test_tool_call_guard.GuardTests.test_all_of_condition_complete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 73, in test_all_of_condition_complete
+    self.assertEqual(self.run_guard()['status'],'prepared')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'blocked' != 'prepared'
+- blocked
++ prepared
+
+
+======================================================================
+FAIL: test_all_of_conditional_required (test_tool_call_guard.GuardTests.test_all_of_conditional_required)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 70, in test_all_of_conditional_required
+    self.a['event']='fixture-review'; self.assertBlocked('required')
+                                      ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 55, in assertBlocked
+    self.assertIn(reason,r['reason'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'required' not found in 'schema_format_unsupported'
+
+======================================================================
+FAIL: test_cli_prepared_and_blocked_exit_codes (test_tool_call_guard.GuardTests.test_cli_prepared_and_blocked_exit_codes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 190, in test_cli_prepared_and_blocked_exit_codes
+    self.assertEqual(first.returncode,0,first.stdout+first.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {"status": "blocked", "called": false, "reason": "schema_format_unsupported"}
+
+
+======================================================================
+FAIL: test_const_object_ref_is_data (test_tool_call_guard.GuardTests.test_const_object_ref_is_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 103, in test_const_object_ref_is_data
+    self.assertEqual(self.run_guard()['status'],'prepared')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'blocked' != 'prepared'
+- blocked
++ prepared
+
+
+======================================================================
+FAIL: test_draft7 (test_tool_call_guard.GuardTests.test_draft7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 116, in test_draft7
+    self.assertEqual(self.run_guard()['status'],'prepared')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'blocked' != 'prepared'
+- blocked
++ prepared
+
+
+======================================================================
+FAIL: test_enum (test_tool_call_guard.GuardTests.test_enum)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 85, in test_enum
+    self.a['event']='unapproved'; self.assertBlocked('enum')
+                                  ~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 55, in assertBlocked
+    self.assertIn(reason,r['reason'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'enum' not found in 'schema_format_unsupported'
+
+======================================================================
+FAIL: test_error_redaction (test_tool_call_guard.GuardTests.test_error_redaction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 168, in test_error_redaction
+    self.assertNotIn(secret,json.dumps(self.assertBlocked('pattern')))
+                                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 55, in assertBlocked
+    self.assertIn(reason,r['reason'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'pattern' not found in 'schema_format_unsupported'
+
+======================================================================
+FAIL: test_missing_local_ref_fails_closed (test_tool_call_guard.GuardTests.test_missing_local_ref_fails_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 106, in test_missing_local_ref_fails_closed
+    self.assertBlocked('validation_error')
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 55, in assertBlocked
+    self.assertIn(reason,r['reason'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'validation_error' not found in 'schema_format_unsupported'
+
+======================================================================
+FAIL: test_nested_extra_argument (test_tool_call_guard.GuardTests.test_nested_extra_argument)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 77, in test_nested_extra_argument
+    self.a['payload']['surprise']=True; self.assertBlocked('additionalProperties')
+                                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 55, in assertBlocked
+    self.assertIn(reason,r['reason'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'additionalProperties' not found in 'schema_format_unsupported'
+
+======================================================================
+FAIL: test_nested_pattern (test_tool_call_guard.GuardTests.test_nested_pattern)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 83, in test_nested_pattern
+    self.a['payload']['amount']='1.000'; self.assertBlocked('pattern')
+                                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 55, in assertBlocked
+    self.assertIn(reason,r['reason'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'pattern' not found in 'schema_format_unsupported'
+
+======================================================================
+FAIL: test_nested_required (test_tool_call_guard.GuardTests.test_nested_required)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 79, in test_nested_required
+    self.a['payload']={}; self.assertBlocked('required')
+                          ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 55, in assertBlocked
+    self.assertIn(reason,r['reason'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'required' not found in 'schema_format_unsupported'
+
+======================================================================
+FAIL: test_nested_type (test_tool_call_guard.GuardTests.test_nested_type)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 81, in test_nested_type
+    self.a['payload']['amount']=1; self.assertBlocked('type')
+                                   ~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 55, in assertBlocked
+    self.assertIn(reason,r['reason'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'type' not found in 'schema_format_unsupported'
+
+======================================================================
+FAIL: test_schema_invalid (test_tool_call_guard.GuardTests.test_schema_invalid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 121, in test_schema_invalid
+    self.d['inputSchema']['required']=42; self.assertBlocked('validation_error')
+                                          ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 55, in assertBlocked
+    self.assertIn(reason,r['reason'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'validation_error' not found in 'schema_format_unsupported'
+
+======================================================================
+FAIL: test_unknown_top_level_argument (test_tool_call_guard.GuardTests.test_unknown_top_level_argument)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 75, in test_unknown_top_level_argument
+    self.a['surprise']=True; self.assertBlocked('additionalProperties')
+                             ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 55, in assertBlocked
+    self.assertIn(reason,r['reason'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'additionalProperties' not found in 'schema_format_unsupported'
+
+======================================================================
+FAIL: test_valid_local_ref (test_tool_call_guard.GuardTests.test_valid_local_ref)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-TOOL-BIND-001\Codex\v1\test_tool_call_guard.py", line 58, in test_valid_local_ref
+    r=self.run_guard(); self.assertEqual(r['status'],'prepared',r)
+                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'blocked' != 'prepared'
+- blocked
++ prepared
+ : {'status': 'blocked', 'called': False, 'reason': 'schema_format_unsupported'}
+
+----------------------------------------------------------------------
+Ran 46 tests in 0.296s
+
+FAILED (failures=15, errors=4)

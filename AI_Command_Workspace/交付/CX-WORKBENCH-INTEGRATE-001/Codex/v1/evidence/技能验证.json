@@ -1,0 +1,6 @@
+{
+  "validator": "skill-creator quick_validate.py",
+  "status": "valid",
+  "skill": "mfg-workbench-integrated",
+  "zip_sha256": "5681d2c6393f73eb90e81dc9b38d82da6175adb23cfd42f2dde972b48ace37cc"
+}

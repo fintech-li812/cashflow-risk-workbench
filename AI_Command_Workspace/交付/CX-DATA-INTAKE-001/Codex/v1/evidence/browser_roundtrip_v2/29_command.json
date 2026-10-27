@@ -1,0 +1,9 @@
+{
+  "args": [
+    "click",
+    "#exportDraft"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"success\":true,\"data\":{\"clicked\":\"#exportDraft\"},\"error\":null}\n",
+  "stderr": ""
+}

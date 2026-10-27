@@ -1,0 +1,206 @@
+{
+  "source_file": "reference-catalog\\候选工具定义_历史参考非真实tools-list.json",
+  "source_sha256": "6df4bc8022270d8e3af5767de951ba66624b93d39c56c0d05b6c0288e440db9b",
+  "source_status": "historical candidate, NOT authoritative tools/list",
+  "meaning": "schema syntax/policy compatibility only; does NOT approve business capabilities or actual arguments",
+  "tools": [
+    {
+      "tool_name": "log_to_mysql",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "request_id",
+        "source_ref",
+        "occurred_at",
+        "event_type",
+        "payload"
+      ],
+      "conditional_branches": 2
+    },
+    {
+      "tool_name": "query_rule_stats",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "start_at",
+        "end_at"
+      ],
+      "conditional_branches": 0
+    },
+    {
+      "tool_name": "query_audit_by_event",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "event_type",
+        "start_at",
+        "end_at"
+      ],
+      "conditional_branches": 0
+    },
+    {
+      "tool_name": "log_feedback",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "request_id",
+        "source_ref",
+        "occurred_at",
+        "metric_code",
+        "actual_source_ref",
+        "evaluation_version",
+        "currency",
+        "accuracy_label",
+        "forecast_start_at",
+        "forecast_end_at"
+      ],
+      "conditional_branches": 1
+    },
+    {
+      "tool_name": "query_feedback_stats",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "start_at",
+        "end_at"
+      ],
+      "conditional_branches": 0
+    },
+    {
+      "tool_name": "save_param_template",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "request_id",
+        "source_ref",
+        "occurred_at",
+        "industry_key",
+        "template_version",
+        "params"
+      ],
+      "conditional_branches": 0
+    },
+    {
+      "tool_name": "load_param_template",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "industry_key"
+      ],
+      "conditional_branches": 0
+    },
+    {
+      "tool_name": "log_exception",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "request_id",
+        "source_ref",
+        "occurred_at",
+        "dept",
+        "amount",
+        "currency",
+        "reason",
+        "approval_ref"
+      ],
+      "conditional_branches": 0
+    },
+    {
+      "tool_name": "query_exception_stats",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "start_at",
+        "end_at"
+      ],
+      "conditional_branches": 0
+    },
+    {
+      "tool_name": "log_stress_test",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "request_id",
+        "source_ref",
+        "occurred_at",
+        "run_id",
+        "scenario",
+        "scenario_version",
+        "input_snapshot",
+        "result_snapshot",
+        "risk_level"
+      ],
+      "conditional_branches": 0
+    },
+    {
+      "tool_name": "verify_payment",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "request_id",
+        "source_ref",
+        "occurred_at",
+        "payment_id",
+        "method",
+        "evidence_ref"
+      ],
+      "conditional_branches": 0
+    },
+    {
+      "tool_name": "rf_predict",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "request_id",
+        "source_ref",
+        "occurred_at",
+        "eval_date",
+        "features",
+        "feature_names",
+        "feature_schema_version",
+        "model_version"
+      ],
+      "conditional_branches": 0
+    },
+    {
+      "tool_name": "load_da_coefficients",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "industry_key",
+        "coefficient_version"
+      ],
+      "conditional_branches": 0
+    },
+    {
+      "tool_name": "save_da_coefficients",
+      "schema_compatible": true,
+      "real_platform_binding": false,
+      "calls_performed": 0,
+      "top_required": [
+        "request_id",
+        "source_ref",
+        "occurred_at",
+        "industry_key",
+        "coefficient_version",
+        "coefficients",
+        "solved_at",
+        "solver_ref"
+      ],
+      "conditional_branches": 0
+    }
+  ]
+}

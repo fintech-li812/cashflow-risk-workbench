@@ -1,0 +1,61 @@
+{
+  "checks": [
+    {
+      "check": "fixture 默认拒绝",
+      "detail": "exit=4",
+      "pass": true
+    },
+    {
+      "check": "fixture 显式允许后提交",
+      "detail": "exit=0",
+      "pass": true
+    },
+    {
+      "check": "同键同参幂等回放",
+      "detail": "exit=0",
+      "pass": true
+    },
+    {
+      "check": "同键异参冲突且不覆盖",
+      "detail": "exit=2",
+      "pass": true
+    },
+    {
+      "check": "按 record_id 精确回查",
+      "detail": "exit=0",
+      "pass": true
+    },
+    {
+      "check": "缺实际余额保存成功且双null",
+      "detail": "exit=0",
+      "pass": true
+    },
+    {
+      "check": "净额差一分拒绝",
+      "detail": "exit=4",
+      "pass": true
+    },
+    {
+      "check": "非success无正式回执",
+      "detail": "exit=7",
+      "pass": true
+    },
+    {
+      "check": "history 两条记录且当前有效可解释",
+      "detail": "exit=0",
+      "pass": true
+    },
+    {
+      "check": "verify-store 通过",
+      "detail": "exit=0",
+      "pass": true
+    },
+    {
+      "check": "关库重开后读回同一记录",
+      "detail": "exit=0",
+      "pass": true
+    }
+  ],
+  "selftest": "PASSED",
+  "workdir": "D:\\AI_Command_Workspace\\交付\\MEM-EVIDENCE-001\\WorkBuddy\\v1\\test-output\\run_20261024_191750\\selftest_ok"
+}

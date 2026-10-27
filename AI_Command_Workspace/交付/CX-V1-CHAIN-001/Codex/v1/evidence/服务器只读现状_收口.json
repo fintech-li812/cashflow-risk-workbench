@@ -1,0 +1,5 @@
+{
+  "exit": 0,
+  "stdout": "{\"host\": \"iZhp3ghhuyoelym8biup8eZ\", \"mysql\": {\"code\": 0, \"stdout\": \"active\", \"stderr\": \"\"}, \"business_tables\": {\"code\": 0, \"stdout\": \"new_project\\t0\\ncf_workbench\\t0\", \"stderr\": \"\"}, \"python_modules\": {\"pymysql\": false, \"mcp\": false, \"starlette\": false}, \"listeners\": {\"code\": 0, \"stdout\": \"LISTEN 0      4096   127.0.0.53%lo:53    0.0.0.0:*\\nLISTEN 0      100        127.0.0.1:3306  0.0.0.0:*\\nLISTEN 0      70         127.0.0.1:33060 0.0.0.0:*\\nLISTEN 0      511          0.0.0.0:80    0.0.0.0:*\\nLISTEN 0      4096         0.0.0.0:22    0.0.0.0:*\\nLISTEN 0      4096      127.0.0.54:53    0.0.0.0:*\\nLISTEN 0      5          127.0.0.1:4010  0.0.0.0:*\\nLISTEN 0      511          0.0.0.0:443   0.0.0.0:*\\nLISTEN 0      511             [::]:80       [::]:*\\nLISTEN 0      4096            [::]:22       [::]:*\\nLISTEN 0      511             [::]:443      [::]:*\", \"stderr\": \"\"}}\n",
+  "stderr": ""
+}

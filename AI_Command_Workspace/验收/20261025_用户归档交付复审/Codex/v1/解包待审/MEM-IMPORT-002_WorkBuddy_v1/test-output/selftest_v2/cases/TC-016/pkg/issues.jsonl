@@ -1,0 +1,2 @@
+{"action":"人工核对源日期","address":"B3","code":"INVALID_DATE","file":"fixture.xlsx","issue_id":"ISS-0001","raw":"2026-13-05","reason":"非法日历日期（不自动进位）: '2026-13-05'","row":3,"sheet":"现金流水"}
+{"action":"人工核对源日期","address":"B4","code":"INVALID_DATE","file":"fixture.xlsx","issue_id":"ISS-0002","raw":"2026-02-30","reason":"非法日历日期（不自动进位）: '2026-02-30'","row":4,"sheet":"现金流水"}

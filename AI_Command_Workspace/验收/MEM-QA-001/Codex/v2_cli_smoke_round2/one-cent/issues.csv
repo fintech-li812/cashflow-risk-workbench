@@ -1,0 +1,3 @@
+﻿state,code,location,expected,actual,action
+失败,NET_MISMATCH,result.amounts.net,流入-流出,检查未满足；见定位及原始工件,核公式和单位
+失败,CLOSING_MISMATCH,result.amounts.closing,期初+净额,检查未满足；见定位及原始工件,核余额承接

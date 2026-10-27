@@ -1,0 +1,2 @@
+﻿issue_id,code,file,sheet,address,row,raw,reason,action
+ISS-0001,NUMERIC_TEXT_NOT_CONVERTED,fixture.xlsx,现金流水,D3,3,123.45,数字以文本存储，未经批准规则不偷转数值,确认是否按数值处理并更新映射

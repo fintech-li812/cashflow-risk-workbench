@@ -1,0 +1,190 @@
+{
+  "total": 30,
+  "pass": 26,
+  "fail": 4,
+  "blocked": 0,
+  "not_executed": 0,
+  "expected_sha256": "6dfe915f33e5d3f59b2f98cfd518f5325ae942b54d40ee08337e363a0351ca23",
+  "results": [
+    {
+      "case": "TC-01",
+      "name": "正常提交",
+      "status": "PASS",
+      "detail": "exit=0 record_id=ev-78f10ce9748f620073921054"
+    },
+    {
+      "case": "TC-02",
+      "name": "重启读回与哈希一致",
+      "status": "PASS",
+      "detail": "exit=0"
+    },
+    {
+      "case": "TC-03",
+      "name": "全0金额允许",
+      "status": "PASS",
+      "detail": "exit=0"
+    },
+    {
+      "case": "TC-04",
+      "name": "缺独立余额双null允许",
+      "status": "PASS",
+      "detail": "exit=0"
+    },
+    {
+      "case": "TC-05",
+      "name": "net差一分拒绝",
+      "status": "PASS",
+      "detail": "exit=4"
+    },
+    {
+      "case": "TC-06",
+      "name": "非法金额字符串拒绝",
+      "status": "PASS",
+      "detail": "exit=4"
+    },
+    {
+      "case": "TC-07",
+      "name": "缺company_id拒绝",
+      "status": "PASS",
+      "detail": "exit=4"
+    },
+    {
+      "case": "TC-08",
+      "name": "payload与context身份不一致拒绝",
+      "status": "PASS",
+      "detail": "exit=4"
+    },
+    {
+      "case": "TC-09",
+      "name": "source_revision不一致拒绝",
+      "status": "PASS",
+      "detail": "exit=4"
+    },
+    {
+      "case": "TC-10",
+      "name": "非success无回执且入诊断",
+      "status": "PASS",
+      "detail": "exit=7"
+    },
+    {
+      "case": "TC-11a",
+      "name": "默认拒绝fixture",
+      "status": "PASS",
+      "detail": "exit=4"
+    },
+    {
+      "case": "TC-11b",
+      "name": "显式允许fixture且带合成标识",
+      "status": "PASS",
+      "detail": "exit=0"
+    },
+    {
+      "case": "TC-12",
+      "name": "同键同参回放原record_id且行数不增",
+      "status": "PASS",
+      "detail": "exit=0"
+    },
+    {
+      "case": "TC-13",
+      "name": "同键异参冲突且旧记录未被覆盖",
+      "status": "FAIL",
+      "detail": "exit=4 verify=0"
+    },
+    {
+      "case": "TC-14",
+      "name": "跨身份get不泄露",
+      "status": "PASS",
+      "detail": "exit=3"
+    },
+    {
+      "case": "TC-15",
+      "name": "commit前故障无半条且可重试",
+      "status": "PASS",
+      "detail": "exit=5 retry=0"
+    },
+    {
+      "case": "TC-16",
+      "name": "commit后回执丢失（子进程exit42）重试返回原record_id",
+      "status": "PASS",
+      "detail": "fault_exit=42 retry=0"
+    },
+    {
+      "case": "TC-17a",
+      "name": "并发同键同参唯一（行数1，退出码均在{0,2}）",
+      "status": "FAIL",
+      "detail": "exits=[0, 5] rows=1"
+    },
+    {
+      "case": "TC-17b",
+      "name": "并发同键异参恰一提交一冲突（行数1）",
+      "status": "FAIL",
+      "detail": "exits=[0, 4] rows=1"
+    },
+    {
+      "case": "TC-18",
+      "name": "历史追加不覆盖",
+      "status": "PASS",
+      "detail": "exit=0 entries=9"
+    },
+    {
+      "case": "TC-19",
+      "name": "当前有效选择规则",
+      "status": "PASS",
+      "detail": "current=ev-212f869b8ba67f53723dfdd3"
+    },
+    {
+      "case": "TC-20",
+      "name": "篡改payload被verify检出",
+      "status": "PASS",
+      "detail": "exit=6"
+    },
+    {
+      "case": "TC-21",
+      "name": "篡改索引列被verify检出",
+      "status": "PASS",
+      "detail": "exit=6"
+    },
+    {
+      "case": "TC-22",
+      "name": "关库重开verify通过",
+      "status": "PASS",
+      "detail": "exit=0"
+    },
+    {
+      "case": "TC-23",
+      "name": "store路径越界拒绝",
+      "status": "PASS",
+      "detail": "exit=4"
+    },
+    {
+      "case": "TC-23b",
+      "name": "越界目标文件未被创建",
+      "status": "PASS",
+      "detail": "exists=False"
+    },
+    {
+      "case": "TC-24",
+      "name": "SQL特殊字符参数化处理且库完好",
+      "status": "PASS",
+      "detail": "exit=0 verify=0"
+    },
+    {
+      "case": "TC-25",
+      "name": "selftest注入失败非0退出",
+      "status": "PASS",
+      "detail": "exit=1"
+    },
+    {
+      "case": "SELFTEST",
+      "name": "selftest正例全过且exit0",
+      "status": "FAIL",
+      "detail": "exit=1"
+    },
+    {
+      "case": "FROZEN",
+      "name": "expected与fixtures运行前后哈希不变",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

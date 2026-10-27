@@ -1,0 +1,24 @@
+{
+  "reviewed_original_count": 15,
+  "archives": [
+    {
+      "task_id": "MEM-DOC-001",
+      "path": "D:\\AI_Command_Workspace\\outbox\\MEM-DOC-001_Codex_v2_20261025_审批修订候选.zip",
+      "sha256": "b77922f5547e81c861d7c289b79fb9c330dd2d2c16611eb769a2895fcec8350a",
+      "zip_crc_verified": true
+    },
+    {
+      "task_id": "MEM-IMPORT-002",
+      "path": "D:\\AI_Command_Workspace\\outbox\\MEM-IMPORT-002_Codex_v2_20261025_审批修订候选.zip",
+      "sha256": "5c58c04a2455f6089c3ea6511c3ddb57aa9b1635ca0a840050cf840d1411fe7a",
+      "zip_crc_verified": true
+    },
+    {
+      "task_id": "MEM-EVIDENCE-001",
+      "path": "D:\\AI_Command_Workspace\\outbox\\MEM-EVIDENCE-001_Codex_v2_20261025_审批修订候选.zip",
+      "sha256": "8d0791f725f9716a9dc0181beb9421169c63a874db834a430cb12e13412824bd",
+      "zip_crc_verified": true
+    }
+  ],
+  "production_deployed": false
+}

@@ -1,0 +1,40 @@
+{
+  "transport": "stdio",
+  "request_id": "v2-stdio-592158cd380d4c4ea32a7e10e283cd5f",
+  "fixture": true,
+  "qwen_agent_called": false,
+  "receipt": {
+    "schema_version": "mfg-evidence.v1",
+    "kind": "receipt",
+    "operation": "save_cashflow_result",
+    "tenant_id": "fixture-tenant",
+    "company_id": "fixture-manufacturing",
+    "period": "2026-08",
+    "source_revision": "fixture-source-v1",
+    "run_id": "fixture-run-202608",
+    "request_id": "v2-stdio-592158cd380d4c4ea32a7e10e283cd5f",
+    "record_id": "e921540e-1884-4489-a81f-713a83c76304",
+    "payload_sha256": "356c833f3234cf25c5703888e4da398b4b7889445f6925365bda1e973c582b7b",
+    "stored_at": "2026-10-24T04:35:08.716465+00:00",
+    "status": "committed"
+  },
+  "tools": [
+    "read_cashflow_result",
+    "save_cashflow_result",
+    "query_cashflow_result"
+  ],
+  "server": {
+    "name": "manufacturing-cashflow-v1-candidate",
+    "title": null,
+    "version": "1.30.0",
+    "websiteUrl": null,
+    "icons": null
+  },
+  "replay_same_receipt": true,
+  "forged_amounts_rejected": true,
+  "version_conflict_rejected": true,
+  "new_client_readback": true,
+  "status": "passed",
+  "independent_sql_readback": true,
+  "production_deployed": false
+}

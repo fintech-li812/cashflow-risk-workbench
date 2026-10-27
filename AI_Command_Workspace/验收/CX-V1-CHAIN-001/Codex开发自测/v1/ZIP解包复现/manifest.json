@@ -1,0 +1,250 @@
+{
+  "task_id": "CX-V1-CHAIN-001",
+  "package_version": "v1",
+  "author": "Codex",
+  "created_at": "2026-10-24T00:49:04+08:00",
+  "status": "candidate_pending_independent_review",
+  "tests": {
+    "arithmetic": 11,
+    "real_mysql": 17,
+    "web_guard": 10,
+    "official_mcp_e2e_successful_flows": 2,
+    "browser_save_query": true,
+    "qwen_platform": false
+  },
+  "production_deployed": false,
+  "files": [
+    {
+      "path": "docs/千问接入接续.md",
+      "sha256": "25727ddcdb48fc24cbdc97404aa75eb3ab512fbbfa82f421ab95d00c63878c31"
+    },
+    {
+      "path": "docs/复现环境.json",
+      "sha256": "c5de6b863d1bf65df6e9b152bebb862fc5d3004a5de2f60f9fbc3c1a88b05fd1"
+    },
+    {
+      "path": "docs/独立审核任务_排队.md",
+      "sha256": "594ea2365768357e10620859895751d8545f2574a8140b4c508c67f1b995d60f"
+    },
+    {
+      "path": "docs/继承清单.json",
+      "sha256": "6d5fb9a66c9a55affd872971822319e210dd2afa18d19323efc90f742070f9d5"
+    },
+    {
+      "path": "docs/范围与架构.md",
+      "sha256": "301ef079a177f759e1473af9e3e5d062f5a667953362ca218513c1ae7b7e58c2"
+    },
+    {
+      "path": "docs/设计取舍.md",
+      "sha256": "d1c05f5157c8341622ecccbc00ef82e023230885e4a717529a2b3d15e4bab7f5"
+    },
+    {
+      "path": "evidence/MCP服务日志.txt",
+      "sha256": "b2f90fcbb0c64b2e252bbe88aa76518494c4c12cbfa40a64d9d3b6f063e514dc"
+    },
+    {
+      "path": "evidence/MCP服务日志_含基础计算.txt",
+      "sha256": "b2f90fcbb0c64b2e252bbe88aa76518494c4c12cbfa40a64d9d3b6f063e514dc"
+    },
+    {
+      "path": "evidence/MCP服务日志_含基础计算_复测.txt",
+      "sha256": "b2f90fcbb0c64b2e252bbe88aa76518494c4c12cbfa40a64d9d3b6f063e514dc"
+    },
+    {
+      "path": "evidence/MCP真实MySQL闭环.json",
+      "sha256": "9460644043036c0066c807cb21c0c509757a995b1d7b0449b68cf83304e99e1e"
+    },
+    {
+      "path": "evidence/MCP真实MySQL闭环_含基础计算_复测.json",
+      "sha256": "6b0cc4d273aaf86376293872b8e7f0beee17716cccfc27f778f7656f6261e43a"
+    },
+    {
+      "path": "evidence/MCP请求开始_含基础计算_复测.json",
+      "sha256": "338c340afcbcee3c8bbac64aa02eab08e83fd7e1f41b3ae016b376713b0ae0bb"
+    },
+    {
+      "path": "evidence/MCP闭环执行_01.txt",
+      "sha256": "ea330a80cd2a0fd95e477bea458c68a92a9bb2286b005c70e95c3a698c040178"
+    },
+    {
+      "path": "evidence/MCP闭环执行_含基础计算.txt",
+      "sha256": "66533be68f1929541173df7025ff30fdadcdcf527f8769eaec2a85fd843b3450"
+    },
+    {
+      "path": "evidence/MCP闭环执行_含基础计算_复测.txt",
+      "sha256": "9bdacc5c494875ce831d0f15caa7114072fe547db2571dcbddd7e2c5f94343a8"
+    },
+    {
+      "path": "evidence/mysql-test-files/test-8a0aacb3ab3a405bbeb0403e3379b39f.json",
+      "sha256": "73bcfb94653ad4b5fdc2768903652c1b262845e92cc8493bda8b0bd3ba1c7730"
+    },
+    {
+      "path": "evidence/MySQL实测_01.txt",
+      "sha256": "3f6b0cb5323f2b4c20fac9ab4b337bbe423011e8234dc86edc253cadacba58fb"
+    },
+    {
+      "path": "evidence/MySQL隔离建表.json",
+      "sha256": "a9e97c59e44c9972929e9e11b10de5aae75c9fec4515826912cbcdb5eb8d030e"
+    },
+    {
+      "path": "evidence/qa_runtime.json",
+      "sha256": "8145a988757dfd2cf481c9a9f843c92e9adf11d1985f5a49e8e42c2ac5b068fd"
+    },
+    {
+      "path": "evidence/SSH隧道.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/web_mcp_stderr.log",
+      "sha256": "429f3c525c651abc98daca4b9a603ded66188b0e1949166a79188f375a3eae5b"
+    },
+    {
+      "path": "evidence/web_runtime.json",
+      "sha256": "4be058a8f194141c5df95e7a69e1facede1caf37b7b7aa727b12c766326c9cf5"
+    },
+    {
+      "path": "evidence/web_runtime_含基础计算.json",
+      "sha256": "161ed0a8c14328e8cc1ddaea42c1bc5f5a4037fb5b9afc332413be6de5c13dcb"
+    },
+    {
+      "path": "evidence/web_server_01.log",
+      "sha256": "b4b534a890ee22a88bf7fe37dcbfade54a1bae9e0b95b4845519b857f8766608"
+    },
+    {
+      "path": "evidence/web_server_含基础计算.log",
+      "sha256": "1c5d6d1b47755ee0af404c4a7cf347c454b6b1ed931151122b3f7ef8f6740d7f"
+    },
+    {
+      "path": "evidence/前端API守卫测试.txt",
+      "sha256": "21a9868a37cb1ce2b51456ce68daa3d03afd4d8295b40522575b966ee7090fb3"
+    },
+    {
+      "path": "evidence/前端API守卫测试_日志目录调整后.txt",
+      "sha256": "cf3557d7335e5ace96d411656ac635f1c7c324406c409b5757208912a6aa86a2"
+    },
+    {
+      "path": "evidence/前端结果独立SQL核对.json",
+      "sha256": "b4d3bb0c116b35ecc171b53ec2863e486b12000a8c8d25589b3e56163d8b98e7"
+    },
+    {
+      "path": "evidence/基础算术测试.txt",
+      "sha256": "751b5d78c2362ae1fd7c7d242f5a9413cdb10aeb87a2eea72b57ab38037affdb"
+    },
+    {
+      "path": "evidence/新版前端_再次回查.png",
+      "sha256": "f36a3134b04f1615325226157a7288404c32f4790d04b813fe8d7f8e391ee4d8"
+    },
+    {
+      "path": "evidence/新版前端_回查文本.txt",
+      "sha256": "bc887bf38f466d3eba308b34df2f5602b5024270ed1ff83ed247f99df7ea8218"
+    },
+    {
+      "path": "evidence/新版前端_基础计算后真实MySQL.png",
+      "sha256": "f36a3134b04f1615325226157a7288404c32f4790d04b813fe8d7f8e391ee4d8"
+    },
+    {
+      "path": "evidence/新版前端_真实MySQL回查通过.png",
+      "sha256": "76e9c48dd9c185afdc0734d400deaf4a759a1963dc5f6cb503c2b46604712ef9"
+    },
+    {
+      "path": "evidence/新版前端_窄屏.png",
+      "sha256": "b0b6c1b97557c8b812a58e517c2edd4ce17d919e2b640f593064d2d57de0fdbf"
+    },
+    {
+      "path": "evidence/新版前端_网络请求.txt",
+      "sha256": "63c54d9ea9815aae97149e85b1651be2848d1e5c1eaf76063e3986c4cb03120f"
+    },
+    {
+      "path": "evidence/新版前端_运行前.png",
+      "sha256": "03cd7e7459c0e11233a4b41f9b1f6efda92a89584b3b97deec0865db1a989d7a"
+    },
+    {
+      "path": "evidence/服务器只读现状.json",
+      "sha256": "b2618de95cc9637e7f89d930aae1360d274f50603ae6549017f1103e8911f8cf"
+    },
+    {
+      "path": "evidence/服务器只读现状_收口.json",
+      "sha256": "91426c7ead7567d1f32cc4d33784731d0eec51a7439c355ffdc3382d4e355a71"
+    },
+    {
+      "path": "evidence/首次SSH权限失败.txt",
+      "sha256": "3612dd46c2791293c6fef5e371e76fe03bb8cf6b85f21e82048d23df5100baae"
+    },
+    {
+      "path": "fixtures/approved_result.json",
+      "sha256": "638366d14254cdf468e9363f7e85aa34b933f55c168f32f01a469e593840d403"
+    },
+    {
+      "path": "fixtures/calculated_result_v1.json",
+      "sha256": "e6470f7adeba00804b178be5dc17a3087a88758178b9482cfd64b8cf81cf36d7"
+    },
+    {
+      "path": "fixtures/normalized_input.json",
+      "sha256": "d0bfb28ab0c1d1acbaf625ac6b9d8175ad53817a85c04e86100c7cb56387e1d9"
+    },
+    {
+      "path": "launch_preview.py",
+      "sha256": "8f1585883ed00278158d3d33ea1b7bbcd6fdb3f11d11cf7fcb0eb9268f3536b5"
+    },
+    {
+      "path": "README.md",
+      "sha256": "866dcb472d5200d70aa474b1ba2c722028a689fed9a26ee4186f20cf8fd6b058"
+    },
+    {
+      "path": "requirements.lock.txt",
+      "sha256": "b0065af0d2d4c0bc5d84d8a7783f09ad2ce1c0405968310db8cd43980dcbe2db"
+    },
+    {
+      "path": "sql/isolated_schema.sql",
+      "sha256": "2ba18dee2898c8fc2e6827810eb40138b1b7e75c80f640ec00f92f36e1394468"
+    },
+    {
+      "path": "src/agent_guard.py",
+      "sha256": "eb99d420e2ac7ef1352b448d0c29e1430d0a65cd80a76111eee3dc27c96055c1"
+    },
+    {
+      "path": "src/app.py",
+      "sha256": "a553f0e1c69300e3079221cfd144a023334bd720ad5359c5d3ecf001636dd525"
+    },
+    {
+      "path": "src/arithmetic.py",
+      "sha256": "8fcda95f051a32786ff9581cd2544df7c1e5062e3739f0e7c2802aa80f5249ac"
+    },
+    {
+      "path": "src/config.py",
+      "sha256": "0f2d773d5fa6ee471e06bddeca6f721dd6c24cb14f29cfbf5a6d43c69a86bfcf"
+    },
+    {
+      "path": "src/service.py",
+      "sha256": "4f1b1dadbea7072af39672b08980a81daf6ad28c2a928c77ccfb27c1b1df046d"
+    },
+    {
+      "path": "src/web_server.py",
+      "sha256": "b53b7b6d52d5e175c3dc70361592085eb00754b362d5f70e0cdc9b5a8f7d2b36"
+    },
+    {
+      "path": "tests/mcp_e2e.py",
+      "sha256": "ef92c9c0c8c59051b15676446e129fbfd8f8972a1fce722be158416a4b63df10"
+    },
+    {
+      "path": "tests/test_arithmetic.py",
+      "sha256": "5ac4b072aef6c2be889508db220e42d9c586d368dcb85dbb2cb23e42f9c1e14a"
+    },
+    {
+      "path": "tests/test_service.py",
+      "sha256": "40bdd49b875481df36dfe2210f50a6c1ed4314de68972e7085d0672121746847"
+    },
+    {
+      "path": "tests/test_web_guard.py",
+      "sha256": "10d0600a6b8c7a389898a33218131348e4cd32de14edd100494f0d6c67924823"
+    },
+    {
+      "path": "web/index.html",
+      "sha256": "7eaa3cb387791f1faf2720aefe2f2d5420da4e28e6a7f43716f93278386d4c3c"
+    },
+    {
+      "path": "第一版粗链路交付报告.md",
+      "sha256": "95555654639c94955ab1af481929511ff1494f7436e365d81c417a0d86d28488"
+    }
+  ]
+}

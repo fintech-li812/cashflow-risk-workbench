@@ -1,0 +1,55 @@
+{
+  "task_id": "CX-RUNTIME-DIAG-001",
+  "status": "candidate",
+  "production_deployed": false,
+  "files": [
+    {
+      "path": "binding.json",
+      "sha256": "ad1b5739af45694a7612f51501b6649342b81b470d18a569345fd523defbc56b"
+    },
+    {
+      "path": "doctor.py",
+      "sha256": "0c342c209b439b3f5cd6863cb84ddaab7a4897c8fb1611fcff54c80eb1280b9d"
+    },
+    {
+      "path": "evidence/单元回归.stderr.txt",
+      "sha256": "508222bc177e32f975052f06176879f84dc4396bb450d0062f79dffe5d41aadc"
+    },
+    {
+      "path": "evidence/单元回归.stdout.txt",
+      "sha256": "fa1e84a486c52db96bdf64feff4cb077926b6ab1efd43e817218e31dbc373ded"
+    },
+    {
+      "path": "evidence/回归核验.json",
+      "sha256": "195fa5c322b67b280811c0f19f9b408cdd7bb64ef2f2f82fe88c9942d5026ff3"
+    },
+    {
+      "path": "evidence/本机实际诊断.json",
+      "sha256": "ffe5b3532db6d79f63a462d1bcb1db93faa43afb1dfcfa9d85ff440d5c1c02c2"
+    },
+    {
+      "path": "evidence/本机离线启动核对.json",
+      "sha256": "9211535bcaae7abba416f9c98483ff6b8fc1a9e9da04e039442b5f8548e703cd"
+    },
+    {
+      "path": "evidence/本机离线启动核对_退出码.json",
+      "sha256": "029b7fac2ca247109f9f97f60f874ae9b77fab41bee68ec5ba031c8ad4209721"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b94b07ecdcdae2f010a0680499b9f491ebaa48193bcf17fff3612794e4506c0e"
+    },
+    {
+      "path": "requirements.lock.txt",
+      "sha256": "711177118c3ad9d59cc62f8f0fedb337c48bb73192af7878492ac0cd739831ea"
+    },
+    {
+      "path": "tests/test_doctor.py",
+      "sha256": "a0cadf8fc25c626c016aa0fafff13bd99a5060f2d644c49196d42c4815c23342"
+    },
+    {
+      "path": "诊断结果与处理顺序.md",
+      "sha256": "d4a4f221bd259e83e4788cb276c0d164265e2f016846201ddd93ed5590337632"
+    }
+  ]
+}

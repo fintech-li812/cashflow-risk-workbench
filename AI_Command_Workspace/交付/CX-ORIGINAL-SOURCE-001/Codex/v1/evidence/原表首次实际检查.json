@@ -1,0 +1,693 @@
+{
+  "schema_version": "manufacturing-source-audit.v1",
+  "status": "audited",
+  "source_file_sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+  "issues": [
+    {
+      "code": "operating_net_mismatch",
+      "source": "现金流水!D8:F8",
+      "detail": "按表头单位读取的流入减流出与表内净额不一致；不反推或覆盖原值。",
+      "category": "data_error",
+      "computed_net_yuan": "16310851500.00",
+      "reported_net_yuan": "-517200.00"
+    },
+    {
+      "code": "duplicate_rows_preserved",
+      "source": "现金流水!A12:I12 / A15:I15",
+      "detail": "原始行完全相同，保留两行并等待明确处置；本次不删除、不合计重复候选。",
+      "category": "data_review"
+    },
+    {
+      "code": "unit_confirmation_required",
+      "source": "现金流水!D8",
+      "detail": "已登记的单位疑点：原值1631300，表头万元；1631300元等于163.13万元。未获依据前保留原值，不自动换口径。",
+      "category": "data_review",
+      "observed": "1631300",
+      "rule_basis": "pinned_source_annotation_not_statistical_threshold"
+    },
+    {
+      "code": "bank_vs_recorded_collected_difference",
+      "source": "应收账款!F4",
+      "detail": "所列银行到账合计与应收表累计已收不同；需核对时间范围/分笔凭证，不按少于应收本身判错。",
+      "category": "data_review",
+      "linked_invoice": "AR202607002",
+      "listed_bank_yuan": "4113900.00",
+      "recorded_collected_yuan": "5713800.00"
+    },
+    {
+      "code": "negative_financing_amount",
+      "source": "筹资信息!C4",
+      "detail": "额度/金额为负，不能用于融资容量或现金流计算。",
+      "category": "data_error"
+    }
+  ],
+  "observations": [
+    {
+      "code": "normal_partial_receipt",
+      "source": "应收账款!E16:F16",
+      "detail": "部分到账是正常业务状态，不因少于应收金额判错。"
+    },
+    {
+      "code": "normal_partial_receipt",
+      "source": "应收账款!E22:F22",
+      "detail": "部分到账是正常业务状态，不因少于应收金额判错。"
+    },
+    {
+      "code": "normal_partial_receipt",
+      "source": "应收账款!E26:F26",
+      "detail": "部分到账是正常业务状态，不因少于应收金额判错。"
+    },
+    {
+      "code": "static_gate_labels_not_used",
+      "source": "现金流水!I:I / 应收账款!J:J",
+      "detail": "原静态标签或空白不充当本次检查结果；新报告独立输出，不回写原表。"
+    },
+    {
+      "code": "historical_dictionary_not_live_findings",
+      "source": "数据字典",
+      "detail": "当前字典标题为制造业共6处；历史17处跨行业清单及字典旧数值不作当前实测结论。"
+    }
+  ],
+  "checks": [
+    {
+      "code": "field_contract",
+      "status": "executed"
+    },
+    {
+      "code": "monthly_fields_and_dates",
+      "status": "executed"
+    },
+    {
+      "code": "exact_duplicate_rows",
+      "status": "executed"
+    },
+    {
+      "code": "monthly_continuity",
+      "status": "executed"
+    },
+    {
+      "code": "operating_net_arithmetic",
+      "status": "executed"
+    },
+    {
+      "code": "statistical_unit_outlier",
+      "status": "not_executed_policy_pending",
+      "detail": "倍数阈值未批准；不自造上下界。"
+    },
+    {
+      "code": "receivable_amounts_and_dates",
+      "status": "executed"
+    },
+    {
+      "code": "invoice_duplicate_ids",
+      "status": "executed"
+    },
+    {
+      "code": "bank_link_and_collected_comparison",
+      "status": "executed"
+    },
+    {
+      "code": "financing_amount_and_maturity",
+      "status": "executed"
+    },
+    {
+      "code": "investment_amount_date_status_mapping",
+      "status": "executed"
+    }
+  ],
+  "gate_rules_executed": true,
+  "full_data_gate_executed": false,
+  "normal_partial_receipts_treated_as_errors": false,
+  "normal_partial_receipt_rows": [
+    16,
+    22,
+    26
+  ],
+  "monthly_operating_preview": [
+    {
+      "source_row": 3,
+      "period": "2025-10",
+      "inflow_yuan": "1808700.00",
+      "outflow_yuan": "1174200.00",
+      "reported_net_yuan": "634500.00",
+      "calculated_operating_net_yuan": "634500.00",
+      "stated_closing_yuan": "3149200.00",
+      "closing_is_independent_evidence": false,
+      "counted_in_full_cashflow": false
+    },
+    {
+      "source_row": 4,
+      "period": "2025-11",
+      "inflow_yuan": "1843500.00",
+      "outflow_yuan": "1995400.00",
+      "reported_net_yuan": "-151900.00",
+      "calculated_operating_net_yuan": "-151900.00",
+      "stated_closing_yuan": "2991500.00",
+      "closing_is_independent_evidence": false,
+      "counted_in_full_cashflow": false
+    },
+    {
+      "source_row": 5,
+      "period": "2025-12",
+      "inflow_yuan": "1745700.00",
+      "outflow_yuan": "2000400.00",
+      "reported_net_yuan": "-254700.00",
+      "calculated_operating_net_yuan": "-254700.00",
+      "stated_closing_yuan": "2695300.00",
+      "closing_is_independent_evidence": false,
+      "counted_in_full_cashflow": false
+    },
+    {
+      "source_row": 6,
+      "period": "2026-01",
+      "inflow_yuan": "1721900.00",
+      "outflow_yuan": "1949600.00",
+      "reported_net_yuan": "-227700.00",
+      "calculated_operating_net_yuan": "-227700.00",
+      "stated_closing_yuan": "2480500.00",
+      "closing_is_independent_evidence": false,
+      "counted_in_full_cashflow": false
+    },
+    {
+      "source_row": 7,
+      "period": "2026-02",
+      "inflow_yuan": "1719000.00",
+      "outflow_yuan": "1969200.00",
+      "reported_net_yuan": "-250200.00",
+      "calculated_operating_net_yuan": "-250200.00",
+      "stated_closing_yuan": "2216200.00",
+      "closing_is_independent_evidence": false,
+      "counted_in_full_cashflow": false
+    },
+    {
+      "source_row": 8,
+      "period": "2026-03",
+      "inflow_yuan": "16313000000.00",
+      "outflow_yuan": "2148500.00",
+      "reported_net_yuan": "-517200.00",
+      "calculated_operating_net_yuan": "16310851500.00",
+      "stated_closing_yuan": "1707400.00",
+      "closing_is_independent_evidence": false,
+      "counted_in_full_cashflow": false
+    },
+    {
+      "source_row": 9,
+      "period": "2026-04",
+      "inflow_yuan": "1488800.00",
+      "outflow_yuan": "1822500.00",
+      "reported_net_yuan": "-333700.00",
+      "calculated_operating_net_yuan": "-333700.00",
+      "stated_closing_yuan": "1407300.00",
+      "closing_is_independent_evidence": false,
+      "counted_in_full_cashflow": false
+    },
+    {
+      "source_row": 10,
+      "period": "2026-05",
+      "inflow_yuan": "1526100.00",
+      "outflow_yuan": "634900.00",
+      "reported_net_yuan": "891200.00",
+      "calculated_operating_net_yuan": "891200.00",
+      "stated_closing_yuan": "2293600.00",
+      "closing_is_independent_evidence": false,
+      "counted_in_full_cashflow": false
+    },
+    {
+      "source_row": 11,
+      "period": "2026-06",
+      "inflow_yuan": "1816600.00",
+      "outflow_yuan": "1474300.00",
+      "reported_net_yuan": "342300.00",
+      "calculated_operating_net_yuan": "342300.00",
+      "stated_closing_yuan": "2639400.00",
+      "closing_is_independent_evidence": false,
+      "counted_in_full_cashflow": false
+    },
+    {
+      "source_row": 12,
+      "period": "2026-07",
+      "inflow_yuan": "1806900.00",
+      "outflow_yuan": "1449400.00",
+      "reported_net_yuan": "357500.00",
+      "calculated_operating_net_yuan": "357500.00",
+      "stated_closing_yuan": "3017300.00",
+      "closing_is_independent_evidence": false,
+      "counted_in_full_cashflow": false
+    },
+    {
+      "source_row": 13,
+      "period": "2026-08",
+      "inflow_yuan": "1891300.00",
+      "outflow_yuan": "2172100.00",
+      "reported_net_yuan": "-280800.00",
+      "calculated_operating_net_yuan": "-280800.00",
+      "stated_closing_yuan": "2765900.00",
+      "closing_is_independent_evidence": false,
+      "counted_in_full_cashflow": false
+    },
+    {
+      "source_row": 14,
+      "period": "2026-09",
+      "inflow_yuan": "1646000.00",
+      "outflow_yuan": "1920900.00",
+      "reported_net_yuan": "-274900.00",
+      "calculated_operating_net_yuan": "-274900.00",
+      "stated_closing_yuan": "2530000.00",
+      "closing_is_independent_evidence": false,
+      "counted_in_full_cashflow": false
+    },
+    {
+      "source_row": 15,
+      "period": "2026-07",
+      "inflow_yuan": "1806900.00",
+      "outflow_yuan": "1449400.00",
+      "reported_net_yuan": "357500.00",
+      "calculated_operating_net_yuan": "357500.00",
+      "stated_closing_yuan": "3017300.00",
+      "closing_is_independent_evidence": false,
+      "counted_in_full_cashflow": false
+    }
+  ],
+  "mapping_preview": [
+    {
+      "sheet": "应收账款",
+      "row": 3,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 4,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 5,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 6,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 7,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 8,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 9,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 10,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 11,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 12,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 13,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 14,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 15,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 16,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 17,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 18,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 19,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 20,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 21,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 22,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 23,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 24,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 25,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "应收账款",
+      "row": 26,
+      "kind": "receivable_reconciliation_only",
+      "counted": false,
+      "reason": "应收或累计已收不是可直接追加的独立本期现金流水。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 3,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2025-12-24",
+      "amount_yuan": "4311400.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 4,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2026-09-20",
+      "amount_yuan": "4113900.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 5,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2026-09-27",
+      "amount_yuan": "10337000.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 6,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2026-06-26",
+      "amount_yuan": "10505400.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 7,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2026-03-27",
+      "amount_yuan": "14250500.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 8,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2025-12-18",
+      "amount_yuan": "13913800.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 9,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2026-01-03",
+      "amount_yuan": "4923200.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 10,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2026-07-24",
+      "amount_yuan": "4343000.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 11,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2026-04-16",
+      "amount_yuan": "4169000.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 12,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2026-04-02",
+      "amount_yuan": "5844400.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 13,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2026-09-10",
+      "amount_yuan": "7033100.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 14,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2025-12-08",
+      "amount_yuan": "10959600.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 15,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2026-02-23",
+      "amount_yuan": "9731100.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 16,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2026-08-19",
+      "amount_yuan": "6361700.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "银行流水",
+      "row": 17,
+      "kind": "actual_receipt_evidence",
+      "candidate_category": "operating",
+      "settlement_date": "2026-01-24",
+      "amount_yuan": "9151300.00",
+      "counted": false,
+      "reason": "与经营月表/应收核对，不重复叠加；账户及来源主从覆盖仍需绑定。"
+    },
+    {
+      "sheet": "筹资信息",
+      "row": 3,
+      "kind": "银行授信额度",
+      "candidate_category": "financing",
+      "counted": false,
+      "reason": "授信额度不是实际收到现金，排除现金合计。"
+    },
+    {
+      "sheet": "筹资信息",
+      "row": 4,
+      "kind": "银行授信额度",
+      "candidate_category": "financing",
+      "counted": false,
+      "reason": "授信额度不是实际收到现金，排除现金合计。"
+    },
+    {
+      "sheet": "筹资信息",
+      "row": 5,
+      "kind": "流动资金贷款",
+      "candidate_category": "financing",
+      "counted": false,
+      "reason": "缺少实际放款/还本付息日期及独立流水，不能把余额、额度或计划当本期现金。"
+    },
+    {
+      "sheet": "筹资信息",
+      "row": 6,
+      "kind": "还款计划",
+      "candidate_category": "financing",
+      "counted": false,
+      "reason": "计划与到期日不代表已实际支付，单列待核。"
+    },
+    {
+      "sheet": "投资现金流",
+      "row": 3,
+      "candidate_category": "investing",
+      "source_status": "已支付",
+      "cash_claim": "paid_in_source",
+      "candidate_direction": "outflow",
+      "signed_amount_yuan": "-8600000.00",
+      "date": "2026-03-15",
+      "counted": false,
+      "reason": "源表已支付/已完成分别保留；未绑定账户与实际收付凭证，不形成完整现金结果。"
+    },
+    {
+      "sheet": "投资现金流",
+      "row": 4,
+      "candidate_category": "investing",
+      "source_status": "已完成",
+      "cash_claim": "settlement_not_confirmed",
+      "candidate_direction": "inflow",
+      "signed_amount_yuan": "620000.00",
+      "date": "2026-06-20",
+      "counted": false,
+      "reason": "源表已支付/已完成分别保留；未绑定账户与实际收付凭证，不形成完整现金结果。"
+    },
+    {
+      "sheet": "投资现金流",
+      "row": 5,
+      "candidate_category": "investing",
+      "source_status": "已支付",
+      "cash_claim": "paid_in_source",
+      "candidate_direction": "outflow",
+      "signed_amount_yuan": "-1450000.00",
+      "date": "2026-08-10",
+      "counted": false,
+      "reason": "源表已支付/已完成分别保留；未绑定账户与实际收付凭证，不形成完整现金结果。"
+    }
+  ],
+  "sheet_data_row_counts": {
+    "企业基本信息": 26,
+    "现金流水": 13,
+    "应收账款": 24,
+    "筹资信息": 4,
+    "投资现金流": 3,
+    "银行流水": 15,
+    "行业参数": 5,
+    "数据字典": 7
+  },
+  "cashflow_aggregation_performed": false,
+  "source_modified": false,
+  "remaining_checks": [
+    {
+      "code": "full_balance_reconciliation",
+      "status": "not_executed_missing_scope_and_balances"
+    },
+    {
+      "code": "all_historical_gate_rules",
+      "status": "not_claimed_complete"
+    }
+  ],
+  "source_id": "manufacturing_sample_v1",
+  "source_kind": "controlled_sample",
+  "sheet_names": [
+    "企业基本信息",
+    "现金流水",
+    "应收账款",
+    "筹资信息",
+    "投资现金流",
+    "银行流水",
+    "行业参数",
+    "数据字典"
+  ]
+}

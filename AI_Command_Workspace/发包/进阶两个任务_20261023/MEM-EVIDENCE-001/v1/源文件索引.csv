@@ -1,0 +1,16 @@
+﻿证据ID,包内路径,原来源,SHA256,边界
+SRC-001,01_源文件/规则/AGENTS.md,D:\AI_Command_Workspace\AGENTS.md,d7a016d2a3802059bba58a915ffe063d15aa4508a1afd145a839f8b1fab4ab21,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-002,01_源文件/规则/一期范围.md,D:\AI_Command_Workspace\规则\制造业现金流一期范围_v1.md,dd0037ff843cff75fb308090f32eb1a0b735fe46432d85b3be95f0931e183b5c,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-003,01_源文件/规则/统一接口_v1.md,D:\AI_Command_Workspace\规则\制造业Agent周边工程统一接口_v1.md,b17a22386d0931093e1bcf6e02d52895bf825c96234f0b2590143d448f6e2fbb,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-004,01_源文件/规则/结果边界接口.md,D:\AI_Command_Workspace\交付\CX-AGENT-002\Codex\v1\接口与状态说明.md,a5f894f10262a842a75e9489495fa062828242c0f1e2250227700d28e83f068b,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-005,01_源文件/规则/算法迭代与接口约定.md,D:\AI_Command_Workspace\规则\算法队友二次迭代与工程接口约定_v1.md,bd1fc66ea6c129b526e0261bfe3a3d5995e566e531737c6a7a98236dd4cf5414,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-006,01_源文件/审核/最新审批与反例.md,D:\AI_Command_Workspace\验收\20261023_最新交付审批\Codex\v1\审批结论与整改要求.md,2fb29c317878f7621cb1b976ca08969836b2bf9a9d6557b0b309d43e6b5d6a66,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-007,01_源文件/参考/Agent接口映射.md,D:\AI_Command_Workspace\交付\WB-AGENT-003\WorkBuddy\v1\docs\接口映射.md,234bb14c43f869be43f7ac1177a5b3c7936350324239dacfee3baa1335444791,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-008,01_源文件/参考/Agent未实现清单.md,D:\AI_Command_Workspace\交付\WB-AGENT-003\WorkBuddy\v1\docs\未实现清单.md,bef5cd5b995c28623d79aeff3d810a2ef298451fcc44fc93ac836888f1b50bfe,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-009,01_源文件/合成夹具/synthetic_success.json,D:\AI_Command_Workspace\交付\CX-AGENT-002\Codex\v1\fixtures\synthetic_success.json,d0e79eceeed7c59de944393c5261ea6772b65c3d92289fb5d0a10208fae4dcb5,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-010,01_源文件/参考候选/agent_guard.py,D:\AI_Command_Workspace\交付\WB-AGENT-003\WorkBuddy\v1\candidate\agent_guard.py,eb99d420e2ac7ef1352b448d0c29e1430d0a65cd80a76111eee3dc27c96055c1,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-011,01_源文件/原任务/结果快照存储任务.md,D:\AI_Command_Workspace\指令\队友三任务_20261023\任务二_结果快照与证据存储.md,51bbeac366e0157e4867277d7b086b3a5b0822d2344521f80fb5755ff18b4ce8,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-012,01_源文件/参考候选/persistence.py,D:\AI_Command_Workspace\交付\WB-AGENT-003\WorkBuddy\v1\candidate\persistence.py,13f9a688efe3622965914f7d6ee8112e1eb0c54ef64ea4b90e1ce208fc217720,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-013,01_源文件/参考候选/runtime_adapter.py,D:\AI_Command_Workspace\交付\WB-AGENT-003\WorkBuddy\v1\candidate\runtime_adapter.py,bbd33e29cf65549c2265bda47ffec6859eefba2be317f0d0b6f74dd4402bdb8f,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-014,01_源文件/参考候选/request_flow.py,D:\AI_Command_Workspace\交付\WB-AGENT-003\WorkBuddy\v1\candidate\request_flow.py,4acf699159af53cdbf5fb1ad0341a7ccc286f7c9d5dbc7c584b914a4ae4b832b,源件只读；参考候选与历史回报不等于本任务已验收
+SRC-015,01_源文件/参考候选/requirements.lock.txt,D:\AI_Command_Workspace\交付\WB-AGENT-003\WorkBuddy\v1\requirements.lock.txt,a471097ecfe6a9c6dcc511917dcf7a894120bed3ed1fb86c2ad8595129935327,源件只读；参考候选与历史回报不等于本任务已验收

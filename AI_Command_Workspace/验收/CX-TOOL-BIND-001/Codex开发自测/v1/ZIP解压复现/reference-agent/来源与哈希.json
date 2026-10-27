@@ -1,0 +1,17 @@
+[
+  {
+    "path": "reference-agent/runtime_adapter.py",
+    "source": "D:\\AI_Command_Workspace\\交付\\CX-AGENT-FIX-001\\Codex\\v1\\candidate\\runtime_adapter.py",
+    "sha256": "4159d501467098a919ab19bdb3a25c0e870bfc6c6677d393772ed4e8fe96e87d"
+  },
+  {
+    "path": "reference-agent/persistence.py",
+    "source": "D:\\AI_Command_Workspace\\交付\\CX-AGENT-FIX-001\\Codex\\v1\\candidate\\persistence.py",
+    "sha256": "4bf6f0436d88fd42ebb27556925b63d961f17ad0846f43b85620277068bdc875"
+  },
+  {
+    "path": "reference-agent/agent_guard.py",
+    "source": "D:\\AI_Command_Workspace\\交付\\CX-AGENT-FIX-001\\Codex\\v1\\candidate\\agent_guard.py",
+    "sha256": "eb99d420e2ac7ef1352b448d0c29e1430d0a65cd80a76111eee3dc27c96055c1"
+  }
+]

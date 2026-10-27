@@ -1,0 +1,82 @@
+[
+  {
+    "path": "README.md",
+    "status": "match"
+  },
+  {
+    "path": "07_逐条修订记录.csv",
+    "status": "missing"
+  },
+  {
+    "path": "08_证据索引.csv",
+    "status": "missing"
+  },
+  {
+    "path": "09_待X确认事项.csv",
+    "status": "missing"
+  },
+  {
+    "path": "10_自查验收.csv",
+    "status": "missing"
+  },
+  {
+    "path": "01_千问报告修正候选/README.md",
+    "status": "missing"
+  },
+  {
+    "path": "01_千问报告修正候选/只读取数证据.json",
+    "status": "missing"
+  },
+  {
+    "path": "01_千问报告修正候选/平台接入口核实.md",
+    "status": "missing"
+  },
+  {
+    "path": "01_千问报告修正候选/问题清单.md",
+    "status": "missing"
+  },
+  {
+    "path": "02_负责人及统计范围.md",
+    "status": "missing"
+  },
+  {
+    "path": "02_责任分工.csv",
+    "status": "missing"
+  },
+  {
+    "path": "02_统计范围.csv",
+    "status": "missing"
+  },
+  {
+    "path": "03_字段合同.md",
+    "status": "match"
+  },
+  {
+    "path": "03_字段合同.csv",
+    "status": "missing"
+  },
+  {
+    "path": "04_现金流核对报告模板.md",
+    "status": "match"
+  },
+  {
+    "path": "04_差异回溯报告模板.md",
+    "status": "missing"
+  },
+  {
+    "path": "04_结果状态说明.md",
+    "status": "missing"
+  },
+  {
+    "path": "05_制造业现金流使用手册_候选.md",
+    "status": "match"
+  },
+  {
+    "path": "06_看板文案修改表.csv",
+    "status": "missing"
+  },
+  {
+    "path": "06_看板与Agent文案稿.md",
+    "status": "match"
+  }
+]

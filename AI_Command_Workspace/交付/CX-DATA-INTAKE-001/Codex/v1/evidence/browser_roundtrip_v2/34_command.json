@@ -1,0 +1,10 @@
+{
+  "args": [
+    "upload",
+    "#importDraft",
+    "D:\\AI_Command_Workspace\\交付\\CX-DATA-INTAKE-001\\Codex\\v1\\evidence\\browser_roundtrip_v2\\实际导出草稿.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"success\":true,\"data\":{\"selector\":\"#importDraft\",\"uploaded\":1},\"error\":null}\n",
+  "stderr": ""
+}

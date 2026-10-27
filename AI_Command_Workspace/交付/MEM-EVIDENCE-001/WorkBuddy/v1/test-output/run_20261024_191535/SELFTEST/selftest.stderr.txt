@@ -1,0 +1,1 @@
+selftest: 10 通过 / 1 失败（库与证据在 selftest_ok）

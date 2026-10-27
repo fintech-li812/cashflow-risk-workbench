@@ -1,0 +1,10 @@
+{
+  "args": [
+    "screenshot",
+    "--full",
+    "D:\\AI_Command_Workspace\\交付\\CX-DATA-INTAKE-001\\Codex\\v1\\evidence\\browser_roundtrip_v2\\手机完成流程.png"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"success\":true,\"data\":{\"path\":\"D:\\\\AI_Command_Workspace\\\\交付\\\\CX-DATA-INTAKE-001\\\\Codex\\\\v1\\\\evidence\\\\browser_roundtrip_v2\\\\手机完成流程.png\"},\"error\":null}\n",
+  "stderr": ""
+}

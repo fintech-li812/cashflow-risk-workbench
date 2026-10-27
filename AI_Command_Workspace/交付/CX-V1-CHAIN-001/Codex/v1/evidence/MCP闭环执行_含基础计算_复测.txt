@@ -1,0 +1,18 @@
+{
+  "scope": "synthetic fixture; isolated real MySQL; not Qwen native",
+  "request_id": "mcp-e2e-c8f29f5c26a244b09ea3f36cb1d09b6c",
+  "protocol": "official mcp SDK 1.30.0 stdio",
+  "server": {
+    "name": "manufacturing-cashflow-v1-candidate",
+    "title": null,
+    "version": "1.30.0",
+    "websiteUrl": null,
+    "icons": null
+  },
+  "restart_readback": true,
+  "status": "passed",
+  "independent_database_readback": true,
+  "qwen_platform": false,
+  "production_deployed": false,
+  "fixture_file": "D:\\AI_Command_Workspace\\交付\\CX-V1-CHAIN-001\\Codex\\v1\\fixtures\\calculated_result_v1.json"
+}

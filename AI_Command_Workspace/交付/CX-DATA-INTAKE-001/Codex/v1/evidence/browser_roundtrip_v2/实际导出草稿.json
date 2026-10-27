@@ -1,0 +1,84 @@
+{
+  "schema_version": "mfg-business-intake-draft.v1",
+  "draft_id": "258899eb-2f4a-48bf-9f6e-f527b9dba363",
+  "origin": "offline_fixture",
+  "industry": "manufacturing",
+  "unit": "CNY",
+  "company_name": "合成制造企业（非真实业务）",
+  "period": "2026-08",
+  "preparer": "合成资料提交人",
+  "scope_note": "合成示例：两个人民币账户",
+  "tenant_id": null,
+  "company_id": null,
+  "internal_identity_binding_required": true,
+  "scope_confirmed": false,
+  "approval": {
+    "status": "not_submitted",
+    "approver": null
+  },
+  "source_authenticity_verified": false,
+  "native_sheet_verified": false,
+  "can_save_source_result": false,
+  "preparation_status": "ready_for_review",
+  "cutoffs": {
+    "opening": "2026-07-31",
+    "closing": "2026-08-31"
+  },
+  "accounts": [
+    {
+      "draft_account_id": "db2f7a27-07ed-4a7e-b298-4301ab2602ce",
+      "account_id": null,
+      "alias": "合成账户A",
+      "included": true,
+      "exclusion_reason": "",
+      "opening": {
+        "raw": "60000",
+        "amount": "60000.00",
+        "document_id": "4ea9f9d6-a5d6-4d40-b25f-becd0b6b71ab",
+        "location": "合成期初余额栏"
+      },
+      "closing": {
+        "raw": "90000",
+        "amount": "90000.00",
+        "document_id": "4ea9f9d6-a5d6-4d40-b25f-becd0b6b71ab",
+        "location": "合成期末余额栏"
+      }
+    },
+    {
+      "draft_account_id": "d82ef5e0-e6a7-4a85-a986-9470ab90da23",
+      "account_id": null,
+      "alias": "合成账户B",
+      "included": true,
+      "exclusion_reason": "",
+      "opening": {
+        "raw": "40000",
+        "amount": "40000.00",
+        "document_id": "03238a25-396f-4516-ab72-4da22b4972ed",
+        "location": "合成期初余额栏"
+      },
+      "closing": {
+        "raw": "50000",
+        "amount": "50000.00",
+        "document_id": "03238a25-396f-4516-ab72-4da22b4972ed",
+        "location": "合成期末余额栏"
+      }
+    }
+  ],
+  "documents": [
+    {
+      "id": "4ea9f9d6-a5d6-4d40-b25f-becd0b6b71ab",
+      "name": "合成账户A余额.json",
+      "size": 74,
+      "sha256": "101dfd7bfe9c23fdb9d5ce22ebb27aeebe4f4a1dfc3bf136b10534d0918d9238",
+      "available_in_session": true
+    },
+    {
+      "id": "03238a25-396f-4516-ab72-4da22b4972ed",
+      "name": "合成账户B余额.json",
+      "size": 74,
+      "sha256": "f4e7f06ceba32c42003466fb4f29cce029678a030f294d06a8db21f48aeaae4a",
+      "available_in_session": true
+    }
+  ],
+  "missing_items": []
+}

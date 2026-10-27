@@ -1,0 +1,19 @@
+test_non_success_reason_must_be_nonempty_text (test_qa_tool.QA.test_non_success_reason_must_be_nonempty_text) ... FAIL
+
+======================================================================
+FAIL: test_non_success_reason_must_be_nonempty_text (test_qa_tool.QA.test_non_success_reason_must_be_nonempty_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_reason_type\test_qa_tool.py", line 223, in test_non_success_reason_must_be_nonempty_text
+    self.check_result('ISSUES_TYPE')
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_reason_type\test_qa_tool.py", line 128, in check_result
+    self.assertEqual(report.status, '失败', report.as_dict())
+AssertionError: '通过' != '失败'
+- 通过
++ 失败
+ : {'schema_version': 'mfg-qa.v1', 'operation': 'verify-result', 'status': '通过', 'exit_code': 0, 'check_count': 26, 'issues': [], 'notes': ['离线工件检查；没有执行主算法、平台操作或数据库提交。']}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

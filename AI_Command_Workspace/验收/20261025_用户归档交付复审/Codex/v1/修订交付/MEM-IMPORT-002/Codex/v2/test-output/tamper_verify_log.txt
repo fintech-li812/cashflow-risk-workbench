@@ -1,0 +1,10 @@
+[OK] manifest 结构与文件哈希/记录数一致
+[OK] source_revision 与真实源一致
+scan 完成: 文件 1 个, 记录 66 条, 问题 3 条, source_revision=ce69a7f3682d2e13…
+注意: scan 技术执行成功=0 不代表数据合格，业务疑点见 issues.jsonl / report.html
+[FAIL] records.jsonl 与真实源重导结果不一致: 包 66 行 vs 重导 66 行
+[FAIL] 第 35 行记录字段 经营性流入（万元） 被篡改: 包内值='180870000.00' 真实源 现金流水!行3 D3 重导值='1808700.00'
+[OK] issues.jsonl 与真实源重导结果逐字节一致
+[OK] inventory.json 与真实源重导结果逐字节一致
+verify 失败: 2 项不符
+verify退出码=1

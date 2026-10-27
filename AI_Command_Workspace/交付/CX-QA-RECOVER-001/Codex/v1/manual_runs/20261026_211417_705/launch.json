@@ -1,0 +1,10 @@
+{
+  "status": "started_not_yet_verified",
+  "pid": 21528,
+  "port": 13317,
+  "local_address": "127.0.0.1",
+  "scope": "existing isolated QA forwarding",
+  "database_authenticated": false,
+  "credentials_copied": false,
+  "production_changed": false
+}

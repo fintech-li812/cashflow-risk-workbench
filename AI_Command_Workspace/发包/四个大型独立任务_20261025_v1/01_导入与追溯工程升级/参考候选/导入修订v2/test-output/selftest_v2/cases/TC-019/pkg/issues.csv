@@ -1,0 +1,2 @@
+﻿issue_id,code,file,sheet,address,row,raw,reason,action
+ISS-0001,EXCEL1900_FICTITIOUS_LEAP_DAY,fixture.xlsx,现金流水,B3,3,60,Excel 1900 日期系统 serial=60 对应不存在的 1900-02-29（虚构闰日）,人工核对源日期

@@ -1,0 +1,32 @@
+{
+  "schema_version": "mfg-release-bundle.v1",
+  "capture_mode": "offline_fixture",
+  "production_deployed": false,
+  "files": [
+    {
+      "path": "context.json",
+      "role": "context",
+      "sha256": "a6a34fcdc911a22c0df8ae04dffe3ee71069856e71066b4f81ba84d15c4f4a63"
+    },
+    {
+      "path": "result.json",
+      "role": "result",
+      "sha256": "e6470f7adeba00804b178be5dc17a3087a88758178b9482cfd64b8cf81cf36d7"
+    },
+    {
+      "path": "receipt.json",
+      "role": "receipt",
+      "sha256": "622adf867d62064d1ca8d6e0cb52f517e867728d02ed2477a9ce33b8c88c80ef"
+    },
+    {
+      "path": "native_check.json",
+      "role": "native_check",
+      "sha256": "4cad0bf82c8ed867096e3baad1dd627ba46e38bfbc8cd6027e612a3fdbb20ca7"
+    },
+    {
+      "path": "tool_trace.jsonl",
+      "role": "tool_trace",
+      "sha256": "208cbd3698be45e89904052917ef508250c135b1570c6192660d47b5aa834642"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+﻿标准项,通过/失败/阻塞/未覆盖,证据路径或行号,问题编号,说明
+冻结快照：12 份候选哈希,通过,D:\AI_Command_Workspace\交付\DS-AUD-001\DeepSeek_Harness\v1\候选SHA256.csv；D:\AI_Command_Workspace\交付\WB-ENG-001\WorkBuddy\v1\SHA256SUMS.txt,,作者清单 11 份全部一致；SHA256SUMS.txt 自身未列（正常）；审核首尾两次哈希一致
+Codex 冻结版本,阻塞,D:\AI_Command_Workspace\任务看板.md:13-14,,看板仍为排队/缺件；用户 20:23 直接指令启动；候选版本地位需 Codex 追认
+14 工具名称集合（A2.1）,通过,D:\AI_Command_Workspace\交付\WB-ENG-001\WorkBuddy\v1\candidate\docs\千问办公_MySQL_MCP工具定义_v1.1.json:12-952,,14 个 name，与规格裁决_20261021.md:28-43 完全一致；无缺漏无重复
+24 个 event_type（A2.2）,通过,"JSON:81-108；init_v1.1.sql:115,125-130；协议:97-101",,JSON/DDL/协议三方集合相等，各 24 值
+灯色 green/yellow/red/unknown（D10）,通过,"init_v1.1.sql:131,272,471；JSON risk_level 4 处",,库里无中文灯色 CHECK 残留
+risk_warning / risk_assessment 条件必填,通过,JSON:25-60（allOf）；init_v1.1.sql:132-134,,两条 if/then + DB CHECK 兜底
+14 工具 additionalProperties:false,通过,JSON 各 inputSchema（14/14）,,探针逐个读取确认
+验收报告 5 处签名违规修复,通过,"JSON:302-420,478-533,567-640,769-800,12-145；验收报告_任务一二三_v2.0.0.md:70-76",,verify_payment/log_exception/save_param_template/log_to_mysql/log_feedback 逐条对上
+11 张表名称（A2.3）,通过,init_v1.1.sql:85-511,,10 业务表 + mcp_request_ledger，与裁决一致
+视图：7 既有 + 3 新增 = 10,通过,"init_v1.1.sql:516-619；源 sql\init.sql:336-389,417",,源文件实际仅 7 个视图定义，注释称 8（U-04 已登记）；修复后 10 个
+库名与排序规则（D8）,通过,init_v1.1.sql:46-48,,11 表显式 utf8mb4_0900_ai_ci；无 audit_db / 表级 utf8mb4_bin
+request_id VARCHAR(128),通过,init_v1.1.sql 11 表,,修复验收报告缺件 4
+created_at DEFAULT (UTC_TIMESTAMP(6))（D21）,通过,init_v1.1.sql 11 处,,是否被 MySQL 8.4 接受未实测
+"金额 DECIMAL(20,2)（D12）",通过,"init_v1.1.sql:155-156,224,294",,4 个金额列；单位元
+三层日志表采纳 D9 结构,通过,init_v1.1.sql:332-477,,company_id/run_id/record_key/payload_sha256/execution_status 与全套 CHECK；D13 已删 30 维硬卡
+追加式纠错 + 同租户子查询,通过,"init_v1.1.sql:522-586,601-619",,6 个 NOT EXISTS 视图均带 s.tenant_id = x.tenant_id
+建表与账号/授权分离,通过,init_v1.1.sql:621-628；grants_admin_view_候选.sql:19,,无 CREATE USER / GRANT；权限候选单列且未执行
+裸 CREATE TABLE + 结构预检,通过,"init_v1.1.sql:58-77,85",,表级无 IF NOT EXISTS；二次执行 ERROR 1050 行为已说明
+JSON 自身合法性,通过,证据 E3.1,,14/14 通过 Draft 2020-12 元校验
+源项目只读,通过,证据 E4,,D:\CashflowRiskWorkbench 19:50 后 0 个文件被修改
+交付无凭据,通过,全文扫描（证据 E1 范围）,,无口令/密钥/令牌/连接串；README 含服务器公网 IP（R-12，非凭据）
+作者测试可复现,通过,证据 E2,,原样复跑输出与留档逐行一致，退出码 0
+log_feedback：pending 无实际值可提交,失败,"JSON:304-317,373-377；init_v1.1.sql:155-156,158；协议:157",R-01,required 强制 actual_value，pending 只能靠填 0 或假值；与 DDL 可空、协议禁止伪造冲突
+audit_id 类型在 JSON/DDL/协议间一致,失败,"JSON:402-407；init_v1.1.sql:107,152；协议:242,249",R-02,JSON 自由字符串 vs DDL BIGINT；协议示例为非数字串 A-demo-001
+11 表均有写入路径,失败,"init_v1.1.sql:332,386；协议:292-293；裁决:28-43",R-03,quality_log / deada_score_log 无任何工具写入；需 Codex 裁决
+v_template_published_latest 只返回有效最新版,失败,init_v1.1.sql:588-598,R-04,未排除 supersedes_id；同 effective_from 返回多行；测试 C17 覆盖不到
+rf_predict_log 必填列有契约来源,失败,init_v1.1.sql:437-457；JSON:831-840；协议:191,R-05,record_key/data_snapshot_id/rule_version 完全无来源；company_id 已挂 U-01；payload_sha256/execution_status/run_id 仅有范围描述
+save_param_template.params 键约束,未覆盖,JSON:521-524；协议:165,R-07,params={} 可通过 Schema；7 个必备键与 K黄>K红 仅服务端校验，无测试
+publication_status 与 published_at 一致性,失败,"init_v1.1.sql:202-205,593",R-08,published 状态可无发布时间，仍进入最新模板视图
+A2.3 账本例外表述与裁决字面一致,失败,"init_v1.1.sql:83；validate_contract.py:369,374,384；裁决:57",R-09,裁决写全部 11 张表；注释/脚本写成 10 张业务表；U-03 已挂账但表述为已定
+CREATE DATABASE 与 cf_admin 权限匹配,阻塞,"init_v1.1.sql:36,46；grants_admin_view_候选.sql:10-11；WB-SRV-001 证据:97-98",R-10,cf_admin 仅库级权限、无全局 CREATE；存在首句 ERROR 1044 中止风险，需隔离实测
+测试报告分节计数准确,失败,测试报告.md:12-15；证据 E8,R-11,报告写 B 31 PASS / C 20 PASS；实际 B 30 PASS+1 SKIP / C 21 PASS；总数不变
+运行环境声明与实测一致,失败,README.md:28；证据 E6,R-12,声明 Python 3.13.12，解释器实测 3.13.14；依赖版本与 requirements 一致
+真实 MySQL 执行（DDL/CHECK/视图/排序规则）,阻塞,测试报告.md:56；证据 E7,,无可用凭据与授权；未执行任何 DDL
+MCP 服务端行为（参数校验/幂等/事务）,阻塞,任务书 WB-ENG-001:3；协议:110-116,,属 WB-ENG-002，本包未实现
+千问平台接入,阻塞,协议:312-321,,平台能力未实测；本包不涉及
+未决项如实登记,通过,未决项.md:1-45,,U-01…U-07 覆盖 company_id、压测唯一键、账本列、视图数量、业务规则、权限、真实执行

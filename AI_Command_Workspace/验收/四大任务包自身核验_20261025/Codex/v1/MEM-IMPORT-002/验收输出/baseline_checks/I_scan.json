@@ -1,0 +1,26 @@
+{
+  "arguments": [
+    "C:\\Users\\33847\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-IMPORT-002\\假交付\\src\\import_cli.py",
+    "scan",
+    "--input",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-IMPORT-002\\验收输出\\baseline_checks\\source",
+    "--output",
+    "D:\\AI_Command_Workspace\\验收\\四大任务包自身核验_20261025\\Codex\\v1\\MEM-IMPORT-002\\验收输出\\baseline_checks\\scan",
+    "--mapping",
+    "D:\\AI_Command_Workspace\\发包\\四个大型独立任务_20261025_v1\\01_导入与追溯工程升级\\冻结基线验收\\fixtures\\mapping.json",
+    "--tenant-id",
+    "fixture-tenant",
+    "--company-id",
+    "fixture-manufacturing",
+    "--period",
+    "2026-08",
+    "--run-id",
+    "fixture-import-run"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "expected_exit": 0
+}

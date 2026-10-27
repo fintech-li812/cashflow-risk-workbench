@@ -1,0 +1,66 @@
+test_each_context_dimension (test_qa_tool.QA.test_each_context_dimension) ... 
+  test_each_context_dimension (test_qa_tool.QA.test_each_context_dimension) (name='tenant_id') ... FAIL
+  test_each_context_dimension (test_qa_tool.QA.test_each_context_dimension) (name='company_id') ... FAIL
+  test_each_context_dimension (test_qa_tool.QA.test_each_context_dimension) (name='period') ... FAIL
+  test_each_context_dimension (test_qa_tool.QA.test_each_context_dimension) (name='source_revision') ... FAIL
+  test_each_context_dimension (test_qa_tool.QA.test_each_context_dimension) (name='run_id') ... FAIL
+
+======================================================================
+FAIL: test_each_context_dimension (test_qa_tool.QA.test_each_context_dimension) (name='tenant_id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_context\test_qa_tool.py", line 149, in test_each_context_dimension
+    self.assertEqual(report.status, '失败')
+AssertionError: '通过' != '失败'
+- 通过
++ 失败
+
+
+======================================================================
+FAIL: test_each_context_dimension (test_qa_tool.QA.test_each_context_dimension) (name='company_id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_context\test_qa_tool.py", line 149, in test_each_context_dimension
+    self.assertEqual(report.status, '失败')
+AssertionError: '通过' != '失败'
+- 通过
++ 失败
+
+
+======================================================================
+FAIL: test_each_context_dimension (test_qa_tool.QA.test_each_context_dimension) (name='period')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_context\test_qa_tool.py", line 149, in test_each_context_dimension
+    self.assertEqual(report.status, '失败')
+AssertionError: '通过' != '失败'
+- 通过
++ 失败
+
+
+======================================================================
+FAIL: test_each_context_dimension (test_qa_tool.QA.test_each_context_dimension) (name='source_revision')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_context\test_qa_tool.py", line 149, in test_each_context_dimension
+    self.assertEqual(report.status, '失败')
+AssertionError: '通过' != '失败'
+- 通过
++ 失败
+
+
+======================================================================
+FAIL: test_each_context_dimension (test_qa_tool.QA.test_each_context_dimension) (name='run_id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_context\test_qa_tool.py", line 149, in test_each_context_dimension
+    self.assertEqual(report.status, '失败')
+AssertionError: '通过' != '失败'
+- 通过
++ 失败
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (failures=5)

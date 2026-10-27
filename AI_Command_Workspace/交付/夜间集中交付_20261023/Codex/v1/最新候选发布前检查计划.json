@@ -1,0 +1,109 @@
+{
+  "schema_version": "mfg-release-preflight.v1",
+  "target": "qwen_office",
+  "artifacts": [
+    {
+      "id": "server_app",
+      "label": "正式MCP应用入口",
+      "root": "project",
+      "path": "mcp-server/app.py",
+      "kind": "file"
+    },
+    {
+      "id": "server_config",
+      "label": "正式MCP配置模块",
+      "root": "project",
+      "path": "mcp-server/config.py",
+      "kind": "file"
+    },
+    {
+      "id": "server_dependencies",
+      "label": "正式服务依赖声明",
+      "root": "project",
+      "path": "mcp-server/requirements.txt",
+      "kind": "file"
+    },
+    {
+      "id": "agent_candidate",
+      "label": "Agent边界修复候选",
+      "root": "workspace",
+      "path": "outbox/CX-AGENT-FIX-001_Codex_v1_候选待独审.zip",
+      "kind": "candidate_zip",
+      "task_id": "CX-AGENT-FIX-001",
+      "sha256": "9dbf885f434be777e139855c871c97f89b8033f67dbef0e9e1f9ab8971558a6c"
+    },
+    {
+      "id": "qa_candidate",
+      "label": "独立验收工具候选",
+      "root": "workspace",
+      "path": "outbox/MEM-QA-001_Codex_v2_候选待独审.zip",
+      "kind": "candidate_zip",
+      "task_id": "MEM-QA-001",
+      "sha256": "b660c53f181a856feb9353c98c699a18d1c19195e3beac0beeb9b1f132c56c5f"
+    },
+    {
+      "id": "protected_sample",
+      "label": "制造样例原件哈希保护",
+      "root": "project",
+      "path": "data/制造业_样例数据.xlsx",
+      "kind": "file",
+      "sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b"
+    }
+  ],
+  "manual_gates": [
+    {
+      "id": "independent_review",
+      "label": "DeepSeek独立审核",
+      "declared_status": "未执行",
+      "missing_condition": "Codex新代码候选尚未取得独立审核，不得作者自批"
+    },
+    {
+      "id": "qwen_read_snapshot",
+      "label": "千问真实读表绑定",
+      "declared_status": "未执行",
+      "missing_condition": "目前证据为本地读取；原生入口和取数快照待实测"
+    },
+    {
+      "id": "qwen_formula_recalc",
+      "label": "千问批准公式与改后重算",
+      "declared_status": "未执行",
+      "missing_condition": "函数可用为X确认，不等于具体公式/重算已过"
+    },
+    {
+      "id": "qwen_agent_request",
+      "label": "千问真实Agent对话流程",
+      "declared_status": "未执行",
+      "missing_condition": "没有完整平台A01–A06执行证据"
+    },
+    {
+      "id": "mcp_authorized_call",
+      "label": "真实MCP鉴权与工具调用",
+      "declared_status": "未执行",
+      "missing_condition": "正式服务/真实inputSchema绑定尚未完成"
+    },
+    {
+      "id": "mysql_exact_readback",
+      "label": "MySQL同请求精确回查",
+      "declared_status": "未执行",
+      "missing_condition": "业务部署与千问保存回查未验收；既有隔离DDL不代替此项"
+    },
+    {
+      "id": "restore_drill",
+      "label": "隔离备份恢复演练",
+      "declared_status": "未执行",
+      "missing_condition": "历史有备份及gzip校验，没有恢复演练通过记录"
+    },
+    {
+      "id": "real_cashflow_scope",
+      "label": "真实业务数据与独立余额完整性",
+      "declared_status": "未执行",
+      "missing_condition": "账户范围/独立期初期末余额及完整实际收付仍待确认"
+    },
+    {
+      "id": "final_x_signoff",
+      "label": "X最终检查签收",
+      "declared_status": "未执行",
+      "missing_condition": "本轮候选尚未统一交X检查签收"
+    }
+  ]
+}

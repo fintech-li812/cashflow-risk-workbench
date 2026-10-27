@@ -1,0 +1,11 @@
+{
+  "AG-P01": "new run succeeds with fresh result",
+  "AG-P02": "bad responses not cached",
+  "AG-P03": "snapshot mismatch blocks",
+  "AG-P04": "same ID different content conflicts",
+  "AG-P05": "foreign result rejected before backend save",
+  "AG-P06": "preparation ok, not committed",
+  "AG-P07": "pending reads block",
+  "additional": "mutable aliases isolated, explicit empty fixture does not become success",
+  "nature": "synthetic only, no platform/DB"
+}

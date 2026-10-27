@@ -1,0 +1,25 @@
+# 文件说明：result.json
+
+- 仓库路径：AI_Command_Workspace/验收/CX-AGENT-FIX-001/Codex/与独立QA的接口联测_v1/normal-run-1/result.json
+- 查看文件：[打开原文件](../AI_Command_Workspace/%E9%AA%8C%E6%94%B6/CX-AGENT-FIX-001/Codex/%E4%B8%8E%E7%8B%AC%E7%AB%8BQA%E7%9A%84%E6%8E%A5%E5%8F%A3%E8%81%94%E6%B5%8B_v1/normal-run-1/result.json)
+- 归属：历史验证证据或验收材料；须结合版本与实际日志阅读
+- 大小：624字节
+- 导出SHA256：97f8999c0d539a0dabd895390f8ed0b29e236051c1c670ea18b0e4bcfc91dffc
+
+## 内容与作用
+
+顶层字段：amounts, calculation_version, company_id, coverage, industry, issues, origin, period, run_id, schema_version, source, source_revision, status, tenant_id, unit
+
+schema_version：mfg-agent-result.v1
+
+status：success
+
+origin：offline_fixture
+
+## 打开与使用
+
+文本编辑器或所属程序的只读查看命令。
+
+## 状态与限制
+
+这是2026-10-27归档时的静态说明，不证明本文件已执行、已部署或业务验证通过。优先阅读仓库根README和主工作台最新交接；历史文件口径可能已被用户后续决定覆盖。

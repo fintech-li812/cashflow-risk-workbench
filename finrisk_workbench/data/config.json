@@ -1,0 +1,99 @@
+{
+  "schema_version": "7.0.0",
+  "company": {
+    "name": "演示科技（DemoTech）",
+    "industry_code": "MFG",
+    "revenue_annual_wan": 6000,
+    "headcount": 180,
+    "note": "合成演示数据，非真实企业"
+  },
+  "base_date": "2026-10-19",
+  "currency_unit": "万元",
+  "opening_cash": {
+    "available": 262.0,
+    "restricted": 35.0,
+    "purpose_restricted": 20.0
+  },
+  "forecast": {
+    "cashflow_weeks": 13,
+    "trend_months": 12,
+    "daily_breakdown_when_major": true,
+    "major_payment_threshold_wan": 40.0
+  },
+  "dynamic_threshold": {
+    "switch": "auto",
+    "modes": ["off", "on", "blend"],
+    "blend_static_weight": 0.7,
+    "min_history_months": 12,
+    "yellow_percentile": 0.25,
+    "red_percentile": 0.10,
+    "note": "v7 统一口径：历史数据不足 12 个月强制使用静态阈值；满 12 个月才允许切换动态"
+  },
+  "industry_deviation_watch_ratio": 0.3,
+  "stress_params": {
+    "collection_delay_days": 30,
+    "credit_cut_ratio": 0.5,
+    "cost_up_ratio": 0.2,
+    "note": "四类场景参数，取自方案 4.3 节；现场可覆盖，属情景参数而非风控阈值，不需审批"
+  },
+  "approval": {
+    "exception_rate_limit": 0.2,
+    "reason_min_length": 10,
+    "repeat_reason_trigger": 3,
+    "exception_amount_vs_quarter_budget": 0.15,
+    "quarter_budget_wan": 1500.0
+  },
+  "payment_verify": {
+    "method": "voucher",
+    "sampling_ratio": 0.2,
+    "consecutive_fail_audit_trigger": 2,
+    "note": "银企直连 bank_api / 凭证上传+抽检 voucher / 待验证 manual。manual 与未通过抽检的金额一律不计入现金缓冲"
+  },
+  "param_self_adjust": {
+    "single_adjust_cap": 0.15,
+    "cumulative_adjust_cap": 0.30,
+    "false_positive_action": -0.10,
+    "false_negative_action": 0.10,
+    "overall_deviation_action": 0.05,
+    "accuracy_threshold": 0.7,
+    "min_samples": 8,
+    "note": "v7 第六章修正规则。单次不超 ±15%，累计不超 ±30%；样本不足只出建议不自动修正"
+  },
+  "data_quality": {
+    "freshness_days": 45,
+    "critical_fields": [
+      "amount",
+      "promised_week",
+      "promised_date",
+      "verify_status"
+    ],
+    "limited_judgment_score_below": 85.0,
+    "missing_critical_collection_rows": 1,
+    "note": "缺关键字段、过期、重复、未核验即扣分；得分低于阈值或关键回款缺失达到阈值 → 判断受限并升级核查"
+  },
+  "audit": {
+    "sqlite_enabled": true,
+    "mcp_enabled": false,
+    "mcp_fallback": "Agent 导出 CSV，由外部脚本落 MySQL（方案 1.2 清单降级路径）",
+    "local_store": "output/audit.db",
+    "csv_export_dir": "output/audit_export"
+  },
+  "rule_gate": {
+    "protected_keys": [
+      "data_quality.limited_judgment_score_below",
+      "approval.exception_rate_limit",
+      "stress_params.collection_delay_days",
+      "dynamic_threshold.min_history_months"
+    ],
+    "industry_protected_suffixes": [
+      "cash_buffer_yellow_wan",
+      "cash_buffer_red_wan",
+      "approval_line_*"
+    ],
+    "note": "风控阈值调整必须引用已批准的变更申请（双签、角色不同）；无变更申请的阈值覆盖一律拒绝执行并留痕"
+  },
+  "reproducibility": {
+    "require_input_hash": true,
+    "result_round_decimals": 4
+  }
+}

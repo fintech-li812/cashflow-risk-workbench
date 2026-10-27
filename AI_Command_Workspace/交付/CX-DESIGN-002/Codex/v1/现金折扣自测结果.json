@@ -1,0 +1,18 @@
+{
+  "status": "offline_arithmetic_checks_passed",
+  "base_case": {
+    "synthetic_proposal": true,
+    "basis_yuan": "1000000",
+    "discount_yuan": "20000.00",
+    "expected_net_yuan": "980000.00",
+    "day_basis": 365,
+    "simple_annualized_cost": "0.3724489795918367346938775511",
+    "compound_annualized_cost": "0.445852927312485120063173573",
+    "rounding_policy_required": false,
+    "approved": false,
+    "bank_verified": false,
+    "recommended": null
+  },
+  "qwen_platform_tested": false,
+  "real_contract_validated": false
+}

@@ -1,0 +1,16 @@
+PASS initial connection permits actions with source-scoped request
+PASS committed receipt displays amounts and exact request
+PASS real check failure clears old receipt and disables actions
+PASS recovery preserves original request and requires explicit query
+PASS new source gets distinct request and never displays previous result
+PASS returning to original source restores original request
+PASS pending preserves request without showing committed or amounts
+PASS query outage never becomes not_found
+PASS exact not_found is clearly distinct from outage
+PASS source conflict blocks more writes until recheck
+PASS mismatched request receipt is never painted successful
+PASS mismatched revision receipt is never painted successful
+PASS lost response preserves id and removes stale receipt
+PASS storage denied blocks actions instead of issuing unpersisted replacement
+PASS invalid source fingerprint cannot enable actions
+{"passed":15,"scope":"VM DOM/backend substitutes; not live browser, Qwen or MySQL"}

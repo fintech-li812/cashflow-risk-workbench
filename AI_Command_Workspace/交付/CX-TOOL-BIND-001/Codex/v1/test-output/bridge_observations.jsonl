@@ -1,0 +1,9 @@
+{"case": "test_compatible_mapping", "old_mapper_status": "ok", "new_guard_status": "prepared", "called": false, "reason": ""}
+{"case": "test_conditional_required_unmapped", "old_mapper_status": "ok", "new_guard_status": "blocked", "called": false, "reason": "input_schema_violation:required"}
+{"case": "test_enum_restriction", "old_mapper_status": "ok", "new_guard_status": "blocked", "called": false, "reason": "input_schema_violation:enum"}
+{"case": "test_nested_amount_minimum", "old_mapper_status": "ok", "new_guard_status": "blocked", "called": false, "reason": "input_schema_violation:required"}
+{"case": "test_nested_amount_type", "old_mapper_status": "ok", "new_guard_status": "blocked", "called": false, "reason": "input_schema_violation:type"}
+{"case": "test_oneof_ambiguous", "old_mapper_status": "ok", "new_guard_status": "blocked", "called": false, "reason": "input_schema_violation:oneOf"}
+{"case": "test_request_pattern", "old_mapper_status": "ok", "new_guard_status": "blocked", "called": false, "reason": "input_schema_violation:pattern"}
+{"case": "test_schema_not_forbidden_unit", "old_mapper_status": "ok", "new_guard_status": "blocked", "called": false, "reason": "input_schema_violation:not"}
+{"case": "test_unit_const", "old_mapper_status": "ok", "new_guard_status": "blocked", "called": false, "reason": "input_schema_violation:const"}

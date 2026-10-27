@@ -1,0 +1,7 @@
+{
+  "tenant_id": "fixture-tenant-B",
+  "company_id": "fixture-company-B",
+  "period": "2026-08",
+  "source_revision": "fixture-rev-1",
+  "run_id": "fixture-run-1"
+}

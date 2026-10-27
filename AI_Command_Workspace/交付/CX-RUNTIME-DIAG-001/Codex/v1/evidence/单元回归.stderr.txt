@@ -1,0 +1,31 @@
+test_absolute_path (test_doctor.DoctorTests.test_absolute_path) ... ok
+test_bad_port_blocked (test_doctor.DoctorTests.test_bad_port_blocked) ... ok
+test_boolean_port_blocked (test_doctor.DoctorTests.test_boolean_port_blocked) ... ok
+test_bound_code_changed (test_doctor.DoctorTests.test_bound_code_changed) ... ok
+test_child_environment_excludes_project_credentials (test_doctor.DoctorTests.test_child_environment_excludes_project_credentials) ... ok
+test_dependency_mismatch (test_doctor.DoctorTests.test_dependency_mismatch) ... ok
+test_duplicate_binding (test_doctor.DoctorTests.test_duplicate_binding) ... ok
+test_duplicate_json_keys (test_doctor.DoctorTests.test_duplicate_json_keys) ... ok
+test_formal_database_blocked (test_doctor.DoctorTests.test_formal_database_blocked) ... ok
+test_invalid_hash (test_doctor.DoctorTests.test_invalid_hash) ... ok
+test_main_exit_codes (test_doctor.DoctorTests.test_main_exit_codes) ... ok
+test_main_preserves_existing_output (test_doctor.DoctorTests.test_main_preserves_existing_output) ... diagnostic_output_exists
+ok
+test_missing_required_binding (test_doctor.DoctorTests.test_missing_required_binding) ... ok
+test_nonfinite_json (test_doctor.DoctorTests.test_nonfinite_json) ... ok
+test_nonpinned_lock (test_doctor.DoctorTests.test_nonpinned_lock) ... ok
+test_password_in_config_not_echoed (test_doctor.DoctorTests.test_password_in_config_not_echoed) ... ok
+test_pin_changed_even_if_outer_binding_rehashed (test_doctor.DoctorTests.test_pin_changed_even_if_outer_binding_rehashed) ... ok
+test_probe_timeout_redacted (test_doctor.DoctorTests.test_probe_timeout_redacted) ... ok
+test_python_missing (test_doctor.DoctorTests.test_python_missing) ... ok
+test_runtime_config_not_object (test_doctor.DoctorTests.test_runtime_config_not_object) ... ok
+test_source_changed (test_doctor.DoctorTests.test_source_changed) ... ok
+test_tcp_reachable_is_not_database_auth (test_doctor.DoctorTests.test_tcp_reachable_is_not_database_auth) ... ok
+test_traversal_path (test_doctor.DoctorTests.test_traversal_path) ... ok
+test_tunnel_refusal (test_doctor.DoctorTests.test_tunnel_refusal) ... ok
+test_valid_offline_does_not_probe_network (test_doctor.DoctorTests.test_valid_offline_does_not_probe_network) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.529s
+
+OK

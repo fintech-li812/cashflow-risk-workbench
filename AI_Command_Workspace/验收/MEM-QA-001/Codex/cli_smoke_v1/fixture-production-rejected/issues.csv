@@ -1,0 +1,2 @@
+﻿state,code,location,expected,actual,action
+失败,FIXTURE_IN_PRODUCTION,result.origin,测试夹具显式allow_fixture,检查未满足；见定位及原始工件,生产路径拒绝夹具

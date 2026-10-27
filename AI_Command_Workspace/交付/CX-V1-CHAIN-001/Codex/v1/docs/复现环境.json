@@ -1,0 +1,6 @@
+{
+  "date": "2026-10-24T00:45:22+08:00",
+  "python": "3.12 isolated runtime",
+  "mcp_sdk": "1.30.0",
+  "pymysql": "1.1.2"
+}

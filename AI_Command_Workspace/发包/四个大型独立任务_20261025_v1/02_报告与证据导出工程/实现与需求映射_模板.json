@@ -1,0 +1,229 @@
+{
+  "task_id": "MEM-REPORT-002",
+  "requirements": [
+    {
+      "case_id": "R01",
+      "requirement": "合法结果及匹配回执",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R02",
+      "requirement": "没有回执",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R03",
+      "requirement": "缺独立余额",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R04",
+      "requirement": "missing_inputs",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R05",
+      "requirement": "formula_error",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R06",
+      "requirement": "unavailable",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R07",
+      "requirement": "企业租户错配",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R08",
+      "requirement": "期间版本run错配",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R09",
+      "requirement": "回执摘要不符",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R10",
+      "requirement": "非法金额与非有限数",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R11",
+      "requirement": "三项勾稽不符",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R12",
+      "requirement": "负净额负余额",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R13",
+      "requirement": "重复JSON键",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R14",
+      "requirement": "fixture默认拒绝",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R15",
+      "requirement": "HTML注入",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R16",
+      "requirement": "CSV注入",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R17",
+      "requirement": "已有输出不覆盖",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R18",
+      "requirement": "缺文件依赖非0",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R19",
+      "requirement": "长中文及来源引用",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R20",
+      "requirement": "新目录解包及原件哈希",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R21",
+      "requirement": "回执时间及operation非法",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R22",
+      "requirement": "非成功不能配成功回执",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R23",
+      "requirement": "精确原文JSON保留",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R24",
+      "requirement": "Manifest全部文件覆盖",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R25",
+      "requirement": "证据归档包可重核",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R26",
+      "requirement": "归档路径穿越拒绝",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R27",
+      "requirement": "缺源证据不能冒充原生",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R28",
+      "requirement": "单文件离线渲染",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R29",
+      "requirement": "多次同输入结果稳定",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R30",
+      "requirement": "中断留半件不能称完整",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R31",
+      "requirement": "报告与CSV与JSON金额一致",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    },
+    {
+      "case_id": "R32",
+      "requirement": "最新冻结自验通过",
+      "implementation": null,
+      "test": null,
+      "evidence": null
+    }
+  ]
+}

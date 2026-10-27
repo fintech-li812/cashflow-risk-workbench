@@ -1,0 +1,4 @@
+{
+  "reason": "amounts.inflow 必须是元为单位、2位小数的十进制字符串（最多18位整数）",
+  "status": "invalid"
+}

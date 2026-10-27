@@ -1,0 +1,2 @@
+﻿state,code,location,expected,actual,action
+失败,SOURCE_CELL_MISMATCH,records[0].cells.D8.value,与真实OOXML原格逐字段一致,检查未满足；见定位及原始工件,核源格，不用重算包哈希掩盖内容篡改

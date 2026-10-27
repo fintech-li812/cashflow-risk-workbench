@@ -1,0 +1,1148 @@
+{
+  "version": "1.1",
+  "date": "2026-10-22",
+  "basis": [
+    "docs/规格裁决_20261021.md A1/A2.1/A2.2/A5",
+    "docs/规格裁决_20261022.md D8/D10/D11/D12/D13",
+    "docs/外包交付/验收报告_任务一二三_v2.0.0.md 第三节（5处签名违规修复）"
+  ],
+  "notes": "候选文件，未经 Codex 验收不得作为 tools/list 权威输出。14 个工具名称集合与裁决 A1/D11 精确一致；event_type 24 值；risk_level 四值 green/yellow/red/unknown；risk_warning 与 risk_assessment 条件必填 rule_id+rule_version+risk_level；全部工具 additionalProperties:false。",
+  "tools": [
+    {
+      "name": "log_to_mysql",
+      "inputSchema": {
+        "required": [
+          "request_id",
+          "source_ref",
+          "occurred_at",
+          "event_type",
+          "payload"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "required": [
+                "event_type"
+              ],
+              "properties": {
+                "event_type": {
+                  "const": "risk_warning"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "rule_id",
+                "rule_version",
+                "risk_level"
+              ]
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "event_type"
+              ],
+              "properties": {
+                "event_type": {
+                  "const": "risk_assessment"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "rule_id",
+                "rule_version",
+                "risk_level"
+              ]
+            }
+          }
+        ],
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "maxLength": 128,
+            "description": "稳定业务幂等键，重试保持不变",
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ref": {
+            "maxLength": 128,
+            "description": "来源记录引用",
+            "type": "string",
+            "minLength": 1
+          },
+          "occurred_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "event_type": {
+            "type": "string",
+            "enum": [
+              "daily_check",
+              "quality_check",
+              "deada_score",
+              "rf_predict",
+              "risk_assessment",
+              "approval",
+              "exception",
+              "config_change",
+              "assumption_analysis",
+              "industry_compare",
+              "param_adjust",
+              "feedback",
+              "onboarding",
+              "root_cause",
+              "dynamic_threshold",
+              "stress_test",
+              "exception_review",
+              "audit_triggered",
+              "payment_verified",
+              "da_coefficients_updated",
+              "risk_warning",
+              "tracking_changed",
+              "parameter_changed",
+              "task_result"
+            ]
+          },
+          "rule_id": {
+            "maxLength": 128,
+            "description": "规则ID",
+            "type": "string",
+            "minLength": 1
+          },
+          "rule_version": {
+            "maxLength": 128,
+            "description": "规则版本",
+            "type": "string",
+            "minLength": 1
+          },
+          "risk_level": {
+            "type": "string",
+            "enum": [
+              "green",
+              "yellow",
+              "red",
+              "unknown"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "description": "追加千问已生成的审计结果，不执行风险计算；risk_warning/risk_assessment 必须提供规则、版本和风险等级。",
+      "annotations": {
+        "readOnlyHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "query_rule_stats",
+      "inputSchema": {
+        "required": [
+          "start_at",
+          "end_at"
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "start_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "end_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "rule_id": {
+            "maxLength": 128,
+            "description": "精确规则ID",
+            "type": "string",
+            "minLength": 1
+          },
+          "rule_version": {
+            "maxLength": 128,
+            "description": "精确规则版本",
+            "type": "string",
+            "minLength": 1
+          },
+          "risk_level": {
+            "type": "string",
+            "enum": [
+              "green",
+              "yellow",
+              "red",
+              "unknown"
+            ]
+          },
+          "limit": {
+            "default": 50,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 200
+          },
+          "cursor": {
+            "maxLength": 128,
+            "description": "分页游标",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "description": "查询授权企业指定时间内的审计统计，不输出未经反馈验证的准确率。",
+      "annotations": {
+        "readOnlyHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "query_audit_by_event",
+      "inputSchema": {
+        "required": [
+          "event_type",
+          "start_at",
+          "end_at"
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "event_type": {
+            "type": "string",
+            "enum": [
+              "daily_check",
+              "quality_check",
+              "deada_score",
+              "rf_predict",
+              "risk_assessment",
+              "approval",
+              "exception",
+              "config_change",
+              "assumption_analysis",
+              "industry_compare",
+              "param_adjust",
+              "feedback",
+              "onboarding",
+              "root_cause",
+              "dynamic_threshold",
+              "stress_test",
+              "exception_review",
+              "audit_triggered",
+              "payment_verified",
+              "da_coefficients_updated",
+              "risk_warning",
+              "tracking_changed",
+              "parameter_changed",
+              "task_result"
+            ]
+          },
+          "start_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "end_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "rule_id": {
+            "maxLength": 128,
+            "description": "可选精确规则ID",
+            "type": "string",
+            "minLength": 1
+          },
+          "rule_version": {
+            "maxLength": 128,
+            "description": "可选精确规则版本",
+            "type": "string",
+            "minLength": 1
+          },
+          "risk_level": {
+            "type": "string",
+            "enum": [
+              "green",
+              "yellow",
+              "red",
+              "unknown"
+            ]
+          },
+          "limit": {
+            "default": 50,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 200
+          },
+          "cursor": {
+            "maxLength": 128,
+            "description": "分页游标",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "description": "按事件类型精确查询审计记录（v8 新增工具，裁决 A2.1 第3号）；不使用 payload 模糊匹配。",
+      "annotations": {
+        "readOnlyHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "log_feedback",
+      "inputSchema": {
+        "required": [
+          "request_id",
+          "source_ref",
+          "occurred_at",
+          "metric_code",
+          "actual_source_ref",
+          "evaluation_version",
+          "currency",
+          "accuracy_label",
+          "forecast_start_at",
+          "forecast_end_at"
+        ],
+        "additionalProperties": false,
+        "anyOf": [
+          {
+            "required": [
+              "audit_id"
+            ]
+          },
+          {
+            "required": [
+              "forecast_id"
+            ]
+          }
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "accuracy_label": {
+                  "enum": [
+                    "accurate",
+                    "inaccurate"
+                  ]
+                }
+              },
+              "required": [
+                "accuracy_label"
+              ]
+            },
+            "then": {
+              "required": [
+                "predicted_value",
+                "actual_value"
+              ]
+            }
+          }
+        ],
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "maxLength": 128,
+            "description": "稳定业务幂等键",
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ref": {
+            "maxLength": 128,
+            "description": "来源记录引用",
+            "type": "string",
+            "minLength": 1
+          },
+          "occurred_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "metric_code": {
+            "maxLength": 128,
+            "description": "指标编码",
+            "type": "string",
+            "minLength": 1
+          },
+          "actual_source_ref": {
+            "maxLength": 128,
+            "description": "实际数据来源引用",
+            "type": "string",
+            "minLength": 1
+          },
+          "evaluation_version": {
+            "maxLength": 128,
+            "description": "评估口径版本",
+            "type": "string",
+            "minLength": 1
+          },
+          "predicted_value": {
+            "description": "金额，单位元；Decimal解析。R-01：不再无条件必填——accurate/inaccurate 必须有，pending 可省略或显式 null（写库为 NULL，禁止用 0 代填）",
+            "pattern": "^-?[0-9]{1,18}(\\.[0-9]{1,2})?$",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "actual_value": {
+            "description": "金额，单位元；Decimal解析。R-01：不再无条件必填——实际值尚未产生时省略或显式 null，写库为 NULL；accurate/inaccurate 必须有真实实际值",
+            "pattern": "^-?[0-9]{1,18}(\\.[0-9]{1,2})?$",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "currency": {
+            "type": "string",
+            "enum": [
+              "CNY"
+            ]
+          },
+          "accuracy_label": {
+            "type": "string",
+            "enum": [
+              "accurate",
+              "inaccurate",
+              "pending"
+            ]
+          },
+          "forecast_start_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "forecast_end_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "audit_id": {
+            "maxLength": 20,
+            "description": "关联 audit_log.id：DB 自增 BIGINT UNSIGNED，接口以十进制数字字符串传输（R-02）。不接受 A-demo-001 等业务串；服务端另须校验 BIGINT UNSIGNED 范围与真实同租户关联，pattern 只约束形态不保证范围",
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[0-9]{1,20}$"
+          },
+          "forecast_id": {
+            "maxLength": 128,
+            "description": "预测体ID；与 audit_id 至少一个",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "description": "保存金额预测反馈；audit_id或forecast_id至少一个，单位与观察期必须一致。accuracy_label 三值枚举（修复验收报告第5处：accuracy/deviation 字段集违规）。R-01：predicted_value/actual_value 改为条件必填——accurate/inaccurate 必填（须有真实实际值），pending 可省略/null，禁止 0 代填。R-02：audit_id 为十进制数字字符串，对应 audit_log.id。",
+      "annotations": {
+        "readOnlyHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "query_feedback_stats",
+      "inputSchema": {
+        "required": [
+          "start_at",
+          "end_at"
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "start_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "end_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "metric_code": {
+            "maxLength": 128,
+            "description": "指标编码",
+            "type": "string",
+            "minLength": 1
+          },
+          "evaluation_version": {
+            "maxLength": 128,
+            "description": "评估口径版本",
+            "type": "string",
+            "minLength": 1
+          },
+          "limit": {
+            "default": 50,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 200
+          },
+          "cursor": {
+            "maxLength": 128,
+            "description": "分页游标",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "description": "按准确性标签汇总反馈数量，未定义分母不生成准确率。",
+      "annotations": {
+        "readOnlyHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "save_param_template",
+      "inputSchema": {
+        "required": [
+          "request_id",
+          "source_ref",
+          "occurred_at",
+          "industry_key",
+          "template_version",
+          "params"
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "maxLength": 128,
+            "description": "稳定业务幂等键",
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ref": {
+            "maxLength": 128,
+            "description": "来源记录引用",
+            "type": "string",
+            "minLength": 1
+          },
+          "occurred_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "industry_key": {
+            "maxLength": 128,
+            "description": "行业编码",
+            "type": "string",
+            "minLength": 1
+          },
+          "template_version": {
+            "maxLength": 128,
+            "description": "不可覆盖版本（修复验收报告第3处：缺 template_version 违规；v8 §8.4 旧写法 source 已作废，不接收）",
+            "type": "string",
+            "minLength": 1
+          },
+          "params": {
+            "description": "R-07：不再允许空对象。必备 7 键按协议 5.4 静态约束；黄灯系数大于红灯系数的跨字段比较无法用 JSON Schema 表达，仍由服务端校验（无静态保证），服务端另须校验红灯系数非负与审批比例结构",
+            "type": "object",
+            "required": [
+              "schema_version",
+              "base_metric",
+              "yellow_coefficient",
+              "red_coefficient",
+              "approval_ratios",
+              "provenance",
+              "effective_from"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "schema_version": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "base_metric": {
+                "description": "协议 §5.4 固定为 monthly_operating_outflow",
+                "type": "string",
+                "const": "monthly_operating_outflow"
+              },
+              "yellow_coefficient": {
+                "description": "有限十进制字符串；须大于 red_coefficient（服务端校验）",
+                "type": "string",
+                "pattern": "^[0-9]{1,10}(\\.[0-9]{1,4})?$"
+              },
+              "red_coefficient": {
+                "description": "有限十进制字符串；非负（服务端校验）",
+                "type": "string",
+                "pattern": "^[0-9]{1,10}(\\.[0-9]{1,4})?$"
+              },
+              "approval_ratios": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "provenance": {
+                "description": "区分经验建议 / 企业批准 / 已核验外部来源；外部出处未经核验不得标 verified",
+                "type": "object",
+                "additionalProperties": true
+              },
+              "effective_from": {
+                "description": "RFC3339，必须带时区",
+                "format": "date-time",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "description": "保存相对指标行业模板草稿，不发布或覆盖历史版本；params 必备 7 键（R-07），黄>红与红灯非负由服务端校验。",
+      "annotations": {
+        "readOnlyHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "load_param_template",
+      "inputSchema": {
+        "required": [
+          "industry_key"
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "industry_key": {
+            "maxLength": 128,
+            "description": "行业编码",
+            "type": "string",
+            "minLength": 1
+          },
+          "template_version": {
+            "maxLength": 128,
+            "description": "指定版本；省略则读取已发布最新版本",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "description": "读取授权范围内行业模板，缺失返回found=false，不替换成其他行业。",
+      "annotations": {
+        "readOnlyHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "log_exception",
+      "inputSchema": {
+        "required": [
+          "request_id",
+          "source_ref",
+          "occurred_at",
+          "dept",
+          "amount",
+          "currency",
+          "reason",
+          "approval_ref"
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "maxLength": 128,
+            "description": "稳定业务幂等键",
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ref": {
+            "maxLength": 128,
+            "description": "来源记录引用",
+            "type": "string",
+            "minLength": 1
+          },
+          "occurred_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "dept": {
+            "maxLength": 128,
+            "description": "部门编码",
+            "type": "string",
+            "minLength": 1
+          },
+          "amount": {
+            "description": "金额，单位元；Decimal解析",
+            "pattern": "^-?[0-9]{1,18}(\\.[0-9]{1,2})?$",
+            "type": "string"
+          },
+          "currency": {
+            "type": "string",
+            "enum": [
+              "CNY"
+            ]
+          },
+          "reason": {
+            "maxLength": 4000,
+            "type": "string",
+            "minLength": 1
+          },
+          "approval_ref": {
+            "maxLength": 128,
+            "description": "可信审批凭据引用（修复验收报告第2处：approver 姓名不采信、approval_ref 必填）",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "description": "核实已有审批凭据后记录例外；不产生审批、不执行付款。",
+      "annotations": {
+        "readOnlyHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "query_exception_stats",
+      "inputSchema": {
+        "required": [
+          "start_at",
+          "end_at"
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "start_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "end_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "dept": {
+            "maxLength": 128,
+            "description": "可选部门编码",
+            "type": "string",
+            "minLength": 1
+          },
+          "limit": {
+            "default": 50,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 200
+          },
+          "cursor": {
+            "maxLength": 128,
+            "description": "分页游标",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "description": "查询例外笔数及金额；缺少总审批笔数则例外率为null。",
+      "annotations": {
+        "readOnlyHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "log_stress_test",
+      "inputSchema": {
+        "required": [
+          "request_id",
+          "source_ref",
+          "occurred_at",
+          "run_id",
+          "scenario",
+          "scenario_version",
+          "input_snapshot",
+          "result_snapshot",
+          "risk_level"
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "maxLength": 128,
+            "description": "稳定业务幂等键",
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ref": {
+            "maxLength": 128,
+            "description": "来源记录引用",
+            "type": "string",
+            "minLength": 1
+          },
+          "occurred_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "description": "整批压力测试ID",
+            "type": "string",
+            "minLength": 1
+          },
+          "scenario": {
+            "type": "string",
+            "enum": [
+              "receivable_shock",
+              "financing_shock",
+              "cost_shock",
+              "dual_shock",
+              "combined_shock"
+            ]
+          },
+          "scenario_version": {
+            "maxLength": 128,
+            "description": "场景版本",
+            "type": "string",
+            "minLength": 1
+          },
+          "input_snapshot": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "result_snapshot": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "risk_level": {
+            "type": "string",
+            "enum": [
+              "green",
+              "yellow",
+              "red",
+              "unknown"
+            ]
+          }
+        }
+      },
+      "description": "保存千问计算的场景结果，不执行压力测试模型。scenario 五值枚举（裁决 A5 扩枚举）。金额一律元（D12），无 unit 自由取值。",
+      "annotations": {
+        "readOnlyHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "verify_payment",
+      "inputSchema": {
+        "required": [
+          "request_id",
+          "source_ref",
+          "occurred_at",
+          "payment_id",
+          "method",
+          "evidence_ref"
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "maxLength": 128,
+            "description": "稳定业务幂等键",
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ref": {
+            "maxLength": 128,
+            "description": "来源记录引用",
+            "type": "string",
+            "minLength": 1
+          },
+          "occurred_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "payment_id": {
+            "maxLength": 128,
+            "description": "应收到账业务ID",
+            "type": "string",
+            "minLength": 1
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "bank_api",
+              "manual_review"
+            ]
+          },
+          "evidence_ref": {
+            "maxLength": 128,
+            "description": "可信证据引用",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "description": "提交证据并返回可信到账状态；无银行或人工复核证据时只能pending。模型不能指定verified——输入不接收 status（修复验收报告第1处：status 由服务端返回）。",
+      "annotations": {
+        "readOnlyHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "rf_predict",
+      "inputSchema": {
+        "required": [
+          "request_id",
+          "source_ref",
+          "occurred_at",
+          "eval_date",
+          "features",
+          "feature_names",
+          "feature_schema_version",
+          "model_version"
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "maxLength": 128,
+            "description": "稳定业务幂等键",
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ref": {
+            "maxLength": 128,
+            "description": "来源记录引用",
+            "type": "string",
+            "minLength": 1
+          },
+          "occurred_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "eval_date": {
+            "description": "业务评价日 YYYY-MM-DD",
+            "format": "date",
+            "type": "string"
+          },
+          "features": {
+            "type": "array",
+            "description": "有序特征值；与 feature_names 等长（D13：不硬卡30维，维度由服务端按 feature_schema_version 校验）",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 1
+          },
+          "feature_names": {
+            "type": "array",
+            "description": "与 features 一一对应的有序特征名",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "feature_schema_version": {
+            "maxLength": 64,
+            "description": "特征清单版本；服务端据此校验维度与名称",
+            "type": "string",
+            "minLength": 1
+          },
+          "model_version": {
+            "maxLength": 64,
+            "description": "模型版本；与特征清单版本对应，未知版本服务端拒绝推理",
+            "type": "string",
+            "minLength": 1
+          },
+          "run_id": {
+            "maxLength": 64,
+            "description": "可选：与 quality/deada 同批评估的关联 ID",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "description": "【唯一计算型工具，裁决 A1/D11 受控例外】离线训练模型的服务端推理，返回概率 P 并落 rf_predict_log；不产生红黄绿判定，不做 Q/D/FUSE。训练标签为 ST/风险，probability_target 由服务端按 model_version 绑定。",
+      "annotations": {
+        "readOnlyHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "load_da_coefficients",
+      "inputSchema": {
+        "required": [
+          "industry_key",
+          "coefficient_version"
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "industry_key": {
+            "maxLength": 128,
+            "description": "行业编码",
+            "type": "string",
+            "minLength": 1
+          },
+          "coefficient_version": {
+            "maxLength": 128,
+            "description": "系数版本；必须精确指定，不允许用“最新版”替代（协议 §四 template_version 同原则）",
+            "type": "string",
+            "minLength": 1
+          },
+          "io_role": {
+            "type": "string",
+            "description": "可选过滤：input / output",
+            "enum": [
+              "input",
+              "output"
+            ]
+          }
+        }
+      },
+      "description": "读取指定版本的 DEA-DA 权重系数，供千问表格 SUMPRODUCT 计算判别得分 D；MCP 不求解。版本不存在返回 found=false。",
+      "annotations": {
+        "readOnlyHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "save_da_coefficients",
+      "inputSchema": {
+        "required": [
+          "request_id",
+          "source_ref",
+          "occurred_at",
+          "industry_key",
+          "coefficient_version",
+          "coefficients",
+          "solved_at",
+          "solver_ref"
+        ],
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "maxLength": 128,
+            "description": "稳定业务幂等键",
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ref": {
+            "maxLength": 128,
+            "description": "离线求解脚本产物引用",
+            "type": "string",
+            "minLength": 1
+          },
+          "occurred_at": {
+            "description": "RFC3339，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "industry_key": {
+            "maxLength": 128,
+            "description": "行业编码",
+            "type": "string",
+            "minLength": 1
+          },
+          "coefficient_version": {
+            "maxLength": 128,
+            "description": "系数版本，不可覆盖历史版本",
+            "type": "string",
+            "minLength": 1
+          },
+          "coefficients": {
+            "type": "array",
+            "description": "本版本全部指标权重行；服务端整批同事务写入，部分失败整体回滚",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "indicator_code",
+                "indicator_name",
+                "io_role",
+                "direction",
+                "weight"
+              ],
+              "properties": {
+                "indicator_code": {
+                  "maxLength": 64,
+                  "type": "string",
+                  "minLength": 1
+                },
+                "indicator_name": {
+                  "maxLength": 128,
+                  "type": "string",
+                  "minLength": 1
+                },
+                "io_role": {
+                  "type": "string",
+                  "enum": [
+                    "input",
+                    "output"
+                  ]
+                },
+                "direction": {
+                  "type": "string",
+                  "enum": [
+                    "positive",
+                    "inverse"
+                  ],
+                  "description": "inverse 表示逆指标，服务端取倒数后入库"
+                },
+                "weight": {
+                  "description": "权重，十进制字符串，最多10位小数（对应 DECIMAL(18,10)）",
+                  "pattern": "^-?[0-9]{1,8}(\\.[0-9]{1,10})?$",
+                  "type": "string"
+                },
+                "returns_to_scale": {
+                  "type": "string",
+                  "enum": [
+                    "CRS",
+                    "VRS"
+                  ],
+                  "default": "VRS"
+                }
+              }
+            },
+            "minItems": 1
+          },
+          "solved_at": {
+            "description": "RFC3339，离线求解完成时间，必须带时区",
+            "format": "date-time",
+            "type": "string"
+          },
+          "solver_ref": {
+            "maxLength": 255,
+            "description": "求解脚本版本与样本区间，可追溯",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "description": "由离线脚本求解后写入 DEA-DA 权重（裁决 A2.1 第14号；MCP 不求解）。同 industry_key+coefficient_version+indicator_code 已存在时不得覆盖（唯一键兜底，冲突返回 IDEMPOTENCY_CONFLICT）。",
+      "annotations": {
+        "readOnlyHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "zip": "D:\\AI_Command_Workspace\\outbox\\CX-TOOL-BIND-001_Codex_v1_调用前契约检查_候选待独审.zip",
+  "zip_sha256": "eaa5acc7bf0d79a3bd6c2da90d2cd8a163fcf3d5a04714b5512fe32c66fdd5a8",
+  "manifest_files": 35,
+  "protected_sources": {
+    "D:\\CashflowRiskWorkbench\\data\\制造业_样例数据.xlsx": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+    "D:\\AI_Command_Workspace\\交付\\CX-AGENT-FIX-001\\Codex\\v1\\candidate\\runtime_adapter.py": "4159d501467098a919ab19bdb3a25c0e870bfc6c6677d393772ed4e8fe96e87d",
+    "D:\\AI_Command_Workspace\\交付\\CX-AGENT-FIX-001\\Codex\\v1\\candidate\\persistence.py": "4bf6f0436d88fd42ebb27556925b63d961f17ad0846f43b85620277068bdc875",
+    "D:\\AI_Command_Workspace\\交付\\CX-AGENT-FIX-001\\Codex\\v1\\candidate\\agent_guard.py": "eb99d420e2ac7ef1352b448d0c29e1430d0a65cd80a76111eee3dc27c96055c1"
+  },
+  "unpack": "D:\\AI_Command_Workspace\\验收\\CX-TOOL-BIND-001\\Codex开发自测\\v1\\ZIP解压复现",
+  "independent_review": false,
+  "deployed": false
+}

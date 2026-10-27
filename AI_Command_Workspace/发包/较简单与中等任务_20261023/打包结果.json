@@ -1,0 +1,22 @@
+{
+  "packages": [
+    {
+      "task_id": "MEM-DATA-001",
+      "tasks": 9,
+      "sources": 17,
+      "zip": "D:\\AI_Command_Workspace\\发包\\较简单与中等任务_20261023\\MEM-DATA-001_较简单任务_任务与源文件_v1.zip",
+      "bytes": 71792,
+      "sha256": "1a419759b4393cbaa97afe5372ca23dc2593d3b412c8b9c4b0da5ee8a8c8c501"
+    },
+    {
+      "task_id": "MEM-CALC-001",
+      "tasks": 8,
+      "sources": 33,
+      "zip": "D:\\AI_Command_Workspace\\发包\\较简单与中等任务_20261023\\MEM-CALC-001_中等任务_任务与源文件_v1.zip",
+      "bytes": 214234,
+      "sha256": "2aac066845ceb6091d4e0a32d86202dd247a681830cc290dd84c0a5e00c0adbe"
+    }
+  ],
+  "combined": "D:\\AI_Command_Workspace\\发包\\较简单与中等任务_20261023\\较简单与中等任务_两个独立发包_v1.zip",
+  "validation": "ZIP CRC, manifest hashes, original source hashes, all 17 IDs verified"
+}

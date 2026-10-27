@@ -1,0 +1,22 @@
+{
+  "idempotent_replay": true,
+  "receipt": {
+    "company_id": "fixture-company",
+    "fixture_marker": "【合成离线夹具，非平台真实结果】",
+    "idempotent_replay": true,
+    "kind": "receipt",
+    "note": "本地SQLite存储ID，不是MySQL主键；committed仅指本地库原子提交完成",
+    "operation": "save_cashflow_result",
+    "payload_sha256": "ccd841c7b7412c0ffc9035f7611ca38ced60dbf2fd4f1fc687ce9c1b1e7c4456",
+    "period": "2026-08",
+    "record_id": "ev-630dd5f4745dd4e52e2ad4b1",
+    "request_id": "st-17",
+    "run_id": "fixture-run-1",
+    "schema_version": "mfg-evidence.v1",
+    "source_revision": "fixture-rev-1",
+    "status": "committed",
+    "stored_at": "2026-10-24T11:17:56.166Z",
+    "tenant_id": "fixture-tenant"
+  },
+  "status": "committed"
+}

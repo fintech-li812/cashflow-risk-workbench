@@ -1,0 +1,8 @@
+{
+  "command": "python -B -m unittest discover -s tests -v",
+  "exit_code": 0,
+  "case_count": 25,
+  "passed": 25,
+  "failed": 0,
+  "scope": "synthetic controlled tests, not real database authentication"
+}

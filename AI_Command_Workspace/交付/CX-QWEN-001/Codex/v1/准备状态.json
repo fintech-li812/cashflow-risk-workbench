@@ -1,0 +1,16 @@
+{
+  "name": "mfg-cashflow-assistant",
+  "stage": "read-only test",
+  "contains_python": false,
+  "contains_credentials": false,
+  "source": "Codex CX-AGENT-002 and WB-AGENT-003 prompt scope adapted for observed Qwen SKILL.md import UI",
+  "sha256": "fb281b0216ca994280c5497d0737eadbeec75319a0aa19f8e08f0629ac204dcd",
+  "platform_installed": true,
+  "status": "skill_installed_and_selected_in_test_composer",
+  "handoff_required": null,
+  "skill_installed": true,
+  "python_runtime_deployed": false,
+  "real_data_bound": false,
+  "mcp_bound": false,
+  "evidence": "Qwen UI installation-success dialog names mfg-cashflow-assistant; Immediate Use opened project composer with Mfg-cashflow-assistant selected. No test message submitted."
+}

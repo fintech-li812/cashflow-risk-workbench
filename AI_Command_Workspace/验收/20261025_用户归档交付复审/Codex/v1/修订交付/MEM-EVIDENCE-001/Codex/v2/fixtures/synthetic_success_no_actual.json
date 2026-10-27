@@ -1,0 +1,30 @@
+{
+  "amounts": {
+    "actual_closing": null,
+    "closing": "140000.00",
+    "difference": null,
+    "inflow": "130000.00",
+    "net": "40000.00",
+    "opening": "100000.00",
+    "outflow": "90000.00"
+  },
+  "calculation_version": "fixture.v1",
+  "company_id": "fixture-company",
+  "coverage": "full_cashflow",
+  "industry": "manufacturing",
+  "issues": [],
+  "origin": "offline_fixture",
+  "period": "2026-08",
+  "run_id": "fixture-run-1",
+  "schema_version": "mfg-agent-result.v1",
+  "source": {
+    "range": "A1:H2",
+    "sheet": "synthetic-result",
+    "snapshot_ref": "fixture-snapshot",
+    "workbook_ref": "synthetic-book"
+  },
+  "source_revision": "fixture-rev-1",
+  "status": "success",
+  "tenant_id": "fixture-tenant",
+  "unit": "CNY"
+}

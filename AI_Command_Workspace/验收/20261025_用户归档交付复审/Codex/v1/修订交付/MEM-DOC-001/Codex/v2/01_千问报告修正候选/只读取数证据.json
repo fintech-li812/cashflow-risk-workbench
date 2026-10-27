@@ -1,0 +1,17 @@
+{
+  "schema": "review-evidence-index.v1",
+  "created_by": "Codex",
+  "reconstructed_missing_original": false,
+  "sources": [
+    {
+      "type": "user_forwarded_report",
+      "description": "本会话四只读工具回报，非Codex原始平台工具输出"
+    },
+    {
+      "type": "local_probe",
+      "path": "交付/CX-WORKBENCH-INTEGRATE-001/Codex/v1/evidence/标准MCP整合探测.json",
+      "native_qwen_call": false
+    }
+  ],
+  "native_recalculation_verified": false
+}

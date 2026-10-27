@@ -1,0 +1,21 @@
+test_datetime_format (test_tool_call_guard.GuardTests.test_datetime_format) ... FAIL
+
+======================================================================
+FAIL: test_datetime_format (test_tool_call_guard.GuardTests.test_datetime_format)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 87, in test_datetime_format
+    self.a['occurred_at']='2026-13-05'; self.assertBlocked('format')
+                                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 51, in assertBlocked
+    self.assertEqual(r['status'],'blocked',r)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'prepared' != 'blocked'
+- prepared
++ blocked
+ : {'status': 'prepared', 'called': False, 'schema_dialect': 'https://json-schema.org/draft/2020-12/schema', 'call_sha256': 'ca918bd52d2419e66ac4054f1e87a49ce1267461bdaf71175ce723841ddd93d1', 'call': {'name': 'synthetic_fixture_save', 'arguments': {'context': {'tenant_id': 'fixture-tenant', 'company_id': 'fixture-company', 'period': '2026-10', 'source_revision': 'fixture-revision', 'run_id': 'fixture-run'}, 'request_id': 'fixture-request', 'event': 'fixture-test', 'occurred_at': '2026-13-05', 'payload': {'amount': '1.00'}}}, 'descriptor_sha256': '7f4e0d6011c1233f3335a1ea67e81203f884a220ca5d30eedbe83432f211305c', 'notice': 'offline validation only; descriptor provenance/authentication unverified'}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (failures=1)

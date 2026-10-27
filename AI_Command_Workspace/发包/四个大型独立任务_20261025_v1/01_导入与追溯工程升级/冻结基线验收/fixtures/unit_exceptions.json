@@ -1,0 +1,12 @@
+{
+  "exceptions": [
+    {
+      "source_file_sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+      "sheet": "现金流水",
+      "cell": "D8",
+      "raw_value": "1631300",
+      "action": "normalized_null",
+      "reason": "unit_unconfirmed"
+    }
+  ]
+}

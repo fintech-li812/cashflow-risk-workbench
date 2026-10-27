@@ -1,0 +1,29 @@
+case_id,name,nature,status,expected_exit,actual_exit,command,expected_ref,note
+TC-01,正常提交后新进程重启读回,正例,通过,0,0,python -m src.cli save ... --allow-fixture && python -m src.cli get ...,expected/expected_values.json#TC-01,提交与读回分别在不同进程，证明跨进程持久化
+TC-02,同键同摘要回放返回原 record_id,正例,通过,0,0,python -m src.cli save --request-id req-main-001,expected/expected_values.json#TC-02,幂等不新增记录；断言内容与身份而非仅计数
+TC-03,同键不同 payload 冲突且不覆盖,负例,通过,4,4,python -m src.cli save --request-id req-main-001（payload 已变）,expected/expected_values.json#TC-03,
+TC-04,全 0 金额（真实 0 不等于缺项）,正例,通过,0,0,python -m src.cli save --input synthetic_success_zero.json,expected/expected_values.json#TC-04,
+TC-05,缺实际余额可保存但勾稽未完成,正例（业务未核对）,通过,0,0,python -m src.cli save --input synthetic_success_no_actual.json,expected/expected_values.json#TC-05,缺项不得伪造差异 0
+TC-06,差异一分保存并标记待核,正例（差异待核）,通过,0,0,python -m src.cli save --input synthetic_success_diff_cent.json,expected/expected_values.json#TC-06,
+TC-07,非法金额/非有限值/勾稽错误全部拒绝,负例,通过,3,3,python -m src.cli save --input result_bad_amount.json / result_nonfinite.json / result_recon_mismatch.json,expected/expected_values.json#TC-07,
+TC-08,缺必填字段拒绝保存,负例,通过,3,3,python -m src.cli save --input result_missing_field.json,expected/expected_values.json#TC-08,
+TC-09,payload 身份与可信上下文不一致拒绝,负例,通过,3,3,python -m src.cli save --input result_identity_mismatch.json,expected/expected_values.json#TC-09,
+TC-10,源版本与上下文不一致拒绝（不误复用旧快照）,负例,通过,3,3,python -m src.cli save --input result_rev_mismatch.json,expected/expected_values.json#TC-10,
+TC-11,非 success 不产生正式回执，仅可存诊断,负例+诊断,通过,3,3,python -m src.cli save --save-diagnostic,expected/expected_values.json#TC-11,业务状态 BLOCKED 与测试状态分开：本用例测试状态为通过
+TC-12,默认拒绝 offline_fixture，显式允许产生醒目标识,负例+正例,通过,3,3,python -m src.cli save（无 --allow-fixture） vs save --allow-fixture,expected/expected_values.json#TC-12,
+TC-13,COMMIT 前进程终止：不留半条记录,故障注入,通过,9,9,python -m src.cli save --fault-before-commit,expected/expected_values.json#TC-13,仅终止本包自己启动的子进程，不停止任何外部进程
+TC-14,COMMIT 后回执丢失：回查命中原记录，重试返回同一 record_id,故障注入+恢复,通过,9,9,python -m src.cli save --fault-after-commit 后同 request-id 再 save,expected/expected_values.json#TC-14,核心故障恢复证据：原 record_id + 摘要 + 主体边界一致
+TC-15,并发/竞争测试未执行,并发测试,未执行,0,None,未运行,expected/expected_values.json#TC-15,用户要求严格串行，本轮不启动重叠子进程；不得计为通过
+TC-16,并发/竞争测试未执行,并发测试,未执行,0,None,未运行,expected/expected_values.json#TC-16,用户要求严格串行，本轮不启动重叠子进程；不得计为通过
+TC-17,历史只追加、旧版不覆盖、当前版本选择可解释,正例,通过,0,0,python -m src.cli history --period 2026-08 / --source-revision fixture-rev-1,expected/expected_values.json#TC-17,旧版本记录保留且未被静默改写
+TC-18,跨租户/跨企业读取被拒且不泄露内容,负例,通过,6,6,python -m src.cli get --context trusted_context_other.json,expected/expected_values.json#TC-18,
+TC-19,verify-store 通过，且关闭库后重开结果一致,正例,通过,0,0,python -m src.cli verify-store --store tc01.sqlite3（两次独立进程）,expected/expected_values.json#TC-19,
+TC-20,篡改检测：篡改 payload 业务值,负例,通过,8,8,python -m src.cli verify-store --store tc20.sqlite3（已篡改）,expected/expected_values.json#TC-20,篡改需先移除 append-only 触发器，模拟具备库文件写权限者
+TC-21,篡改检测：篡改 payload_sha256,负例,通过,8,8,python -m src.cli verify-store --store tc21.sqlite3（已篡改）,expected/expected_values.json#TC-21,篡改需先移除 append-only 触发器，模拟具备库文件写权限者
+TC-22,篡改检测：篡改关联身份字段,负例,通过,8,8,python -m src.cli verify-store --store tc22.sqlite3（已篡改）,expected/expected_values.json#TC-22,篡改需先移除 append-only 触发器，模拟具备库文件写权限者
+TC-23,路径穿越/绝对路径越界/非法后缀/非空工作目录全部拒绝,负例,通过,2,2,python -m src.cli save --store ../outside-evidence.sqlite3,expected/expected_values.json#TC-23,
+TC-24,身份含 SQL 特殊字符仍安全存取（全参数化）,正例,通过,0,0,python -m src.cli save --context trusted_context_sql_special.json,expected/expected_values.json#TC-24,
+TC-25,提交后回执未确定：返回未确定态且不报成功,故障注入,通过,11,11,python -m src.cli save --simulate-unknown,expected/expected_values.json#TC-25,
+TC-26,故意断言失败的自测必须非 0 退出,元测试,通过,10,10,python -m src.cli selftest --workdir <空目录> --inject-failure,expected/expected_values.json#TC-26,验证失败退出码能真实触发，不是 catch 后仍报 PASS
+TC-27,源码静态边界检查：无外连/无删除逻辑/无凭据读取,静态检查,通过,0,0,python tests/static_boundary_check.py,expected/expected_values.json#TC-27,
+TC-28,运行前后独立预期与夹具哈希未被改写,元测试,通过,0,0,（selftest 内部自动核验）,expected/expected_values.json#TC-28,独立预期来自冻结文件，运行不重写

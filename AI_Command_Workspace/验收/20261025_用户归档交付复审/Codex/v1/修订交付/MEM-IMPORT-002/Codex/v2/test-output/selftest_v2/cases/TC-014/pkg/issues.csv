@@ -1,0 +1,2 @@
+﻿issue_id,code,file,sheet,address,row,raw,reason,action
+ISS-0001,UNIT_SUSPECT_PENDING,fixture.xlsx,现金流水,D3,3,1631300,已登记单位疑点（绑定源SHA+Sheet+地址）：自测登记的单位疑点（绑定源SHA+Sheet+地址）；规范值保持 null，不再放大,人工核实真实单位后按批准口径重导

@@ -1,0 +1,3 @@
+﻿issue_id,code,file,sheet,address,row,raw,reason,action
+ISS-0001,DUPLICATE_COLUMN,fixture.xlsx,现金流水,"D2,E2",2,经营性流入（万元）,"字段 经营性流入（万元） 匹配到多列 ['D', 'E']，不取第一项",人工消除歧义后重导
+ISS-0002,MISSING_COLUMN,fixture.xlsx,现金流水,,,,"缺少必需列: 经营性流出（万元）（别名 ['经营性流出（万元）', '经营性流出']）",补齐源表列或更新映射后重导

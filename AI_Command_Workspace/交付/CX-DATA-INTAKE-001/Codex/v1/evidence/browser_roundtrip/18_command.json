@@ -1,0 +1,10 @@
+{
+  "args": [
+    "fill",
+    "[aria-label=\"账户1别名\"]",
+    "<img src=x onerror=window.intakeXss=1>"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"success\":true,\"data\":{\"filled\":\"[aria-label=\\\"账户1别名\\\"]\"},\"error\":null}\n",
+  "stderr": ""
+}

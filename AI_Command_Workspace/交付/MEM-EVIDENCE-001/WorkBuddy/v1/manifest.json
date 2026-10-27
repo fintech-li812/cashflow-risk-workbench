@@ -1,0 +1,1487 @@
+{
+  "task_id": "MEM-EVIDENCE-001",
+  "package_version": "v1",
+  "author": "WorkBuddy",
+  "ai_used": "WorkBuddy（服务器侧执行者，登记33847）",
+  "created_at": "2026-10-24T19:25:44+08:00",
+  "status": "candidate",
+  "source_bundle_sha256": "5b4811f03e6a705f9dcde94c2fea13fdc87e1cf7a27be874bbdf9592d503a0f2",
+  "source_snapshot_id": "MEM-EVIDENCE-001.20261023.v1",
+  "scope": "manufacturing_actual_cashflow",
+  "files": [
+    {
+      "path": "01_需求与实现映射.csv",
+      "sha256": "34fe75c97013f6491a41db1278cb595dc0a50e4cecaeca6e0f54df72110a7874"
+    },
+    {
+      "path": "02_测试结果.csv",
+      "sha256": "da8d6fe860dff3c1b84145db26514284b1420fbd163573b12c4959985345758d"
+    },
+    {
+      "path": "03_证据索引.csv",
+      "sha256": "ded4fbc0f686c39d226dabf8d46ae891c615c04b89df4d4ce2f91c2cbc209c02"
+    },
+    {
+      "path": "04_继承与改动.csv",
+      "sha256": "03d43cf3f0817393586c8fcfe33854e89a892b6edd25d17e4b9b8af72204213a"
+    },
+    {
+      "path": "expected/cli_cases_expected.json",
+      "sha256": "6dfe915f33e5d3f59b2f98cfd518f5325ae942b54d40ee08337e363a0351ca23"
+    },
+    {
+      "path": "fixtures/context_other_tenant.json",
+      "sha256": "627a41f260c65f65ef1d9af3056a232351e363189c64ba5aa47de551500c219e"
+    },
+    {
+      "path": "fixtures/context_rev2.json",
+      "sha256": "966fb7e324b18934fa88ce43ae75728e5dbad8884b3e4c4c4972d3cb7f6c4b93"
+    },
+    {
+      "path": "fixtures/context_trusted.json",
+      "sha256": "a20986b2975ed33a7a6361499aa3a31edbf54e0bcbd0601c8574b3ab3d04a0b9"
+    },
+    {
+      "path": "fixtures/result_bad_amount_fixture.json",
+      "sha256": "73c09a7a4fc9e3b9f557dec158bb54ce95b340e46ef689e48c923e39430c2058"
+    },
+    {
+      "path": "fixtures/result_diff_off_by_cent_fixture.json",
+      "sha256": "8d877c30eaa111ceb63b7ef1a47244771234d8bd4f7fd6d7f3b5435cd6195af0"
+    },
+    {
+      "path": "fixtures/result_missing_field.json",
+      "sha256": "3bc00051aa6c05010b61f928e4307687922b4ee4f2ed2b5d5970f716b5a197d7"
+    },
+    {
+      "path": "fixtures/result_net_off_by_cent_fixture.json",
+      "sha256": "50f456cf7d41b1be8d4b33fd06b679b9bb5a61e51771d31d69e265c31ea05649"
+    },
+    {
+      "path": "fixtures/result_no_balance_fixture.json",
+      "sha256": "1f0a14cff4b6cdc0e11ef94d92c5f61bea6e5a794264d0e593dac47e66a26b28"
+    },
+    {
+      "path": "fixtures/result_non_success.json",
+      "sha256": "99292c130bea224ac572c5319f49264b005c98b275abcb8fe465135161ef0c1a"
+    },
+    {
+      "path": "fixtures/result_qwen_labeled_fixture.json",
+      "sha256": "31d5b5359a1845ab771bb701dbf1e179068bf575e10976f3055d7302918ceb80"
+    },
+    {
+      "path": "fixtures/result_success_fixture.json",
+      "sha256": "b7e08dd1e8d27e180a5c819d70522c000a5a106ca151102c9ab869fb6632bc8d"
+    },
+    {
+      "path": "fixtures/result_zero_amounts_fixture.json",
+      "sha256": "543616a3301d0954e4e170f12c29ec024598c98fb1ff2bbc508d4db68b7af6a3"
+    },
+    {
+      "path": "README.md",
+      "sha256": "8eb1657fa376b39ad4f6d9991bf00a2fa07a7f441df09ea59b542a522fa561e4"
+    },
+    {
+      "path": "requirements.lock.txt",
+      "sha256": "97e2b8ea791a694d8b751668f3f99f590b3e05f20916e5da2b5681c450f54de0"
+    },
+    {
+      "path": "src/evidence_cli.py",
+      "sha256": "70af89c79306c8290d16724f7a4a7c6ae203eddb0ac100fe3476f5ecc8a79647"
+    },
+    {
+      "path": "src/evidence_store.py",
+      "sha256": "123fd3446505a1dec15923c3ec97be6796d858d401772bbbfbd56dbea1414768"
+    },
+    {
+      "path": "test-output/manual_selftest/selftest.db",
+      "sha256": "4d99d238f9c12c4ade2ce12c9115f25192073e24a0ae7474106e90adc4e1ab4f"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-01/save.cmd.txt",
+      "sha256": "e80f281a86c45440c982ce51d0d3f78c6f8475930c6f3f419894f567250fcad1"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-01/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-01/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-01/save.stdout.txt",
+      "sha256": "951da217c969bea57a816e696b877d2f2ed34f0d08c7fd6110d7b979c9a1f593"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-02/get.cmd.txt",
+      "sha256": "f18b86e651559189aad613d064f3f5e19559c15b76df5d9137471b0e16cd8a83"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-02/get.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-02/get.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-02/get.stdout.txt",
+      "sha256": "2233ef75f1c0d528c43a8122c67779297eeb03e2c9b63479df9a8e566b4b5915"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-03/save.cmd.txt",
+      "sha256": "da72ee3a4457b1cf627e6ec029466d42b1acee3311e75a59b089b5cdc673f608"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-03/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-03/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-03/save.stdout.txt",
+      "sha256": "58533a058d309b8c6956a95b388b37196e70cb6357da0f4ef4aff6b993d53754"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-04/save.cmd.txt",
+      "sha256": "c6ad7060d6447fb394ebc9a7410cbb7f9c16b80ce0d97e7bcad9446b8f1ba110"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-04/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-04/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-04/save.stdout.txt",
+      "sha256": "ad855b4442a2355ad2a76c1461e3b9e7e206491839d65866e886bac6b4f08420"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-05/save.cmd.txt",
+      "sha256": "aacfb6bf2bd0f9d51f5be5bda3f58e8e81b35ebc7d5d71f6117da8b0e14866c6"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-05/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-05/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-05/save.stdout.txt",
+      "sha256": "bacf7b1b8b46e08220d5328f7793688b602002f0d202290d97201c4509f5129c"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-06/save.cmd.txt",
+      "sha256": "221897595707ddccc83cfd9706a31e475e7368f3e7b40389b093c562b9c9b8c2"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-06/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-06/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-06/save.stdout.txt",
+      "sha256": "6d9e5851ceefec1655289b362eaac462c6cf58e362a36a5ee8c3e8bcbccec675"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-07/save.cmd.txt",
+      "sha256": "7f77c9ae489ec20b417176fdc165e34e89d70c19a0b9133def3918f832f2ac1a"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-07/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-07/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-07/save.stdout.txt",
+      "sha256": "7b4788542d71a8e07491fa568572320b27aacad04cc418def80c17f1dc50beb1"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-08/save.cmd.txt",
+      "sha256": "6b9cf4b531d3afa0129131c31f9166644f90ea96408a6d06629203cb5b5a59b6"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-08/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-08/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-08/save.stdout.txt",
+      "sha256": "2c8b005c21ebd5d136b0931e09e21b72f8c157b58f04f240a97a9a284f563a9e"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-09/save.cmd.txt",
+      "sha256": "771ad492f9ff6ac32d5a4b34045c14252f2a26e60c3d393c962f113cb8ddc21a"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-09/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-09/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-09/save.stdout.txt",
+      "sha256": "a74e06edce66d7555b586b9d27ca6637bb4d4692bda511e3fc6f508358a0daa9"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-10/save.cmd.txt",
+      "sha256": "8ac2f53d2442031fdbb5ce53de86ca0c727f2868bdea657cb06e3139f3dfd9b1"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-10/save.exit.txt",
+      "sha256": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-10/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-10/save.stdout.txt",
+      "sha256": "aa0026730289dc01a4fb3e533be9a3d32b6e81074b5e495820c076c6e3cc7f0b"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-11a/save.cmd.txt",
+      "sha256": "48ae504ce21c9b601c696c2aa5bd2ffc6274cf6e7d00ed30c2c9e3f74b6d3994"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-11a/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-11a/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-11a/save.stdout.txt",
+      "sha256": "55d24beb0c8c89aded83f4ebce51ba6ae97e7d6998f4768022c7281706af8cef"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-11b/save.cmd.txt",
+      "sha256": "193f37293cae6bb90dee858abb80f386da75e6ffa9b1ed05bd251c8b25da4b0b"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-11b/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-11b/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-11b/save.stdout.txt",
+      "sha256": "6891fc519973b71ef44c407cfb627de8285c60453a5d81f132b544e647956a5c"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-12/save.cmd.txt",
+      "sha256": "e80f281a86c45440c982ce51d0d3f78c6f8475930c6f3f419894f567250fcad1"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-12/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-12/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191459/TC-12/save.stdout.txt",
+      "sha256": "1aa34317d74d2d191cffdcecedf157cb0d21b9162c9ea7bb0f6fd992793188c5"
+    },
+    {
+      "path": "test-output/run_20261024_191459/wd/test.db",
+      "sha256": "1beb8eb4834fc6b4c23635104cf816ccbb82c7155604192213eb6f034be705d8"
+    },
+    {
+      "path": "test-output/run_20261024_191535/SELFTEST/selftest.cmd.txt",
+      "sha256": "468fbcc2e559f6454627e77da0c509ba662b628817038bec0df1daed62c79677"
+    },
+    {
+      "path": "test-output/run_20261024_191535/SELFTEST/selftest.exit.txt",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "path": "test-output/run_20261024_191535/SELFTEST/selftest.stderr.txt",
+      "sha256": "0cbfa5e91bbff026f7bdd7f6b59568c601484ad6f2c862a32f69b583e32d0a41"
+    },
+    {
+      "path": "test-output/run_20261024_191535/SELFTEST/selftest.stdout.txt",
+      "sha256": "86b00db274d3272092b042588c197aa0f8926d5f721517285a604924c9926761"
+    },
+    {
+      "path": "test-output/run_20261024_191535/selftest_ok/selftest.db",
+      "sha256": "82c93fbd4fbe69f82ab6aebd0341a531cda4f452ad1bb634e8dfb7ea86fd22a1"
+    },
+    {
+      "path": "test-output/run_20261024_191535/summary.json",
+      "sha256": "89c0844e96ef236ff9fb9da79b8b3a28a9e8a38a9c10b4420dfb48cc2c559420"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-01/save.cmd.txt",
+      "sha256": "ad7c63c9eae3267daa330f52e1dae719a602ccdf1626e7a3edd756d7804bf9a5"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-01/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-01/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-01/save.stdout.txt",
+      "sha256": "deec7f0fb802bd64ee49ee7d929e6afb42b961e62fa7fed6c6f007822305d8f5"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-02/get.cmd.txt",
+      "sha256": "f0977fac6692b833ebb4e38e55b4d9a53eab9d4ca00090807b54100c891bda0f"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-02/get.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-02/get.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-02/get.stdout.txt",
+      "sha256": "011847b391df49fcd7b7542fa6a46dd1ab3a767a309dc43959419c20412b0403"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-03/save.cmd.txt",
+      "sha256": "55aed9e5e169450cb0eb84a87e4d6c75ba0d996487b3a94838d296a4b363dcad"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-03/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-03/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-03/save.stdout.txt",
+      "sha256": "8515caa9fbfdd34de2dc6122b2ef3f8435d2c465fabae3348f2715ce582575ff"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-04/save.cmd.txt",
+      "sha256": "cdd379b3d5e94c196d51b18657bf0eb135fd257125d93bab9767d24e6f36e4bc"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-04/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-04/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-04/save.stdout.txt",
+      "sha256": "85c0a2c39140f4d9c954a6459c0cc58d6acca767b0a19c999c10381f24e21376"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-05/save.cmd.txt",
+      "sha256": "a08bf88bc30467e1a907707d69c8d8cb31353139c68b63d8fdd7417637b2b88a"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-05/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-05/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-05/save.stdout.txt",
+      "sha256": "bacf7b1b8b46e08220d5328f7793688b602002f0d202290d97201c4509f5129c"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-06/save.cmd.txt",
+      "sha256": "a7d35c9a73b17852d2c10a5ab336a5860c07222cbe66b637626025ee69e93699"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-06/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-06/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-06/save.stdout.txt",
+      "sha256": "6d9e5851ceefec1655289b362eaac462c6cf58e362a36a5ee8c3e8bcbccec675"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-07/save.cmd.txt",
+      "sha256": "1a68b487724bf7fdeb1f31ddf388759673d30f635f76e93652eccc1a405e4b3b"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-07/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-07/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-07/save.stdout.txt",
+      "sha256": "7b4788542d71a8e07491fa568572320b27aacad04cc418def80c17f1dc50beb1"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-08/save.cmd.txt",
+      "sha256": "a27ea10e062df002fdfc22d15883a5332b9c37e47f250238767367c1c545ca1b"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-08/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-08/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-08/save.stdout.txt",
+      "sha256": "2c8b005c21ebd5d136b0931e09e21b72f8c157b58f04f240a97a9a284f563a9e"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-09/save.cmd.txt",
+      "sha256": "4f32bc113ff5718071a776cb7d147a3f168374da037f025ea15457e3e6b741d0"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-09/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-09/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-09/save.stdout.txt",
+      "sha256": "a74e06edce66d7555b586b9d27ca6637bb4d4692bda511e3fc6f508358a0daa9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-10/save.cmd.txt",
+      "sha256": "752c8a71f47a5508a1bdc42b493f5f444f25b80e37a6598dc648ef96ff6473ed"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-10/save.exit.txt",
+      "sha256": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-10/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-10/save.stdout.txt",
+      "sha256": "aa0026730289dc01a4fb3e533be9a3d32b6e81074b5e495820c076c6e3cc7f0b"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-11a/save.cmd.txt",
+      "sha256": "b65e47624c460b9f925e1d34617fb6446bd0b3843dfe9afb17f5bcc790501fca"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-11a/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-11a/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-11a/save.stdout.txt",
+      "sha256": "55d24beb0c8c89aded83f4ebce51ba6ae97e7d6998f4768022c7281706af8cef"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-11b/save.cmd.txt",
+      "sha256": "1e3f157174e9205ccd927a4ab5a32b1f1fe4a32aa59ec4e5ebd50c9641fae907"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-11b/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-11b/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-11b/save.stdout.txt",
+      "sha256": "0c6592cbbc8a52f51d2a6f3c14d3d65964f8005b7f6ed103c9d130b53f8e33bf"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-12/save.cmd.txt",
+      "sha256": "ad7c63c9eae3267daa330f52e1dae719a602ccdf1626e7a3edd756d7804bf9a5"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-12/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-12/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-12/save.stdout.txt",
+      "sha256": "a62a7d8ce5a3b6d78a88590079ed911930bd803b8661d877f8da9b840357b61a"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-13/changed.json",
+      "sha256": "6113350b4f97f609e27862481e266435f77a6409cdb5c1c7a5e242e720823dd5"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-13/save.cmd.txt",
+      "sha256": "135802ea5139af1b71559130f28671a7a02c749a069f6b82e0425aca4e0ab434"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-13/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-13/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-13/save.stdout.txt",
+      "sha256": "6a327a4b845128b24f47d883f4811333e6c1a31b06c0d67688b38d017b9a41e3"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-13/verify.cmd.txt",
+      "sha256": "ef30a8b3c58dfe58491a6b9a310d2be5db8bc90c95274beab72b18481252103b"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-13/verify.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-13/verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-13/verify.stdout.txt",
+      "sha256": "5445f1aa5f21726048e95ab4b42787b898c5f4bbc168a8ad98f0fc8b58e4983b"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-14/get.cmd.txt",
+      "sha256": "7e711647940530569582bf534c91a0391645853210739bba3560b1ced2bf64c5"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-14/get.exit.txt",
+      "sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-14/get.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-14/get.stdout.txt",
+      "sha256": "3aece12c9b26285fcca9dac7f14a784d772ae1b29e26fe4bc42be9180b9ba3eb"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-15/retry.cmd.txt",
+      "sha256": "794163e08d6e3c9c87d4700a9111393f113e0ffc5dd07240cecc71894c4d665f"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-15/retry.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-15/retry.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-15/retry.stdout.txt",
+      "sha256": "e952409c71fb0e1f1bfd16e6258eac620e2417cce093460d095100c5a47ab6d9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-15/save.cmd.txt",
+      "sha256": "8c464da6f59fa2a889832392ec80cc19dd6f74347e279c5e17180114b0a3a284"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-15/save.exit.txt",
+      "sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-15/save.stderr.txt",
+      "sha256": "8f52a13080dd97e70a0afbf70ebb2fe90c2e1dc569172c8f5f604ec107ec2fdc"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-15/save.stdout.txt",
+      "sha256": "50028944b9a078648515d531985af920e5fdd70b190afb7bb1928a1e4e410dcb"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-16/retry.cmd.txt",
+      "sha256": "52e153413165f6e7b108b20e680ac3175b59db88d69f5ceb45a965ec94ceb6fe"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-16/retry.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-16/retry.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-16/retry.stdout.txt",
+      "sha256": "4c94b9353dbd2bfcde107a8dab331d07672f2d88991ba2f16516172b70ce095e"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-16/save.cmd.txt",
+      "sha256": "7e5b460f6a3e413443901a5eda9738a760caa4edbc5caa874affa020c205bf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-16/save.exit.txt",
+      "sha256": "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-16/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-16/save.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-17/alt.json",
+      "sha256": "690c166ab4ee386fecd538286f244aff89b182c36a716805ff8faee21eca3e95"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-17/exits.txt",
+      "sha256": "4cc9349174607215001e17f5c6101e826344d1ec75444055ccf78a4a3be35e90"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-17/exits_b.txt",
+      "sha256": "b107442a6b633a24cdc04b5ba3909491c81286553a4227df0108d10e7fe2d7a4"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-18/history.cmd.txt",
+      "sha256": "664d06504c295d0d5b72026ab3407e3d5153193ab4cc70d2a248a7518fee2124"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-18/history.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-18/history.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-18/history.stdout.txt",
+      "sha256": "63ff629b7744ba9fe148797682504f30ce598050fb837dae584a6dd8ed7fd8b3"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-18/save.cmd.txt",
+      "sha256": "1189d17c36bab22ee7aac8d6809ec6f87ffbe682d9f3df6806f3247408489de2"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-18/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-18/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-18/save.stdout.txt",
+      "sha256": "efd93beea983ad9a69a0f03e91104a5067bd4a4a1f39e98a5b0aa88051dedc44"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-20/seed.cmd.txt",
+      "sha256": "afcfb282361b675034bec5df936cbc7e545d820ee69e490dee9913b6973660b2"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-20/seed.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-20/seed.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-20/seed.stdout.txt",
+      "sha256": "be1ba12770c6ea5da392e85d5f2ef7a4187138b24b6185f57ec92f3d0da98d04"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-20/verify.cmd.txt",
+      "sha256": "9f3e3f9852e95c976ee02e80e9681178af515410b0729957490a928ffcd3e0d1"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-20/verify.exit.txt",
+      "sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-20/verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-20/verify.stdout.txt",
+      "sha256": "10229885b067df166f46d17b5a27a088324b458e4d7e36df3dc9930ebf47653f"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-21/verify.cmd.txt",
+      "sha256": "9f3e3f9852e95c976ee02e80e9681178af515410b0729957490a928ffcd3e0d1"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-21/verify.exit.txt",
+      "sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-21/verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-21/verify.stdout.txt",
+      "sha256": "41cd985e0ec17b6abf1a6c939a05ebf6c926d831ec87055774133384d5234016"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-22/verify.cmd.txt",
+      "sha256": "ef30a8b3c58dfe58491a6b9a310d2be5db8bc90c95274beab72b18481252103b"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-22/verify.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-22/verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-22/verify.stdout.txt",
+      "sha256": "cb13d7d8702c24dc588fdb5a1b91750c655b60945316251a895d3ce02bdc9141"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-23/save.cmd.txt",
+      "sha256": "4a12282455b4ccecbf2727f9d58ffa843e39fe7bfb4d8a85b7141eff3b1436f0"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-23/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-23/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-23/save.stdout.txt",
+      "sha256": "26854829153bd96b11781150913bd0883528686a04b9bb5312c0d3d33bffe67b"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-24/save.cmd.txt",
+      "sha256": "3fd4132473c0913b41a19256279aca36ae59d9ee23ee020854289e6d2e34563b"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-24/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-24/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-24/save.stdout.txt",
+      "sha256": "6b04d04648d6ca2032bdadcf95c48c85b63b5960bcc137509a942df9c64bf25a"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-24/verify.cmd.txt",
+      "sha256": "ef30a8b3c58dfe58491a6b9a310d2be5db8bc90c95274beab72b18481252103b"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-24/verify.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-24/verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-24/verify.stdout.txt",
+      "sha256": "e72746101eb06208506f0c08e706c8198a8a743b882cf0e28b56a7529b172757"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-25/selftest.cmd.txt",
+      "sha256": "e2e66bf6058ad2a0821c3221749edc16b50f372078904e8495855064d808efcc"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-25/selftest.exit.txt",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-25/selftest.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191535/TC-25/selftest.stdout.txt",
+      "sha256": "4849b0c26eea721e4246ba9ad606260a22068f5a2c315943b42859bf1e1ec9fc"
+    },
+    {
+      "path": "test-output/run_20261024_191535/wd/test.db",
+      "sha256": "0f33435e337e315fe938edef9449bcd7847bfaca9725f6a2699ace2c4d743959"
+    },
+    {
+      "path": "test-output/run_20261024_191535/wd_tamper/t.db",
+      "sha256": "89788f157d8837c01afb8a785cade86e10cdc49df1b0eedbd7c70c12580278bd"
+    },
+    {
+      "path": "test-output/run_20261024_191750/SELFTEST/selftest.cmd.txt",
+      "sha256": "2875f36e37ead59bdf3ce8fe3e0557f9c8570162de2d4e66ce4f644586c281b4"
+    },
+    {
+      "path": "test-output/run_20261024_191750/SELFTEST/selftest.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/SELFTEST/selftest.stderr.txt",
+      "sha256": "a435f25a0a8b5b2ec9f76bbe2c644c1dc833e77a6b65ae24a9abe0fb6d22ff8d"
+    },
+    {
+      "path": "test-output/run_20261024_191750/SELFTEST/selftest.stdout.txt",
+      "sha256": "526673823bb061bc18e8eddec4966110de63a7ae6bcb01d3f9adeb05eee15024"
+    },
+    {
+      "path": "test-output/run_20261024_191750/selftest_ok/selftest.db",
+      "sha256": "06537993d9e5efa951e6d246e6dad81ce530119679d15013ba8cb530e5b46742"
+    },
+    {
+      "path": "test-output/run_20261024_191750/summary.json",
+      "sha256": "88175de2cff51eb4c1b8cc65b101b884d89bf020bbf0a3f6f117e5ad17488fdf"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-01/save.cmd.txt",
+      "sha256": "146e418c78bc66627d0727bb824c131918a6142d0c4dee1d91095b7d7041ae58"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-01/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-01/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-01/save.stdout.txt",
+      "sha256": "6c37a5997f6ce796736c07afc3a3cec67530ac2290bac563fb0cf72a57517402"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-02/get.cmd.txt",
+      "sha256": "cea01c388bdf3877e39a40334291b632db71d3a234420da713dc0511df50e58f"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-02/get.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-02/get.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-02/get.stdout.txt",
+      "sha256": "9076ca2675566ab6c200d3034a16cebc42c552bda56be6aadf0c608ad9c8695c"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-03/save.cmd.txt",
+      "sha256": "bad511b719a023ef87d11720c34acbd838c7224a10b50b1333153433638f6dc7"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-03/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-03/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-03/save.stdout.txt",
+      "sha256": "0de048fa0e953542259fd45feb9ddb4a191f1c293197cfd5c8bc7e50f6ae37ca"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-04/save.cmd.txt",
+      "sha256": "a9a7cbcd299112bef79b6d763592e486bf6fa33eb757324a7ca5888ec0dacc2d"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-04/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-04/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-04/save.stdout.txt",
+      "sha256": "53b742421db31374e2771fefd72bc6e59dc968ae48cce64e888573805be63a8e"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-05/save.cmd.txt",
+      "sha256": "216bb0c195766f4563202cbd382525116c3b393daa6fcab4430c8552345d6752"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-05/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-05/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-05/save.stdout.txt",
+      "sha256": "bacf7b1b8b46e08220d5328f7793688b602002f0d202290d97201c4509f5129c"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-06/save.cmd.txt",
+      "sha256": "7411bcc07793d88aaca897d4330eee8662f7f086dfe623dcc85a332f082bb7dc"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-06/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-06/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-06/save.stdout.txt",
+      "sha256": "6d9e5851ceefec1655289b362eaac462c6cf58e362a36a5ee8c3e8bcbccec675"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-07/save.cmd.txt",
+      "sha256": "755e48103b57d5f1345ecb292a28d1a293c4bc3d54e134c2fa584561c7020aa5"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-07/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-07/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-07/save.stdout.txt",
+      "sha256": "7b4788542d71a8e07491fa568572320b27aacad04cc418def80c17f1dc50beb1"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-08/save.cmd.txt",
+      "sha256": "0a5a98afdddafd5f5a1578e43a84c3a7fa0e019c6603d72e98a1e9b6df7949a6"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-08/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-08/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-08/save.stdout.txt",
+      "sha256": "2c8b005c21ebd5d136b0931e09e21b72f8c157b58f04f240a97a9a284f563a9e"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-09/save.cmd.txt",
+      "sha256": "1b8073b89826e55d5f5ae6c4f83ca7b8797f89438f5446f3f66826d7c8e3b8b0"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-09/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-09/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-09/save.stdout.txt",
+      "sha256": "a74e06edce66d7555b586b9d27ca6637bb4d4692bda511e3fc6f508358a0daa9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-10/save.cmd.txt",
+      "sha256": "735f87e0fdf078f055c5275e9e7c3cc900d29cc603b82ee2e8cf5906bde815b9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-10/save.exit.txt",
+      "sha256": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-10/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-10/save.stdout.txt",
+      "sha256": "aa0026730289dc01a4fb3e533be9a3d32b6e81074b5e495820c076c6e3cc7f0b"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-11a/save.cmd.txt",
+      "sha256": "59281e5ccd0ffb3a79d304ad08af626402a5380b8662f1ad997353d741fe806d"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-11a/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-11a/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-11a/save.stdout.txt",
+      "sha256": "55d24beb0c8c89aded83f4ebce51ba6ae97e7d6998f4768022c7281706af8cef"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-11b/save.cmd.txt",
+      "sha256": "212d474ef864085cccdfed4654fc6bbf36a655426a8eb6d9f0e91f2cfb2e4c1c"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-11b/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-11b/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-11b/save.stdout.txt",
+      "sha256": "55e067170e396fd82b563fc24fb344b2b6968981ec61348288eeb5710b0324f6"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-12/save.cmd.txt",
+      "sha256": "146e418c78bc66627d0727bb824c131918a6142d0c4dee1d91095b7d7041ae58"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-12/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-12/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-12/save.stdout.txt",
+      "sha256": "5c2804c5da030500c6d76753f8e3271b2b2ced07beecceeee5117fd1a5c98f8e"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-13/changed.json",
+      "sha256": "a265ce51d9e4cb207b19ef3acbeb89274fc9d8802443e5acc0264cc63eca93c5"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-13/save.cmd.txt",
+      "sha256": "92d83d1612fec354abe1f8ddb51338b1a2e74d1cb168d8ea58c3bf7b516437bf"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-13/save.exit.txt",
+      "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-13/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-13/save.stdout.txt",
+      "sha256": "d7ece3e65faa540f9f1530eefb57c1da1ba8e268cd594b1a7309f89f82d28db3"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-13/verify.cmd.txt",
+      "sha256": "429f9c8dab9a14f1da8fd010b32f713065fa0e8bba1e122d5c7418a0d269dbee"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-13/verify.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-13/verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-13/verify.stdout.txt",
+      "sha256": "5445f1aa5f21726048e95ab4b42787b898c5f4bbc168a8ad98f0fc8b58e4983b"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-14/get.cmd.txt",
+      "sha256": "ccb71e5c1d920cdd25ba22ff9703157d2a31ff75c7d5f5a8fd415c0656347ab9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-14/get.exit.txt",
+      "sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-14/get.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-14/get.stdout.txt",
+      "sha256": "3aece12c9b26285fcca9dac7f14a784d772ae1b29e26fe4bc42be9180b9ba3eb"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-15/retry.cmd.txt",
+      "sha256": "7dc5e26bf104eb0bda9b4e46e26e5f7ae92f2691e522fe529b25b120afb7c4cd"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-15/retry.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-15/retry.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-15/retry.stdout.txt",
+      "sha256": "9ad6ffac19141673ff724967b9df676c3c0488f5f0049603be451dbb1e6dcd21"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-15/save.cmd.txt",
+      "sha256": "fe14495735920153e61655eeb9121ade3b8b469446e2dfdb4577a1b87cf3a367"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-15/save.exit.txt",
+      "sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-15/save.stderr.txt",
+      "sha256": "8f52a13080dd97e70a0afbf70ebb2fe90c2e1dc569172c8f5f604ec107ec2fdc"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-15/save.stdout.txt",
+      "sha256": "50028944b9a078648515d531985af920e5fdd70b190afb7bb1928a1e4e410dcb"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-16/retry.cmd.txt",
+      "sha256": "152c73f6b708ce08718317c9e7090e366757734caaeedf753ef05acfd93f907b"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-16/retry.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-16/retry.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-16/retry.stdout.txt",
+      "sha256": "f66ecf8a6432d9543d0ed09ab72b4e17a60f1c89cb3d5e8e1827f8f4ec8a7990"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-16/save.cmd.txt",
+      "sha256": "8b169031936a3473156d60b5b2cdebf3f7503b7a2c461eaf10893e2f368aca7e"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-16/save.exit.txt",
+      "sha256": "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-16/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-16/save.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/alt.json",
+      "sha256": "60cda421e24873d059f90ca369c45000fe8f51ed60e7075a8b4f17f00dc6eae4"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/diff_0.cmd.txt",
+      "sha256": "913e52cb0a9cb851d4eca98f54ee6bff53afae27faa26207df331cea00bcc23f"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/diff_0.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/diff_0.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/diff_0.stdout.txt",
+      "sha256": "b8b8d5bf4c37d3333c1c834bd03e1ee63ead0104f7b2ef78eee3fcf149443685"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/diff_1.cmd.txt",
+      "sha256": "913e52cb0a9cb851d4eca98f54ee6bff53afae27faa26207df331cea00bcc23f"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/diff_1.exit.txt",
+      "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/diff_1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/diff_1.stdout.txt",
+      "sha256": "2385202ac74f0373f97af4fcecd008b9e3e61a2408f0f1d46fcf2867b1a94a14"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/exits.txt",
+      "sha256": "ab395cb4c41927dc03d8d0b9e1de32ba2761d97d7d85b9c89fc54ae3591dc0e1"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/exits_b.txt",
+      "sha256": "63cbaf561c188d36f4dbafe6d8dc1bcec36aca66073c6bfd5c9787663f4efd99"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/same_0.cmd.txt",
+      "sha256": "fa14e84824776f98b8135d0ee80c8eeb188ae2cf52ac92d77463a4a96f8ff460"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/same_0.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/same_0.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/same_0.stdout.txt",
+      "sha256": "6742f311319fdeb19a2bee82b57c8dfe454798b110ccad91c1c6e7ef4dd97fe6"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/same_1.cmd.txt",
+      "sha256": "fa14e84824776f98b8135d0ee80c8eeb188ae2cf52ac92d77463a4a96f8ff460"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/same_1.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/same_1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/same_1.stdout.txt",
+      "sha256": "1b33b948645d5fc9e25ae8c62331dd2317ccbf26be5cbaddff87c77a3004a257"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/warmup.cmd.txt",
+      "sha256": "429f9c8dab9a14f1da8fd010b32f713065fa0e8bba1e122d5c7418a0d269dbee"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/warmup.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/warmup.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-17/warmup.stdout.txt",
+      "sha256": "3f713115a2786031caaeb263c0c9d1cc6aebd2d9344b246e905939129d36fe84"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-18/history.cmd.txt",
+      "sha256": "065907cb5c98f825285e6e02a507c5e02f57d21bb5517980564ea54f736ceddf"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-18/history.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-18/history.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-18/history.stdout.txt",
+      "sha256": "c0d335a183a8c25cf6d6b1c37ed2789182d01575d3cda4c066e31767a27fdc4a"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-18/save.cmd.txt",
+      "sha256": "6bf2cf8c69a971198b4f8c417be9f3f5a0ec64125efb21283875090ebafedb8c"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-18/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-18/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-18/save.stdout.txt",
+      "sha256": "1243e159cf3d520b57fc8ff3c75d3e34edbd4ca64ea4280658d8a3139541329d"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-20/seed.cmd.txt",
+      "sha256": "12ec3c6c35ad34acba52b5e0200d37e25d996afbc92f278c485dc5c39071bd26"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-20/seed.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-20/seed.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-20/seed.stdout.txt",
+      "sha256": "367a2afd375b61ef064fb1430024f11f0d85736763d3b6cae7e8d4776fc886b3"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-20/verify.cmd.txt",
+      "sha256": "0c7e5406621283ce18de799d8a1682796c2f5fbf3dd43c8649f4f100e380c2dd"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-20/verify.exit.txt",
+      "sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-20/verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-20/verify.stdout.txt",
+      "sha256": "10229885b067df166f46d17b5a27a088324b458e4d7e36df3dc9930ebf47653f"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-21/verify.cmd.txt",
+      "sha256": "0c7e5406621283ce18de799d8a1682796c2f5fbf3dd43c8649f4f100e380c2dd"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-21/verify.exit.txt",
+      "sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-21/verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-21/verify.stdout.txt",
+      "sha256": "41cd985e0ec17b6abf1a6c939a05ebf6c926d831ec87055774133384d5234016"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-22/verify.cmd.txt",
+      "sha256": "429f9c8dab9a14f1da8fd010b32f713065fa0e8bba1e122d5c7418a0d269dbee"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-22/verify.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-22/verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-22/verify.stdout.txt",
+      "sha256": "cb13d7d8702c24dc588fdb5a1b91750c655b60945316251a895d3ce02bdc9141"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-23/save.cmd.txt",
+      "sha256": "d6e1ebe911f3a7fcd576386266b135db5a6ff4e32658363506dee621979b3b6d"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-23/save.exit.txt",
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-23/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-23/save.stdout.txt",
+      "sha256": "26854829153bd96b11781150913bd0883528686a04b9bb5312c0d3d33bffe67b"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-24/save.cmd.txt",
+      "sha256": "92eda70577191241852fe4f3de5dcd07f4951a6c6589dd154518a9f1015bfd12"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-24/save.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-24/save.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-24/save.stdout.txt",
+      "sha256": "1a0446561680c3e02d8d9dd2265e171d4f1d3117de267c81d5eee252cd693600"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-24/verify.cmd.txt",
+      "sha256": "429f9c8dab9a14f1da8fd010b32f713065fa0e8bba1e122d5c7418a0d269dbee"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-24/verify.exit.txt",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-24/verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-24/verify.stdout.txt",
+      "sha256": "e72746101eb06208506f0c08e706c8198a8a743b882cf0e28b56a7529b172757"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-25/selftest.cmd.txt",
+      "sha256": "fa329d20deb2ea65a08ad0f265ecd497bb777cdf0d25d8f3c58667d5a4dfb9b7"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-25/selftest.exit.txt",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-25/selftest.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test-output/run_20261024_191750/TC-25/selftest.stdout.txt",
+      "sha256": "4849b0c26eea721e4246ba9ad606260a22068f5a2c315943b42859bf1e1ec9fc"
+    },
+    {
+      "path": "test-output/run_20261024_191750/wd/test.db",
+      "sha256": "52d871d28c1fa6a3301556f82e0d8887ebf6d96c68ba1dfbd88c305be77c8798"
+    },
+    {
+      "path": "test-output/run_20261024_191750/wd_tamper/t.db",
+      "sha256": "8396950820cb005cc1e9966808b2e30139d5e2d4831408e75afa37d7f6a3821b"
+    },
+    {
+      "path": "test-output/发包哈希复核.txt",
+      "sha256": "355b6a59169d34f9042f1c73373b533aa9698e7b2381c32a2a32cf86cc2271eb"
+    },
+    {
+      "path": "tests/run_tests.py",
+      "sha256": "5f126351648b2c62eab372518b4356cca7a3b00d82b229a55f62d31d555ccd97"
+    },
+    {
+      "path": "trust_boundary.md",
+      "sha256": "4022584dcc1e18ee518e4deac35936b9d9afe0bdd344f7d7d20a9a36cc5ca892"
+    },
+    {
+      "path": "未实现与待确认.md",
+      "sha256": "b0aec5ad3d80089097b63d4bdaf1c4a0ac0a4774985066d82e5d501cf950f255"
+    },
+    {
+      "path": "设计与接口说明.md",
+      "sha256": "93141e63c362636f5c37f53de8426860e9925d8ef4f8ab8d136335fa68ac4a3b"
+    },
+    {
+      "path": "错误码说明.md",
+      "sha256": "b8af7d81850fe549991b2f4010f67db200908515cbd73cc4025aa79b0d9a1c4b"
+    }
+  ],
+  "open_issue_ids": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4",
+    "Q5",
+    "U1",
+    "U2",
+    "U3",
+    "U4",
+    "U5",
+    "U6",
+    "U7"
+  ]
+}

@@ -1,0 +1,29 @@
+﻿用例ID,测试性质,输入定位,独立预期定位,实际输出定位,命令,退出码,状态,证据ID
+TC-01,正例,fixtures/synthetic_success.json + 可信上下文,expected/expected_values.json#TC-01,test-output/results.json#TC-01；test-output\cases\TC-01.out,python -m src.cli save ... --allow-fixture && python -m src.cli get ...,0,通过,EV-01
+TC-02,正例,同一 request-id + 同一 payload,expected/expected_values.json#TC-02,test-output/results.json#TC-02；test-output\cases\TC-02.out,python -m src.cli save --request-id req-main-001,0,通过,EV-01
+TC-03,负例,fixtures/synthetic_success_variant.json,expected/expected_values.json#TC-03,test-output/results.json#TC-03；test-output\cases\TC-03.out,python -m src.cli save --request-id req-main-001（payload 已变）,4,通过,EV-08
+TC-04,正例,fixtures/synthetic_success_zero.json,expected/expected_values.json#TC-04,test-output/results.json#TC-04；test-output\cases\TC-04.out,python -m src.cli save --input synthetic_success_zero.json,0,通过,EV-01
+TC-05,正例（业务未核对）,fixtures/synthetic_success_no_actual.json,expected/expected_values.json#TC-05,test-output/results.json#TC-05；test-output\cases\TC-05.out,python -m src.cli save --input synthetic_success_no_actual.json,0,通过,EV-01
+TC-06,正例（差异待核）,fixtures/synthetic_success_diff_cent.json,expected/expected_values.json#TC-06,test-output/results.json#TC-06,python -m src.cli save --input synthetic_success_diff_cent.json,0,通过,EV-01
+TC-07,负例,result_bad_amount.json、result_nonfinite.json、result_recon_mismatch.json,expected/expected_values.json#TC-07,test-output/results.json#TC-07；test-output\cases\TC-07.out,python -m src.cli save --input result_bad_amount.json / result_nonfinite.json / result_recon_mismatch.json,3,通过,EV-01
+TC-08,负例,fixtures/result_missing_field.json,expected/expected_values.json#TC-08,test-output/results.json#TC-08；test-output\cases\TC-08.out,python -m src.cli save --input result_missing_field.json,3,通过,EV-13
+TC-09,负例,fixtures/result_identity_mismatch.json,expected/expected_values.json#TC-09,test-output/results.json#TC-09,python -m src.cli save --input result_identity_mismatch.json,3,通过,EV-01
+TC-10,负例,fixtures/result_rev_mismatch.json,expected/expected_values.json#TC-10,test-output/results.json#TC-10,python -m src.cli save --input result_rev_mismatch.json,3,通过,EV-01
+TC-11,负例+诊断,fixtures/result_non_success.json,expected/expected_values.json#TC-11,test-output/results.json#TC-11；test-output\cases\TC-11.out,python -m src.cli save --save-diagnostic,3,通过,EV-01
+TC-12,负例+正例,fixtures/synthetic_success.json（origin=offline_fixture）,expected/expected_values.json#TC-12,test-output/results.json#TC-12；test-output\cases\TC-12.out,python -m src.cli save（无 --allow-fixture） vs save --allow-fixture,3,通过,EV-01
+TC-13,故障注入,子进程 --fault-before-commit,expected/expected_values.json#TC-13,test-output/results.json#TC-13；test-output\cases\TC-13.out,python -m src.cli save --fault-before-commit,9,通过,EV-05
+TC-14,故障注入+恢复,子进程 --fault-after-commit 后同 ID 重试,expected/expected_values.json#TC-14,test-output/results.json#TC-14；test-output\cases\TC-14.out,python -m src.cli save --fault-after-commit 后同 request-id 再 save,9,通过,EV-06
+TC-15,并发负例,6×子进程同 request-id 同 payload,expected/expected_values.json#TC-15,test-output/results.json#TC-15；test-output\cases\TC-15.out,python -m src.cli save --request-id req-race-001 ×6 并发,0,通过,EV-07
+TC-16,故障注入,子进程 lock-hold 8s + 主进程 save,expected/expected_values.json#TC-16,test-output/results.json#TC-16；test-output\cases\TC-16.out,python -m src.cli lock-hold --seconds 8 与 save 并行,7,通过,EV-12
+TC-17,正例,rev1 与 rev2 两条同期间不同源版本,expected/expected_values.json#TC-17,test-output/results.json#TC-17；test-output\cases\TC-17.out,python -m src.cli history --period 2026-08 / --source-revision fixture-rev-1,0,通过,EV-17
+TC-18,负例,固定独立可信上下文 trusted_context_other.json,expected/expected_values.json#TC-18,test-output/results.json#TC-18；test-output\cases\TC-18.out,python -m src.cli get --context trusted_context_other.json,6,通过,EV-09
+TC-19,正例,tc01.sqlite3（含 1 条记录）,expected/expected_values.json#TC-19,test-output/results.json#TC-19；test-output\cases\TC-19.out,python -m src.cli verify-store --store tc01.sqlite3（两次独立进程）,0,通过,EV-01
+TC-20,负例,tests/tamper_db.py --mode payload,expected/expected_values.json#TC-20,test-output/results.json#TC-20；test-output\cases\TC-20.out,python -m src.cli verify-store --store tc20.sqlite3（已篡改）,8,通过,EV-10
+TC-21,负例,tests/tamper_db.py --mode digest,expected/expected_values.json#TC-21,test-output/results.json#TC-21；test-output\cases\TC-21.out,python -m src.cli verify-store --store tc21.sqlite3（已篡改）,8,通过,EV-10
+TC-22,负例,tests/tamper_db.py --mode identity,expected/expected_values.json#TC-22,test-output/results.json#TC-22；test-output\cases\TC-22.out,python -m src.cli verify-store --store tc22.sqlite3（已篡改）,8,通过,EV-10
+TC-23,负例,../outside-evidence.sqlite3、绝对路径、tc23.txt、非空 workdir,expected/expected_values.json#TC-23,test-output/results.json#TC-23；test-output\cases\TC-23.out,python -m src.cli save --store ../outside-evidence.sqlite3,2,通过,EV-11
+TC-24,正例,trusted_context_sql_special.json,expected/expected_values.json#TC-24,test-output/results.json#TC-24；test-output\cases\TC-24.out,python -m src.cli save --context trusted_context_sql_special.json,0,通过,EV-01
+TC-25,故障注入,--simulate-unknown,expected/expected_values.json#TC-25,test-output/results.json#TC-25；test-output\cases\TC-25.out,python -m src.cli save --simulate-unknown,11,通过,EV-06
+TC-26,元测试,嵌套 selftest --inject-failure,expected/expected_values.json#TC-26,test-output/results.json#TC-26,python -m src.cli selftest --workdir <空目录> --inject-failure,10,通过,EV-13
+TC-27,静态检查,"src/*.py, tests/*.py",expected/expected_values.json#TC-27,test-output/results.json#TC-27；test-output\cases\TC-27.out,python tests/static_boundary_check.py,0,通过,EV-16
+TC-28,元测试,expected/ 与 fixtures/ 全量文件,expected/expected_values.json#TC-28,test-output/results.json#TC-28,（selftest 内部自动核验）,0,通过,EV-14

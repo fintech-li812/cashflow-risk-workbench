@@ -1,0 +1,5 @@
+首次命令工作目录为Codex会话根目录，未进入候选目录：
+python -B -m unittest -v test_tool_call_guard
+ModuleNotFoundError: No module named 'test_tool_call_guard'
+Ran 1 test; FAILED (errors=1); exit 1。
+此为加载失败，不是任何业务用例已通过。随后只读确认文件存在于候选目录，按规则等待至少30秒后改正workdir运行。

@@ -1,0 +1,37 @@
+{
+  "version": "v2",
+  "count": 5,
+  "matched": 5,
+  "cases": [
+    {
+      "case": "valid",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "matched": true
+    },
+    {
+      "case": "one-cent",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "matched": true
+    },
+    {
+      "case": "source",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "matched": true
+    },
+    {
+      "case": "replay",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "matched": true
+    },
+    {
+      "case": "production-fixture",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "matched": true
+    }
+  ]
+}

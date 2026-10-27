@@ -1,0 +1,16 @@
+test_one_cent_net_error (test_qa_tool.QA.test_one_cent_net_error) ... FAIL
+
+======================================================================
+FAIL: test_one_cent_net_error (test_qa_tool.QA.test_one_cent_net_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_net\test_qa_tool.py", line 158, in test_one_cent_net_error
+    self.check_result('NET_MISMATCH')
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_net\test_qa_tool.py", line 129, in check_result
+    self.assertIn(code, {x['code'] for x in report.issues})
+AssertionError: 'NET_MISMATCH' not found in {'CLOSING_MISMATCH'}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)

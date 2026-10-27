@@ -1,0 +1,200 @@
+{
+  "counts": {
+    "BLOCKED": 0,
+    "FAIL": 0,
+    "NOT_RUN": 0,
+    "PASS": 31,
+    "TOTAL": 31
+  },
+  "expected_file_sha256_after": "321172d4f0a4f209eee260f4e69f39f34a902518f01d1cf1cdd06523d406bfab",
+  "expected_file_sha256_before": "321172d4f0a4f209eee260f4e69f39f34a902518f01d1cf1cdd06523d406bfab",
+  "results": [
+    {
+      "case_id": "TC-001",
+      "detail": "记录 6 条；流入 ['1808700.00', '1843500.00', '1745700.00']；营收 128000000.00；全部字段带地址与转换依据",
+      "status": "PASS",
+      "title": "正常三行抽取：金额/日期/来源准确"
+    },
+    {
+      "case_id": "TC-002",
+      "detail": "列重排后仍映射正确: ['1808700.00', '1843500.00', '1745700.00']",
+      "status": "PASS",
+      "title": "列重排仍映射正确"
+    },
+    {
+      "case_id": "TC-003",
+      "detail": "缺 Sheet 明确报告并继续执行: ['MISSING_SHEET']",
+      "status": "PASS",
+      "title": "缺必需 Sheet 明确报告"
+    },
+    {
+      "case_id": "TC-004",
+      "detail": "缺列报 MISSING_COLUMN，规范值保持 null: ['MISSING_COLUMN']",
+      "status": "PASS",
+      "title": "缺列报缺项，规范值 null"
+    },
+    {
+      "case_id": "TC-005",
+      "detail": "重名列报 DUPLICATE_COLUMN，不取第一项",
+      "status": "PASS",
+      "title": "重名列报重名，不取第一项"
+    },
+    {
+      "case_id": "TC-006",
+      "detail": "两个别名同时出现报歧义，不覆盖不取值",
+      "status": "PASS",
+      "title": "别名歧义同时出现报歧义"
+    },
+    {
+      "case_id": "TC-007",
+      "detail": "纵向字段换行仍按字段名定位，地址 = B4",
+      "status": "PASS",
+      "title": "企业纵向字段换行仍按字段名定位"
+    },
+    {
+      "case_id": "TC-008",
+      "detail": "0=0.00；空白=blank_cell；空串=empty_string；空格=whitespace_only（四者可区分）",
+      "status": "PASS",
+      "title": "0/空白/空串/空格可区分"
+    },
+    {
+      "case_id": "TC-009",
+      "detail": "数字文本不偷转，保留原文 123.45 并报 NUMERIC_TEXT_NOT_CONVERTED",
+      "status": "PASS",
+      "title": "数字文本不偷转"
+    },
+    {
+      "case_id": "TC-010",
+      "detail": "公式 D3*2 有缓存：保留公式原文 + 缓存值 1808700.00",
+      "status": "PASS",
+      "title": "公式有缓存：保留公式与缓存值"
+    },
+    {
+      "case_id": "TC-011",
+      "detail": "公式无缓存：规范值 null + FORMULA_CACHE_MISSING，不 eval 代算",
+      "status": "PASS",
+      "title": "公式无缓存：null + 报缺口，不 eval"
+    },
+    {
+      "case_id": "TC-012",
+      "detail": "原始 80.59999999999999 原样保留，规范值 806000.00",
+      "status": "PASS",
+      "title": "原始长小数保留"
+    },
+    {
+      "case_id": "TC-013",
+      "detail": "1.234567万→12345.67元；163.13万→1631300.00元",
+      "status": "PASS",
+      "title": "万元精度：先乘后落分"
+    },
+    {
+      "case_id": "TC-014",
+      "detail": "D3=1631300 绑定例外：规范值 null，原值保留，不乘 10000",
+      "status": "PASS",
+      "title": "单位例外绑定源SHA+Sheet+地址"
+    },
+    {
+      "case_id": "TC-015",
+      "detail": "另一源同地址不误拦，正常换算为 16313000000.00",
+      "status": "PASS",
+      "title": "同地址不同源不误拦"
+    },
+    {
+      "case_id": "TC-016",
+      "detail": "2026-13-05 / 2026-02-30 保持 null，报 2 条 INVALID_DATE",
+      "status": "PASS",
+      "title": "非法日期不静默修正"
+    },
+    {
+      "case_id": "TC-017",
+      "detail": "两位年份 26-01-31 不猜世纪，报 TWO_DIGIT_YEAR",
+      "status": "PASS",
+      "title": "两位年份不猜世纪"
+    },
+    {
+      "case_id": "TC-018",
+      "detail": "1900 系统 serial 45961 → 2025-10-31（记录 date_system=1900）",
+      "status": "PASS",
+      "title": "1900 序列日期"
+    },
+    {
+      "case_id": "TC-019",
+      "detail": "serial=60 明确报 Excel1900 虚构闰日，不冒充 1900-02-29",
+      "status": "PASS",
+      "title": "Excel1900 虚构闰日"
+    },
+    {
+      "case_id": "TC-020",
+      "detail": "1904 系统识别正确，日期 2026-01-31",
+      "status": "PASS",
+      "title": "1904 日期系统"
+    },
+    {
+      "case_id": "TC-021",
+      "detail": "重复两行全部保留，各自有独立键与重复证据",
+      "status": "PASS",
+      "title": "重复行保留且可区分"
+    },
+    {
+      "case_id": "TC-022",
+      "detail": "应收 1000000.00 / 已收 400000.00，未判为数据错误",
+      "status": "PASS",
+      "title": "合法分次到账不当错误"
+    },
+    {
+      "case_id": "TC-023",
+      "detail": "同源重跑字节一致；source_revision 稳定 56220c7d8cf4…；输出排序稳定",
+      "status": "PASS",
+      "title": "同源重跑键与排序稳定"
+    },
+    {
+      "case_id": "TC-024",
+      "detail": "源改变后 verify 退出码 1 并检出；source_revision 由 1f988f28848e… 变为 e5e3171edb20…",
+      "status": "PASS",
+      "title": "源改变：revision 变且 verify 检出"
+    },
+    {
+      "case_id": "TC-025",
+      "detail": "篡改字段并重算清单哈希后 verify 退出码 1，指出源地址与期望值：[FAIL] 第 4 行记录字段 经营性流入（万元） 被篡改: 包内值='99999999.00' 真实源 现金流水!行3 D3 重导值='1808700.00'",
+      "status": "PASS",
+      "title": "篡改字段并重算哈希仍失败"
+    },
+    {
+      "case_id": "TC-026",
+      "detail": "单元格 <script> 被转义为 &lt;script&gt;，报告无外部资源",
+      "status": "PASS",
+      "title": "HTML 注入转义且离线"
+    },
+    {
+      "case_id": "TC-027",
+      "detail": "= / + / @ / HYPERLINK 等 CSV 危险文本导出时加前缀，原文仍在 JSON 保留",
+      "status": "PASS",
+      "title": "CSV 导出防公式注入"
+    },
+    {
+      "case_id": "TC-028",
+      "detail": "输出重名退出码 2；.. 越界 1；绝对路径 1（均非0拒绝）",
+      "status": "PASS",
+      "title": "路径越界/重名拒绝"
+    },
+    {
+      "case_id": "TC-029",
+      "detail": "非法 period 退出码 2；缺文件 verify 退出码 1（非0）",
+      "status": "PASS",
+      "title": "故意失败退出码非0"
+    },
+    {
+      "case_id": "TC-030",
+      "detail": "源件 scan 前后 SHA256 一致: 50d4a363f234c7c2…",
+      "status": "PASS",
+      "title": "源件 scan 前后一致"
+    },
+    {
+      "case_id": "TC-031",
+      "detail": "干净包 verify 退出码 0：清单哈希、记录数、字段来源一致",
+      "status": "PASS",
+      "title": "干净包 verify 通过"
+    }
+  ],
+  "workdir": "test-output/selftest_v2"
+}

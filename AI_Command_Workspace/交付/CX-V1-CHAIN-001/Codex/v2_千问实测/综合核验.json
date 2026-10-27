@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-24T10:41:19.763366+00:00",
+  "status": "passed",
+  "qwen_chat_id": "mvm9gfc0dn7c9a7h",
+  "qwen_agent_mcp_flow_verified": true,
+  "read_then_save_payload_unchanged": true,
+  "exact_query_arguments_verified": true,
+  "first_query_repeat_receipts_identical": true,
+  "independent_sql_record_count": 1,
+  "request_id": "qwen-v2-native-20261024-01",
+  "record_id": "d7f97377-2fd2-45ff-8046-49297bf15c61",
+  "payload_sha256": "356c833f3234cf25c5703888e4da398b4b7889445f6925365bda1e973c582b7b",
+  "unit": "CNY",
+  "fixture": true,
+  "qwen_native_sheet_recalculation_verified": false,
+  "production_deployed": false,
+  "independent_code_review_completed": false,
+  "scope": "synthetic fixture only; actual Qwen tool details plus independent SELECT; no replacement MCP saves by Codex"
+}

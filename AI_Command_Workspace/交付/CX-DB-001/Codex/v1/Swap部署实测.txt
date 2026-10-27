@@ -1,0 +1,4 @@
+== swap preflight ==
+NAME      TYPE  SIZE USED PRIO
+/swapfile file 1024M   0B   -2
+Unexpected total swap bytes=0, stop before changes

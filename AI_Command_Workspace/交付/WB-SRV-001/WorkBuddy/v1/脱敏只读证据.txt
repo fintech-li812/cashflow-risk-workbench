@@ -1,0 +1,140 @@
+================================================================
+WB-SRV-001 脱敏只读证据
+执行者：WorkBuddy　采集时间：2026-10-22 19:36-19:41 (+0800)
+目标：39.104.201.10　范围：严格只读，无任何写操作
+脱敏：不含私钥正文、口令、令牌、authentication_string
+================================================================
+
+------------------------------------------------
+[证据 1] 本机 SSH 客户端与密钥入口（本机执行）
+------------------------------------------------
+$ which ssh ; ls -l "/c/Program Files/Git/usr/bin/ssh.exe" ; ssh -V
+输出：
+  /usr/bin/ssh
+  -rwxr-xr-x 1 33847 197609 903128 May  2  2024 /c/Program Files/Git/usr/bin/ssh.exe
+  OpenSSH_10.3p1, OpenSSL 3.5.7 9 Jun 2026
+
+$ ls -l "/c/Users/33847/WorkBuddy/2026-10-15-20-06-39/deploy/keys/"
+输出（仅路径与权限，无内容）：
+  -rw-r--r-- 1 33847 197609 411 Oct 15 20:15 site_ed25519
+  -rw-r--r-- 1 33847 197609  97 Oct 15 20:15 site_ed25519.pub
+
+$ ssh-keygen -lf ".../deploy/keys/site_ed25519"
+输出（公钥指纹）：
+  256 SHA256:POqJ0H7PVmG5DCRTc5QhWx/9ooHc0xzV9qeUcPib2fs site-deploy-key (ED25519)
+
+$ ssh-keygen -F "39.104.201.10" -f ~/.ssh/known_hosts
+输出：known_hosts 命中 3 条（ed25519 / ssh-rsa / 另一算法），其中：
+  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICfJwg7jgvc0sotONumvdIBy31ENuccCL6jCXKanZZr/
+
+------------------------------------------------
+[证据 2] 主机 SSH 公钥指纹（ssh-keyscan，只读，未登录）
+------------------------------------------------
+$ ssh-keyscan -t ed25519,rsa 39.104.201.10 | ssh-keygen -lf -
+输出：
+  3072 SHA256:aJBh1eoaAF8LfibmEbiZ+12BWcb7m3y0GY4VEQz+EC8 39.104.201.10 (RSA)
+  256 SHA256:Fl32wXdN3R83/iIk6sGHWZ7OKBRs106guxvocHWfDWQ 39.104.201.10 (ED25519)
+
+$ 与 known_hosts 内置记录计算指纹比对
+输出：
+  内置 ED25519: SHA256:Fl32wXdN3R83/iIk6sGHWZ7OKBRs106guxvocHWfDWQ
+  内置 RSA    : SHA256:aJBh1eoaAF8LfibmEbiZ+12BWcb7m3y0GY4VEQz+EC8
+  本次keyscan : ED25519=SHA256:Fl32wXdN3R83/iIk6sGHWZ7OKBRs106guxvocHWfDWQ
+结论：
+  MATCH: 主机身份与历史一致，可安全连接
+  （本轮登录未使用 StrictHostKeyChecking=no，采用严格主机校验）
+
+------------------------------------------------
+[证据 3] 服务器端只读采集（严格校验登录，root，只读命令）
+------------------------------------------------
+== 时间与时区 ==
+Thu Oct 22 07:40:11 PM CST 2026
+TZ=CST
+Asia/Shanghai
+
+== 系统版本 ==
+NAME="Ubuntu"
+VERSION="24.04.5 LTS (Noble Numbat)"
+6.8.0-139-generic
+
+== 主机SSH公钥指纹(服务端自报) ==
+256 SHA256:Fl32wXdN3R83/iIk6sGHWZ7OKBRs106guxvocHWfDWQ root@iZhp3ghhuyoelym8biup8eZ (ED25519)
+（与证据 2 的客户端 keyscan 结果一致）
+
+== MySQL 版本与服务 ==
+mysql  Ver 8.0.46-0ubuntu0.24.04.4 for Linux on x86_64 ((Ubuntu))
+active
+
+== 监听 3306 / 33060 / 8000 ==
+LISTEN 0 100 127.0.0.1:3306  0.0.0.0:*  users:(("mysqld",pid=66198,fd=23))
+LISTEN 0  70 127.0.0.1:33060 0.0.0.0:*  users:(("mysqld",pid=66198,fd=21))
+（无 8000 监听行 → 8000 未监听）
+
+== 数据库清单 ==
+cf_workbench
+information_schema
+mysql
+new_project
+performance_schema
+sys
+
+== 业务表数量 ==
+cf_workbench表数  0
+new_project表数   0
+
+== 账号 user/host ==
+cf_admin          localhost
+cf_app            localhost
+cf_backup         localhost
+cf_read           localhost
+debian-sys-maint  localhost
+proj_admin        localhost
+root              localhost
+（全部 localhost，无 % 账号）
+
+== 角色授权（SHOW GRANTS，未查询 authentication_string）==
+-- cf_admin@localhost
+GRANT USAGE ON *.* TO `cf_admin`@`localhost`
+GRANT SELECT, INSERT, UPDATE, CREATE, DROP, REFERENCES, INDEX, ALTER ON `cf_workbench`.* TO `cf_admin`@`localhost`
+-- cf_read@localhost
+GRANT USAGE ON *.* TO `cf_read`@`localhost`
+GRANT SELECT ON `cf_workbench`.* TO `cf_read`@`localhost`
+-- cf_app@localhost
+GRANT USAGE ON *.* TO `cf_app`@`localhost`
+GRANT SELECT, INSERT ON `cf_workbench`.* TO `cf_app`@`localhost`
+-- cf_backup@localhost
+GRANT PROCESS ON *.* TO `cf_backup`@`localhost`
+GRANT SELECT, LOCK TABLES, SHOW VIEW, TRIGGER ON `cf_workbench`.* TO `cf_backup`@`localhost`
+-- proj_admin@localhost
+GRANT USAGE ON *.* TO `proj_admin`@`localhost`
+GRANT ALL PRIVILEGES ON `new_project`.* TO `proj_admin`@`localhost`
+
+== 时区与会话变量 ==
+             @@version: 8.0.46-0ubuntu0.24.04.4
+@@character_set_server: utf8mb4
+    @@collation_server: utf8mb4_0900_ai_ci
+    @@system_time_zone: CST
+           @@time_zone: SYSTEM
+     @@global.sql_mode: ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+
+== 关键参数 ==
+innodb_buffer_pool_size  536870912
+max_connections          100
+bind_address             127.0.0.1
+
+== 内存与 swap ==
+               total        used        free      shared  buff/cache   available
+Mem:           1.7Gi       909Mi       178Mi       3.4Mi       831Mi       831Mi
+Swap:          1.0Gi          0B       1.0Gi
+
+== MCP 目录与服务 ==
+drwxr-xr-x 3 root root 4096 Oct 22 18:27 /etc/cf-mcp
+total 8
+-rw------- 1 root root  373 Oct 22 18:22 env
+drwx------ 2 root root 4096 Oct 22 18:27 ssh_keys
+  无 mcp 相关服务
+（仅列目录与文件名，未读取 env 正文，未打印进程环境）
+
+================================================================
+证据结束。全程只读；未执行建表、改配置、重启、迁移、装包、新增账号/密钥。
+================================================================

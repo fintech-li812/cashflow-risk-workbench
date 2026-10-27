@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "制造业现金流_隔离联调_v2": {
+      "command": "C:\\Users\\33847\\Documents\\Codex\\2026-10-22\\1-gpt-xlsx-17-10-6\\work\\cx-v1-runtime\\Scripts\\python.exe",
+      "args": [
+        "-B",
+        "-u",
+        "D:\\AI_Command_Workspace\\交付\\CX-V1-CHAIN-001\\Codex\\v2\\qa_entry.py",
+        "stdio"
+      ]
+    }
+  }
+}

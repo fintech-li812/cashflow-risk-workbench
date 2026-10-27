@@ -1,0 +1,15 @@
+{
+  "schema_version": "mfg-evidence.v1",
+  "kind": "receipt",
+  "operation": "save_cashflow_result",
+  "tenant_id": "fixture-tenant",
+  "company_id": "fixture-manufacturing",
+  "period": "2026-08",
+  "source_revision": "fixture-source-v1",
+  "run_id": "fixture-run-202608",
+  "request_id": "qwen-v2-native-20261024-01",
+  "record_id": "d7f97377-2fd2-45ff-8046-49297bf15c61",
+  "payload_sha256": "356c833f3234cf25c5703888e4da398b4b7889445f6925365bda1e973c582b7b",
+  "stored_at": "2026-10-24T10:33:51.749147+00:00",
+  "status": "committed"
+}

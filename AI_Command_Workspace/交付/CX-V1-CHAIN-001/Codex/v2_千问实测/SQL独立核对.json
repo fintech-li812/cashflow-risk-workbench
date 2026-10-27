@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-24T10:37:36.134232+00:00",
+  "verification_method": "independent SQL SELECT + exact service query; no MCP save invoked by this verifier",
+  "database": "cfqa_v2_20261024_043125",
+  "request_id": "qwen-v2-native-20261024-01",
+  "record_count": 1,
+  "receipt": {
+    "schema_version": "mfg-evidence.v1",
+    "kind": "receipt",
+    "operation": "save_cashflow_result",
+    "tenant_id": "fixture-tenant",
+    "company_id": "fixture-manufacturing",
+    "period": "2026-08",
+    "source_revision": "fixture-source-v1",
+    "run_id": "fixture-run-202608",
+    "request_id": "qwen-v2-native-20261024-01",
+    "record_id": "d7f97377-2fd2-45ff-8046-49297bf15c61",
+    "payload_sha256": "356c833f3234cf25c5703888e4da398b4b7889445f6925365bda1e973c582b7b",
+    "stored_at": "2026-10-24T10:33:51.749147+00:00",
+    "status": "committed"
+  },
+  "amounts": {
+    "net": "40000.00",
+    "inflow": "130000.00",
+    "closing": "140000.00",
+    "opening": "100000.00",
+    "outflow": "90000.00",
+    "difference": "0.00",
+    "actual_closing": "140000.00"
+  },
+  "source": {
+    "range": "A1:G2",
+    "sheet": "fixture-result",
+    "snapshot_ref": "fixture-snapshot-202608",
+    "workbook_ref": "synthetic-manufacturing-v1"
+  },
+  "fixture": true,
+  "currency": null,
+  "origin": "offline_fixture",
+  "approved_snapshot_payload_matches": true,
+  "stored_hash_matches": true,
+  "qwen_native_sheet_recalculation_verified": false,
+  "production_deployed": false
+}

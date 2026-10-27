@@ -1,0 +1,156 @@
+{
+  "test_database": "cfqa_20261022_125214",
+  "remote_path": "/var/tmp/cfqa_20261022_125214",
+  "source_sha256": "c588fedfcf6ebc2e13c2f6c2190ce965c78bcad0cb099992c9af541fde45802e",
+  "started": "2026-10-22T12:52:24.102046+00:00",
+  "tests": [
+    {
+      "name": "object_counts",
+      "status": "PASS",
+      "expected": "11\t10",
+      "exit_code": 0,
+      "stdout": "11\t10\n",
+      "stderr": ""
+    },
+    {
+      "name": "utc_default_under_plus08",
+      "status": "PASS",
+      "expected": "1",
+      "exit_code": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "risk_missing_metadata_rejected",
+      "status": "PASS",
+      "expected": "ERROR 3819",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "ERROR 3819 (HY000) at line 1: Check constraint 'ck_audit_risk_event' is violated.\n"
+    },
+    {
+      "name": "unknown_event_rejected",
+      "status": "PASS",
+      "expected": "ERROR 3819",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "ERROR 3819 (HY000) at line 1: Check constraint 'ck_audit_event_type' is violated.\n"
+    },
+    {
+      "name": "invalid_risk_enum_rejected",
+      "status": "PASS",
+      "expected": "ERROR 3819",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "ERROR 3819 (HY000) at line 1: Check constraint 'ck_audit_risk_level' is violated.\n"
+    },
+    {
+      "name": "same_tenant_duplicate_request_rejected",
+      "status": "PASS",
+      "expected": "ERROR 1062",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "ERROR 1062 (23000) at line 1: Duplicate entry 'T1-same' for key 'audit_log.uk_audit_req'\n"
+    },
+    {
+      "name": "different_tenants_same_request_allowed",
+      "status": "PASS",
+      "expected": "2",
+      "exit_code": 0,
+      "stdout": "2\n",
+      "stderr": ""
+    },
+    {
+      "name": "request_128_supported",
+      "status": "PASS",
+      "expected": "128",
+      "exit_code": 0,
+      "stdout": "128\n",
+      "stderr": ""
+    },
+    {
+      "name": "request_129_rejected",
+      "status": "PASS",
+      "expected": "ERROR 1406",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "ERROR 1406 (22001) at line 1: Data too long for column 'request_id' at row 1\n"
+    },
+    {
+      "name": "same_tenant_supersedes_excludes_old",
+      "status": "PASS",
+      "expected": "1",
+      "exit_code": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "cross_tenant_pointer_cannot_hide_original",
+      "status": "PASS",
+      "expected": "1",
+      "exit_code": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "ledger_bad_hash_rejected",
+      "status": "PASS",
+      "expected": "ERROR 3819",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "ERROR 3819 (HY000) at line 1: Check constraint 'ck_ledger_hash' is violated.\n"
+    },
+    {
+      "name": "pending_feedback_NULL_supported_by_DB",
+      "status": "PASS",
+      "expected": "1\t0.30",
+      "exit_code": 0,
+      "stdout": "1\t0.30\n",
+      "stderr": ""
+    },
+    {
+      "name": "audit_business_string_rejected_by_BIGINT",
+      "status": "PASS",
+      "expected": "ERROR 1366",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "ERROR 1366 (HY000) at line 1: Incorrect integer value: 'A-demo-001' for column 'audit_id' at row 1\n"
+    },
+    {
+      "name": "R04_template_supersedes_must_return_one_latest",
+      "status": "FAIL",
+      "expected": "1",
+      "exit_code": 0,
+      "stdout": "2\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "isolated schema only; no production rows/configuration changed",
+  "business_before": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "ddl": {
+    "exit_code": 0,
+    "stdout": "utf8mb4\tutf8mb4_0900_ai_ci\n",
+    "stderr": ""
+  },
+  "qa_rows_after_rollback": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "qa_all_empty": true,
+  "business_after": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "business_objects_unchanged": true,
+  "summary": {
+    "passed": 14,
+    "failed": 1,
+    "ddl_succeeded": true
+  }
+}

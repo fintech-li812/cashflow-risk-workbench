@@ -1,0 +1,149 @@
+{
+  "task_id": "MEM-IMPORT-002",
+  "requirements": [
+    {
+      "case_id": "I01",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I02",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I03",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I04",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I05",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I06",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I07",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I08",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I09",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I10",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I11",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I12",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I13",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I14",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I15",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I16",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I17",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I18",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I19",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I20",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I21",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I22",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I23",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    },
+    {
+      "case_id": "I24",
+      "implementation_file": "待填写",
+      "test_file": "待填写",
+      "evidence": "待填写"
+    }
+  ]
+}

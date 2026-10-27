@@ -1,0 +1,90 @@
+校验对象: 千问办公_MySQL_MCP工具定义_v1.1.json / init_v1.1.sql
+==============================================================================
+[PASS   ] A-JSON静态 | 14工具名称集合精确匹配 | 实际14个
+[PASS   ] A-JSON静态 | 全部工具 additionalProperties:false | 14/14
+[PASS   ] A-JSON静态 | log_to_mysql event_type 24值精确集合
+[PASS   ] A-JSON静态 | query_audit_by_event event_type 24值
+[PASS   ] A-JSON静态 | risk_level=green/yellow/red/unknown（4处） | 4/4 一致
+[PASS   ] A-JSON静态 | 条件必填 risk_warning+risk_assessment 两条
+[PASS   ] A-JSON静态 | log_stress_test scenario 5值（A5扩枚举）
+[PASS   ] A-JSON静态 | verify_payment 无 status 输入（违规1修复）
+[PASS   ] A-JSON静态 | log_exception 无approver/有approval_ref（违规2修复）
+[PASS   ] A-JSON静态 | save_param_template 有template_version/无source（违规3修复）
+[PASS   ] A-JSON静态 | log_to_mysql 幂等三件套必填（违规4修复）
+[PASS   ] A-JSON静态 | log_feedback 10项无条件必填+无accuracy/deviation（违规5修复+R-01）
+[PASS   ] A-JSON静态 | 金额字段=十进制字符串+pattern（元，D12）
+[PASS   ] A-JSON静态 | R-01 log_feedback.predicted_value 可空（pending 无实际值） | type=['string', 'null']
+[PASS   ] A-JSON静态 | R-01 log_feedback.actual_value 可空（pending 无实际值） | type=['string', 'null']
+[PASS   ] A-JSON静态 | R-02 audit_id 为十进制数字字符串（非业务串） | pattern=^[0-9]{1,20}$
+[PASS   ] A-JSON静态 | rf_predict 必填特征对+双版本
+[PASS   ] A-JSON静态 | load_da_coefficients 必填精确版本
+[PASS   ] B-Schema正反例 | 正例: risk_warning 三件套齐全 | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | 正例: risk_assessment + unknown 灯 | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | 正例: daily_check 无需三件套 | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | 反例: risk_warning 缺 rule_id/rule_version/risk_level | 期望拒绝，实际拒绝（首错: $: 'rule_id' is a required property）
+[PASS   ] B-Schema正反例 | 反例: risk_assessment 缺 risk_level | 期望拒绝，实际拒绝（首错: $: 'risk_level' is a required property）
+[PASS   ] B-Schema正反例 | 反例: 非法 event_type 枚举 | 期望拒绝，实际拒绝（首错: $.event_type: 'not_a_real_event' is not one of ['daily_check', 'quality_ch）
+[PASS   ] B-Schema正反例 | 反例: 非法 risk_level | 期望拒绝，实际拒绝（首错: $.risk_level: 'greenx' is not one of ['green', 'yellow', 'red', 'unknown']）
+[PASS   ] B-Schema正反例 | 反例: 多余字段（additionalProperties:false） | 期望拒绝，实际拒绝（首错: $: Additional properties are not allowed ('extra_field' was une）
+[PASS   ] B-Schema正反例 | 反例: 缺必填 request_id | 期望拒绝，实际拒绝（首错: $: 'request_id' is a required property）
+[PASS   ] B-Schema正反例 | 正例: verify_payment 合法输入 | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | 反例: verify_payment 携带 status（模型自证） | 期望拒绝，实际拒绝（首错: $: Additional properties are not allowed ('status' was unexpect）
+[PASS   ] B-Schema正反例 | 反例: 非法 method 枚举 | 期望拒绝，实际拒绝（首错: $.method: 'cash' is not one of ['bank_api', 'manual_review']）
+[PASS   ] B-Schema正反例 | 正例: financing_shock（A5新增枚举） | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | 反例: 非法 scenario 枚举 | 期望拒绝，实际拒绝（首错: $.scenario: 'fx_shock' is not one of ['receivable_shock', 'financing_sho）
+[PASS   ] B-Schema正反例 | 正例: stress risk_level=unknown（D10） | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | 正例: log_exception 合法 | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | 反例: log_exception 携带 approver 姓名 | 期望拒绝，实际拒绝（首错: $: Additional properties are not allowed ('approver' was unexpe）
+[PASS   ] B-Schema正反例 | 反例: 金额超过两位小数 | 期望拒绝，实际拒绝（首错: $.amount: '1.234' does not match '^-?[0-9]{1,18}(\\.[0-9]{1,2})?$'）
+[PASS   ] B-Schema正反例 | 反例: 金额整数位超18位（DECIMAL(20,2)容量外） | 期望拒绝，实际拒绝（首错: $.amount: '1234567890123456789.00' does not match '^-?[0-9]{1,18}(\\.[）
+[PASS   ] B-Schema正反例 | 反例: 缺 approval_ref | 期望拒绝，实际拒绝（首错: $: 'approval_ref' is a required property）
+[PASS   ] B-Schema正反例 | 正例: rf_predict 15维（非30维也可，D13） | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | 反例: features 空数组（minItems:1） | 期望拒绝，实际拒绝（首错: $.features: [] should be non-empty）
+[PASS   ] B-Schema正反例 | 反例: 缺 feature_schema_version | 期望拒绝，实际拒绝（首错: $: 'feature_schema_version' is a required property）
+[PASS   ] B-Schema正反例 | 反例: feature_names 非数组 | 期望拒绝，实际拒绝（首错: $.feature_names: 'not_array' is not of type 'array'）
+[PASS   ] B-Schema正反例 | 正例: log_feedback 合法（audit_id 分支，R-02 数字形态） | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | 反例: audit_id/forecast_id 均缺（anyOf） | 期望拒绝，实际拒绝（首错: $: {'request_id': 'r1', 'source_ref': 's1', 'occurred_at': '202）
+[PASS   ] B-Schema正反例 | 反例: 非法 accuracy_label 枚举 | 期望拒绝，实际拒绝（首错: $.accuracy_label: 'mostly_right' is not one of ['accurate', 'inaccurate', 'pen）
+[PASS   ] B-Schema正反例 | R-01 正例: pending 省略两金额（不得被迫填 0） | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | R-01 正例: pending 显式 null 两金额 | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | R-01 说明: pending 携带 actual_value 也允许（按 Codex 处置不增设禁止） | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | R-01 反例: accurate 缺 actual_value | 期望拒绝，实际拒绝（首错: $: 'actual_value' is a required property）
+[PASS   ] B-Schema正反例 | R-01 反例: inaccurate 缺 actual_value | 期望拒绝，实际拒绝（首错: $: 'actual_value' is a required property）
+[PASS   ] B-Schema正反例 | R-01 反例: actual_value 非金额格式 | 期望拒绝，实际拒绝（首错: $.actual_value: 'abc' does not match '^-?[0-9]{1,18}(\\.[0-9]{1,2})?$'）
+[PASS   ] B-Schema正反例 | R-02 反例: audit_id 为业务串（协议旧示例已作废） | 期望拒绝，实际拒绝（首错: $.audit_id: 'A-demo-001' does not match '^[0-9]{1,20}$'）
+[PASS   ] B-Schema正反例 | R-02 反例: audit_id 含非数字字符 | 期望拒绝，实际拒绝（首错: $.audit_id: '12a4' does not match '^[0-9]{1,20}$'）
+[PASS   ] B-Schema正反例 | R-02 反例: audit_id 超 20 位（BIGINT UNSIGNED 形态上限） | 期望拒绝，实际拒绝（首错: $.audit_id: '111111111111111111111' is too long）
+[PASS   ] B-Schema正反例 | R-02 正例: audit_id 20 位数字（形态通过；范围仍由服务端校验） | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | 正例: save_da_coefficients 合法 | 期望合法，实际合法
+[PASS   ] B-Schema正反例 | 反例: 非法 io_role 枚举 | 期望拒绝，实际拒绝（首错: $.coefficients[0].io_role: 'middle' is not one of ['input', 'output']）
+[PASS   ] B-Schema正反例 | 反例: weight 超10位小数 | 期望拒绝，实际拒绝（首错: $.coefficients[0].weight: '0.12345678901' does not match '^-?[0-9]{1,8}(\\.[0-9]{1,10}）
+[SKIP   ] B-Schema正反例 | features/feature_names 等长 | JSON Schema 无法表达跨字段等长；由 ck_rf_feature_pair + 服务端按 feature_schema_version 校验
+[PASS   ] C-DDL静态 | 11张表名称集合精确匹配 | 实际11张
+[PASS   ] C-DDL静态 | 10个视图名称集合精确匹配 | 实际10个
+[PASS   ] C-DDL静态 | 表级无 IF NOT EXISTS（不静默跳过） | 裸 CREATE TABLE；同名报错停止
+[PASS   ] C-DDL静态 | 无 GRANT/CREATE USER（账号分离）
+[PASS   ] C-DDL静态 | 库=cf_workbench（USE 硬失败前置）+ 全表 utf8mb4_0900_ai_ci（D8/R-10） | USE=True 表级collate命中=11/期望>=11
+[PASS   ] C-DDL静态 | 无 audit_db / 库表级 utf8mb4_bin 残留
+[PASS   ] C-DDL静态 | 业务表公共列齐全（A2.3；账本按 U-03 待裁不补列，R-09） | 10/10
+[PASS   ] C-DDL静态 | mcp_request_ledger 账本结构（登记例外）
+[PASS   ] C-DDL静态 | R-04 v_template_published_latest 排除被替代版本且并列确定性 | NOT EXISTS=True 同租户=True 并列确定性=True
+[PASS   ] C-DDL静态 | R-08 ck_tpl_published_has_time（published→published_at 非空）
+[PASS   ] C-DDL静态 | R-10 无 CREATE DATABASE（避免 cf_admin 权限不足 1044 中止）
+[PASS   ] C-DDL静态 | request_id=VARCHAR(128) 全11表（验收报告缺件4） | 11/11
+[PASS   ] C-DDL静态 | created_at DEFAULT (UTC_TIMESTAMP(6)) 全11表（D21） | 11/11
+[PASS   ] C-DDL静态 | 金额列 DECIMAL(20,2)（元，D12） | 4列一致
+[PASS   ] C-DDL静态 | occurred_at DATETIME(6) 全10业务表 | 10/10
+[PASS   ] C-DDL静态 | 灯色 green/yellow/red/unknown，无中文枚举残留（D10）
+[PASS   ] C-DDL静态 | rf 无30维硬卡+保留等长约束（D13）
+[PASS   ] C-DDL静态 | audit_log event_type CHECK 24值
+[PASS   ] C-DDL静态 | stress_test_log scenario CHECK 5值（A5）
+[PASS   ] C-DDL静态 | 三层日志表含 company_id/run_id/record_key/payload_sha256/execution_status（D9采纳）
+[PASS   ] C-DDL静态 | 纠错链子查询同 tenant 限制（防跨租户误判）
+[PASS   ] C-DDL静态 | 结构预检段存在（库collation/同名表/同名视图）
+[PASS   ] C-DDL静态 | 三层日志表行级唯一键 (tenant,company,run,record_key)（D9）
+[PASS   ] C-DDL静态 | 账本唯一键 (tenant_id,tool_name,request_id)
+[BLOCKED] D-真实MySQL | init_v1.1.sql 在 MySQL 8.x 实际执行 | R-06 修正措辞：本机【有】MySQL 实例（审核实测 MySQL84 服务运行、3306 监听、mysql.exe 存在），真正的原因是【无可用凭据且未获授权建库】——root 以空口令被拒，且 WB-ENG-001 纪律禁止在服务器执行 DDL。静态解析通过 ≠ MySQL 执行通过，留待 WB-ENG-006 隔离环境验证
+[BLOCKED] D-真实MySQL | 视图在真实库创建与查询 | 同上；且 cf_admin 缺 CREATE VIEW/SHOW VIEW，权限候选待批准
+==============================================================================
+汇总: PASS=82 FAIL=0 SKIP=1 BLOCKED=2 合计=85
+结论: 无 FAIL（BLOCKED/SKIP 项见明细，不构成通过证据）

@@ -1,0 +1,5 @@
+{
+  "existing_record_id": "ev-78f10ce9748f620073921054",
+  "reason": "同一 (tenant_id,company_id,operation,request_id) 已存在不同 payload 摘要，拒绝覆盖旧记录",
+  "status": "conflict"
+}

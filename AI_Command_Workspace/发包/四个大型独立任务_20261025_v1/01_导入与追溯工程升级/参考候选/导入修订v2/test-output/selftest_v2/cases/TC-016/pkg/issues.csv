@@ -1,0 +1,3 @@
+﻿issue_id,code,file,sheet,address,row,raw,reason,action
+ISS-0001,INVALID_DATE,fixture.xlsx,现金流水,B3,3,2026-13-05,非法日历日期（不自动进位）: '2026-13-05',人工核对源日期
+ISS-0002,INVALID_DATE,fixture.xlsx,现金流水,B4,4,2026-02-30,非法日历日期（不自动进位）: '2026-02-30',人工核对源日期

@@ -1,0 +1,21 @@
+test_unused_external_ref_blocked (test_tool_call_guard.GuardTests.test_unused_external_ref_blocked) ... FAIL
+
+======================================================================
+FAIL: test_unused_external_ref_blocked (test_tool_call_guard.GuardTests.test_unused_external_ref_blocked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\交付\CX-SMOKE-001\Codex\v1\验证_正常包\candidate-copy\test_tool_call_guard.py", line 110, in test_unused_external_ref_blocked
+    self.assertBlocked('external_reference_forbidden')
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\交付\CX-SMOKE-001\Codex\v1\验证_正常包\candidate-copy\test_tool_call_guard.py", line 51, in assertBlocked
+    self.assertEqual(r['status'],'blocked',r)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'prepared' != 'blocked'
+- prepared
++ blocked
+ : {'status': 'prepared', 'called': False, 'schema_dialect': 'https://json-schema.org/draft/2020-12/schema', 'call_sha256': '6cc9ca008e0dee0bd62fc51c8adaba5ded2908fa6a24e45ddcf2c6bcca05709d', 'call': {'name': 'synthetic_fixture_save', 'arguments': {'context': {'tenant_id': 'fixture-tenant', 'company_id': 'fixture-company', 'period': '2026-10', 'source_revision': 'fixture-revision', 'run_id': 'fixture-run'}, 'request_id': 'fixture-request', 'event': 'fixture-test', 'occurred_at': '2026-10-23T23:00:00+08:00', 'payload': {'amount': '1.00'}}}, 'descriptor_sha256': '3728e3b9c6cd61889b4988298a09827624db98f639398ff01e0cbb6ef4b4878c', 'notice': 'offline validation only; descriptor provenance/authentication unverified'}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (failures=1)

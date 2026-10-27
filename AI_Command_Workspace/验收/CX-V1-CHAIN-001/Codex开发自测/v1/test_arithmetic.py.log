@@ -1,0 +1,16 @@
+test_bad_money_blocked (__main__.ArithmeticTests.test_bad_money_blocked) ... ok
+test_changed_inflow_difference_not_autozero (__main__.ArithmeticTests.test_changed_inflow_difference_not_autozero) ... ok
+test_fixture_must_be_explicit (__main__.ArithmeticTests.test_fixture_must_be_explicit) ... ok
+test_independent_august_example (__main__.ArithmeticTests.test_independent_august_example) ... ok
+test_missing_actual_preserved (__main__.ArithmeticTests.test_missing_actual_preserved) ... ok
+test_missing_group_blocked (__main__.ArithmeticTests.test_missing_group_blocked) ... ok
+test_missing_not_zero (__main__.ArithmeticTests.test_missing_not_zero) ... ok
+test_negative_balance_retained (__main__.ArithmeticTests.test_negative_balance_retained) ... ok
+test_negative_gross_blocked (__main__.ArithmeticTests.test_negative_gross_blocked) ... ok
+test_qwen_origin_not_faked (__main__.ArithmeticTests.test_qwen_origin_not_faked) ... ok
+test_zero_not_missing (__main__.ArithmeticTests.test_zero_not_missing) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.002s
+
+OK

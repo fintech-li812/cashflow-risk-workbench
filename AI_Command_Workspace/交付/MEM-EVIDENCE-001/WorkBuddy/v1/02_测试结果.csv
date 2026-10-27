@@ -1,0 +1,31 @@
+﻿用例ID,测试性质,输入定位,独立预期定位,实际输出定位,命令,退出码,状态,证据ID
+TC-01,正例,fixtures/result_success_fixture.json + context_trusted.json,expected TC-01 exit0 committed,test-output/run_20261024_191750/TC-01/,save --request-id st-01 --allow-fixture,0,PASS,EV-02
+TC-02,正例,TC-01产生的record_id,expected TC-02 exit0 sha一致,test-output/run_20261024_191750/TC-02/,get --record-id ev-78f10ce9748f620073921054,0,PASS,EV-02
+TC-03,正例,fixtures/result_zero_amounts_fixture.json,expected TC-03 exit0,test-output/run_20261024_191750/TC-03/,save --request-id st-03,0,PASS,EV-02
+TC-04,正例,fixtures/result_no_balance_fixture.json,expected TC-04 exit0 双null,test-output/run_20261024_191750/TC-04/,save --request-id st-04,0,PASS,EV-02
+TC-05,负例,fixtures/result_net_off_by_cent_fixture.json,expected TC-05 exit4,test-output/run_20261024_191750/TC-05/,save --request-id st-05,4,PASS,EV-02
+TC-06,负例,fixtures/result_bad_amount_fixture.json,expected TC-06 exit4,test-output/run_20261024_191750/TC-06/,save --request-id st-06,4,PASS,EV-02
+TC-07,负例,fixtures/result_missing_field.json,expected TC-07 exit4,test-output/run_20261024_191750/TC-07/,save --request-id st-07,4,PASS,EV-02
+TC-08,负例,fixtures/context_other_tenant.json与success夹具,expected TC-08 exit4,test-output/run_20261024_191750/TC-08/,save --request-id st-08,4,PASS,EV-02
+TC-09,负例,fixtures/context_rev2.json与success夹具,expected TC-09 exit4,test-output/run_20261024_191750/TC-09/,save --request-id st-09,4,PASS,EV-02
+TC-10,负例,fixtures/result_non_success.json,expected TC-10 exit7 诊断1行正式0行,test-output/run_20261024_191750/TC-10/,save --request-id st-10,7,PASS,EV-02
+TC-11a,负例,success夹具不带--allow-fixture,expected TC-11a exit4,test-output/run_20261024_191750/TC-11a/,save --request-id st-11,4,PASS,EV-02
+TC-11b,正例,success夹具带--allow-fixture,expected TC-11b exit0 带合成标识,test-output/run_20261024_191750/TC-11b/,save --request-id st-11 --allow-fixture,0,PASS,EV-02
+TC-12,幂等,重复TC-01同键同参,expected TC-12 exit0 replay record_id=ev-78f10ce9748f620073921054 行数1,test-output/run_20261024_191750/TC-12/,save --request-id st-01,0,PASS,EV-02
+TC-13,负例,test-output内changed.json同键异参,expected TC-13 exit2 verify仍0 行数1,test-output/run_20261024_191750/TC-13/,save --request-id st-01（异参）;verify-store,2;0,PASS,EV-02
+TC-14,越权负例,tenant-B查tenant-A的record,expected TC-14 exit3,test-output/run_20261024_191750/TC-14/,get --tenant-id fixture-tenant-B,3,PASS,EV-02
+TC-15,故障注入,--fault-inject before_commit后重试,expected TC-15 exit5 行数0 重试0,test-output/run_20261024_191750/TC-15/,save --request-id st-15 --fault-inject before_commit,5;0,PASS,EV-02
+TC-16,故障注入,--fault-inject after_commit子进程exit42后同ID重试,expected TC-16 重试exit0 replay 行数1,test-output/run_20261024_191750/TC-16/,save --request-id st-16 --fault-inject after_commit;save重试,42;0,PASS,EV-02
+TC-17a,并发,两子进程同键同参,expected TC-17 exits∈{0;2} 行数1,test-output/run_20261024_191750/TC-17/,双进程并发save st-17,0;0,PASS,EV-02
+TC-17b,并发,两子进程同键异参,expected TC-17 恰一0一2 行数1,test-output/run_20261024_191750/TC-17/,双进程并发save st-17b,0;2,PASS,EV-02
+TC-18,正例,同period新request_id st-18,expected TC-18 exit0 entries>=2,test-output/run_20261024_191750/TC-18/,history --period 2026-08,0,PASS,EV-02
+TC-19,正例,TC-18的history输出,expected TC-19 当前有效=stored_at最新 不跨主体,test-output/run_20261024_191750/TC-19/,history输出断言,0,PASS,EV-02
+TC-20,篡改负例,sqlite3直接UPDATE payload_json追加空格,expected TC-20 exit6 tampered,test-output/run_20261024_191750/TC-20/,verify-store（篡改库）,6,PASS,EV-02
+TC-21,篡改负例,sqlite3直接UPDATE tenant_id=evil-tenant,expected TC-21 exit6 tampered,test-output/run_20261024_191750/TC-21/,verify-store（篡改库）,6,PASS,EV-02
+TC-22,正例,正常库关开后verify,expected TC-22 exit0 ok,test-output/run_20261024_191750/TC-22/,verify-store,0,PASS,EV-02
+TC-23,负例,--store ../escape.db --workdir wd,expected TC-23 exit4,test-output/run_20261024_191750/TC-23/,save --store ../escape.db,4,PASS,EV-02
+TC-23b,负例,检查越界目标文件,expected 未创建,test-output/run_20261024_191750/TC-23/,文件系统断言,无,PASS,EV-02
+TC-24,负例,request_id=x'); DROP TABLE evidence_records;--,expected TC-24 exit0 且verify仍0,test-output/run_20261024_191750/TC-24/,save;verify-store,0;0,PASS,EV-02
+TC-25,负例,selftest --selftest-fail-inject,expected TC-25 exit1非0,test-output/run_20261024_191750/TC-25/,selftest --selftest-fail-inject,1,PASS,EV-02
+SELFTEST,正例,selftest全新目录,expected exit0 PASSED,test-output/run_20261024_191750/SELFTEST/,selftest --workdir selftest_ok,0,PASS,EV-02
+FROZEN,一致性,expected与fixtures运行前后SHA256,expected 不变,test-output/run_20261024_191750/summary.json,哈希比对,无,PASS,EV-05

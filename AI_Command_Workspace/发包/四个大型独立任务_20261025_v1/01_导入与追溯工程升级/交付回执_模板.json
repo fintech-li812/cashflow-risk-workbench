@@ -1,0 +1,14 @@
+{
+  "task_id": "MEM-IMPORT-002",
+  "executor": "待填",
+  "version": "待填",
+  "scope": "manufacturing_actual_cashflow",
+  "engineering_admission": "not_run",
+  "platform_acceptance": "not_run",
+  "production_deployed": false,
+  "selfaudit_command": "待填",
+  "selfaudit_exit_code": null,
+  "admission_sha256": null,
+  "limitations": [],
+  "source_before_after_hashes": []
+}

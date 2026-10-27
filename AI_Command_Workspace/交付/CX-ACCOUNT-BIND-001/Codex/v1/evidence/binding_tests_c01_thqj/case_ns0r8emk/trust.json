@@ -1,0 +1,17 @@
+{
+  "schema_version": "mfg-account-binding-trust.v1",
+  "tenant_id": "fixture-tenant",
+  "company_id": "fixture-manufacturing",
+  "period": "2026-08",
+  "source_revision": "fixture-source-v1",
+  "run_id": "fixture-run-202608",
+  "industry": "manufacturing",
+  "approval_ref": "SYNTHETIC-OPERATOR-BINDING-ONLY",
+  "allow_fixture": true,
+  "approved_inputs": {
+    "context.json": "67d2ef3bd97b6b5b4b0e880aca1b2ce4ff3ff2ba838b7801f14808ca61a36eb9",
+    "scope.json": "a69997aa67ae3705d89716f16099e27126ce8577652e38e8c589ecfd084d020a",
+    "balances.json": "aab57e01b3f50b8ff5b0901ddebb3084c79fe469e57a5ab7521a2f333ac638dc",
+    "evidence_manifest.json": "8e37c1b4a08529b893faeecc3bd9ba3a3706228ed7cda0dcbe5b8edd227dc020"
+  }
+}

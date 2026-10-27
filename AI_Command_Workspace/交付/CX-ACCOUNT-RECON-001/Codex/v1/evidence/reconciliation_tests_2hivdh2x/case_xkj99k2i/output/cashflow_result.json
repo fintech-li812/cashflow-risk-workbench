@@ -1,0 +1,30 @@
+{
+  "tenant_id": "fixture-tenant",
+  "company_id": "fixture-manufacturing",
+  "period": "2026-08",
+  "source_revision": "fixture-source-v1",
+  "run_id": "fixture-run-202608",
+  "schema_version": "mfg-agent-result.v1",
+  "industry": "manufacturing",
+  "status": "success",
+  "origin": "offline_fixture",
+  "unit": "CNY",
+  "coverage": "full_cashflow",
+  "calculation_version": "baseline-cashflow-arithmetic.v1",
+  "source": {
+    "workbook_ref": "synthetic-account-evidence",
+    "sheet": "offline-normalized",
+    "range": "selected_records",
+    "snapshot_ref": "687e93100b391cc9c10a39081a65b88956b0bd9ebaf1ff50f61156dafdc95c6f"
+  },
+  "issues": [],
+  "amounts": {
+    "opening": "100000.00",
+    "inflow": "1400.00",
+    "outflow": "100.00",
+    "net": "1300.00",
+    "closing": "101300.00",
+    "actual_closing": "140000.00",
+    "difference": "38700.00"
+  }
+}

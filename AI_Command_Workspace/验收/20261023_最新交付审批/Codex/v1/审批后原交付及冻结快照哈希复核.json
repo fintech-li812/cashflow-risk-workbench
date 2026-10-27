@@ -1,0 +1,215 @@
+{
+  "time": "2026-10-23T19:26:15.479590+08:00",
+  "packages": {
+    "QWC-002": {
+      "count": 4,
+      "all_ok": true,
+      "checks": [
+        {
+          "file": "README.md",
+          "ok": true
+        },
+        {
+          "file": "只读取数证据.json",
+          "ok": true
+        },
+        {
+          "file": "平台接入口核实.md",
+          "ok": true
+        },
+        {
+          "file": "问题清单.md",
+          "ok": true
+        }
+      ]
+    },
+    "WB-FIN-001-v2": {
+      "count": 7,
+      "all_ok": true,
+      "checks": [
+        {
+          "file": "README.md",
+          "ok": true
+        },
+        {
+          "file": "财务公式与口径总表.md",
+          "ok": true
+        },
+        {
+          "file": "待确认问题.md",
+          "ok": true
+        },
+        {
+          "file": "手算与边界用例.csv",
+          "ok": true
+        },
+        {
+          "file": "verify_financial_formulas.py",
+          "ok": true
+        },
+        {
+          "file": "校验结果.txt",
+          "ok": true
+        },
+        {
+          "file": "返工报告_逐条回应.md",
+          "ok": true
+        }
+      ]
+    },
+    "WB-ENG-001-v2": {
+      "count": 12,
+      "all_ok": true,
+      "checks": [
+        {
+          "file": "candidate/docs/千问办公_MySQL_MCP对接协议_v1.1.md",
+          "ok": true
+        },
+        {
+          "file": "candidate/docs/千问办公_MySQL_MCP工具定义_v1.1.json",
+          "ok": true
+        },
+        {
+          "file": "candidate/sql/grants_admin_view_候选.sql",
+          "ok": true
+        },
+        {
+          "file": "candidate/sql/init_v1.1.sql",
+          "ok": true
+        },
+        {
+          "file": "tools/requirements.txt",
+          "ok": true
+        },
+        {
+          "file": "tools/validate_contract.py",
+          "ok": true
+        },
+        {
+          "file": "test-output/validate_output.txt",
+          "ok": true
+        },
+        {
+          "file": "README.md",
+          "ok": true
+        },
+        {
+          "file": "改动清单.md",
+          "ok": true
+        },
+        {
+          "file": "测试报告.md",
+          "ok": true
+        },
+        {
+          "file": "未决项.md",
+          "ok": true
+        },
+        {
+          "file": "返工报告_逐条回应.md",
+          "ok": true
+        }
+      ]
+    },
+    "WB-AGENT-003": {
+      "count": 23,
+      "all_ok": true,
+      "checks": [
+        {
+          "file": "candidate/__init__.py",
+          "ok": true
+        },
+        {
+          "file": "candidate/adapters.py",
+          "ok": true
+        },
+        {
+          "file": "candidate/agent_guard.py",
+          "ok": true
+        },
+        {
+          "file": "candidate/persistence.py",
+          "ok": true
+        },
+        {
+          "file": "candidate/request_flow.py",
+          "ok": true
+        },
+        {
+          "file": "candidate/runtime_adapter.py",
+          "ok": true
+        },
+        {
+          "file": "agent/八条制造业现金流追问_v2_继承原文.md",
+          "ok": true
+        },
+        {
+          "file": "agent/八条制造业现金流追问_v3.md",
+          "ok": true
+        },
+        {
+          "file": "agent/制造业现金流主提示词_v2_继承原文.txt",
+          "ok": true
+        },
+        {
+          "file": "agent/制造业现金流主提示词_v3.txt",
+          "ok": true
+        },
+        {
+          "file": "docs/X千问配置操作单.md",
+          "ok": true
+        },
+        {
+          "file": "docs/接口映射.md",
+          "ok": true
+        },
+        {
+          "file": "docs/未实现清单.md",
+          "ok": true
+        },
+        {
+          "file": "docs/来源继承与差异说明.md",
+          "ok": true
+        },
+        {
+          "file": "fixtures/synthetic_success.json",
+          "ok": true
+        },
+        {
+          "file": "tests/__init__.py",
+          "ok": true
+        },
+        {
+          "file": "tests/test_flow_and_persistence.py",
+          "ok": true
+        },
+        {
+          "file": "tests/test_inherited_guard.py",
+          "ok": true
+        },
+        {
+          "file": "test-output/selftest_v1.txt",
+          "ok": true
+        },
+        {
+          "file": "README.md",
+          "ok": true
+        },
+        {
+          "file": "run_tests.py",
+          "ok": true
+        },
+        {
+          "file": "requirements.lock.txt",
+          "ok": true
+        },
+        {
+          "file": "config.example.json",
+          "ok": true
+        }
+      ]
+    }
+  },
+  "workbook_sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+  "notes": "原交付未修改；探针仅在副本执行，执行副本受影响的清单内文件已从核验通过的原交付恢复。测试日志另存。"
+}

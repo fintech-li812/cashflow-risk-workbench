@@ -1,0 +1,104 @@
+{
+  "task_id": "MEM-DOC-001",
+  "package_version": "v1",
+  "author": "包A（团队角色）",
+  "ai_used": "WorkBuddy",
+  "created_at": "2026-10-24T07:52:00+08:00",
+  "status": "candidate",
+  "source_bundle_sha256": "da8a931caf65d8c28e7fd187d35f5ba1d7d2adbe791ca949e25eea0f500f0f32",
+  "scope": "manufacturing_actual_cashflow",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "b21b1b86a29c80d24d151cc4db4c3956c94eefabca3b0f1755f3fd80e908e00d"
+    },
+    {
+      "path": "07_逐条修订记录.csv",
+      "sha256": "762d99260f942a711d35ed86f9918062ab3f0d60608979ef48bdcb378b105bd8"
+    },
+    {
+      "path": "08_证据索引.csv",
+      "sha256": "2877893ec8503c80a89325b8fe8b4f7ca53b3801932d29725124baf01ea7257f"
+    },
+    {
+      "path": "09_待X确认事项.csv",
+      "sha256": "d8694311357652235901f44406d943e9707c2ab3bcbe217b65c23d5ac7b4f3fa"
+    },
+    {
+      "path": "10_自查验收.csv",
+      "sha256": "a2e410c0616b154065d2eab4c0365ba197e6811b98986f9b1a3feaa79d9a8106"
+    },
+    {
+      "path": "01_千问报告修正候选/README.md",
+      "sha256": "4949ecbc776a15bedd4fdd66a3a334bfb5444c689c0cdd6e772d8f89195c9589"
+    },
+    {
+      "path": "01_千问报告修正候选/只读取数证据.json",
+      "sha256": "a8624372ab8d282dd6278b21ec4d9d0e1821ef55761ccc194bf76b8361db635f"
+    },
+    {
+      "path": "01_千问报告修正候选/平台接入口核实.md",
+      "sha256": "c3a1d884dfbeb881b5c2008405522d3fc38c3a16b79bf0816af08285f0d2ce60"
+    },
+    {
+      "path": "01_千问报告修正候选/问题清单.md",
+      "sha256": "3a0438d3a29353c952f7e0574884257c63a610a0a1d042877050b4fbcfa64da4"
+    },
+    {
+      "path": "02_负责人及统计范围.md",
+      "sha256": "a2f9d3cba49cca81059c14f17be417cfc3d377e8d6fa43cb146ed5cd73ae0fa4"
+    },
+    {
+      "path": "02_责任分工.csv",
+      "sha256": "875f9a6e79b79bb06083a510c4ae6d89b6f5cea65e260c1257d9920e92e58b18"
+    },
+    {
+      "path": "02_统计范围.csv",
+      "sha256": "a721fd84e574e8685b027dd65df7986915e4f04eecca90c00490dd189b059149"
+    },
+    {
+      "path": "03_字段合同.md",
+      "sha256": "ca906c96394959027a08d113e9722ab7bb8eff8f5edfa430a30b72233d6a1995"
+    },
+    {
+      "path": "03_字段合同.csv",
+      "sha256": "869652f378dd823ca8402003283bd0b2d9df05bf76bed31a777dbc8e7265cc5c"
+    },
+    {
+      "path": "04_现金流核对报告模板.md",
+      "sha256": "2c14a7e88e8ef0d1641ce48befa46bc94db82f7e6a733b1caa739a247ea3b535"
+    },
+    {
+      "path": "04_差异回溯报告模板.md",
+      "sha256": "985142eed1044c018d29f1d10aac5f7a22c5dc5f99f05cf8da84166e72efc3dc"
+    },
+    {
+      "path": "04_结果状态说明.md",
+      "sha256": "5ebc8fd6d572f8733da0e47749c8fa23c07565dee167a3dec03de2b976afb531"
+    },
+    {
+      "path": "05_制造业现金流使用手册_候选.md",
+      "sha256": "3af1ffd52a41f6ce052dd3634e3565a47d90f1af0900c608fe66fa89df36bf22"
+    },
+    {
+      "path": "06_看板文案修改表.csv",
+      "sha256": "717121bc60ea15881b36e0dbfbb1e07fcfb4074780ed5199432ed0f0321d1d1c"
+    },
+    {
+      "path": "06_看板与Agent文案稿.md",
+      "sha256": "1adae8e0a3ec9df41c8782bb9d15621116ee567a26864a712870e76f1a70f758"
+    }
+  ],
+  "open_issue_ids": [
+    "OPEN-01",
+    "OPEN-02",
+    "OPEN-03",
+    "OPEN-04",
+    "OPEN-05",
+    "OPEN-06",
+    "OPEN-07",
+    "OPEN-08",
+    "OPEN-09",
+    "OPEN-10"
+  ]
+}

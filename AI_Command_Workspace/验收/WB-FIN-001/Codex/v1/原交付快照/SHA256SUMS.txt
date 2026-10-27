@@ -1,0 +1,10 @@
+# WB-FIN-001 WorkBuddy v1 交付文件 SHA256 清单
+# 生成时间: 2026-10-22 20:55:10 +0800（Asia/Shanghai）
+# 用途：Codex 冻结候选与 DeepSeek 审核开始时比对
+#
+88b3bb1ecc423a9426a444aec396c9f4cedfc1aee4d297b60bf62d357bc0b020 *README.md
+92503d2755d152290c8655cf08e196db955b0b2840a258a943f79a738f8553c4 *财务公式与口径总表.md
+334d768e694aaf2f2981bcc204b76d77edd3f230e7ca0681ab22b13284624547 *待确认问题.md
+96fa26aba2ac4077296f85da6a85009dd616c5345ddd05d1064b42b74f813598 *手算与边界用例.csv
+de174ad1d55ba310398e518bf1f3486aaf5ffdf346c6b5d140e882cc867e41dd *verify_financial_formulas.py
+c0a643b254b2233588f7c8b0511ea476417fab4b41fe75ead6d7fdfcd004c71d *校验结果.txt

@@ -1,0 +1,2 @@
+﻿state,code,location,expected,actual,action
+失败,UNIT_UNRESOLVED,records[0].normalized.inflow,源哈希/地址绑定单位疑点必须null,检查未满足；见定位及原始工件,待业务核实，不自动放大

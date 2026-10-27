@@ -1,0 +1,162 @@
+{
+  "packages": 31,
+  "missing": [],
+  "mismatched": [],
+  "details": [
+    {
+      "name": "annotated-types",
+      "expected": "0.8.0",
+      "actual": "0.8.0"
+    },
+    {
+      "name": "anyio",
+      "expected": "4.15.1",
+      "actual": "4.15.1"
+    },
+    {
+      "name": "attrs",
+      "expected": "26.1.0",
+      "actual": "26.1.0"
+    },
+    {
+      "name": "certifi",
+      "expected": "2026.10.23",
+      "actual": "2026.10.23"
+    },
+    {
+      "name": "cffi",
+      "expected": "2.1.1",
+      "actual": "2.1.1"
+    },
+    {
+      "name": "click",
+      "expected": "8.5.0",
+      "actual": "8.5.0"
+    },
+    {
+      "name": "cryptography",
+      "expected": "50.0.2",
+      "actual": "50.0.2"
+    },
+    {
+      "name": "h11",
+      "expected": "0.16.0",
+      "actual": "0.16.0"
+    },
+    {
+      "name": "httpcore",
+      "expected": "1.0.9",
+      "actual": "1.0.9"
+    },
+    {
+      "name": "httpx",
+      "expected": "0.28.1",
+      "actual": "0.28.1"
+    },
+    {
+      "name": "httpx-sse",
+      "expected": "0.4.3",
+      "actual": "0.4.3"
+    },
+    {
+      "name": "idna",
+      "expected": "3.20",
+      "actual": "3.20"
+    },
+    {
+      "name": "jsonschema",
+      "expected": "4.26.0",
+      "actual": "4.26.0"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "expected": "2025.9.1",
+      "actual": "2025.9.1"
+    },
+    {
+      "name": "mcp",
+      "expected": "1.30.0",
+      "actual": "1.30.0"
+    },
+    {
+      "name": "pycparser",
+      "expected": "3.12",
+      "actual": "3.12"
+    },
+    {
+      "name": "pydantic",
+      "expected": "2.14.1",
+      "actual": "2.14.1"
+    },
+    {
+      "name": "pydantic-settings",
+      "expected": "2.16.1",
+      "actual": "2.16.1"
+    },
+    {
+      "name": "pydantic_core",
+      "expected": "2.50.1",
+      "actual": "2.50.1"
+    },
+    {
+      "name": "PyJWT",
+      "expected": "2.15.1",
+      "actual": "2.15.1"
+    },
+    {
+      "name": "PyMySQL",
+      "expected": "1.1.2",
+      "actual": "1.1.2"
+    },
+    {
+      "name": "python-dotenv",
+      "expected": "1.2.4",
+      "actual": "1.2.4"
+    },
+    {
+      "name": "python-multipart",
+      "expected": "0.0.32",
+      "actual": "0.0.32"
+    },
+    {
+      "name": "pywin32",
+      "expected": "312",
+      "actual": "312"
+    },
+    {
+      "name": "referencing",
+      "expected": "0.37.0",
+      "actual": "0.37.0"
+    },
+    {
+      "name": "rpds-py",
+      "expected": "2026.9.1",
+      "actual": "2026.9.1"
+    },
+    {
+      "name": "sse-starlette",
+      "expected": "3.5.0",
+      "actual": "3.5.0"
+    },
+    {
+      "name": "starlette",
+      "expected": "1.9.0",
+      "actual": "1.9.0"
+    },
+    {
+      "name": "typing-inspection",
+      "expected": "0.4.4",
+      "actual": "0.4.4"
+    },
+    {
+      "name": "typing_extensions",
+      "expected": "4.16.0",
+      "actual": "4.16.0"
+    },
+    {
+      "name": "uvicorn",
+      "expected": "0.54.0",
+      "actual": "0.54.0"
+    }
+  ]
+}

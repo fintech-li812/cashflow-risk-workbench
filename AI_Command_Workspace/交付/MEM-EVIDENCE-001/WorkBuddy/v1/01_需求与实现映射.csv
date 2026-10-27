@@ -1,0 +1,13 @@
+﻿需求ID,需求原文定位,实现文件与位置,关联用例ID,状态,证据ID,未实现与待确认
+REQ-01,任务书"具体产物与接口"第1条：实装save/get/history/verify-store/selftest,src/evidence_cli.py 全部五个子命令,TC-01;TC-02;TC-12;TC-18;TC-22;TC-25,已实现,EV-02,无
+REQ-02,第2条：必须落本地事务库、重启读回、回执只在commit之后,src/evidence_store.py EvidenceStore.save/DDL,TC-02;TC-15;TC-16;TC-22,已实现,EV-02,MySQL部署未实现（U2）
+REQ-03,第3条：只接success且勾稽合格；缺余额双null；非success独立诊断无回执,src/evidence_store.py validate_result/_save_diagnostic,TC-04;TC-05;TC-10,已实现,EV-02,无
+REQ-04,第4条：幂等唯一键tenant/company/operation/request_id；同参回放异参冲突,src/evidence_store.py UNIQUE约束/save/_retry_after_unique_race,TC-12;TC-13,已实现,EV-02,无
+REQ-05,第5条：受控子进程竞争提交唯一约束与事务；锁超时明确返回,src/evidence_store.py busy_timeout/save,TC-17a;TC-17b,已实现,EV-02,仅本机受控测试库不代表允许多人并行施工
+REQ-06,第6条：断点注入commit前无半条；commit后回执丢失重试返回原记录,src/evidence_store.py fault参数；CLI --fault-inject,TC-15;TC-16,已实现,EV-02,仅测试入口
+REQ-07,第7条：历史只追加；当前有效依赖同主体/期间/来源版本；不MAX(id)跨企业,src/evidence_store.py history,TC-18;TC-19,已实现,EV-02,批准规则叠加待确认（Q5）
+REQ-08,第8条：verify-store复核摘要/回执/身份关联；篡改检测边界说明,src/evidence_store.py verify_store；trust_boundary.md,TC-20;TC-21,已实现,EV-02,不抗整库重写者（U5已声明）
+REQ-09,第9条：get/history限企业租户防混查；trust_boundary.md,src/evidence_store.py get/history；trust_boundary.md,TC-14,已实现,EV-02,生产认证未接线（U1）
+REQ-10,第10条：库只在指定测试目录创建；SQL参数化；脱敏；默认拒fixture,src/evidence_store.py resolve_store_path；CLI --allow-fixture,TC-11a;TC-11b;TC-23;TC-23b;TC-24,已实现,EV-02,无
+REQ-11,原任务"必须实现"：退出码语义与文档实例,错误码说明.md；README.md CLI示例,TC-25;SELFTEST,已实现,EV-03,无
+REQ-12,统一交付格式：README/src/tests/fixtures/expected/test-output/文档/CSV/manifest/SHA256,本目录全部文件,FROZEN,已实现,EV-05,无

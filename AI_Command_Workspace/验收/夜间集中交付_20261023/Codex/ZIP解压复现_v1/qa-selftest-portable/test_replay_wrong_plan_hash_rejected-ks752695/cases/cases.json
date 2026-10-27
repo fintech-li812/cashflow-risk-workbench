@@ -1,0 +1,1 @@
+{"cases":[{"allow_fixture":true,"context":"ok-context.json","expected":{"codes":[],"status":"通过"},"files":{"ok-context.json":"3828a54b68884428615ec55be7740b921d593757eee6c2019505d83cdbee1574","ok-result.json":"21e73fc2387cf1eebd17bfb0e23f7fb2b1bf89150dae53b4345ee50d9713351e"},"id":"ok","operation":"verify-result","result":"ok-result.json"}],"schema_version":"mfg-qa-replay.v1"}

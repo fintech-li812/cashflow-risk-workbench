@@ -1,0 +1,1 @@
+{"status": "prepared", "called": false, "schema_dialect": "https://json-schema.org/draft/2020-12/schema", "call_sha256": "6cc9ca008e0dee0bd62fc51c8adaba5ded2908fa6a24e45ddcf2c6bcca05709d", "descriptor_sha256": "7f4e0d6011c1233f3335a1ea67e81203f884a220ca5d30eedbe83432f211305c", "notice": "offline validation only; descriptor provenance/authentication unverified"}

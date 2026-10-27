@@ -1,0 +1,1 @@
+请先读取D:\AI_Command_Workspace\任务看板.md。最新开发候选已全部冻结，按串行顺序独审：MEM-QA-001 Codex v2、CX-AGENT-FIX-001 Codex v1、CX-RELEASE-001 Codex v1、CX-TOOL-BIND-001 Codex v1。先接第一项，不与其他施工并行。新增守卫审查标准见指令/DS-AUD-TOOL-BIND-001_调用前守卫独立审核_v1.md。各项独立复现，列最小反例和修改意见；未经审核不合并、不部署，所有结果统一交X。开发者的通过记录不是独立审核通过。

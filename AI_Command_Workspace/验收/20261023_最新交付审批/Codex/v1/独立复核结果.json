@@ -1,0 +1,435 @@
+{
+  "FIN": {
+    "rerun_exit": 0,
+    "probes": [
+      {
+        "id": "FIN-R01_conversion",
+        "actual": "1.23 万元 = 12300.00 元"
+      },
+      {
+        "id": "FIN-R02_invalid",
+        "actual": "AttributeError: 'NoneType' object has no attribute 'is_nan'"
+      },
+      {
+        "id": "FIN-R02_nonfinite",
+        "actual": "['NaN', 'Infinity', 'Infinity']"
+      },
+      {
+        "id": "FIN-R04_red_rounding",
+        "actual": "('黄灯', '1.5000 < K黄 2.5')"
+      },
+      {
+        "id": "FIN-R04_yellow_rounding",
+        "actual": "('绿灯', '2.5000 ≥ K黄 2.5')"
+      },
+      {
+        "id": "FIN-R05_window",
+        "actual": "(Decimal('66.6667'), '')"
+      },
+      {
+        "id": "FIN-R03_failure_exit",
+        "actual": {
+          "exit": 0,
+          "FAIL_1": true
+        }
+      },
+      {
+        "id": "FIN-R03_exception_blocked",
+        "actual": {
+          "exit": 0,
+          "error": true,
+          "blocked": true
+        }
+      }
+    ]
+  },
+  "ENG": {
+    "runtime": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+    "dependency": "existing author CPython venv jsonschema; no dependency installation",
+    "rerun_exit": 0,
+    "rerun_tail": "实MySQL | init_v1.1.sql 在 MySQL 8.x 实际执行 | R-06 修正措辞：本机【有】MySQL 实例（审核实测 MySQL84 服务运行、3306 监听、mysql.exe 存在），真正的原因是【无可用凭据且未获授权建库】——root 以空口令被拒，且 WB-ENG-001 纪律禁止在服务器执行 DDL。静态解析通过 ≠ MySQL 执行通过，留待 WB-ENG-006 隔离环境验证\n[BLOCKED] D-真实MySQL | 视图在真实库创建与查询 | 同上；且 cf_admin 缺 CREATE VIEW/SHOW VIEW，权限候选待批准\n==============================================================================\n汇总: PASS=82 FAIL=0 SKIP=1 BLOCKED=2 合计=85\n结论: 无 FAIL（BLOCKED/SKIP 项见明细，不构成通过证据）\n",
+    "null_probes": [
+      {
+        "label": "accurate",
+        "predicted_value": "1.00",
+        "actual_value": "2.00",
+        "accepted": true,
+        "errors": []
+      },
+      {
+        "label": "accurate",
+        "predicted_value": "1.00",
+        "actual_value": null,
+        "accepted": true,
+        "errors": []
+      },
+      {
+        "label": "inaccurate",
+        "predicted_value": null,
+        "actual_value": null,
+        "accepted": true,
+        "errors": []
+      },
+      {
+        "label": "pending",
+        "predicted_value": null,
+        "actual_value": null,
+        "accepted": true,
+        "errors": []
+      }
+    ],
+    "base_fixture": {
+      "request_id": "audit-r",
+      "source_ref": "synthetic-test",
+      "occurred_at": "2026-10-23T00:00:00Z",
+      "metric_code": "cashflow",
+      "actual_source_ref": "synthetic-actual",
+      "evaluation_version": "audit.v1",
+      "currency": "CNY",
+      "accuracy_label": "accurate",
+      "forecast_start_at": "2026-10-01T00:00:00Z",
+      "forecast_end_at": "2026-10-20T00:00:00Z",
+      "forecast_id": "f1"
+    }
+  },
+  "QWC": {
+    "source_hash_match": true,
+    "reported_source_changed": true,
+    "D8_match": true,
+    "D8_declared_wanyuan_converts_to_yiyuan": "163.13",
+    "reported_text": "原值1631300，按声明单位万元则折合16.31亿元量级，与列内其余值(百位级万元)差约4个数量级；仅标记疑点，不修正、不缩放、不删",
+    "checked_cell_entries": 67,
+    "mismatches": [],
+    "raw_observations": [
+      {
+        "cell": "企业基本信息!A1",
+        "ok": true,
+        "actual": "制造业｜企业基本信息",
+        "reported": "制造业｜企业基本信息"
+      },
+      {
+        "cell": "企业基本信息!B1",
+        "ok": true,
+        "actual": null,
+        "reported": null
+      },
+      {
+        "cell": "企业基本信息!C1",
+        "ok": true,
+        "actual": null,
+        "reported": null
+      },
+      {
+        "cell": "企业基本信息!A2",
+        "ok": true,
+        "actual": "字段",
+        "reported": "字段"
+      },
+      {
+        "cell": "企业基本信息!B2",
+        "ok": true,
+        "actual": "值",
+        "reported": "值"
+      },
+      {
+        "cell": "企业基本信息!C2",
+        "ok": true,
+        "actual": "说明",
+        "reported": "说明"
+      },
+      {
+        "cell": "企业基本信息!A3",
+        "ok": true,
+        "actual": "企业名称",
+        "reported": "企业名称"
+      },
+      {
+        "cell": "企业基本信息!B3",
+        "ok": true,
+        "actual": "恒驰精密制造（苏州）有限公司",
+        "reported": "恒驰精密制造（苏州）有限公司"
+      },
+      {
+        "cell": "企业基本信息!C3",
+        "ok": true,
+        "actual": "工商登记全称",
+        "reported": "工商登记全称"
+      },
+      {
+        "cell": "企业基本信息!A4",
+        "ok": true,
+        "actual": "行业代码（GB/T 4754-2017）",
+        "reported": "行业代码（GB/T 4754-2017）"
+      },
+      {
+        "cell": "企业基本信息!B4",
+        "ok": true,
+        "actual": "C13",
+        "reported": "C13"
+      },
+      {
+        "cell": "企业基本信息!C4",
+        "ok": true,
+        "actual": "数据闸→行业代码校验",
+        "reported": "数据闸→行业代码校验"
+      },
+      {
+        "cell": "企业基本信息!A5",
+        "ok": true,
+        "actual": "所属行业",
+        "reported": "所属行业"
+      },
+      {
+        "cell": "企业基本信息!B5",
+        "ok": true,
+        "actual": "制造业",
+        "reported": "制造业"
+      },
+      {
+        "cell": "企业基本信息!C5",
+        "ok": true,
+        "actual": "",
+        "reported": ""
+      },
+      {
+        "cell": "企业基本信息!A6",
+        "ok": true,
+        "actual": "企业规模",
+        "reported": "企业规模"
+      },
+      {
+        "cell": "企业基本信息!B6",
+        "ok": true,
+        "actual": "中型",
+        "reported": "中型"
+      },
+      {
+        "cell": "企业基本信息!C6",
+        "ok": true,
+        "actual": "按工信部中小企业划型标准",
+        "reported": "按工信部中小企业划型标准"
+      },
+      {
+        "cell": "企业基本信息!A7",
+        "ok": true,
+        "actual": "在职人数（人）",
+        "reported": "在职人数（人）"
+      },
+      {
+        "cell": "企业基本信息!B7",
+        "ok": true,
+        "actual": "320",
+        "reported": "320"
+      },
+      {
+        "cell": "企业基本信息!C7",
+        "ok": true,
+        "actual": "数据闸→规模合理性校验（人数<1 判异常）",
+        "reported": "数据闸→规模合理性校验（人数<1 判异常）"
+      },
+      {
+        "cell": "企业基本信息!A8",
+        "ok": true,
+        "actual": "上年度营业收入（万元）",
+        "reported": "上年度营业收入（万元）"
+      },
+      {
+        "cell": "企业基本信息!B8",
+        "ok": true,
+        "actual": "12800",
+        "reported": "12800"
+      },
+      {
+        "cell": "企业基本信息!C8",
+        "ok": true,
+        "actual": "数据闸→规模合理性校验（营收<0 判异常）",
+        "reported": "数据闸→规模合理性校验（营收<0 判异常）"
+      },
+      {
+        "cell": "企业基本信息!A9",
+        "ok": true,
+        "actual": "月均现金缓冲（万元）",
+        "reported": "月均现金缓冲（万元）"
+      },
+      {
+        "cell": "企业基本信息!B9",
+        "ok": true,
+        "actual": "260",
+        "reported": "260"
+      },
+      {
+        "cell": "企业基本信息!C9",
+        "ok": true,
+        "actual": "用于红黄绿判定的测算基数",
+        "reported": "用于红黄绿判定的测算基数"
+      },
+      {
+        "cell": "企业基本信息!A10",
+        "ok": true,
+        "actual": "月均经营性流出 M（万元）",
+        "reported": "月均经营性流出 M（万元）"
+      },
+      {
+        "cell": "企业基本信息!B10",
+        "ok": true,
+        "actual": "161.2",
+        "reported": "161.2"
+      },
+      {
+        "cell": "企业基本信息!C10",
+        "ok": true,
+        "actual": "近12个月经营性流出均值，定时任务每月重算（v8 基数）",
+        "reported": "近12个月经营性流出均值，定时任务每月重算（v8 基数）"
+      },
+      {
+        "cell": "现金流水!F2",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G2",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F3",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G3",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F4",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G4",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F5",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G5",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F6",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G6",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F7",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G7",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F8",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G8",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F9",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G9",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F10",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G10",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F11",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G11",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F12",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G12",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F13",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G13",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F14",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G14",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F15",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G15",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!A12/A15",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!B12/B15",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!C12/C15",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!D12/D15",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!E12/E15",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!F12/F15",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!G12/G15",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!H12/H15",
+        "ok": true
+      },
+      {
+        "cell": "现金流水!I12/I15",
+        "ok": true
+      }
+    ],
+    "evidence_has_complete_cashflow_rows": false
+  }
+}

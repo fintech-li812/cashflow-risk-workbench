@@ -1,0 +1,8 @@
+{
+  "args": [
+    "errors"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"success\":true,\"data\":{\"errors\":[]},\"error\":null}\n",
+  "stderr": ""
+}

@@ -1,0 +1,205 @@
+{
+  "path": "D:\\CashflowRiskWorkbench\\data\\制造业_样例数据.xlsx",
+  "sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b",
+  "sheets": [
+    {
+      "sheet": "企业基本信息",
+      "rows": 28,
+      "columns": 3,
+      "fields": [
+        [
+          "制造业｜企业基本信息",
+          "None"
+        ],
+        [
+          "字段",
+          "值"
+        ],
+        [
+          "企业名称",
+          "恒驰精密制造（苏州）有限公司"
+        ],
+        [
+          "行业代码（GB/T 4754-2017）",
+          "C13"
+        ],
+        [
+          "所属行业",
+          "制造业"
+        ],
+        [
+          "企业规模",
+          "中型"
+        ],
+        [
+          "在职人数（人）",
+          "320"
+        ],
+        [
+          "上年度营业收入（万元）",
+          "12800"
+        ],
+        [
+          "月均现金缓冲（万元）",
+          "260"
+        ],
+        [
+          "月均经营性流出 M（万元）",
+          "161.2"
+        ]
+      ]
+    },
+    {
+      "sheet": "现金流水",
+      "rows": 15,
+      "columns": 9,
+      "headers": [
+        "月份",
+        "月末日期",
+        "流水类型",
+        "经营性流入（万元）",
+        "经营性流出（万元）",
+        "净现金流（万元）",
+        "期末现金余额（万元）",
+        "说明",
+        "数据闸结果"
+      ],
+      "period_rows": [
+        {
+          "row": 3,
+          "month": "2025-10",
+          "date": "2025-10-31 00:00:00",
+          "type": "经营性",
+          "has_formula_F": false,
+          "has_formula_G": false
+        },
+        {
+          "row": 4,
+          "month": "2025-11",
+          "date": "2025-11-30 00:00:00",
+          "type": "经营性",
+          "has_formula_F": false,
+          "has_formula_G": false
+        },
+        {
+          "row": 5,
+          "month": "2025-12",
+          "date": "2025-12-31 00:00:00",
+          "type": "经营性",
+          "has_formula_F": false,
+          "has_formula_G": false
+        },
+        {
+          "row": 6,
+          "month": "2026-01",
+          "date": "2026-01-31 00:00:00",
+          "type": "经营性",
+          "has_formula_F": false,
+          "has_formula_G": false
+        },
+        {
+          "row": 7,
+          "month": "2026-02",
+          "date": "2026-02-28 00:00:00",
+          "type": "经营性",
+          "has_formula_F": false,
+          "has_formula_G": false
+        },
+        {
+          "row": 8,
+          "month": "2026-03",
+          "date": "2026-03-31 00:00:00",
+          "type": "经营性",
+          "has_formula_F": false,
+          "has_formula_G": false
+        },
+        {
+          "row": 9,
+          "month": "2026-04",
+          "date": "2026-04-30 00:00:00",
+          "type": "经营性",
+          "has_formula_F": false,
+          "has_formula_G": false
+        },
+        {
+          "row": 10,
+          "month": "2026-05",
+          "date": "2026-05-31 00:00:00",
+          "type": "经营性",
+          "has_formula_F": false,
+          "has_formula_G": false
+        },
+        {
+          "row": 11,
+          "month": "2026-06",
+          "date": "2026-06-30 00:00:00",
+          "type": "经营性",
+          "has_formula_F": false,
+          "has_formula_G": false
+        },
+        {
+          "row": 12,
+          "month": "2026-07",
+          "date": "2026-07-31 00:00:00",
+          "type": "经营性",
+          "has_formula_F": false,
+          "has_formula_G": false
+        },
+        {
+          "row": 13,
+          "month": "2026-08",
+          "date": "2026-08-31 00:00:00",
+          "type": "经营性",
+          "has_formula_F": false,
+          "has_formula_G": false
+        },
+        {
+          "row": 14,
+          "month": "2026-09",
+          "date": "2026-09-30 00:00:00",
+          "type": "经营性",
+          "has_formula_F": false,
+          "has_formula_G": false
+        },
+        {
+          "row": 15,
+          "month": "2026-07",
+          "date": "2026-07-31 00:00:00",
+          "type": "经营性",
+          "has_formula_F": false,
+          "has_formula_G": false
+        }
+      ]
+    },
+    {
+      "sheet": "应收账款",
+      "rows": 26,
+      "columns": 10
+    },
+    {
+      "sheet": "筹资信息",
+      "rows": 6,
+      "columns": 5
+    },
+    {
+      "sheet": "投资现金流",
+      "rows": 5,
+      "columns": 6
+    },
+    {
+      "sheet": "银行流水",
+      "rows": 17,
+      "columns": 6
+    },
+    {
+      "sheet": "行业参数",
+      "rows": 8,
+      "columns": 13
+    },
+    {
+      "sheet": "数据字典",
+      "rows": 9,
+      "columns": 6
+    }
+  ]
+}

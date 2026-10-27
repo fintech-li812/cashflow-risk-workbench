@@ -1,0 +1,12 @@
+{
+  "original_report_read": true,
+  "revised_docx": "D:\\AI_Command_Workspace\\验收\\20261025_用户归档交付复审\\Codex\\v1\\修订交付\\随附说明修订\\MEM-EVIDENCE-001_完成报告.docx",
+  "default_renderer_error": "FileNotFoundError: LibreOffice soffice.exe was not found on PATH",
+  "fallback": "native Office COM PDF export + Poppler rasterization",
+  "first_com_cleanup_error": "远程过程调用失败。 (0x800706BE); PDF export already succeeded, no repeated Quit",
+  "final_export_exit_code": 0,
+  "final_image": "证据/Word渲染/page-final.png",
+  "pages": 1,
+  "visually_inspected": true,
+  "findings": "标题黑色无边线，正文完整，无溢出或遮挡"
+}

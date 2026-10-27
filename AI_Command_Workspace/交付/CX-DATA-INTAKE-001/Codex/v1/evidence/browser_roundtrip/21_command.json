@@ -1,0 +1,10 @@
+{
+  "args": [
+    "eval",
+    "-b",
+    "KHt4c3M6d2luZG93LmludGFrZVhzc3x8bnVsbCxzY3JpcHRDb3VudDpkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCIjZ2FwcyBpbWcsI2dhcHMgc2NyaXB0IikubGVuZ3RoLHRleHQ6ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImdhcHMiKS50ZXh0Q29udGVudH0p"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"success\":true,\"data\":{\"origin\":\"file:///D:/AI_Command_Workspace/%E4%BA%A4%E4%BB%98/CX-DATA-INTAKE-001/Codex/v1/web/index.html\",\"result\":{\"scriptCount\":0,\"text\":\"<img src=x onerror=window.intakeXss=1>：缺少期末余额\",\"xss\":null}},\"error\":null}\n",
+  "stderr": ""
+}

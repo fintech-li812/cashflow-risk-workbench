@@ -1,0 +1,1 @@
+Windows OpenSSH首次只读接入失败：UNPROTECTED PRIVATE KEY FILE / Permissions are too open / bad permissions / Permission denied (publickey)，exit255。未改密钥与权限。间隔至少30秒后核对旧脚本，改用此前验证过的Git SSH成功。原先首轮失败JSON被后次同名输出覆盖，本文件据当时工具输出补记，不冒充未覆盖的原始日志。

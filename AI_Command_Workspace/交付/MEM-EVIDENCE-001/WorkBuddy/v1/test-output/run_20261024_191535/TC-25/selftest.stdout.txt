@@ -1,0 +1,10 @@
+{
+  "checks": [
+    {
+      "check": "selftest-fail-inject（人为注入的失败断言）",
+      "detail": "该用例被 --selftest-fail-inject 强制置为失败，用于证明退出码非0可真实触发",
+      "pass": false
+    }
+  ],
+  "selftest": "FAILED"
+}

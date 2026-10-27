@@ -1,0 +1,19 @@
+test_committed_receipt_wrong_payload (test_qa_tool.QA.test_committed_receipt_wrong_payload) ... FAIL
+
+======================================================================
+FAIL: test_committed_receipt_wrong_payload (test_qa_tool.QA.test_committed_receipt_wrong_payload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_receipt_hash\test_qa_tool.py", line 241, in test_committed_receipt_wrong_payload
+    self.check_result('RECEIPT_HASH', receipt=self.receipt)
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_receipt_hash\test_qa_tool.py", line 128, in check_result
+    self.assertEqual(report.status, '失败', report.as_dict())
+AssertionError: '通过' != '失败'
+- 通过
++ 失败
+ : {'schema_version': 'mfg-qa.v1', 'operation': 'verify-result', 'status': '通过', 'exit_code': 0, 'check_count': 76, 'issues': [], 'notes': ['离线工件检查；没有执行主算法、平台操作或数据库提交。', '当前为显式合成测试；通过仅证明格式与算术，不代表真实企业/平台。', '回执仅核内容一致性；未连接存储，不能证明事务已提交或MySQL入库。']}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

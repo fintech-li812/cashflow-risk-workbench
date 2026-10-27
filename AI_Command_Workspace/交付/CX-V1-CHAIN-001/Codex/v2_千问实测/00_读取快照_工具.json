@@ -1,0 +1,45 @@
+{
+  "source": "Qwen desktop tool detail UI",
+  "chat": "mvm9gfc0dn7c9a7h",
+  "arguments": {
+    "arguments": {},
+    "toolName": "mcp__制造业现金流_隔离联调_v2__read_cashflow_result"
+  },
+  "result": {
+    "status": "ok",
+    "result": {
+      "tenant_id": "fixture-tenant",
+      "company_id": "fixture-manufacturing",
+      "period": "2026-08",
+      "source_revision": "fixture-source-v1",
+      "run_id": "fixture-run-202608",
+      "schema_version": "mfg-agent-result.v1",
+      "industry": "manufacturing",
+      "status": "success",
+      "origin": "offline_fixture",
+      "unit": "CNY",
+      "coverage": "full_cashflow",
+      "calculation_version": "baseline-cashflow-arithmetic.v1",
+      "source": {
+        "workbook_ref": "synthetic-manufacturing-v1",
+        "sheet": "fixture-result",
+        "range": "A1:G2",
+        "snapshot_ref": "fixture-snapshot-202608"
+      },
+      "issues": [],
+      "amounts": {
+        "opening": "100000.00",
+        "inflow": "130000.00",
+        "outflow": "90000.00",
+        "net": "40000.00",
+        "closing": "140000.00",
+        "actual_closing": "140000.00",
+        "difference": "0.00"
+      }
+    },
+    "explanation": "【合成数据离线演示】2026-08现金流（元）：流入130000.00，流出90000.00，净额40000.00，计算期末余额140000.00。实际期末余额140000.00，差异0.00。来源：synthetic-manufacturing-v1 / fixture-result / A1:G2。此结果不代表已入库或已通知。",
+    "source_file_sha256": "e6470f7adeba00804b178be5dc17a3087a88758178b9482cfd64b8cf81cf36d7",
+    "platform_native_verified": false,
+    "fixture": true
+  }
+}

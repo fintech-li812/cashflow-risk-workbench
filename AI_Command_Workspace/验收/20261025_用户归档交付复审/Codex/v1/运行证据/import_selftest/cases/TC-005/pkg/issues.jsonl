@@ -1,0 +1,2 @@
+{"action":"人工消除歧义后重导","address":"D2,E2","code":"DUPLICATE_COLUMN","file":"fixture.xlsx","issue_id":"ISS-0001","raw":"经营性流入（万元）","reason":"字段 经营性流入（万元） 匹配到多列 ['D', 'E']，不取第一项","row":2,"sheet":"现金流水"}
+{"action":"补齐源表列或更新映射后重导","address":null,"code":"MISSING_COLUMN","file":"fixture.xlsx","issue_id":"ISS-0002","raw":null,"reason":"缺少必需列: 经营性流出（万元）（别名 ['经营性流出（万元）', '经营性流出']）","row":null,"sheet":"现金流水"}

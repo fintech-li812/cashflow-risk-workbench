@@ -1,0 +1,35 @@
+BACKUP_DIR=/var/backups/cf-workbench/codex-20261022T121626Z
+
+== disk ==
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda3        40G  4.4G   33G  12% /
+/dev/vda3        40G  4.4G   33G  12% /
+
+== preflight ==
+@@global.time_zone	@@global.innodb_buffer_pool_size	@@global.max_connections
+SYSTEM	536870912	100
+
+== logical backup ==
+backup mode=600 owner=root size=279767
+e0aea71d73fadd4f21d1d1889d2e74ee94582aa20975581d552ddd87cf34414e  /var/backups/cf-workbench/codex-20261022T121626Z/mysql_all_before.sql.gz
+
+== prepare configuration rollback ==
+
+== approved D21 D23 settings ==
+
+== after, new session ==
+@@version	@@global.time_zone	@@session.time_zone	@@global.innodb_buffer_pool_size	@@global.max_connections
+8.0.46-0ubuntu0.24.04.4	+00:00	+00:00	268435456	20
+VARIABLE_NAME	VARIABLE_VALUE
+innodb_buffer_pool_size	268435456
+max_connections	20
+time_zone	+00:00
+Variable_name	Value
+Innodb_buffer_pool_resize_status	Completed resizing buffer pool at 261022 20:16:27.
+Threads_connected	1
+SCHEMA_NAME	objects
+new_project	0
+cf_workbench	0
+active
+
+CONFIG_DEPLOYMENT_COMPLETE

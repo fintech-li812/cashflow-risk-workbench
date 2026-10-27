@@ -1,0 +1,18 @@
+test_package_hash_tamper (test_qa_tool.QA.test_package_hash_tamper) ... FAIL
+
+======================================================================
+FAIL: test_package_hash_tamper (test_qa_tool.QA.test_package_hash_tamper)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\MEM-QA-001\Codex\mutation_round1\ignore_package_hash\test_qa_tool.py", line 309, in test_package_hash_tamper
+    self.assertEqual(r.status, '失败'); self.assertIn('FILE_HASH', {v['code'] for v in r.issues})
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '阻塞' != '失败'
+- 阻塞
++ 失败
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.010s
+
+FAILED (failures=1)

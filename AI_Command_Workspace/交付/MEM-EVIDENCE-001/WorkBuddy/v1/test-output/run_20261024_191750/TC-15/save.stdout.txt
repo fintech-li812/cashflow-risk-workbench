@@ -1,0 +1,4 @@
+{
+  "reason": "故障注入：commit前失败，事务已回滚",
+  "status": "store_error"
+}

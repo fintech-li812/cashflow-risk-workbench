@@ -1,0 +1,148 @@
+{
+  "schema_version": "mfg-release-preflight-report.v1",
+  "status": "失败",
+  "release_authorized": false,
+  "target": "qwen_office",
+  "counts": {
+    "通过": 3,
+    "失败": 3,
+    "阻塞": 9,
+    "未执行": 0
+  },
+  "checks": [
+    {
+      "id": "server_app",
+      "label": "正式MCP应用入口",
+      "status": "失败",
+      "observation": "文件为0字节，不能作为实现完成证据",
+      "scope": "本地文件条件，不能证明可运行"
+    },
+    {
+      "id": "server_config",
+      "label": "正式MCP配置模块",
+      "status": "失败",
+      "observation": "文件为0字节，不能作为实现完成证据",
+      "scope": "本地文件条件，不能证明可运行"
+    },
+    {
+      "id": "server_dependencies",
+      "label": "正式服务依赖声明",
+      "status": "失败",
+      "observation": "文件为0字节，不能作为实现完成证据",
+      "scope": "本地文件条件，不能证明可运行"
+    },
+    {
+      "id": "agent_candidate",
+      "label": "Agent边界修复候选",
+      "status": "通过",
+      "observation": "候选内容摘要一致；manifest自报状态不是批准",
+      "scope": "本地文件条件，不能证明可运行",
+      "bytes": 63976,
+      "sha256": "9dbf885f434be777e139855c871c97f89b8033f67dbef0e9e1f9ab8971558a6c",
+      "candidate_metadata": {
+        "task_id": "CX-AGENT-FIX-001",
+        "package_version": "v1",
+        "declared_status": "candidate"
+      }
+    },
+    {
+      "id": "qa_candidate",
+      "label": "独立验收工具候选",
+      "status": "通过",
+      "observation": "候选内容摘要一致；manifest自报状态不是批准",
+      "scope": "本地文件条件，不能证明可运行",
+      "bytes": 50429,
+      "sha256": "e8eda6da98adc84ae3854dee0ed1adf0ac11eea563d28a40076caa9b2da46a75",
+      "candidate_metadata": {
+        "task_id": "MEM-QA-001",
+        "package_version": "v1",
+        "declared_status": "candidate"
+      }
+    },
+    {
+      "id": "protected_sample",
+      "label": "制造样例原件哈希保护",
+      "status": "通过",
+      "observation": "",
+      "scope": "本地文件条件，不能证明可运行",
+      "bytes": 20259,
+      "sha256": "7e32b1eca8cfe892bd0ee96dfe257b03965018e607fc0e8cbaface33c13d0a3b"
+    },
+    {
+      "id": "independent_review",
+      "label": "DeepSeek独立审核",
+      "status": "阻塞",
+      "declared_status": "未执行",
+      "observation": "Codex新代码候选尚未取得独立审核，不得作者自批",
+      "scope": "人工/平台/数据库观察；本工具不能自动批准"
+    },
+    {
+      "id": "qwen_read_snapshot",
+      "label": "千问真实读表绑定",
+      "status": "阻塞",
+      "declared_status": "未执行",
+      "observation": "目前证据为本地读取；原生入口和取数快照待实测",
+      "scope": "人工/平台/数据库观察；本工具不能自动批准"
+    },
+    {
+      "id": "qwen_formula_recalc",
+      "label": "千问批准公式与改后重算",
+      "status": "阻塞",
+      "declared_status": "未执行",
+      "observation": "函数可用为X确认，不等于具体公式/重算已过",
+      "scope": "人工/平台/数据库观察；本工具不能自动批准"
+    },
+    {
+      "id": "qwen_agent_request",
+      "label": "千问真实Agent对话流程",
+      "status": "阻塞",
+      "declared_status": "未执行",
+      "observation": "没有完整平台A01–A06执行证据",
+      "scope": "人工/平台/数据库观察；本工具不能自动批准"
+    },
+    {
+      "id": "mcp_authorized_call",
+      "label": "真实MCP鉴权与工具调用",
+      "status": "阻塞",
+      "declared_status": "未执行",
+      "observation": "正式服务/真实inputSchema绑定尚未完成",
+      "scope": "人工/平台/数据库观察；本工具不能自动批准"
+    },
+    {
+      "id": "mysql_exact_readback",
+      "label": "MySQL同请求精确回查",
+      "status": "阻塞",
+      "declared_status": "未执行",
+      "observation": "业务部署与千问保存回查未验收；既有隔离DDL不代替此项",
+      "scope": "人工/平台/数据库观察；本工具不能自动批准"
+    },
+    {
+      "id": "restore_drill",
+      "label": "隔离备份恢复演练",
+      "status": "阻塞",
+      "declared_status": "未执行",
+      "observation": "历史有备份及gzip校验，没有恢复演练通过记录",
+      "scope": "人工/平台/数据库观察；本工具不能自动批准"
+    },
+    {
+      "id": "real_cashflow_scope",
+      "label": "真实业务数据与独立余额完整性",
+      "status": "阻塞",
+      "declared_status": "未执行",
+      "observation": "账户范围/独立期初期末余额及完整实际收付仍待确认",
+      "scope": "人工/平台/数据库观察；本工具不能自动批准"
+    },
+    {
+      "id": "final_x_signoff",
+      "label": "X最终检查签收",
+      "status": "阻塞",
+      "declared_status": "未执行",
+      "observation": "本轮候选尚未统一交X检查签收",
+      "scope": "人工/平台/数据库观察；本工具不能自动批准"
+    }
+  ],
+  "notes": [
+    "只读本地发布前检查；不联网、不执行候选、不部署。",
+    "非空文件不证明程序已实现；独立审批、平台运行、MySQL与恢复演练都需真实证据。"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "new_business_logic": "explicit evidence selection and internal transfer plan",
+  "shared_utility_source": "CX-ACCOUNT-BIND-001/Codex/v1/src/account_binding.py",
+  "copied_utility_sha256": "4341c7d591751111226f13bf068e4c2216fd46f820de77a05b3a8eb9b3188034",
+  "utility_modified": false,
+  "real_business_data_bound": false
+}

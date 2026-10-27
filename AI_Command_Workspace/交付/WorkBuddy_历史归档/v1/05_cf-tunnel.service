@@ -1,0 +1,44 @@
+# CashflowRiskWorkbench 常驻 SSH 隧道（systemd user service）
+# 作用：从“笔记本/应用机/备份机”发起，把本机端口转发到服务器 localhost 的服务
+#       13306 -> 服务器 127.0.0.1:3306 (MySQL)
+#       18000 -> 服务器 127.0.0.1:8000 (MCP Server，尚未部署也不影响建隧道)
+# 设计：autossh 负责断线自愈；systemd --user 负责开机/登录自启。
+#
+# 部署步骤（在“隧道发起方机器”上，不是服务器上）：
+#   mkdir -p ~/.config/systemd/user
+#   cp cf-tunnel.service ~/.config/systemd/user/
+#   # 编辑下面 <sshuser> 与密钥路径，密钥须已对服务器授权（建议建受限 SSH 账号，仅允许 TCP 转发）
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now cf-tunnel.service
+#   systemctl --user status cf-tunnel.service
+#   # 让服务在退出登录后仍然常驻：
+#   loginctl enable-linger $USER
+#   # 验证：mysql -h 127.0.0.1 -P 13306 -u cf_read -p   /   连接器填 http://127.0.0.1:18000/mcp
+
+[Unit]
+Description=CashflowRiskWorkbench 常驻 SSH 隧道（DB 3306 + MCP 8000，自愈）
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# AUTOSSH_PORT=0 关闭 autossh 自身额外监听端口；用 ServerAlive 做心跳
+Environment=AUTOSSH_PORT=0
+Environment=AUTOSSH_GATETIME=30
+ExecStart=/usr/bin/autossh -M 0 -N \
+  -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -o ExitOnForwardFailure=yes \
+  -L 13306:127.0.0.1:3306 \
+  -L 18000:127.0.0.1:8000 \
+  -i %h/.ssh/cf_server_ed25519 \
+  <sshuser>@39.104.201.10
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
+
+# —— 不使用 autossh 时的纯 ssh 替代（systemd 也会自动重启）——
+# ExecStart=/usr/bin/ssh -N \
+#   -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -o ExitOnForwardFailure=yes \
+#   -L 13306:127.0.0.1:3306 -L 18000:127.0.0.1:8000 \
+#   -i %h/.ssh/cf_server_ed25519 <sshuser>@39.104.201.10

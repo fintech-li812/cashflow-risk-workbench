@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "{\"cases\": [{\"case\": \"duplicate_json_keys\", \"expected\": \"reject\", \"actual\": \"reject\", \"passed\": true}, {\"case\": \"operation_closed_set\", \"expected\": \"reject\", \"actual\": \"reject\", \"passed\": true}, {\"case\": \"wrong_context_version\", \"expected\": \"reject\", \"actual\": \"reject\", \"passed\": true}, {\"case\": \"get_link\", \"expected\": \"reject\", \"actual\": \"reject\", \"passed\": true}, {\"case\": \"history_link\", \"expected\": \"reject\", \"actual\": \"reject\", \"passed\": true}, {\"case\": \"replay_link\", \"expected\": \"reject\", \"actual\": \"reject\", \"passed\": true}, {\"case\": \"verify_flag\", \"expected\": \"reject\", \"actual\": \"reject\", \"passed\": true}, {\"case\": \"normal_idempotency_readback\", \"passed\": true}], \"passed\": 8, \"total\": 8}\n",
+  "stderr": ""
+}

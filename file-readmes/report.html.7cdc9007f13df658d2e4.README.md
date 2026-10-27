@@ -1,0 +1,19 @@
+# 文件说明：report.html
+
+- 仓库路径：AI_Command_Workspace/交付/MEM-QA-001/Codex/v1/examples/import-package/report.html
+- 查看文件：[打开原文件](../AI_Command_Workspace/%E4%BA%A4%E4%BB%98/MEM-QA-001/Codex/v1/examples/import-package/report.html)
+- 归属：样例或测试夹具；可能故意无效，仅按所属测试使用
+- 大小：31字节
+- 导出SHA256：16fb08ec6a53788bab1cc1427cb9e199d37086071a1fb682cace7cfd47f9e866
+
+## 内容与作用
+
+HTML为页面/报告源码；有API调用的页面需按所属服务启动，双击不等同在线服务。
+
+## 打开与使用
+
+文本/代码编辑器；HTML按所属说明预览。
+
+## 状态与限制
+
+这是2026-10-27归档时的静态说明，不证明本文件已执行、已部署或业务验证通过。优先阅读仓库根README和主工作台最新交接；历史文件口径可能已被用户后续决定覆盖。

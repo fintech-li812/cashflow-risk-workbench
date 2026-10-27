@@ -1,0 +1,86 @@
+test_every_context_field_compared (test_tool_call_guard.GuardTests.test_every_context_field_compared) ... 
+  test_every_context_field_compared (test_tool_call_guard.GuardTests.test_every_context_field_compared) (field='tenant_id') ... FAIL
+  test_every_context_field_compared (test_tool_call_guard.GuardTests.test_every_context_field_compared) (field='company_id') ... FAIL
+  test_every_context_field_compared (test_tool_call_guard.GuardTests.test_every_context_field_compared) (field='period') ... FAIL
+  test_every_context_field_compared (test_tool_call_guard.GuardTests.test_every_context_field_compared) (field='source_revision') ... FAIL
+  test_every_context_field_compared (test_tool_call_guard.GuardTests.test_every_context_field_compared) (field='run_id') ... FAIL
+
+======================================================================
+FAIL: test_every_context_field_compared (test_tool_call_guard.GuardTests.test_every_context_field_compared) (field='tenant_id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 143, in test_every_context_field_compared
+    self.assertBlocked('context_mismatch:'+k);self.a['context'][k]=original
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 51, in assertBlocked
+    self.assertEqual(r['status'],'blocked',r)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'prepared' != 'blocked'
+- prepared
++ blocked
+ : {'status': 'prepared', 'called': False, 'schema_dialect': 'https://json-schema.org/draft/2020-12/schema', 'call_sha256': 'a738a938d8a5eb677a62716dba17917fb96ba9b8ea9cf317819db3b6fe11806d', 'call': {'name': 'synthetic_fixture_save', 'arguments': {'context': {'tenant_id': 'wrong', 'company_id': 'fixture-company', 'period': '2026-10', 'source_revision': 'fixture-revision', 'run_id': 'fixture-run'}, 'request_id': 'fixture-request', 'event': 'fixture-test', 'occurred_at': '2026-10-23T23:00:00+08:00', 'payload': {'amount': '1.00'}}}, 'descriptor_sha256': '7f4e0d6011c1233f3335a1ea67e81203f884a220ca5d30eedbe83432f211305c', 'notice': 'offline validation only; descriptor provenance/authentication unverified'}
+
+======================================================================
+FAIL: test_every_context_field_compared (test_tool_call_guard.GuardTests.test_every_context_field_compared) (field='company_id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 143, in test_every_context_field_compared
+    self.assertBlocked('context_mismatch:'+k);self.a['context'][k]=original
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 51, in assertBlocked
+    self.assertEqual(r['status'],'blocked',r)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'prepared' != 'blocked'
+- prepared
++ blocked
+ : {'status': 'prepared', 'called': False, 'schema_dialect': 'https://json-schema.org/draft/2020-12/schema', 'call_sha256': 'b69721bbd6ab33b752b394e9a19c9e7d044738e4aaff29e0dad46f86404b62d2', 'call': {'name': 'synthetic_fixture_save', 'arguments': {'context': {'tenant_id': 'wrong', 'company_id': 'wrong', 'period': '2026-10', 'source_revision': 'fixture-revision', 'run_id': 'fixture-run'}, 'request_id': 'fixture-request', 'event': 'fixture-test', 'occurred_at': '2026-10-23T23:00:00+08:00', 'payload': {'amount': '1.00'}}}, 'descriptor_sha256': '7f4e0d6011c1233f3335a1ea67e81203f884a220ca5d30eedbe83432f211305c', 'notice': 'offline validation only; descriptor provenance/authentication unverified'}
+
+======================================================================
+FAIL: test_every_context_field_compared (test_tool_call_guard.GuardTests.test_every_context_field_compared) (field='period')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 143, in test_every_context_field_compared
+    self.assertBlocked('context_mismatch:'+k);self.a['context'][k]=original
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 51, in assertBlocked
+    self.assertEqual(r['status'],'blocked',r)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'prepared' != 'blocked'
+- prepared
++ blocked
+ : {'status': 'prepared', 'called': False, 'schema_dialect': 'https://json-schema.org/draft/2020-12/schema', 'call_sha256': '1b80a0e25af5e92cf898d5d4c9d74cdd072fa5a76576be79669f71ae85c37f83', 'call': {'name': 'synthetic_fixture_save', 'arguments': {'context': {'tenant_id': 'wrong', 'company_id': 'wrong', 'period': 'wrong', 'source_revision': 'fixture-revision', 'run_id': 'fixture-run'}, 'request_id': 'fixture-request', 'event': 'fixture-test', 'occurred_at': '2026-10-23T23:00:00+08:00', 'payload': {'amount': '1.00'}}}, 'descriptor_sha256': '7f4e0d6011c1233f3335a1ea67e81203f884a220ca5d30eedbe83432f211305c', 'notice': 'offline validation only; descriptor provenance/authentication unverified'}
+
+======================================================================
+FAIL: test_every_context_field_compared (test_tool_call_guard.GuardTests.test_every_context_field_compared) (field='source_revision')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 143, in test_every_context_field_compared
+    self.assertBlocked('context_mismatch:'+k);self.a['context'][k]=original
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 51, in assertBlocked
+    self.assertEqual(r['status'],'blocked',r)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'prepared' != 'blocked'
+- prepared
++ blocked
+ : {'status': 'prepared', 'called': False, 'schema_dialect': 'https://json-schema.org/draft/2020-12/schema', 'call_sha256': '78e2ed649afe6746ecdfbb370af6c8278098bf673feb9bc6eabbfa4e9198e697', 'call': {'name': 'synthetic_fixture_save', 'arguments': {'context': {'tenant_id': 'wrong', 'company_id': 'wrong', 'period': 'wrong', 'source_revision': 'wrong', 'run_id': 'fixture-run'}, 'request_id': 'fixture-request', 'event': 'fixture-test', 'occurred_at': '2026-10-23T23:00:00+08:00', 'payload': {'amount': '1.00'}}}, 'descriptor_sha256': '7f4e0d6011c1233f3335a1ea67e81203f884a220ca5d30eedbe83432f211305c', 'notice': 'offline validation only; descriptor provenance/authentication unverified'}
+
+======================================================================
+FAIL: test_every_context_field_compared (test_tool_call_guard.GuardTests.test_every_context_field_compared) (field='run_id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 143, in test_every_context_field_compared
+    self.assertBlocked('context_mismatch:'+k);self.a['context'][k]=original
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI_Command_Workspace\验收\CX-TOOL-BIND-001\Codex开发自测\v1\ZIP解压复现\test_tool_call_guard.py", line 51, in assertBlocked
+    self.assertEqual(r['status'],'blocked',r)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'prepared' != 'blocked'
+- prepared
++ blocked
+ : {'status': 'prepared', 'called': False, 'schema_dialect': 'https://json-schema.org/draft/2020-12/schema', 'call_sha256': '19891bfda65af364e370e017092bd471872d937a068457a93ce03e384c39ef83', 'call': {'name': 'synthetic_fixture_save', 'arguments': {'context': {'tenant_id': 'wrong', 'company_id': 'wrong', 'period': 'wrong', 'source_revision': 'wrong', 'run_id': 'wrong'}, 'request_id': 'fixture-request', 'event': 'fixture-test', 'occurred_at': '2026-10-23T23:00:00+08:00', 'payload': {'amount': '1.00'}}}, 'descriptor_sha256': '7f4e0d6011c1233f3335a1ea67e81203f884a220ca5d30eedbe83432f211305c', 'notice': 'offline validation only; descriptor provenance/authentication unverified'}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.017s
+
+FAILED (failures=5)

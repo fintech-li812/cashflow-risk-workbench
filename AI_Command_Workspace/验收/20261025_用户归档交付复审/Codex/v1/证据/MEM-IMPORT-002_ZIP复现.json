@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "{\"cases\": [{\"case\": \"serial_1\", \"expected\": \"1900-01-01\", \"actual\": \"1900-01-01\", \"passed\": true}, {\"case\": \"serial_59\", \"expected\": \"1900-02-28\", \"actual\": \"1900-02-28\", \"passed\": true}, {\"case\": \"serial_61\", \"expected\": \"1900-03-01\", \"actual\": \"1900-03-01\", \"passed\": true}, {\"case\": \"sample_D8_null_and_duplicates_preserved\", \"passed\": true, \"sample_counts\": {\"issues\": 3, \"records\": 66}}, {\"case\": \"clean_verify\", \"passed\": true, \"exit_code\": 0}, {\"case\": \"manifest_omits_required_files\", \"expected\": \"nonzero\", \"exit_code\": 1, \"passed\": true, \"output\": \"[FAIL] manifest files 缺少必需项: inventory.json\\n[FAIL] manifest files 缺少必需项: issues.csv\\n[FAIL] manifest files 缺少必需项: issues.jsonl\\n[FAIL] manifest files 缺少必需项: records.jsonl\\n[FAIL] manifest files 缺少必需项: report.html\\n[FAIL] manifest files 缺少必需项: unit_exceptions.snapshot.json\\nverify 失败: 6 项结构或哈希不符\\n\"}], \"passed\": 6, \"total\": 6}\n",
+  "stderr": ""
+}

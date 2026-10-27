@@ -1,0 +1,466 @@
+{
+  "excluded_files": [
+    {
+      "path": "CashflowRiskWorkbench/outbox/牛马X_交接包_1021-2323.zip",
+      "reason": "sensitive_or_unscannable_binary_archive",
+      "findings": [
+        "archive:credential_literal",
+        "archive:sql_password_literal"
+      ],
+      "readme": "file-readmes/牛马X_交接包_1021-2323.zip.bcd293ff24c009c9022b.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/交付/MEM-EVIDENCE-001/WorkBuddy/v1/test-output/manual_selftest/selftest.db",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/selftest.db.2820707e934a3e083778.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/交付/MEM-EVIDENCE-001/WorkBuddy/v1/test-output/run_20261024_191459/wd/test.db",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/test.db.f9784ea87e3da26b00b8.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/交付/MEM-EVIDENCE-001/WorkBuddy/v1/test-output/run_20261024_191535/selftest_ok/selftest.db",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/selftest.db.28a3d4848afab154dce0.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/交付/MEM-EVIDENCE-001/WorkBuddy/v1/test-output/run_20261024_191535/wd/test.db",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/test.db.200119a8f4e842148cf7.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/交付/MEM-EVIDENCE-001/WorkBuddy/v1/test-output/run_20261024_191535/wd_tamper/t.db",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/t.db.505f71a3883cb2e3bc77.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/交付/MEM-EVIDENCE-001/WorkBuddy/v1/test-output/run_20261024_191750/selftest_ok/selftest.db",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/selftest.db.28ee1d403dbc544f2662.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/交付/MEM-EVIDENCE-001/WorkBuddy/v1/test-output/run_20261024_191750/wd/test.db",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/test.db.75ebf52dc3e2a0edf187.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/交付/MEM-EVIDENCE-001/WorkBuddy/v1/test-output/run_20261024_191750/wd_tamper/t.db",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/t.db.14eae04f3ad8d1b25ad5.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/ZIP复现运行/MEM-EVIDENCE-001/get_link.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/get_link.sqlite3.a67309482ec1fd243d34.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/ZIP复现运行/MEM-EVIDENCE-001/history_link.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/history_link.sqlite3.b4f6fada5d9513362910.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/ZIP复现运行/MEM-EVIDENCE-001/normal.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/normal.sqlite3.f77747040ecb32fb37d9.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/ZIP复现运行/MEM-EVIDENCE-001/operation.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/operation.sqlite3.e64741fea87db605f5ff.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/ZIP复现运行/MEM-EVIDENCE-001/replay_link.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/replay_link.sqlite3.13086ba502fd0c4e35c4.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/ZIP复现运行/MEM-EVIDENCE-001/verify_flag.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/verify_flag.sqlite3.05b9f237f5d9e96bae48.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/ZIP复现运行/MEM-EVIDENCE-001/wrong_context_version.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/wrong_context_version.sqlite3.b5791911f337b6d0184c.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/可搬运命令复跑/MEM-EVIDENCE-001/get_link.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/get_link.sqlite3.248d03e02c8f4e2353c5.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/可搬运命令复跑/MEM-EVIDENCE-001/history_link.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/history_link.sqlite3.d178bdc75c35999bd600.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/可搬运命令复跑/MEM-EVIDENCE-001/normal.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/normal.sqlite3.e72659c8b3ce7bfe5bc5.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/可搬运命令复跑/MEM-EVIDENCE-001/operation.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/operation.sqlite3.b2eb5f4fc5d47410e1b0.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/可搬运命令复跑/MEM-EVIDENCE-001/replay_link.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/replay_link.sqlite3.48828c1e3d15111268d8.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/可搬运命令复跑/MEM-EVIDENCE-001/verify_flag.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/verify_flag.sqlite3.e22825d5dd350bdd1c6c.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/可搬运命令复跑/MEM-EVIDENCE-001/wrong_context_version.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/wrong_context_version.sqlite3.62ae71007e8fd9b2cec0.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_fixed/get_link.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/get_link.sqlite3.623ca7a276a239cf554e.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_fixed/history_link.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/history_link.sqlite3.30e33c9c6f2d4a58be2d.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_fixed/normal.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/normal.sqlite3.2e9ae29e55a71d253e13.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_fixed/operation.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/operation.sqlite3.a156aa689c15037cece0.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_fixed/replay_link.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/replay_link.sqlite3.883a4deb06b1c7820e3b.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_fixed/verify_flag.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/verify_flag.sqlite3.c11a85771c693a120cba.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_fixed/wrong_context_version.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/wrong_context_version.sqlite3.7db88b4196aa9dc0c3b3.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_original/get_link.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/get_link.sqlite3.72c8bbc32b32b915d66a.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_original/history_link.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/history_link.sqlite3.5ba7293ee3776738b3bd.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_original/normal.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/normal.sqlite3.7cc81456d7d48fac4a46.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_original/operation.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/operation.sqlite3.f005161f08e52539e84e.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_original/replay_link.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/replay_link.sqlite3.189c849858bff5e67d7b.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_original/verify_flag.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/verify_flag.sqlite3.52a828fc5cf38d09e19e.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/独立反例运行/MEM-EVIDENCE-001_original/wrong_context_version.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/wrong_context_version.sqlite3.4a4072393701298a230e.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc01.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc01.sqlite3.dc4a6823d6c20447002a.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc04.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc04.sqlite3.36d5b32ceafc7a5d5864.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc05.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc05.sqlite3.a1ff7a6941bc1e36921b.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc06.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc06.sqlite3.025cf2036c5ba6593475.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc07.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc07.sqlite3.06e60931d30bbb30736e.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc08.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc08.sqlite3.9ebd7fb6cf0dc0a1ade0.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc09.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc09.sqlite3.b952f8bd4ec403df53fc.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc10.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc10.sqlite3.790f204061fcf9f896c6.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc11.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc11.sqlite3.6b80eaf8a1dd05247948.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc12.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc12.sqlite3.5d7585b5ab0bc34bccac.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc13.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc13.sqlite3.645a98a49d80bbd42882.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc14.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc14.sqlite3.3498fc6e5b637441c229.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc17.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc17.sqlite3.6f242034dfb713303402.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc20.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc20.sqlite3.1c6bb26c94b1521b9ffa.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc21.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc21.sqlite3.aabd4c4c2e80ff17887f.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc22.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc22.sqlite3.d81373b1c14b7d76ba58.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc24.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc24.sqlite3.2666e95b0d45c3da3d32.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/tc25.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc25.sqlite3.fe7aa86d4393b5a13ba4.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc01.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc01.sqlite3.8f01de74b9d96408d7b8.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc04.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc04.sqlite3.28aa12870f1a4871e0ef.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc05.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc05.sqlite3.a958111353918fb95ffa.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc06.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc06.sqlite3.ad9a5550cf45391f252f.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc07.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc07.sqlite3.53cc972e04bbb663fb64.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc08.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc08.sqlite3.04b1eeaf63b45edae4e9.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc09.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc09.sqlite3.465aa4bf52d47f933c79.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc10.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc10.sqlite3.f3f870de37f4c40be800.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc11.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc11.sqlite3.932615f4e2ea0e21b5fb.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc12.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc12.sqlite3.008e0489f4f80aadae1e.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc13.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc13.sqlite3.d71c0869ce65e1713e2b.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc14.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc14.sqlite3.c4e5f7b6c154e3365580.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc17.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc17.sqlite3.b10dcb554318cc02c898.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc20.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc20.sqlite3.7f9b39bd7a3d5c9f5be4.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc21.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc21.sqlite3.2a1b2e3c527ad622eaf1.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc22.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc22.sqlite3.d53a57cca339636f6dbd.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc24.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc24.sqlite3.17c47852c909a19da348.README.md"
+    },
+    {
+      "path": "AI_Command_Workspace/验收/20261025_用户归档交付复审/Codex/v1/运行证据/evidence_selftest/inject-check/tc25.sqlite3",
+      "reason": "database_binary_not_uploaded_use_deliberate_backup",
+      "readme": "file-readmes/tc25.sqlite3.e294bd5e970c5dfd7dd5.README.md"
+    }
+  ],
+  "excluded_directories": [
+    {
+      "path": "D:\\CashflowRiskWorkbench\\mcp-server\\program_v1\\.tmp",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\CashflowRiskWorkbench\\_inbox\\现金流风控_v2_完整交付\\cashflow_v2\\__pycache__",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\runtime\\cashflow_v1",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\交付\\CX-AGENT-002\\Codex\\v1\\__pycache__",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\交付\\CX-AGENT-002\\Codex\\v1\\tests\\__pycache__",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\交付\\CX-AGENT-FIX-001\\Codex\\v1\\candidate\\__pycache__",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\交付\\CX-AGENT-FIX-001\\Codex\\v1\\tests\\__pycache__",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\交付\\CX-RELEASE-001\\Codex\\v1\\__pycache__",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\交付\\CX-V1-CHAIN-001\\Codex\\v1\\src\\__pycache__",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\交付\\CX-V1-CHAIN-001\\Codex\\v1\\tests\\__pycache__",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\交付\\CX-V1-CHAIN-001\\Codex\\v2\\src\\__pycache__",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\交付\\MEM-QA-001\\Codex\\v1\\__pycache__",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\交付\\MEM-QA-001\\Codex\\v2\\__pycache__",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\交付\\WB-ENG-001\\WorkBuddy\\v1\\tools\\venv",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\交付\\WB-ENG-001\\WorkBuddy\\v2\\tools\\venv",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\验收\\WB-AGENT-003\\Codex\\接入前检查_v1\\测试副本\\candidate\\__pycache__",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\验收\\WB-AGENT-003\\Codex\\接入前检查_v1\\测试副本\\tests\\__pycache__",
+      "reason": "environment_cache_or_link"
+    },
+    {
+      "path": "D:\\AI_Command_Workspace\\验收\\WB-AGENT-003\\Codex\\边界反例_20261023_v1\\冻结代码\\__pycache__",
+      "reason": "environment_cache_or_link"
+    }
+  ],
+  "redacted_files": [
+    {
+      "path": "CashflowRiskWorkbench/docs/v8_完整方案.md",
+      "findings": [
+        "credential_literal",
+        "sql_password_literal"
+      ],
+      "action": "redacted_copy_only"
+    },
+    {
+      "path": "CashflowRiskWorkbench/outbox/牛马X_交接包_1021-2323/03_口径依据/v8_完整方案.md",
+      "findings": [
+        "credential_literal",
+        "sql_password_literal"
+      ],
+      "action": "redacted_copy_only"
+    }
+  ],
+  "source_changed_during_copy": []
+}

@@ -1,0 +1,3 @@
+﻿issue_id,code,file,sheet,address,row,raw,reason,action
+ISS-0001,DUPLICATE_ROW,fixture.xlsx,现金流水,,3,,"行 [3, 4] 原始取值完全相同；重复保留，不删除",人工确认是否重复录入
+ISS-0002,DUPLICATE_ROW,fixture.xlsx,现金流水,,4,,"行 [3, 4] 原始取值完全相同；重复保留，不删除",人工确认是否重复录入

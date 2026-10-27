@@ -1,0 +1,13 @@
+{
+  "schema_version": "mfg-native-check.v1",
+  "tenant_id": "fixture-tenant",
+  "company_id": "fixture-manufacturing",
+  "period": "2026-08",
+  "source_revision": "fixture-source-v1",
+  "run_id": "fixture-run-202608",
+  "transport_mode": "replay",
+  "validation_status": "passed",
+  "platform_status": "blocked",
+  "native_execution_verified": false,
+  "can_save_source_result": false
+}

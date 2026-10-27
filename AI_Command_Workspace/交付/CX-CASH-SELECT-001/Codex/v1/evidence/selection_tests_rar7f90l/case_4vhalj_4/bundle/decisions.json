@@ -1,0 +1,36 @@
+{
+  "schema_version": "mfg-cash-link-decisions.v1",
+  "tenant_id": "fixture-tenant",
+  "company_id": "fixture-manufacturing",
+  "period": "2026-08",
+  "source_revision": "fixture-source-v1",
+  "run_id": "fixture-run-202608",
+  "origin": "offline_fixture",
+  "duplicates": [],
+  "links": [
+    {
+      "primary_record_id": "bank-sale",
+      "corroborating_record_ids": [
+        "business-sale"
+      ],
+      "link_type": "transaction_evidence",
+      "evidence_ref": "SYNTHETIC-APPROVAL-CASH"
+    },
+    {
+      "primary_record_id": "bank-sale",
+      "corroborating_record_ids": [
+        "invoice"
+      ],
+      "link_type": "transaction_evidence",
+      "evidence_ref": "SYNTHETIC-APPROVAL-INVOICE"
+    }
+  ],
+  "transfers": [
+    {
+      "pair_id": "PAIR-A-B",
+      "out_record_id": "transfer-out",
+      "in_record_id": "transfer-in",
+      "evidence_ref": "SYNTHETIC-TRANSFER-APPROVAL"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "mfg-cash-selection-trust.v1",
+  "tenant_id": "fixture-tenant",
+  "company_id": "fixture-manufacturing",
+  "period": "2026-08",
+  "source_revision": "fixture-source-v1",
+  "run_id": "fixture-run-202608",
+  "industry": "manufacturing",
+  "approval_ref": "SYNTHETIC-REGISTERED-SOURCES",
+  "allow_fixture": true,
+  "approved_inputs": {
+    "scope_binding.json": "16676d55516a27f37ecad3fbdcd7f9209d28c518441d587cafd3346ae292a7d3",
+    "events.json": "811eb9e56b53381217cc8248d4463464d1a2b748e13ebe278943ef31727d8ed4",
+    "source_registry.json": "6b5a89489b163abbd9182162d1c82a44991f37e02e7b7b1208c57c2a05277c27",
+    "decisions.json": "3da76c5a54b7ec0c4ae66893ff227c41837d49dbc72594d1a5f540f576485fcd"
+  }
+}

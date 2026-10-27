@@ -1,0 +1,18 @@
+{
+  "problem_count": 3,
+  "problems": [
+    {
+      "check": "payload_sha256 与内容不符",
+      "record_id": "ev-44eabb2dbe19a36d28dbea7a"
+    },
+    {
+      "check": "record_id 与身份/摘要关联不符",
+      "record_id": "ev-44eabb2dbe19a36d28dbea7a"
+    },
+    {
+      "check": "索引列与 payload 字段不一致: tenant_id",
+      "record_id": "ev-44eabb2dbe19a36d28dbea7a"
+    }
+  ],
+  "status": "tampered"
+}

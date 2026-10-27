@@ -1,0 +1,16 @@
+[
+  {
+    "task": "MEM-REPORT-002",
+    "test": "fabricated all-pass selftest + no-op CLI must be rejected",
+    "actual_exit": 2,
+    "actual_status": "failed",
+    "passed": true
+  },
+  {
+    "task": "MEM-IMPORT-002",
+    "test": "fabricated all-pass selftest + no-op CLI must be rejected",
+    "actual_exit": 2,
+    "actual_status": "failed",
+    "passed": true
+  }
+]

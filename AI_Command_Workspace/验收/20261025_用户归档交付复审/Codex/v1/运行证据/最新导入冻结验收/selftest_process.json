@@ -1,0 +1,15 @@
+{
+  "arguments": [
+    "C:\\Users\\33847\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "D:\\AI_Command_Workspace\\验收\\20261025_用户归档交付复审\\Codex\\v1\\解包待审\\MEM-IMPORT-002_WorkBuddy_v1\\src\\selftest.py",
+    "--workdir",
+    "D:\\AI_Command_Workspace\\验收\\20261025_用户归档交付复审\\Codex\\v1\\运行证据\\最新导入冻结验收\\selftest-work",
+    "--report",
+    "D:\\AI_Command_Workspace\\验收\\20261025_用户归档交付复审\\Codex\\v1\\运行证据\\最新导入冻结验收\\selftest_result.json"
+  ],
+  "exit_code": 2,
+  "stdout": "",
+  "stderr": "C:\\Users\\33847\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe: can't open file 'D:\\\\AI_Command_Workspace\\\\验收\\\\20261025_用户归档交付复审\\\\Codex\\\\v1\\\\解包待审\\\\MEM-IMPORT-002_WorkBuddy_v1\\\\src\\\\selftest.py': [Errno 2] No such file or directory\n",
+  "expected_exit": 0
+}

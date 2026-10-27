@@ -1,0 +1,63 @@
+== identity ==
+2026-10-22T19:56:35+08:00
+iZhp3ghhuyoelym8biup8eZ
+root
+uid=0(root) gid=0(root) groups=0(root)
+
+== mysql service ==
+mysql  Ver 8.0.46-0ubuntu0.24.04.4 for Linux on x86_64 ((Ubuntu))
+active
+
+== mysql read-only inspection ==
+CURRENT_USER()	VERSION()	@@global.time_zone	@@session.time_zone	@@system_time_zone
+root@localhost	8.0.46-0ubuntu0.24.04.4	SYSTEM	SYSTEM	CST
+SCHEMA_NAME
+cf_workbench
+information_schema
+mysql
+new_project
+performance_schema
+sys
+SCHEMA_NAME	table_count
+new_project	0
+cf_workbench	0
+user	host
+cf_admin	localhost
+cf_app	localhost
+cf_backup	localhost
+cf_read	localhost
+debian-sys-maint	localhost
+mysql.infoschema	localhost
+mysql.session	localhost
+mysql.sys	localhost
+proj_admin	localhost
+root	localhost
+Grants for cf_app@localhost
+GRANT USAGE ON *.* TO `cf_app`@`localhost`
+GRANT SELECT, INSERT ON `cf_workbench`.* TO `cf_app`@`localhost`
+Grants for cf_read@localhost
+GRANT USAGE ON *.* TO `cf_read`@`localhost`
+GRANT SELECT ON `cf_workbench`.* TO `cf_read`@`localhost`
+Variable_name	Value
+bind_address	127.0.0.1
+innodb_buffer_pool_size	536870912
+max_connections	100
+mysqlx_bind_address	127.0.0.1
+sql_mode	ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+
+== listeners ==
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                                                               
+LISTEN 0      100        127.0.0.1:3306       0.0.0.0:*    users:(("mysqld",pid=66198,fd=23))                                                   
+LISTEN 0      70         127.0.0.1:33060      0.0.0.0:*    users:(("mysqld",pid=66198,fd=21))                                                   
+
+== memory ==
+               total        used        free      shared  buff/cache   available
+Mem:           1.7Gi       917Mi       168Mi       3.4Mi       832Mi       823Mi
+Swap:          1.0Gi          0B       1.0Gi
+
+== mcp metadata ==
+755 root:root /etc/cf-mcp
+600 root:root /etc/cf-mcp/env
+
+== inspection completed ==
+
