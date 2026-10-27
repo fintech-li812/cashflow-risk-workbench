@@ -1,0 +1,6 @@
+.env
+*.env
+!.env.template
+
+# 服务器凭据（临时缓存，勿提交）
+.sshpw

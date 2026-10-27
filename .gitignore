@@ -14,3 +14,13 @@ __pycache__/
 *.key
 *.sqlite3
 *.db
+
+# 本地数据库数据目录（二进制，体积大，绝不入库）
+.mysqldata/
+*.ibd
+*.pid
+runtime/
+
+# 操作凭据缓存
+.sshpw
+*.sshpw

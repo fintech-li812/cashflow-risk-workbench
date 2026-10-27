@@ -1,0 +1,26 @@
+{
+  "_comment": "粘贴到千问办公的 MCP 配置中。args 里的路径请替换为你的实际绝对路径；如 python 不在 PATH，请改用解释器绝对路径（例如 D:/AI_Command_Workspace/runtime/cashflow_v1/Scripts/python.exe）。",
+  "mcpServers": {
+    "cashflow-workbench": {
+      "command": "python",
+      "args": ["D:/CashflowRiskWorkbench/qwen-integration/mcp_frontend_server.py"],
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "CF_MCP_TOKEN": ""
+      },
+      "transport": "stdio",
+      "disabled": false
+    }
+  },
+  "_http_alternative": {
+    "_comment": "若千问办公侧支持 HTTP/SSE 连接，改用下方片段；启动时先运行：python mcp_frontend_server.py --http --port 8090，并设置 CF_MCP_TOKEN。",
+    "mcpServers": {
+      "cashflow-workbench-http": {
+        "url": "http://127.0.0.1:8090/mcp",
+        "headers": { "X-MCP-Token": "请替换为与启动时一致的 CF_MCP_TOKEN" },
+        "transport": "http",
+        "disabled": false
+      }
+    }
+  }
+}
