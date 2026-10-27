@@ -1,0 +1,9 @@
+{
+  "_comment": "远程 HTTP 接法。服务器侧已实测握手成功，千问连接器是否接受 HTTP 地址仍待验证。验证不通过请改用 connector-stdio.json。",
+  "mcpServers": {
+    "制造业现金流_程序计算_v1": {
+      "type": "http",
+      "url": "https://<填你的域名>/mcp"
+    }
+  }
+}
