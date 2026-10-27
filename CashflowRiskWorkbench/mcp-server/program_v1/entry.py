@@ -20,7 +20,10 @@ def environment():
     return env
 
 def main():
-    os.environ.update(environment())
+    # An externally supplied CF_DB_NAME means the caller owns the configuration
+    # (deploy/.env). Only fall back to the isolated QA binding when it is absent.
+    if not os.environ.get('CF_DB_NAME'):
+        os.environ.update(environment())
     sys.path.insert(0,str(ROOT/'src'))
     mode=sys.argv[1] if len(sys.argv)==2 else None
     if mode=='stdio':
@@ -32,6 +35,14 @@ def main():
     elif mode=='web':
         from web_server import main as web_main
         web_main()
-    else:raise SystemExit('usage: entry.py stdio|check|web')
+    elif mode=='http':
+        # Remote transport for the server deployment. Binds loopback only; Nginx
+        # terminates TLS in front of it. Never expose this port directly.
+        from app import build_mcp
+        import uvicorn
+        host=os.environ.get('MCP_HTTP_HOST','127.0.0.1')
+        port=int(os.environ.get('MCP_HTTP_PORT','8000'))
+        uvicorn.run(build_mcp().streamable_http_app(),host=host,port=port,log_level='info')
+    else:raise SystemExit('usage: entry.py stdio|check|web|http')
 
 if __name__=='__main__':main()
