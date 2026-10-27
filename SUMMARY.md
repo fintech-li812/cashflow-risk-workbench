@@ -65,7 +65,29 @@
 ### 8. 今日文档（新增/修改）
 `docs/架构设计_千问中枢_v9_20261027.md`、`docs/架构设计_前端_千问中枢_MCP_v10.md`、`docs/第一版交付_千问中枢_v1_20261027.md`、`docs/现状核对_MCP服务已建成_20261027.md`、`docs/责任机制设计_v11.md`、`docs/v8_完整方案.md`（改）。
 
-### 9. 仓库治理
+### 9. 常驻 Agent 服务（新增，`deploy/agent/`，30 文件 / 约 2000 行）
+面向**自有服务器常驻运行**的 v8 落地形态。目标机：阿里云 ECS `39.104.201.10`（Ubuntu 24.04.5 / MySQL 8.0.46 仅绑 127.0.0.1:3306 / 内存 1.7Gi）。
+
+| 模块 | 文件 | 能力 |
+|---|---|---|
+| 基础设施 | `config.py`、`logging_setup.py`、`db.py`、`ops_guard.py`、`errors.py` | 配置与实现分离（YAML 非敏感 + env 敏感 0600）；结构化日志；DB 层**强制只允许 SELECT/INSERT**；高风险操作二次确认 |
+| 数据读取 | `datasource.py`、`risk.py` | 按需拉取并汇总内部数据源；数据源缺失时如实返回 `missing`，**不降级为 low** |
+| 定时巡检 | `inspector.py` + `scheduler.py`（纯 stdlib，零依赖） | 可配置周期巡检，异常告警 + 巡检记录留痕 |
+| 周报推送 | `reporter.py` + `channels.py` | 周期数据汇总成结构化周报并推送；未配凭据一律 dry-run，**绝不伪造送达** |
+| 前端对话 | `httpapi.py`（仅标准库，含 SSE）+ `chat.py` | `/v1/chat` 流式问答，只听 `127.0.0.1:8090` |
+| 决策卡片 | `decision_card.py` | 背景 / 结论 / 建议动作 / 风险提示四段式 |
+| 部署运维 | `scripts/{recon,install,rollback,healthcheck}.sh` | 只读采集 → 预演 → `--apply`；不可变 `releases/<时间戳>` + `current` 软链，切换即回滚 |
+| 自愈 | `systemd/*.service|timer`、`logrotate.conf` | 三层自愈 + 日志 14 天轮转 |
+| 数据库 | `sql/init_agent.sql` | `cf_agent@localhost` **仅 SELECT+INSERT**，6 张 `agent_*` 追加写表 |
+| 测试 | `tests/smoke_test.py` | **PASS 28 / FAIL 0**（离线，不连库） |
+
+**最小权限**：OS 账号 `cfagent`（nologin）+ systemd `ProtectSystem=strict` / `CapabilityBoundingSet=`，**不以 root 运行常驻进程**。
+**三层自愈**：① `Restart=always` + 5s；② `MemoryMax=320M` 超限被杀后自动拉起；③ watchdog timer 每 5 分钟探 `/healthz`，**连续 3 次失败才重启**（避免抖动误重启）。
+**高风险二次确认**：`/v1/ops/restart` 必须传 `{"confirm":true,"confirm_phrase":"restart"}`；`rollback.sh --drop-data` 必须手输 `DELETE DATA`；`install.sh` 不加 `--apply` 只预演，已存在配置绝不覆盖（只写 `.new`）。
+
+> **状态：交付物已完成，尚未部署。** 未连接服务器（缺 root 口令），未执行 `recon.sh` 实测，服务未跑起来。
+
+### 10. 仓库治理
 - 根 `.gitignore` 补充：`.mysqldata/`、`*.ibd/ibt/dblwr`、`binlog.*`、`*.zip`、`outbox/runtime/`、`*.log`、编辑器与系统文件。
 - 删除 6 个已过期的 `outbox/*.zip` 构建产物。
 
@@ -79,6 +101,7 @@
 | `qwen-integration/verify_accountability.py` | 全部通过 |
 | `qwen-integration/verify_acc_http.py` | 全部通过 |
 | `qwen-integration/test_mcp_frontend.py` | 全部通过 |
+| `deploy/agent/tests/smoke_test.py` | PASS 28 / FAIL 0（离线） |
 
 服务端口实测在监听：3307（MySQL）、8000（工作台）、8010（v8）、8020（责任机制）、8100（v10 网关）。
 
@@ -99,26 +122,36 @@
 3. **钉钉确认书为 dry-run**：未配置 `DINGTALK_WEBHOOK/SECRET` 时接口如实返回 `not_configured`，`message_id` 为 `dryrun-*`；**没有真实送达，不得声称已推送到人**。
 4. **部署参数全部是占位**：`CF_DB_HOST/PORT/USER/PASSWORD/NAME`（生产库名不得 `cfqa_` 前缀）、`CF_MCP_TOKEN`、`MCP_TRANSPORT`、`QWEN_API_BASE/KEY`、`DINGTALK_*`、`CF_CONFIRM_BASE`、域名与 Nginx 配置，均集中在 `v8/db.py`、`gateway.py`、`mcp_frontend_server.py` 的 TODO 块，替换前不具备生产条件。
 5. **本机口令曾出现在本次会话输出中**（`deploy/.env` 内 `CF_DB_PASSWORD`），仅存在于本机未入仓，建议轮换。
-6. 归档仓库中的 `file-readmes/`、`AI_Command_Workspace/` 为历史归档，与今日工作无关，未改动。
+6. **Agent 服务尚未部署**：交付物已就绪并通过离线冒烟，但**从未连接目标服务器**。服务端现状（Docker/Nginx/端口 8090 是否空闲/`python3-venv` 是否安装）仍基于 10-22 报告，**必须上机实测复核**。
+7. **服务器 `cf_workbench` 表结构未知**：10-22 报告显示其为 0 表，v8 的 `mfg_*` 表目前只在本机 3307。若服务器无源表，agent 会如实返回"数据源缺失"并判为 medium，而非假装 low。
+8. 归档仓库中的 `file-readmes/`、`AI_Command_Workspace/` 为历史归档，与今日工作无关，未改动。
 
 ---
 
 ## 五、下一步可执行方案（按优先级）
 
-**P0 — 让链路真实可用**
+**P0 — 部署常驻 Agent 服务（当前卡点）**
+0. **提供 root 访问方式**（口令或可 sudo 的账号 + SSH 端口）。拿到后按序执行：
+   ① `scripts/recon.sh` 只读采集，复核 Python/venv/端口 8090/内存/Docker；
+   ② `scripts/install.sh`（不加 `--apply`，先看预演）→ 你确认 → `--apply`；
+   ③ 执行 `sql/init_agent.sql` 建 `cf_agent@localhost` 与 6 张表；
+   ④ 验收 `/healthz` 与 `/v1/chat`，确认 systemd `active (running)` 且 watchdog timer 已启用。
+   同时确定数据源方案：把 v8 源表迁到服务器 `cf_workbench`，还是先让服务跑起来等数据灌入。
+
+**P1 — 让链路真实可用**
 1. 在一台自有服务器部署 MySQL，创建非 root 应用账号与生产库名（不得 `cfqa_` 前缀），替换 `v8/db.py` TODO 块的 `CF_DB_*`。
 2. `pip install -r mcp-server/program_v1/requirements.lock.txt`，执行 `sql/v8_schema.sql` 与 `sql/v8_accountability_schema.sql` 建表。
 3. 设置 `CF_MCP_TOKEN`，把 `MCP_TRANSPORT` 从 `stdio` 切到 `http`，验证千问办公能远程 `tools/list` + `tools/call`。
 
-**P1 — 接通千问中枢**
+**P2 — 接通千问中枢**
 4. 配置 `QWEN_API_BASE/QWEN_API_KEY`，把 `planner` 从 `local-planner` 切到真实千问编排，再用 `verify_v10.py` 复跑一遍事件流。
 5. 用 `deploy/v10/nginx-v10.conf` 反代 8100，确认 `proxy_buffering off` 生效、SSE 不断流。
 
-**P2 — 责任机制上线**
+**P3 — 责任机制上线**
 6. 填入 `DINGTALK_WEBHOOK/DINGTALK_SECRET` 与 `CF_CONFIRM_BASE`，把钉钉确认书从 dry-run 转为真实发送，验证 `message_id` 不再是 `dryrun-*`。
 7. 按真实组织架构替换 `owner_matrix` 种子数据（现为演示用的张伟/李娜/王强/陈静）。
 
-**P3 — 收敛与交付**
+**P4 — 收敛与交付**
 8. 把 `20261027` 分支合入 `main`（本分支未强推，可安全走 PR）。
 9. 视需要把仓库从 public 转为 private —— 当前为公开，代码内含内部业务逻辑与演示责任人姓名（已确认无密钥明文）。
 10. 清理归档仓库中的 `file-readmes/`、`AI_Command_Workspace/` 历史目录，或移入 `archive/`，减少仓库噪音。
