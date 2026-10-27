@@ -14,3 +14,23 @@ __pycache__/
 *.key
 *.sqlite3
 *.db
+
+# MySQL 数据目录：含 InnoDB 二进制与服务端私钥，绝不能入仓
+.mysqldata/
+**/.mysqldata/
+*.ibd
+*.ibt
+*.dblwr
+binlog.*
+
+# 构建产物与运行时输出
+*.zip
+outbox/**/*.zip
+outbox/runtime/
+*.log
+
+# 编辑器与系统文件
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
