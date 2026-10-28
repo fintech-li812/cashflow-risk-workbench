@@ -76,6 +76,17 @@ def legacy_scores(x15):
 
 
 def legacy_fuse(q, d, vote):
+    """v2 遗留融合规则，仅用于与旧口径做向后对比，**不是 v8 的权威口径**。
+
+    v8 的权威融合规则见 ``mcp-server/program_v1/src/v8/fusion.py``。
+    两者在绝大多数输入上结论一致，唯一的已知差异是
+    ``d >= 0 且 vote >= 0.7``：legacy 判绿灯，v8 判黄灯（FUSE-R6，
+    理由：财务健康结论与舞弊证据冲突时不应放行绿灯）。
+    该差异由 ``tests/test_fusion_rules.py`` 显式固定，防止两套规则静默漂移。
+
+    本函数还会在 q/vote 越界或缺失时抛 ValueError——这是 legacy 的输入校验，
+    v8 相应场景改为返回「红灯/黄灯 + 不可用原因」，不抛异常。
+    """
     q, d, vote = number(q), number(d), number(vote)
     if not 0 <= q <= 1 or not 0 <= vote <= 1:
         raise ValueError('q and vote must be in [0,1]')

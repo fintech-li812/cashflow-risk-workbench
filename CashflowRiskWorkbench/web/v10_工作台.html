@@ -86,7 +86,7 @@ pre{background:#f8fafc;border:1px solid var(--line);border-radius:6px;padding:9p
     <div class="legend">
       <span><b style="background:var(--green)"></b><b>绿灯</b>　缓冲倍数 ≥ K黄，且三层融合 FUSE 判健康</span>
       <span><b style="background:var(--amber)"></b><b>黄灯</b>　K红 ≤ 缓冲倍数 &lt; K黄，或 FUSE 判黄</span>
-      <span><b style="background:var(--red)"></b><b>红灯</b>　缓冲倍数 &lt; K红，或 FUSE 判红（P ≥ 0.5 / D 判风险）</span>
+      <span><b style="background:var(--red)"></b><b>红灯</b>　缓冲倍数 &lt; K红，或 FUSE 判红（Q 不可用 / Q&lt;0.3 / D&lt;0 且 P≥0.7）</span>
     </div>
     <div class="muted" style="margin-top:7px">最终灯色 = 三层融合 与 现金流缓冲判定 <b>取较严格者</b>（v8 文档 4.0）。K黄/K红 随行业切换。</div>
   </div>

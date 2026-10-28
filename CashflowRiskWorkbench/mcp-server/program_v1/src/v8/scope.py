@@ -102,6 +102,29 @@ CAPABILITIES = {
         "impl": "v8.workflow.sweep_timeouts(...)",
         "note": "催办达上限自动升级至 escalate_to，责任转移全程留痕。",
     },
+    # ---- 三层模型拆分为独立工具（差距报告 v8 新增验收项 第 8 条）----
+    # 拆分动机：risk.assess_v8 一次返回 Q/D/P，无法单独复盘某一层。拆开后
+    # 每层可独立调用、独立留痕，且落库到 quality_log / deada_score_log /
+    # rf_predict_log 三张表。三者的输入与 assess_v8 完全同源，结果一致。
+    "quality.check": {
+        "name": "第一层·数据质量门禁（Benford χ² + Myer 末位堆积 → Q）",
+        "requires": ["企业基本信息", "数据字典"],
+        "impl": "v8.layers.quality_gate(...)",
+        "note": "15 个财务比率为独立登记的合成样本（八表未启用评级），已在页面声明；"
+                "Myer 指数照实展示但在小样本下易虚高，不作为唯一判据。",
+    },
+    "risk.deada_score": {
+        "name": "第二层·改进 DEA-DA 判别得分 D",
+        "requires": ["企业基本信息", "行业参数"],
+        "impl": "v8.layers.deada(...)",
+        "note": "线性规划为自带两阶段单纯形实现，非 scipy；求解失败时如实标注降级，不伪装最优解。",
+    },
+    "risk.rf_predict": {
+        "name": "第三层·Benford-随机森林舞弊概率 P",
+        "requires": ["企业基本信息", "行业参数"],
+        "impl": "v8.layers.benford_rf(...)",
+        "note": "CART 为自带实现，非 scikit-learn；训练标签为 ST/风险，与「舞弊」不等同。",
+    },
     "clean.run_batch": {
         "name": "数据清洗与入库",
         "requires": ["银行流水", "应收账款", "数据字典"],

@@ -15,6 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from . import indicators as ind
 from . import industry as ins
 from . import layers
+from . import fusion
 
 # 压力测试输入：来自合成八表登记值（注明出处，非凭空假设）
 STRESS_INPUTS = {
@@ -143,7 +144,12 @@ def assess(industry: str = "制造业", scenario: str = "edge",
     gate = layers.quality_gate(pool)
     da = layers.deada(pool, target["values"])
     rf = layers.benford_rf(pool, target["values"], gate)
-    fused = layers.fuse(gate["Q"], da["D"], rf["P"])
+    # 上游可用性必须显式传入：DEA-DA 求解降级时 D 不可信，
+    # 随机森林未训练出任何树时 P 无意义。不传就等同于默认「可信」，
+    # 会把「无法判断」静默当成「无风险」（详见 fusion.py 模块说明）。
+    fused = fusion.fuse(gate["Q"], da["D"], rf["P"],
+                        d_reliable=not da.get("降级", False),
+                        p_reliable=rf.get("树数", 0) > 0)
 
     buffer_judge = ins.judge_by_buffer(industry, M, buffer) if M else None
     thr = ins.warning_lines(industry, M) if M else None
@@ -153,17 +159,36 @@ def assess(industry: str = "制造业", scenario: str = "edge",
 
     # v8 文档 4.0：缓冲阈值判定并未废弃，而是降级为第二层的辅助约束，
     # 两层逻辑并行，最终结果取较严格者。
+    #
+    # 取严的两个前提必须显式校验，不能用 dict.get(..., 0) 蒙混：
+    #   1. 参与比较的等级必须是已知灯色——未知/缺失若按默认 0 处理，
+    #      等于把「没算出来」当成「绿灯（最宽松）」，取严就失效了；
+    #   2. 口径文案必须按实际参与比较的维度生成——缓冲维度缺失时
+    #      仍宣称「两层并行取严」会让人误以为最终等级含缓冲因素。
     rank = {"绿灯": 0, "黄灯": 1, "红灯": 2}
-    final_level = fused["等级"]
+    fused_level = fused["等级"]
+    buffer_level = buffer_judge["等级"] if buffer_judge else None
+
+    final_level = fused_level
     stricter = "三层融合判定 FUSE(Q,D,P)"
-    if buffer_judge and rank.get(buffer_judge["等级"], 0) > rank.get(final_level, 0):
-        final_level = buffer_judge["等级"]
+    if buffer_level in rank and rank[buffer_level] > rank.get(fused_level, 0):
+        final_level = buffer_level
         stricter = "现金流缓冲判定（相对阈值 M×K）更严格"
+
+    sources = ["三层融合判定 FUSE(Q,D,P)"]
+    if buffer_level in rank:
+        sources.append("现金流缓冲判定（相对阈值 M×K）")
+    note = "取较严格者（参与维度：%s）" % "、".join(sources)
+    if buffer_level not in rank:
+        note += ("；缓冲维度未参与比较（现金流事实不可用或月均流出为 0），"
+                 "最终等级仅由三层融合给出")
+
     final = {
         "等级": final_level, "取严来源": stricter,
-        "三层融合": fused["等级"],
-        "缓冲判定": buffer_judge["等级"] if buffer_judge else "—",
-        "口径": "两层逻辑并行，最终结果取较严格者（v8 文档 4.0）",
+        "三层融合": fused_level,
+        "缓冲判定": buffer_level if buffer_level else "—",
+        "口径": note,
+        "缓冲维度参与比较": buffer_level in rank,
     }
 
     return {

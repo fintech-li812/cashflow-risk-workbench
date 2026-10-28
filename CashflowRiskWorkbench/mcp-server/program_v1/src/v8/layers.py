@@ -167,9 +167,14 @@ def benford_factors(values: dict, gate: dict):
 
 
 def _simplex(c, A, b, max_iter=4000):
-    """两阶段单纯形法：min cᵀx, s.t. Ax = b, x ≥ 0（要求 b ≥ 0）。
+    """两阶段单纯形法：**maximize** cᵀx, s.t. Ax = b, x ≥ 0（要求 b ≥ 0）。
 
     返回 (x, obj, ok)。ok=False 表示未求得最优解（调用方应降级并如实标注）。
+
+    ⚠ 方向说明（2026-10-28 更正）：本函数的 docstring 原写 "min cᵀx"，与实现
+    不符——实现求的是 **max**。判据：c=[1,1,0]、约束 x1+x2+s=10 时返回
+    obj=10（取到 x1=10），而非 minimize 下的 0。
+    调用方若要求最小化目标，须自行把系数取负（见 deada 中松弛变量的处理）。
     """
     m, n = len(A), len(c)
     # 保证 b >= 0
@@ -200,27 +205,42 @@ def _simplex(c, A, b, max_iter=4000):
                 obj1[j] -= T[i][j]
 
     def pivot(T, obj, basis, phase1):
+        # 【可复现性修复 2026-10-28】
+        # 原实现按「最负 reduce cost」选入基、容差 1e-12。当两列的 reduce cost
+        # 在浮点误差范围内接近时，不同平台的 libm / CPU / Python 版本算出的微小
+        # 差异会选到不同的入基列，进而走出不同的 pivot 路径，最终导致判别得分 D
+        # 跨平台不一致（实测：Windows+Py3.13 得 -0.117677，Linux+Py3.12 得
+        # -0.114258，同平台内稳定但互不相同），违反「全链路可复现」要求。
+        #
+        # 现改为真正的 Bland 最小下标规则：
+        #   入基 = 下标最小的负 reduce cost 列（与系数大小无关，只与下标有关）
+        #   出基 = 最小比值行；比值并列时取基变量下标最小者
+        # 下标是整数比较，不受浮点误差影响，从而保证结果跨平台一致。
+        TOL = 1e-9
         for _ in range(max_iter):
-            # 选入基：最负 reduce cost（Bland 平局）
-            enter, best = -1, -1e-9
+            # 入基：Bland 规则 —— 下标最小的负 reduce cost
+            enter = -1
             for j in range(len(obj) - 1):
-                if obj[j] < best - 1e-12:
-                    best, enter = obj[j], j
+                if obj[j] < -TOL:
+                    enter = j
+                    break
             if enter < 0:
                 return True
-            # 出基：最小比值
+            # 出基：最小比值；并列时取基变量下标最小者（Bland）
             leave, ratio = -1, None
             for i in range(len(T)):
-                if T[i][enter] > 1e-9:
+                if T[i][enter] > TOL:
                     r = T[i][-1] / T[i][enter]
-                    if ratio is None or r < ratio - 1e-12:
+                    if ratio is None or r < ratio - TOL:
                         ratio, leave = r, i
+                    elif abs(r - ratio) <= TOL and basis[i] < basis[leave]:
+                        leave = i
             if leave < 0:
                 return False  # 无界
             piv = T[leave][enter]
             T[leave] = [v / piv for v in T[leave]]
             for i in range(len(T)):
-                if i != leave and abs(T[i][enter]) > 1e-12:
+                if i != leave and abs(T[i][enter]) > TOL:
                     f = T[i][enter]
                     T[i] = [T[i][k] - f * T[leave][k] for k in range(len(T[leave]))]
             f = obj[enter]
@@ -241,7 +261,7 @@ def _simplex(c, A, b, max_iter=4000):
                     piv = T[i][j]
                     T[i] = [v / piv for v in T[i]]
                     for k in range(m):
-                        if k != i and abs(T[k][j]) > 1e-12:
+                        if k != i and abs(T[k][j]) > 1e-9:
                             f = T[k][j]
                             T[k] = [T[k][t] - f * T[i][t] for t in range(n + 1)]
                     basis[i] = j
@@ -306,8 +326,15 @@ def deada(pool: list, target: dict):
     # 变量：v(ni) | u(no) | dp | dn | s+(|g1|) | s-(|g2|)
     nvar = nv + 2 + len(g1) + len(g2)
     c = [0.0] * nvar
+    # 【修复 2026-10-28 · 求解方向反了】
+    # _simplex 的实际语义是 **maximize cᵀx**（其 docstring 原写 "min cᵀx"，与实现
+    # 不符，已一并更正）。DEA-DA 两阶段的标准目标是 **最小化** 误分类总量
+    # min Σ(s⁺ + s⁻)，在 maximize 语义下必须取负号。
+    # 原代码用 +1.0，等于在**最大化**所有样本的误分类：实测松弛总和高达 32.03，
+    # 40 个松弛变量中 39 个非零，即几乎所有样本都被判到错误的一侧，
+    # 由此求出的权重与判别得分 D 不可信。
     for k in range(nv + 2, nvar):
-        c[k] = 1.0
+        c[k] = -1.0
     A, b = [], []
     for k1, (_, r) in enumerate(g1):  # ΣvX + ΣuY + s⁺ − d = 0
         row = [0.0] * nvar
@@ -459,20 +486,18 @@ def benford_rf(pool: list, target: dict, gate: dict, n_trees=60, seed=20261027):
 
 
 # ---------------------------------------------------------------- 融合
+#
+# 注意：融合判定的权威实现已迁移到 v8/fusion.py。
+#
+# 迁移原因：原实现存在「阈值符号不统一、规则用『或』连接导致彼此不互斥、
+# 结果依赖 if/elif 书写顺序、空值与上游求解降级一律未处理」等问题，
+# 详见 docs/融合规则口径冲突消歧报告_20261028.md。
+#
+# 这里保留三参数签名仅为兼容历史调用点，但**无法感知上游降级**，
+# 新代码请直接调用 v8.fusion.fuse(Q, D, P, d_reliable=..., p_reliable=...)。
 
 
 def fuse(Q: float, D: float, P: float):
-    """三层融合判定 FUSE(Q, D, P)。"""
-    if (D < 0 and P >= 0.7) or Q < 0.3:
-        level, why = "红灯", "判为风险且舞弊概率 P≥0.7，或数据质量 Q<0.3"
-    elif (D < 0 and 0.3 <= P < 0.7) or (Q < 0.5 and D < 0):
-        level, why = "黄灯", "判为风险且 0.3≤P<0.7，或数据质量偏低且判为风险"
-    elif D >= 0 and Q >= 0.5:
-        level, why = "绿灯", "判别得分 D≥0 且数据质量 Q≥0.5"
-    else:
-        level, why = "黄灯", "未完全满足绿灯条件，按较严格者判定"
-    return {
-        "等级": level, "依据": why,
-        "公式": "红灯：若(D<0 且 P≥0.7) 或 Q<0.3；黄灯：若(D<0 且 0.3≤P<0.7) 或 (Q<0.5 且 D<0)；绿灯：D≥0 且 Q≥0.5",
-        "输入": {"Q": Q, "D": D, "P": P},
-    }
+    """兼容包装：等价于 fusion.fuse(Q, D, P)，但不感知 D/P 的上游降级。"""
+    from . import fusion
+    return fusion.fuse(Q, D, P)

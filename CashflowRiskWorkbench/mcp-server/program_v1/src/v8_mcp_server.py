@@ -20,10 +20,12 @@
 """
 from __future__ import annotations
 
+import datetime
 import json
 import os
 import sys
 import threading
+import time
 import uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
@@ -41,6 +43,8 @@ from v8 import industry as _ins     # noqa: E402
 from v8 import indicators as _ind   # noqa: E402
 from v8 import workflow as _wf      # noqa: E402 责任机制编排层
 from v8 import dingtalk as _dtk     # noqa: E402 钉钉确认书通道
+from v8 import layers as _lyr       # noqa: E402 三层模型（拆分为独立工具用）
+from v8 import layer_log as _llog   # noqa: E402 三层留痕（quality/deada/rf 三张日志表）
 
 PROTOCOL_VERSION = "2025-06-18"
 SERVER_INFO = {"name": "manufacturing-risk-workbench-v8", "version": "v8.0.0"}
@@ -70,6 +74,46 @@ TOOLS = [
         "out_schema": {"Q": "数据质量得分", "D": "判别得分", "P": "舞弊概率",
                        "融合判定": "FUSE 结果", "最终等级": "绿灯|黄灯|红灯",
                        "缓冲判定": "缓冲倍数与等级", "压力测试": "四场景结果"},
+    },
+    {
+        "name": "quality.check",
+        "description": "第一层·数据质量门禁：对 15 个财务比率逐一做 Benford χ² 与末位均匀分布检验，"
+                       "输出质量得分 Q 与逐指标命中明细，并写入 quality_log",
+        "inputSchema": {"type": "object", "properties": {
+            "n_per_group": T("integer", "每组样本量，默认 20"),
+            "as_of": T("string", "检查日期 YYYY-MM-DD，默认今天"),
+            "source_ref": T("string", "来源标识"), "request_id": T("string", "幂等键，重复调用不会重复落库"),
+            "actor": T("string", "操作人，缺省取 CF_AUDIT_ACTOR"),
+            "persist": T("boolean", "是否落库，默认 true")}, "required": []},
+        "out_schema": {"Q": "数据质量得分 [0,1]", "命中Benford数": "", "命中Myer数": "",
+                       "明细": "逐指标的 χ²、风险数字、B/M 因子", "留痕": "quality_log 写入结果"},
+    },
+    {
+        "name": "risk.deada_score",
+        "description": "第二层·改进 DEA-DA 判别：两阶段单纯形法求权重，输出判别得分 D 与稀疏权重，"
+                       "并写入 deada_score_log（兼容别名 deada_score）",
+        "inputSchema": {"type": "object", "properties": {
+            "scenario": T("string", "healthy|edge|risk，默认 edge"),
+            "n_per_group": T("integer", "每组样本量，默认 20"),
+            "as_of": T("string", "评估日期 YYYY-MM-DD"),
+            "source_ref": T("string", "来源标识"), "request_id": T("string", "幂等键"),
+            "actor": T("string", "操作人"), "persist": T("boolean", "是否落库，默认 true")}, "required": []},
+        "out_schema": {"D": "D<0 判为财务风险", "权重": "投入/产出指标权重（稀疏）",
+                       "降级": "线性规划未求得最优解时为 true", "留痕": "deada_score_log 写入结果"},
+    },
+    {
+        "name": "risk.rf_predict",
+        "description": "第三层·Benford-随机森林：30 维特征（15 财务比率 + 15 Benford 因子）"
+                       "推理舞弊概率 P，并写入 rf_predict_log（兼容别名 rf_predict）",
+        "inputSchema": {"type": "object", "properties": {
+            "scenario": T("string", "healthy|edge|risk，默认 edge"),
+            "n_per_group": T("integer", "每组样本量，默认 20"),
+            "n_trees": T("integer", "树数，默认 60"),
+            "as_of": T("string", "评估日期 YYYY-MM-DD"),
+            "source_ref": T("string", "来源标识"), "request_id": T("string", "幂等键"),
+            "actor": T("string", "操作人"), "persist": T("boolean", "是否落库，默认 true")}, "required": []},
+        "out_schema": {"P": "舞弊概率 [0,1]，P≥0.7 升级红灯", "树数": "", "特征维度": 30,
+                       "留痕": "rf_predict_log 写入结果"},
     },
     {
         "name": "risk.stress_test",
@@ -250,6 +294,94 @@ def _err(msg, data=None):
     return e
 
 
+# ---------------------------------------------------------------------------
+# 三层模型独立工具的实现（与 risk.assess_v8 共用同一套 layers 与样本池，
+# 保证「单独调用某一层」与「整包评估」得到的 Q/D/P 完全一致）
+# ---------------------------------------------------------------------------
+def _layer_common(a: dict):
+    """三層共用的入参归一：样本池 / 目标样本 / 评估日期 / 每组样本量。"""
+    n = int(a.get("n_per_group", 20) or 20)
+    pool = _ind.build_sample_pool(n)
+    scenario = a.get("scenario", "edge")
+    target = _ind.TARGET_SCENARIOS.get(scenario) or _ind.TARGET_SCENARIOS["edge"]
+    as_of = a.get("as_of")
+    d = (datetime.datetime.strptime(as_of, "%Y-%m-%d").date()
+         if as_of else datetime.date.today())
+    return pool, target["values"], d, n, target
+
+
+def _persist_meta(result: dict, log: dict) -> None:
+    """把落库结果并入返回，落库失败时如实标注，不伪装成功。"""
+    result["留痕"] = log
+    if not log.get("persisted"):
+        result["留痕告警"] = "本次结果未落库（%s），结果仅在本次返回中有效" % (
+            log.get("error") or "未请求落库")
+
+
+def _layer_quality(a: dict):
+    pool, values, d, n, _ = _layer_common(a)
+    gate = _lyr.quality_gate(pool)
+    out = {
+        "schema": "mfg-v8-layer-quality.v1",
+        "层": "第一层·数据质量门禁（BM-BP 双质量因子）",
+        "检查日期": d.isoformat(), "每组样本量": n, "样本总数": len(pool),
+    }
+    out.update(gate)
+    if a.get("persist", True) is False:
+        out["留痕"] = {"persisted": False, "note": "调用方指定 persist=false"}
+    else:
+        _persist_meta(out, _llog.log_quality(
+            gate, len(pool), d,
+            source_ref=a.get("source_ref", "synthetic_eight_sheet_v1"),
+            request_id=a.get("request_id"), actor=a.get("actor")))
+    return out
+
+
+def _layer_deada(a: dict):
+    pool, values, d, n, _ = _layer_common(a)
+    da = _lyr.deada(pool, values)
+    out = {
+        "schema": "mfg-v8-layer-deada.v1",
+        "层": "第二层·改进 DEA-DA 判别（BCC 规模收益可变）",
+        "评估日期": d.isoformat(), "每组样本量": n,
+        "受评场景": a.get("scenario", "edge"),
+    }
+    out.update(da)
+    if a.get("persist", True) is False:
+        out["留痕"] = {"persisted": False, "note": "调用方指定 persist=false"}
+    else:
+        _persist_meta(out, _llog.log_deada(
+            da, d, source_ref=a.get("source_ref", "synthetic_eight_sheet_v1"),
+            request_id=a.get("request_id"), actor=a.get("actor")))
+    return out
+
+
+def _layer_rf(a: dict):
+    pool, values, d, n, _ = _layer_common(a)
+    # 第三层需要第一层的风险数字构造 Benford 因子，故先跑门禁（与 assess 同源）
+    gate = _lyr.quality_gate(pool)
+    t0 = time.time()
+    rf = _lyr.benford_rf(pool, values, gate, n_trees=int(a.get("n_trees", 60) or 60))
+    ms = int((time.time() - t0) * 1000)
+    feats = ([values[k] for k, _, _ in _ind.INDICATORS]
+             + _lyr.benford_factors(values, gate))
+    out = {
+        "schema": "mfg-v8-layer-rf.v1",
+        "层": "第三层·Benford-随机森林舞弊概率",
+        "评估日期": d.isoformat(), "每组样本量": n,
+        "受评场景": a.get("scenario", "edge"),
+        "推理耗时_ms": ms,
+    }
+    out.update(rf)
+    if a.get("persist", True) is False:
+        out["留痕"] = {"persisted": False, "note": "调用方指定 persist=false"}
+    else:
+        _persist_meta(out, _llog.log_rf(
+            rf, feats, d, source_ref=a.get("source_ref", "synthetic_eight_sheet_v1"),
+            request_id=a.get("request_id"), actor=a.get("actor"), inference_ms=ms))
+    return out
+
+
 def call_tool(name: str, args: dict):
     """工具分发。任何能力调用前先过数据范围闸门。"""
     a = args or {}
@@ -263,6 +395,17 @@ def call_tool(name: str, args: dict):
                            scenario=a.get("scenario", "edge"),
                            amount=float(a.get("amount", 120000) or 120000),
                            n_per_group=int(a.get("n_per_group", 20) or 20))
+    # ---------------- 三层模型（独立工具，与 risk.assess_v8 同源）----------------
+    # 三个工具共享同一次样本池构造逻辑，保证单独调用与整体评估的结果完全一致。
+    if name in ("quality.check", "quality_check"):
+        _scope.gate("quality.check")
+        return _layer_quality(a)
+    if name in ("risk.deada_score", "deada_score"):
+        _scope.gate("risk.deada_score")
+        return _layer_deada(a)
+    if name in ("risk.rf_predict", "rf_predict"):
+        _scope.gate("risk.rf_predict")
+        return _layer_rf(a)
     if name == "risk.stress_test":
         _scope.gate("risk.stress_test")
         f = _eng.cashflow_facts()

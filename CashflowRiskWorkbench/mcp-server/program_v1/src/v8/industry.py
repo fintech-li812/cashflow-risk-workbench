@@ -6,6 +6,8 @@
 """
 from __future__ import annotations
 
+import math
+
 # 阈值来源（v8 5.0 节）：出处=上市公司年报/中国统计年鉴，年份=2024，样本量见备注。
 # 该来源为方案预设值，方案本身要求"参赛前重新核对最新年报并标注页码"，此处如实保留。
 THRESHOLD_SOURCE = {
@@ -63,25 +65,121 @@ INDUSTRIES = {
 
 DEFAULT_INDUSTRY = "制造业"
 
+# 动态阈值启用条件（差距报告 v7 遗留 #8：统一为「数据满 12 个月」）
+DYNAMIC_MIN_MONTHS = 12
+# 分位数口径与静态阈值保持一致：K黄=P25、K红=P10（见 THRESHOLD_SOURCE.note）
+DYNAMIC_Q_YELLOW = 0.25
+DYNAMIC_Q_RED = 0.10
+
 
 def get(industry: str) -> dict:
     return INDUSTRIES.get(industry) or INDUSTRIES[DEFAULT_INDUSTRY]
 
 
-def warning_lines(industry: str, M: float) -> dict:
-    """相对阈值：预警线 = 月均经营性流出 M × 系数 K。"""
+def percentile(values: list, q: float) -> float:
+    """线性插值分位数，与 numpy.percentile(method="linear") 口径一致。
+
+    单独实现而不用 numpy/statistics，是为了避免引入新依赖，并且让「同样的输入
+    在任何环境下得到同样的输出」——浮点插值是确定性的，不涉及任何平台相关的
+    库实现差异（这一点对可复现性很重要，参见 layers._simplex 的修复说明）。
+    """
+    if not values:
+        raise ValueError("percentile: 输入序列为空")
+    if not 0.0 <= q <= 1.0:
+        raise ValueError("percentile: q 必须落在 [0,1]，收到 %r" % q)
+    s = sorted(float(v) for v in values)
+    if len(s) == 1:
+        return s[0]
+    pos = (len(s) - 1) * q
+    lo = math.floor(pos)
+    hi = math.ceil(pos)
+    if lo == hi:
+        return s[lo]
+    return s[lo] + (s[hi] - s[lo]) * (pos - lo)
+
+
+def dynamic_thresholds(industry: str, history: list | None) -> dict:
+    """按企业自身历史缓冲倍数求动态阈值（滚动分位数）。
+
+    对应差距报告 v7 遗留第 8 条「动态阈值启用条件统一为数据满 12 个月」与
+    第十八章「风控闸（动态）：表格 + Agent，≥12 个月」。
+
+    参数
+    ----
+    history : 按月的历史「缓冲倍数」序列（缓冲 ÷ 月均经营性流出 M），
+              按时间从旧到新排列。长度不足 DYNAMIC_MIN_MONTHS 时回退静态阈值。
+
+    返回
+    ----
+    始终包含 启用/模式/K黄/K红/样本月数/口径 六个键；无论启用与否，都给出
+    静态对照值，便于前端解释「为什么这次用动态 / 为什么还在用静态」。
+
+    不静默降级：历史不足时明确标注 mode=static 与原因，不假装已动态化。
+    """
     p = get(industry)
+    static = {"K黄": p["K黄"], "K红": p["K红"]}
+    hist = [float(h) for h in (history or []) if h is not None]
+    n = len(hist)
+
+    if n < DYNAMIC_MIN_MONTHS:
+        return {
+            "启用": False, "模式": "static",
+            "K黄": static["K黄"], "K红": static["K红"],
+            "样本月数": n, "最低月数": DYNAMIC_MIN_MONTHS,
+            "原因": "历史缓冲倍数仅 %d 个月，未满 %d 个月，保持静态阈值"
+                    % (n, DYNAMIC_MIN_MONTHS),
+            "静态对照": static,
+            "口径": "动态阈值启用条件：连续 %d 个月历史缓冲倍数" % DYNAMIC_MIN_MONTHS,
+        }
+
+    ky = percentile(hist, DYNAMIC_Q_YELLOW)
+    kr = percentile(hist, DYNAMIC_Q_RED)
+    # K红 必须不高于 K黄，否则判定逻辑（<K红 红灯 / <K黄 黄灯）会出现空红灯区。
+    # 极端样本（如大量月份缓冲倍数为 0）会让两者相等甚至倒挂，此处如实修正并标注。
+    inverted = kr > ky
+    if inverted:
+        kr, ky = ky, kr
+    return {
+        "启用": True, "模式": "dynamic",
+        "K黄": round(ky, 4), "K红": round(kr, 4),
+        "样本月数": n, "最低月数": DYNAMIC_MIN_MONTHS,
+        "原因": "历史缓冲倍数满 %d 个月，启用滚动分位数阈值" % n,
+        "静态对照": static,
+        "与静态差异": {
+            "K黄": round(ky - static["K黄"], 4),
+            "K红": round(kr - static["K红"], 4),
+            "更严格": (ky > static["K黄"]) or (kr > static["K红"]),
+        },
+        "口径": "K黄 = 历史缓冲倍数 P%.0f，K红 = P%.0f（与静态阈值同口径，便于对照）"
+                % (DYNAMIC_Q_YELLOW * 100, DYNAMIC_Q_RED * 100),
+        "分位区间": {"min": round(min(hist), 4), "max": round(max(hist), 4)},
+        "已修正倒挂": inverted,
+    }
+
+
+def warning_lines(industry: str, M: float, history: list | None = None) -> dict:
+    """相对阈值：预警线 = 月均经营性流出 M × 系数 K。
+
+    history 给出近 N 个月的历史缓冲倍数时，优先用动态阈值；
+    历史不足 12 个月则自动回退静态阈值，并在返回里写明原因（不静默降级）。
+    """
+    dyn = dynamic_thresholds(industry, history)
     return {
         "M_月均经营性流出": M,
-        "K黄": p["K黄"], "K红": p["K红"],
-        "黄灯线": M * p["K黄"], "红灯线": M * p["K红"],
+        "K黄": dyn["K黄"], "K红": dyn["K红"],
+        "黄灯线": M * dyn["K黄"], "红灯线": M * dyn["K红"],
+        "动态阈值": dyn,
         "口径": "现金缓冲预警线 = M × K（相对指标，随企业规模自动缩放）",
     }
 
 
-def judge_by_buffer(industry: str, M: float, buffer: float) -> dict:
-    """按缓冲倍数判定（v8 相对口径）：实际缓冲 ÷ M 与 K红/K黄 比较。"""
-    w = warning_lines(industry, M)
+def judge_by_buffer(industry: str, M: float, buffer: float,
+                    history: list | None = None) -> dict:
+    """按缓冲倍数判定（v8 相对口径）：实际缓冲 ÷ M 与 K红/K黄 比较。
+
+    history 透传给 warning_lines，用于启用动态阈值。
+    """
+    w = warning_lines(industry, M, history)
     ratio = (buffer / M) if M else 0.0
     if ratio < w["K红"]:
         level, why = "红灯", "缓冲倍数 %.2f < K红 %.2f" % (ratio, w["K红"])
